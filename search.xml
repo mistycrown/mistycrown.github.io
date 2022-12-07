@@ -1,277 +1,69 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="毛詩正義·大雅·雲漢">
-<meta property="og:url" content="http://example.com/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/index.html">
-<meta property="og:site_name" content="嚶嚶閣">
-<meta property="og:description" content="倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/assets/image-20220916161619-2ijg7p7.png">
-<meta property="og:image" content="http://example.com/assets/image-20221123104142-gtm59yr.png">
-<meta property="og:image" content="http://example.com/assets/image-20221123104032-1dwgrok.png">
-<meta property="og:image" content="http://example.com/assets/image-20221123104047-5tsw3fi.png">
-<meta property="og:image" content="http://example.com/assets/image-20220918211550-qvhj9n8.png">
-<meta property="og:image" content="http://example.com/assets/image-20220918211250-uuokow1.png">
-<meta property="og:image" content="http://example.com/assets/image-20220918215318-xm5xa66.png">
-<meta property="og:image" content="http://example.com/assets/image-20221129224501-b5v6gqa.png">
-<meta property="og:image" content="http://example.com/assets/image-20221129224442-pk96geq.png">
-<meta property="og:image" content="http://example.com/assets/image-20221114141204-3cdhkie.png">
-<meta property="og:image" content="http://example.com/assets/image-20221106164229-u73buss.png">
-<meta property="og:image" content="http://example.com/assets/image-20221130110040-yxdh63h.png">
-<meta property="og:image" content="http://example.com/assets/image-20221130110054-12nqixq.png">
-<meta property="og:image" content="http://example.com/assets/image-20220610131725-v1b22aa.png">
-<meta property="og:image" content="http://example.com/assets/image-20220610133457-p3lsmbg.png">
-<meta property="article:published_time" content="2022-12-06T06:09:22.000Z">
-<meta property="article:modified_time" content="2022-12-06T10:54:12.646Z">
-<meta property="article:author" content="蒺藜">
-<meta property="article:tag" content="詩經">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/assets/image-20220916161619-2ijg7p7.png">
-
-<link rel="canonical" href="http://example.com/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>毛詩正義·大雅·雲漢 | 嚶嚶閣</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">嚶嚶閣</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">嚶其鳴矣，求其友聲。</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/yinglogo.png">
-      <meta itemprop="name" content="蒺藜">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嚶嚶閣">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          毛詩正義·大雅·雲漢
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-06 14:09:22 / 修改时间：18:54:12" itemprop="dateCreated datePublished" datetime="2022-12-06T14:09:22+08:00">2022-12-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%AD%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">札記</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？</p>
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>是你在改造我们生活的荒凉</title>
+    <url>/2022/12/06/%E6%98%AF%E4%BD%A0%E5%9C%A8%E6%94%B9%E9%80%A0%E6%88%91%E4%BB%AC%E7%94%9F%E6%B4%BB%E7%9A%84%E8%8D%92%E5%87%89/</url>
+    <content><![CDATA[<p>文学，在改造我们的生活。而白洋淀的文学，在改造那个时代的荒凉。新中国建立初期我们总在强调文艺与生活的结合，让工农斗争的日常渗透进文学的丝毫中。可是这种大面积的渗透又何常不是一种荒凉。白洋淀的诗人无法冲破主流叙事的笼罩，不能像《狂人日记》一般振臂高呼，发挥巨大的启蒙作用，是时代局限的束缚，但诗人们也满足于这样一种自娱自乐式的自我慰藉。潜在文学的声音虽然微小，但总保留着这一丝人情的微火，存亡绝续，燃烧着压抑中的生命力量与现代智慧，接续着新文化的传统并开启着朦胧诗的风格。这一点小小的光明，在黑暗中弥足珍贵，它展现着青春的力量和个人的启蒙，是坚冰下，延续不断的溪流。</p>
 <span id="more"></span>
 
 
 
-<h1 id="雲漢"><a href="#雲漢" class="headerlink" title="雲漢"></a>雲漢</h1><p><a target="_blank" rel="noopener" href="http://127.0.0.1:8000/shijingpian/%E9%9B%B2%E6%BC%A2/">嚶嚶閣</a></p>
+<h1 id="是你在改造我们生活的荒凉"><a href="#是你在改造我们生活的荒凉" class="headerlink" title="是你在改造我们生活的荒凉"></a>是你在改造我们生活的荒凉</h1><p>是你在改造我们生活的荒凉——浅谈白洋淀诗歌群落的潜在写作</p>
+<p>在白洋淀插队的众多知青，自发地组织民间诗歌文学活动。这些地下沙龙和地下诗社，以破碎的形态存在，处于不同于红色主流文化的边缘立场。在价值失落的疯狂年代，他们对革命开始感到失望，试图消解那种主流意识形态的僵化、死硬和教条，去探求真实的感情世界和精神价值。他们的写作是对立于公开发表的文学活动的潜在写作，他们表达的是自己对时代的感受和思考，而非政治裹挟下失去主体性的随顺高歌。身处于那个精神世界在高度统一的政治呼喊下极度匮乏的年代里，他们创造了一小片文学净土，改造着生活的荒凉。</p>
+<p>白洋淀诗人们大都是知识分子、干部、艺术家庭的孩子，是被改造的小资产阶级，失去了革命激情的他们，是这场浩大运动的游离者。他们对政治话语体系的排遣，造就了他们书写的真实性与内在精神结构的张力。</p>
+<p>如果说食指的《相信未来》还是浪漫主义的，还带有对未来的向上的信念的作品，白洋淀诗人们则是对食指形式的突破，表现得更加晦涩与怪诞，融入了更多嘲讽与反抗，有时还弥漫着颓废和悲哀，为的是呈现出独特的内心感受和生命体验。不论是那株“就好象是为了一口咬断&#x2F;那套在它脖子上的&#x2F;那牵在太阳手中的绳索”的向日葵，还是那颗“暗褐色的心，像一块加热又冷却过&#x2F;十九次的钢，安详、沉重&#x2F;永远不再闪烁”，都映照着诗人精神的迷惘、渴望、反叛，回归了诗歌多重审美意蕴的本质，而不再是呆板僵滞的政治意象堆砌。缺少了广泛的接受这一环节，也多了一分不受群体评价和政治洪流的裹挟的可能性，白洋淀的诗是纯粹的个人化的表达，是“情动于中而形于言”。他们的艺术，就是在平淡的生活里，为自己和朋友们增加一些色彩，对抗单一的、艳丽的、甚至有些压迫的红色。<br>民间的隐形结构往往具有顽强的生命力。因为文学的力量在于其对人心的触动，政治力量只能操控表面上的惊涛骇浪，却无法阻止水面下的暗流涌动。文革所期待的思想意识大一统的局面，因其强制性和压迫性，最终只能破产。写作的政治迷失带来是人性的压抑，重建人文的写作则变成了这群年轻人的光荣与梦想。高扬的政治主旋律固然无可厚非，但是不能因此消解个性化的平等表达，这些真实可感的文字失去了公之于众的权利，无疑是群体对个体的压迫。这种个人化的立场，使他们的诗句在那个功利性的文学浪潮中格格不入，但也恰恰在经历的时代的淘洗之后，启示我们真正的文学是什么，历久弥新的价值又是什么。</p>
+<p>没有人是一座孤岛，但是白洋淀的诗人们，仿佛在努力地抽离。白洋淀诗群的名字，群落，牛汉认为这个名字本身就很有诗意，给人一种苍茫、荒蛮、不屈不挠、顽强生存的感觉。不像一个流派那样聚集，诗人们彼此独立，并非一个固定的群体。他们不仅与那个时代的红色话语疏离，他们彼此之间似乎也是有距离的。芒克的青春明朗、简隽明亮，根子和多多的叛逆颓废，方含和林莽的细腻忧伤，都不尽相同。他们的交流是一起读诗，是一种心灵上的相知，同时又要写出自己的风格和世界，在和而不同中完成文学的生成。林莽说：“一个诗人最重要的是完成自己，什么是完成自己？就是你要回到你生命的原初，回到根本。”某种程度上来说，诗歌的本质，大约就是那种原初的，从内的生发与创造，而所有外在的标准，似乎都是附加的。</p>
+<p>文学，在改造我们的生活。而白洋淀的文学，在改造那个时代的荒凉。新中国建立初期我们总在强调文艺与生活的结合，让工农斗争的日常渗透进文学的丝毫中。可是这种大面积的渗透又何常不是一种荒凉。白洋淀的诗人无法冲破主流叙事的笼罩，不能像《狂人日记》一般振臂高呼，发挥巨大的启蒙作用，是时代局限的束缚，但诗人们也满足于这样一种自娱自乐式的自我慰藉。潜在文学的声音虽然微小，但总保留着这一丝人情的微火，存亡绝续，燃烧着压抑中的生命力量与现代智慧，接续着新文化的传统并开启着朦胧诗的风格。这一点小小的光明，在黑暗中弥足珍贵，它展现着青春的力量和个人的启蒙，是坚冰下，延续不断的溪流。</p>
+<p>参考文献<br>[1]李润霞.论“白洋淀诗群”的文化特征[J].南开学报,2005(04):19-25.<br>[2]张清华.黑夜深处的火光:六七十年代地下诗歌的启蒙主题[J].当代作家评论,2000(03):48-54.<br>[3]李宪瑜.中国新诗发展的一个重要环节——“白洋淀诗群”研究[J].北京大学学报(哲学社会科学版),1999(02):3-5.<br>[4]陈默.坚冰下的溪流——谈“白洋淀诗群”[J].诗探索,1994(04):158-164.</p>
+]]></content>
+      <categories>
+        <category>作業</category>
+      </categories>
+      <tags>
+        <tag>當代文學</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鰥</title>
+    <url>/2022/12/06/%E9%B0%A5/</url>
+    <content><![CDATA[<p>《<strong>禮記注疏·禮運</strong>》：矜寡孤獨廢疾者皆有所養。<br>鰥寡孤獨出现于经疏、经注及宋明以后著作。</p>
+<p>说文：鰥，魚也。从魚眔聲。<br>段注：見齊風。毛傳曰。大魚也。謂鰥與魴皆大魚之名也。鄭箋乃讀鰥為爾雅鯤魚子之鯤。殆非是。<strong>鰥多叚借為鰥寡字。鰥寡字葢古衹作矝。矝即憐之叚借。</strong><br>《章太炎说文解字授课笔记》：【朱一】从魚𥊽省聲。《莊子》「鯤魚」即鰥之假借。鰥寡字，《釋名》解鰥字可笑，以一切魚皆不閉目也。段氏以為矜之假&lt;假&gt;[借]，是也。惟以為憐之假借則非。說見《新方言》「光棍」條。</p>
+<span id="more"></span>
+
+<blockquote>
+<p> 《新方言（章氏叢書）·卷二·釋言第二》：方言：矝謂之杖。&#x3D;&#x3D;尋古音矝如鰥&#x3D;&#x3D;，故老而無妻者，或書作矝，或書作鰥。今人謂杖為棍，即矝字之變矣。又謂凶人為光棍，尋說文檮柮〔亦作杌〕斷木也。古謂凶人曰檮柮，今謂凶人曰光棍，其義同也。左傳檮杌杜解以為即鯀，古人即名表德，堯舜桀紂皆是然。則鯀之言棍，即古矝字矣。楚辭云：鯀婞直以亡身。婞直亦與矝同義。矝為直立之物，故古人謂直為矝。論語古之矝也廉，今之矝也忿戾。又云：君子矝而不爭，廉直為矝，所謂婞也，忿戾為矝，所謂檮柮光棍也，古今語正自不異，&#x3D;&#x3D;又今人亦謂無室家者為光棍，則正無妻為矝之義，訓詁聲音皆同&#x3D;&#x3D;〔說文鯀鰥二文相接，竝訓魚，疑本重文〕或言光蜑亦矝之切音也</p>
+</blockquote>
+<p>1、矝：见纽真部。鰥：见纽文部。真文旁转。二字可通<br>2、檮柮（断木）-凶人。故有杖棍义的光棍也有凶人义。<br>3、檮杌即鯀，凶兽。鲧：见纽文部。亦通。<br>4、婞直，直立义与矝同。<br>5、矝正面引申为廉直，负面引申为忿戾。<br>6、無室家者為光棍，即矝，连读成音。</p>
+<p>所以，鳏是假借字，矝是本字。鳏本义是大鱼，与无妻义无涉。矝本义是光棍，引申有无妻。二字音转而可通假。</p>
+]]></content>
+      <categories>
+        <category>札記</category>
+      </categories>
+      <tags>
+        <tag>新方言</tag>
+        <tag>章太炎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毛詩正義·大雅·雲漢</title>
+    <url>/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/</url>
+    <content><![CDATA[<p>倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？</p>
+<span id="more"></span>
+
+
+
+<h1 id="雲漢"><a href="#雲漢" class="headerlink" title="雲漢"></a>雲漢</h1><p><a href="http://127.0.0.1:8000/shijingpian/%E9%9B%B2%E6%BC%A2/">嚶嚶閣</a></p>
 <p>朱熹《詩集傳》——《集傳》</p>
 <p>方玉潤《詩經原始》——《原始》</p>
 <p>姚際恒《詩經通論》——《通論》</p>
 <p>林義光《詩經通解》——《通解》</p>
-<p>馬瑞辰《毛詩傳箋通釋》——《<a target="_blank" rel="noopener" href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=718001&libId=6">通釋</a>》</p>
-<p>王先謙《詩三家義集疏》——《<a target="_blank" rel="noopener" href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=718727&libId=6">集疏</a>》</p>
-<p>陳奐《詩毛氏傳疏》——《<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/shijingbook/10/580/">傳疏</a>》<a href="bookxnotepro://opennote/?nb={4b9980b9-3b39-42e0-887a-1f5660be07ad}&book=0ef2517104f4588d15d33ac555dc1283&page=43&x=306&y=205&id=1&uuid=8a2d2f62158f9daa76db3584a29e796f">044</a></p>
-<p>程俊英《詩經注析》——《<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/shijingbook/13/877/">注析</a>》</p>
+<p>馬瑞辰《毛詩傳箋通釋》——《<a href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=718001&libId=6">通釋</a>》</p>
+<p>王先謙《詩三家義集疏》——《<a href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=718727&libId=6">集疏</a>》</p>
+<p>陳奐《詩毛氏傳疏》——《<a href="http://127.0.0.1:8000/shijingbook/10/580/">傳疏</a>》<a href="bookxnotepro://opennote/?nb={4b9980b9-3b39-42e0-887a-1f5660be07ad}&book=0ef2517104f4588d15d33ac555dc1283&page=43&x=306&y=205&id=1&uuid=8a2d2f62158f9daa76db3584a29e796f">044</a></p>
+<p>程俊英《詩經注析》——《<a href="http://127.0.0.1:8000/shijingbook/13/877/">注析</a>》</p>
 <p>章太炎《說文解字授課筆記》——《筆記》</p>
-<p>李山《詩經析讀》——《<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/shijingbook/14/862/">析讀</a>》</p>
-<p>胡承珙《毛詩後箋》——《<a target="_blank" rel="noopener" href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=2998498&libId=6">後箋</a>》</p>
+<p>李山《詩經析讀》——《<a href="http://127.0.0.1:8000/shijingbook/14/862/">析讀</a>》</p>
+<p>胡承珙《毛詩後箋》——《<a href="http://publish.ancientbooks.cn/docShuju/platformViewArticle.jspx?id=2998498&libId=6">後箋</a>》</p>
 <h1 id="零、詩旨"><a href="#零、詩旨" class="headerlink" title="零、詩旨"></a>零、詩旨</h1><p>韵读，二章：冬部屬侵部</p>
 <p>《析讀》：記周宣王向上天祈雨言辭的篇章。</p>
 <p>○ 诗之首章。写周王<u>夜仰星汉</u>，慨然浩叹。</p>
@@ -622,7 +414,7 @@
 <p><kbd>推訓至</kbd></p>
 <p>《說文·手部》：摧，擠也。从手崔聲。一曰挏也，一曰折也。臣鍇曰：“挏，推動也。段注：釋詁、毛傳皆曰“摧、至也”，即抵之義也。<u>自推至摧六篆同義。</u>（同義詞：推、捘 zun4、排、擠、抵、摧）</p>
 <p>《說文》：挏 dòng，𢹬 yǒng 引也。段注“推引也”：推各本作𢹬。今依《廣韵》《韵會》本。推讀如或推或輓之推。謂推之使前也。</p>
-<p>《說文解字同源字新證》<a target="_blank" rel="noopener" href="http://www.kaom.net/img.php?b=xungu_swjztyzxz&p=892">推同抵、摧、捼、捘</a>：</p>
+<p>《說文解字同源字新證》<a href="http://www.kaom.net/img.php?b=xungu_swjztyzxz&p=892">推同抵、摧、捼、捘</a>：</p>
 <blockquote>
 <p>《手部》推，排也，从手隹聲。||捘zun4，推也，从手夋聲。||抵，擠也。从手氐聲。||摧，擠也。从手崔聲。一曰挏也，一曰折也。||捼ruo2，摧也，从手委聲。一曰兩手相切摩也。</p>
 <p><u>此五字義互引申，並相互訓。</u>《左傳·定八年》“將歃，涉佗捘衛侯之手及捥”清翟灝謂<strong>“捘”隸爲“拶”</strong>，蓋衛侯欲先歃，涉佗拶其手及腕，故血流及屨。後代排木爲刑具，排擠婦人手指，音小變爲 ziǎn。逼迫義用？字。（拶讀 zā 表逼迫）。<del>前證擠迫義</del>​<u>摧猶抵耳，昔人謂至曰抵</u>，《詩大雅》：“先祖於摧”。釋詁毛傳皆訓摧爲至，《手部》抵亦訓擠，今人謂至曰抵，昔人謂至爲摧，其？則同，<u>凡相擠迫者必至其處，古摧抵同爲至。</u>​<del>由擠迫義引申出至義</del></p>
@@ -633,7 +425,7 @@
 <h4 id="滅也"><a href="#滅也" class="headerlink" title="滅也"></a>滅也</h4><p>《集傳》：摧，滅也，言先祖之祀，將自此而滅也。</p>
 <p>《注析》：先祖怎麽不相與畏惧呢？如果因爲飢餓而子孫死盡，祭祖的典禮將從此而毁减了。</p>
 <p>《王力古漢語字典》摧下義項“毁滅、崩壞”：雲漢：“胡不相畏？先祖于摧。”史記孔子世家：“泰山壞乎！梁柱摧乎！哲人萎乎！”</p>
-<p><code>摧訓滅及其詞義特點</code>《古辭辨》<a target="_blank" rel="noopener" href="http://www.kaom.net/img.php?b=xungu_gcb&p=708">催、挫、拉</a>：“摧”多半表示物体因为承受不起巨大的外力而折毁。这种外力有两种作用方式：<u>一种是持续加压；一种是突然撞击。</u>《周礼·考工记·與人》“大倚小则摧”，《史记·孔子世家》“太山坏乎，梁柱摧乎”；<u>“摧”就是承受不起外界的压力而折断</u>；《汉书·贾山传》“雷霆所击，莫不摧破”，《三国志·魏书·许褚传》“褚飞石掷之，所值皆摧碎”；“摧”就是受到外来的突然而沉重的打击而坏碎。就被折毁的物体来说，它承受的是正面的、与之垂直的压力或冲击力。被折毁物的折毁特点主要也是两种，细而长的物体往往是从中间折断，如《中论·赏罚》“覆车而摧辕”；刚坚而大的，往往是坏碎，如李贺《雁门太守行》“黑雲压城欲摧”。</p>
+<p><code>摧訓滅及其詞義特點</code>《古辭辨》<a href="http://www.kaom.net/img.php?b=xungu_gcb&p=708">催、挫、拉</a>：“摧”多半表示物体因为承受不起巨大的外力而折毁。这种外力有两种作用方式：<u>一种是持续加压；一种是突然撞击。</u>《周礼·考工记·與人》“大倚小则摧”，《史记·孔子世家》“太山坏乎，梁柱摧乎”；<u>“摧”就是承受不起外界的压力而折断</u>；《汉书·贾山传》“雷霆所击，莫不摧破”，《三国志·魏书·许褚传》“褚飞石掷之，所值皆摧碎”；“摧”就是受到外来的突然而沉重的打击而坏碎。就被折毁的物体来说，它承受的是正面的、与之垂直的压力或冲击力。被折毁物的折毁特点主要也是两种，细而长的物体往往是从中间折断，如《中论·赏罚》“覆车而摧辕”；刚坚而大的，往往是坏碎，如李贺《雁门太守行》“黑雲压城欲摧”。</p>
 <h4 id="通䜅、譙qiao4，責備"><a href="#通䜅、譙qiao4，責備" class="headerlink" title="通䜅、譙qiao4，責備"></a>通䜅、譙qiao4，責備</h4><p><code>摧與䜅</code>《通釋》：竊謂摧與䜅通。<strong>邶風「室人交徧摧我」，箋：「摧者，刺譏之言。」韓詩作䜅，云：「䜅 wei2，就也。」就當為訧字形近之譌。以下章「讁我」類之，䜅亦讁耳。</strong>​<del>由異文及詩經對文材料釋摧與䜅通，訓責備。</del>​<strong>廣雅釋詁：「摧，折也。」羲亦相近。</strong>​<del>引專書釋義</del>「先祖于摧」亦當讀䜅，<u>謂先祖方見讁罰也</u>。傳訓摧爲至，箋讀於爲吁，讀摧爲嗺嗟。並失之。</p>
 <p><code>摧與誰、譙</code>《通解》：摧讀爲誰。誰，譙責也，字亦變作譙。說見《北門》篇。<strong>譙責先祖，爲其不愛護我也。古人禱祀天祖常有譙责之意，如昊天不惠、先祖匪人之類皆是。</strong>​<del>證譙責的合理性</del></p>
 <p>《通解》北門：摧讀爲譙。<strong>譙讓之譙，本誰之音譌。誰與摧皆從隹得聲，古同音也。</strong>​<del>誰譙摧聲符同，音通。</del>​<strong>《史記·秦始皇本纪》“信臣精卒，陳利兵而誰何”，揚雄《衛尉箴》“閻樂矯搜，戟者不誰”，誰皆譙問之義。</strong>​<del>誰訓譙的用例。</del>​<strong>《史記·萬石君傅》“歲餘不譙呵綰”，索隱云：譙呵音誰何。是譙即誰也。</strong>​<del>譙通誰的用例</del>​<strong>《韓詩》“交徧譙我”，譙字形與誰近。《毛詩》作摧，殆又由譙字轉譌耳。</strong>​<del>誰譙摧字形易混。</del>《雲漢》“先祖于摧”，摧亦譙間之義，與此篇同。</p>
@@ -914,226 +706,12 @@
 <p><img src="/assets/image-20220610133457-p3lsmbg.png" alt="image.png"></p>
 </blockquote>
 <p>‍</p>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E8%A9%A9%E7%B6%93/" rel="tag"># 詩經</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2022/12/06/%E9%B0%A5/" rel="next" title="鰥">
-      鰥 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-    
-  <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC81Nzc0MS8zNDIwNA=="></div>
-  </div>
-  
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B2%E6%BC%A2"><span class="nav-number">1.</span> <span class="nav-text">雲漢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E3%80%81%E8%A9%A9%E6%97%A8"><span class="nav-number">2.</span> <span class="nav-text">零、詩旨</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B2%E6%BC%A2-1"><span class="nav-number">2.1.</span> <span class="nav-text">雲漢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E5%BA%8F"><span class="nav-number">2.2.</span> <span class="nav-text">小序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8D%E5%8F%94"><span class="nav-number">2.2.1.</span> <span class="nav-text">仍叔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%B2%E7%8E%8B%E3%80%81%E5%AE%A3%E7%8E%8B%E4%B9%8B%E4%BA%8B"><span class="nav-number">2.2.2.</span> <span class="nav-text">厲王、宣王之事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%88%EF%BC%8C%E9%A4%98%E4%B9%9F"><span class="nav-number">2.2.3.</span> <span class="nav-text">烈，餘也</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B4%E8%BA%AB%E4%BF%AE%E8%A1%8C"><span class="nav-number">2.2.4.</span> <span class="nav-text">側身修行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9F%B3%E7%BE%A9"><span class="nav-number">2.2.5.</span> <span class="nav-text">音義</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A9%A9%E6%97%A8%E5%B7%AE%E7%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">詩旨差異</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%8E%E5%AE%A3%E7%8E%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">美宣王</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A3%E7%8E%8B%E7%A5%88%E9%9B%A8%E4%B9%8B%E8%A9%A9"><span class="nav-number">2.3.2.</span> <span class="nav-text">宣王祈雨之詩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.3.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%80%AC%E5%BD%BC%E9%9B%B2%E6%BC%A2%EF%BC%8C%E6%98%AD%E5%9B%9E%E4%BA%8E%E5%A4%A9%E2%80%A6%E2%80%A6"><span class="nav-number">3.</span> <span class="nav-text">一章：倬彼雲漢，昭回于天……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%AC%E5%BD%BC%E9%9B%B2%E6%BC%A2%EF%BC%8C%E6%98%AD%E5%9B%9E%E6%96%BC%E5%A4%A9"><span class="nav-number">3.1.</span> <span class="nav-text">倬彼雲漢，昭回於天</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%AC%EF%BC%88zhuo1%EF%BC%89"><span class="nav-number">3.1.1.</span> <span class="nav-text">倬（zhuo1）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%AC%E6%9C%89%E6%98%8E%E3%80%81%E5%A4%A7%E7%BE%A9"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">倬有明、大義</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%AC%E8%88%87%E8%8F%BF%EF%BC%88%E8%A8%93%E5%A4%A7%EF%BC%89"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">倬與菿（訓大）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%AD%E5%9B%9E"><span class="nav-number">3.1.2.</span> <span class="nav-text">昭回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%92-%E6%B8%B4"><span class="nav-number">3.1.3.</span> <span class="nav-text">愒-渴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9B%E5%80%99"><span class="nav-number">3.1.4.</span> <span class="nav-text">望候</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%8B%E6%9B%B0%E6%96%BC%E4%B9%8E%EF%BC%8C%E4%BD%95%E8%BE%9C%E4%BB%8A%E4%B9%8B%E4%BA%BA%EF%BC%81%E5%A4%A9%E9%99%8D%E5%96%AA%E4%BA%82%EF%BC%8C%E9%A5%91%E9%A5%89%E8%96%A6%E8%87%BB%E3%80%82"><span class="nav-number">3.2.</span> <span class="nav-text">王曰於乎，何辜今之人！天降喪亂，饑饉薦臻。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%9C"><span class="nav-number">3.2.1.</span> <span class="nav-text">辜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A5%91%E9%A5%89"><span class="nav-number">3.2.2.</span> <span class="nav-text">饑饉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%96%A6%E8%87%BB"><span class="nav-number">3.2.3.</span> <span class="nav-text">薦臻</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A1%E7%A5%9E%E4%B8%8D%E8%88%89%EF%BC%8C%E9%9D%A1%E6%84%9B%E6%96%AF%E7%89%B2%E3%80%82%E5%9C%AD%E7%92%A7%E6%97%A2%E5%8D%92%EF%BC%8C%E7%94%AF%E8%8E%AB%E6%88%91%E8%81%BD%EF%BC%81"><span class="nav-number">3.3.</span> <span class="nav-text">靡神不舉，靡愛斯牲。圭璧既卒，甯莫我聽！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%88%89"><span class="nav-number">3.3.1.</span> <span class="nav-text">舉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%AD%E7%92%A7%E6%97%A2%E5%8D%92%EF%BC%8C%E7%94%AF%E8%8E%AB%E6%88%91%E8%81%BD%EF%BC%81"><span class="nav-number">3.3.2.</span> <span class="nav-text">圭璧既卒，甯莫我聽！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%8F"><span class="nav-number">3.4.</span> <span class="nav-text">疏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%A7%E7%94%9A%EF%BC%8C%E8%98%8A%E9%9A%86%E8%9F%B2%E8%9F%B2%E2%80%A6%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">二章：旱既大甚，蘊隆蟲蟲……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%A7%E7%94%9A%EF%BC%8C%E8%98%8A%E9%9A%86%E8%9F%B2%E8%9F%B2%E3%80%82"><span class="nav-number">4.1.</span> <span class="nav-text">旱既大甚，蘊隆蟲蟲。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%98%8A"><span class="nav-number">4.1.1.</span> <span class="nav-text">蘊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%86"><span class="nav-number">4.1.2.</span> <span class="nav-text">隆</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E9%9B%B7%E8%81%B2%EF%BC%8C%E6%93%AC%E8%81%B2%E8%A9%9E"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">指雷聲，擬聲詞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E6%9A%91%E6%B0%A3%EF%BC%8C%E7%9B%9B"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">指暑氣，盛</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9F%B2"><span class="nav-number">4.1.3.</span> <span class="nav-text">蟲</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E6%AE%84%E7%A6%8B%E7%A5%80%EF%BC%8C%E8%87%AA%E9%83%8A%E5%BE%82%E5%AE%AE%E3%80%82%E4%B8%8A%E4%B8%8B%E5%A5%A0%E7%98%9E%EF%BC%8C%E9%9D%A1%E7%A5%9E%E4%B8%8D%E5%AE%97%E3%80%82"><span class="nav-number">4.2.</span> <span class="nav-text">不殄禋祀，自郊徂宮。上下奠瘞，靡神不宗。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%84"><span class="nav-number">4.2.1.</span> <span class="nav-text">殄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%8B-yin1-%E7%A5%80"><span class="nav-number">4.2.2.</span> <span class="nav-text">禋 yin1 祀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E9%83%8A%E5%BE%82%E5%AE%AE"><span class="nav-number">4.2.3.</span> <span class="nav-text">自郊徂宮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%A0%E7%98%9E-yi4"><span class="nav-number">4.2.4.</span> <span class="nav-text">奠瘞 yi4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%97"><span class="nav-number">4.2.5.</span> <span class="nav-text">宗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%A8%B7%E4%B8%8D%E5%85%8B%EF%BC%8C%E4%B8%8A%E5%B8%9D%E4%B8%8D%E8%87%A8%E3%80%82%E8%80%97%E6%96%81%E4%B8%8B%E5%9C%9F%EF%BC%8C%E7%94%AF%E4%B8%81%E6%88%91%E8%BA%AC%EF%BC%81"><span class="nav-number">4.3.</span> <span class="nav-text">后稷不克，上帝不臨。耗斁下土，甯丁我躬！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B"><span class="nav-number">4.3.1.</span> <span class="nav-text">克</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AD%98%E4%B9%9F"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">識也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%BD%E4%B9%9F"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">能也</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%A8"><span class="nav-number">4.3.2.</span> <span class="nav-text">臨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%97%E6%96%81-du4"><span class="nav-number">4.3.3.</span> <span class="nav-text">耗斁 du4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%AF%E4%B8%81%E6%88%91%E8%BA%AC"><span class="nav-number">4.3.4.</span> <span class="nav-text">甯丁我躬</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E5%89%87%E4%B8%8D%E5%8F%AF%E6%8E%A8%E2%80%A6%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">三章：旱既太甚，則不可推……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E5%89%87%E4%B8%8D%E5%8F%AF%E6%8E%A8%E3%80%82%E5%85%A2%E5%85%A2%E6%A5%AD%E6%A5%AD%EF%BC%8C%E5%A6%82%E9%9C%86%E5%A6%82%E9%9B%B7%E3%80%82%E5%91%A8%E9%A4%98%E9%BB%8E%E6%B0%91%EF%BC%8C%E9%9D%A1%E6%9C%89%E5%AD%91%E9%81%BA%E3%80%82"><span class="nav-number">5.1.</span> <span class="nav-text">旱既太甚，則不可推。兢兢業業，如霆如雷。周餘黎民，靡有孑遺。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8"><span class="nav-number">5.1.1.</span> <span class="nav-text">推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A2%E5%85%A2%E6%A5%AD%E6%A5%AD"><span class="nav-number">5.1.2.</span> <span class="nav-text">兢兢業業</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A2"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">兢</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A5%AD"><span class="nav-number">5.1.2.2.</span> <span class="nav-text">業</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%8E"><span class="nav-number">5.1.3.</span> <span class="nav-text">黎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%91"><span class="nav-number">5.1.4.</span> <span class="nav-text">孑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A5%E6%84%8F"><span class="nav-number">5.1.5.</span> <span class="nav-text">句意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8A%E5%A4%A9%E4%B8%8A%E5%B8%9D%EF%BC%8C%E5%89%87%E4%B8%8D%E6%88%91%E9%81%BA%E3%80%82%E8%83%A1%E4%B8%8D%E7%9B%B8%E7%95%8F%EF%BC%9F%E5%85%88%E7%A5%96%E6%96%BC%E6%91%A7%E3%80%82"><span class="nav-number">5.2.</span> <span class="nav-text">昊天上帝，則不我遺。胡不相畏？先祖於摧。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BA"><span class="nav-number">5.2.1.</span> <span class="nav-text">遺</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%BA%E7%95%99%E3%80%81%E9%81%97%E8%84%B1"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">遺留、遗脱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E9%97%AEwei4"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">存问wei4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E7%95%8F"><span class="nav-number">5.2.2.</span> <span class="nav-text">相畏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%8F%E5%A6%82%E5%AD%97"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">畏如字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%8F%E8%AE%80%E7%88%B2%E5%81%8E"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">畏讀爲偎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%A7"><span class="nav-number">5.2.3.</span> <span class="nav-text">摧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%B3%E4%B9%9F"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">至也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E5%97%BAzui%EF%BC%8C%E5%97%9F%E4%B9%9F"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">通嗺zuī，嗟也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%85%E4%B9%9F"><span class="nav-number">5.2.3.3.</span> <span class="nav-text">滅也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E4%9C%85%E3%80%81%E8%AD%99qiao4%EF%BC%8C%E8%B2%AC%E5%82%99"><span class="nav-number">5.2.3.4.</span> <span class="nav-text">通䜅、譙qiao4，責備</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E5%89%87%E4%B8%8D%E5%8F%AF%E6%B2%AE%E2%80%A6%E2%80%A6"><span class="nav-number">6.</span> <span class="nav-text">四章：旱既太甚，則不可沮……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E5%89%87%E4%B8%8D%E5%8F%AF%E6%B2%AE%E3%80%82%E8%B5%AB%E8%B5%AB%E7%82%8E%E7%82%8E%EF%BC%8C%E4%BA%91%E6%88%91%E7%84%A1%E6%89%80%E3%80%82%E5%A4%A7%E5%91%BD%E8%BF%91%E6%AD%A2%EF%BC%8C%E9%9D%A1%E7%9E%BB%E9%9D%A1%E9%A1%A7%E3%80%82"><span class="nav-number">6.1.</span> <span class="nav-text">旱既太甚，則不可沮。赫赫炎炎，云我無所。大命近止，靡瞻靡顧。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%AE"><span class="nav-number">6.1.1.</span> <span class="nav-text">沮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%AB%E8%B5%AB%E7%82%8E%E7%82%8E"><span class="nav-number">6.1.2.</span> <span class="nav-text">赫赫炎炎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%91"><span class="nav-number">6.1.3.</span> <span class="nav-text">云</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AA%AA%E3%80%81%E8%A8%80"><span class="nav-number">6.1.3.1.</span> <span class="nav-text">說、言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B2%EF%BC%8C%E9%81%AE%E8%94%BD"><span class="nav-number">6.1.3.2.</span> <span class="nav-text">雲，遮蔽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AA%9E%E6%B0%A3%E8%A9%9E"><span class="nav-number">6.1.3.3.</span> <span class="nav-text">語氣詞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%91%BD%E8%BF%91%E6%AD%A2"><span class="nav-number">6.1.4.</span> <span class="nav-text">大命近止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%A7"><span class="nav-number">6.1.5.</span> <span class="nav-text">顧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E5%85%AC%E5%85%88%E6%AD%A3%EF%BC%8C%E5%89%87%E4%B8%8D%E6%88%91%E5%8A%A9%E3%80%82%E7%88%B6%E6%AF%8D%E5%85%88%E7%A5%96%EF%BC%8C%E8%83%A1%E5%AF%A7%E5%BF%8D%E4%BA%88%EF%BC%81"><span class="nav-number">6.2.</span> <span class="nav-text">群公先正，則不我助。父母先祖，胡寧忍予！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E5%85%AC%E5%85%88%E6%AD%A3"><span class="nav-number">6.2.1.</span> <span class="nav-text">群公先正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E6%AF%8D%E5%85%88%E7%A5%96"><span class="nav-number">6.2.2.</span> <span class="nav-text">父母先祖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E6%BB%8C%E6%BB%8C%E5%B1%B1%E5%B7%9D%E2%80%A6%E2%80%A6"><span class="nav-number">7.</span> <span class="nav-text">五章：旱既太甚，滌滌山川……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E6%BB%8C%E6%BB%8C%E5%B1%B1%E5%B7%9D%E3%80%82%E6%97%B1%E9%AD%83%E7%82%BA%E8%99%90%EF%BC%8C%E5%A6%82%E6%83%94%E5%A6%82%E7%84%9A%E3%80%82%E6%88%91%E5%BF%83%E6%86%9A%E6%9A%91%EF%BC%8C%E6%86%82%E5%BF%83%E5%A6%82%E8%96%B0%E3%80%82"><span class="nav-number">7.1.</span> <span class="nav-text">旱既太甚，滌滌山川。旱魃為虐，如惔如焚。我心憚暑，憂心如薰。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%8C"><span class="nav-number">7.1.1.</span> <span class="nav-text">滌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AD%83-ba2"><span class="nav-number">7.1.2.</span> <span class="nav-text">魃 ba2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%94-tan2"><span class="nav-number">7.1.3.</span> <span class="nav-text">惔 tan2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%86%9A"><span class="nav-number">7.1.4.</span> <span class="nav-text">憚</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8B%9E%E4%B9%9F%EF%BC%88%E4%B8%81%E4%BD%90%E5%8F%8D%EF%BC%8C%E6%B8%85%EF%BC%89"><span class="nav-number">7.1.4.1.</span> <span class="nav-text">勞也（丁佐反，清）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%8F%E4%B9%9F%EF%BC%88%E5%BE%92%E6%97%A6%E5%8F%8D%EF%BC%8C%E6%BF%81%EF%BC%89"><span class="nav-number">7.1.4.2.</span> <span class="nav-text">畏也（徒旦反，濁）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%96%B0"><span class="nav-number">7.1.5.</span> <span class="nav-text">薰</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E5%85%AC%E5%85%88%E6%AD%A3%EF%BC%8C%E5%89%87%E4%B8%8D%E6%88%91%E8%81%9E%E3%80%82%E6%98%8A%E5%A4%A9%E4%B8%8A%E5%B8%9D%EF%BC%8C%E5%AF%A7%E4%BF%BE%E6%88%91%E9%81%AF%E3%80%82"><span class="nav-number">7.2.</span> <span class="nav-text">群公先正，則不我聞。昊天上帝，寧俾我遯。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9E"><span class="nav-number">7.2.1.</span> <span class="nav-text">聞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E5%AD%97"><span class="nav-number">7.2.1.1.</span> <span class="nav-text">如字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%95%8F"><span class="nav-number">7.2.1.2.</span> <span class="nav-text">問</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%AF"><span class="nav-number">7.2.2.</span> <span class="nav-text">遯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%83"><span class="nav-number">7.2.2.1.</span> <span class="nav-text">逃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%AF%E3%80%81%E5%9B%B0"><span class="nav-number">7.2.2.2.</span> <span class="nav-text">屯、困</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E9%BB%BD%E5%8B%89%E7%95%8F%E5%8E%BB%E2%80%A6%E2%80%A6"><span class="nav-number">8.</span> <span class="nav-text">六章：旱既太甚，黽勉畏去……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E9%BB%BD%E5%8B%89%E7%95%8F%E5%8E%BB%E3%80%82%E8%83%A1%E5%AF%A7%E7%98%A8%E6%88%91%E4%BB%A5%E6%97%B1%EF%BC%9F%E6%86%AF%E4%B8%8D%E7%9F%A5%E5%85%B6%E6%95%85%E3%80%82"><span class="nav-number">8.1.</span> <span class="nav-text">旱既太甚，黽勉畏去。胡寧瘨我以旱？憯不知其故。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%BD%E5%8B%89%E7%95%8F%E5%8E%BB"><span class="nav-number">8.1.1.</span> <span class="nav-text">黽勉畏去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%98%A8-dian1"><span class="nav-number">8.1.2.</span> <span class="nav-text">瘨 dian1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%86%AF"><span class="nav-number">8.1.3.</span> <span class="nav-text">憯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E6%95%85"><span class="nav-number">8.1.4.</span> <span class="nav-text">其故</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%88%E5%B9%B4%E5%AD%94%E5%A4%99%EF%BC%8C%E6%96%B9%E7%A4%BE%E4%B8%8D%E8%8E%AB%E3%80%82%E6%98%8A%E5%A4%A9%E4%B8%8A%E5%B8%9D%EF%BC%8C%E5%89%87%E4%B8%8D%E6%88%91%E8%99%9E%E3%80%82%E6%95%AC%E6%81%AD%E6%98%8E%E7%A5%9E%EF%BC%8C%E5%AE%9C%E7%84%A1%E6%82%94%E6%80%92%E3%80%82"><span class="nav-number">8.2.</span> <span class="nav-text">祈年孔夙，方社不莫。昊天上帝，則不我虞。敬恭明神，宜無悔怒。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%99%E3%80%81%E8%8E%AB"><span class="nav-number">8.2.1.</span> <span class="nav-text">夙、莫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B4%E3%80%81%E6%96%B9%E3%80%81%E7%A4%BE"><span class="nav-number">8.2.2.</span> <span class="nav-text">年、方、社</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9E"><span class="nav-number">8.2.3.</span> <span class="nav-text">虞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%A6%E4%B9%9F"><span class="nav-number">8.2.3.1.</span> <span class="nav-text">度也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A9%E4%B9%9F"><span class="nav-number">8.2.3.2.</span> <span class="nav-text">助也</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A5%9E"><span class="nav-number">8.2.4.</span> <span class="nav-text">明神</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E7%AB%A0%EF%BC%9A%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E6%95%A3%E7%84%A1%E5%8F%8B%E7%B4%80%E2%80%A6%E2%80%A6"><span class="nav-number">9.</span> <span class="nav-text">七章：旱既太甚，散無友紀……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B1%E6%97%A2%E5%A4%AA%E7%94%9A%EF%BC%8C%E6%95%A3%E7%84%A1%E5%8F%8B%E7%B4%80%E3%80%82%E9%9E%AB%E5%93%89%E5%BA%B6%E6%AD%A3%EF%BC%8C%E7%96%9A%E5%93%89%E5%A1%9A%E5%AE%B0%E3%80%82%E8%B6%A3%E9%A6%AC%E5%B8%AB%E6%B0%8F%EF%BC%8C%E8%86%B3%E5%A4%AB%E5%B7%A6%E5%8F%B3%E3%80%82"><span class="nav-number">9.1.</span> <span class="nav-text">旱既太甚，散無友紀。鞫哉庶正，疚哉塚宰。趣馬師氏，膳夫左右。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E7%84%A1%E5%8F%8B%E7%B4%80"><span class="nav-number">9.1.1.</span> <span class="nav-text">散無友紀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A5%E7%BE%A4%E8%87%A3%E7%88%B2%E5%8F%8B"><span class="nav-number">9.1.1.1.</span> <span class="nav-text">以群臣爲友</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8B%E7%88%B2%E8%99%9B%E8%A9%9E"><span class="nav-number">9.1.1.2.</span> <span class="nav-text">友爲虛詞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9E%AB%E5%93%89%E5%BA%B6%E6%AD%A3"><span class="nav-number">9.1.2.</span> <span class="nav-text">鞫哉庶正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%96%9A%E5%93%89%E5%86%A2%E5%AE%B0"><span class="nav-number">9.1.3.</span> <span class="nav-text">疚哉冢宰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%A3%E9%A6%AC%E5%B8%AB%E6%B0%8F%EF%BC%8C%E8%86%B3%E5%A4%AB%E5%B7%A6%E5%8F%B3%E3%80%82"><span class="nav-number">9.1.4.</span> <span class="nav-text">趣馬師氏，膳夫左右。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A5%E6%84%8F-1"><span class="nav-number">9.1.5.</span> <span class="nav-text">句意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A1%E4%BA%BA%E4%B8%8D%E5%91%A8%EF%BC%8C%E7%84%A1%E4%B8%8D%E8%83%BD%E6%AD%A2%E3%80%82"><span class="nav-number">9.2.</span> <span class="nav-text">靡人不周，無不能止。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%A8"><span class="nav-number">9.2.1.</span> <span class="nav-text">周</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%A1%E4%B8%8D%E8%83%BD%E6%AD%A2"><span class="nav-number">9.2.2.</span> <span class="nav-text">無不能止</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E8%87%A3%E5%91%A8%E4%BA%BA%EF%BC%8C%E7%84%A1%EF%BC%88%E5%9B%A0%EF%BC%89%E4%B8%8D%E8%83%BD%E6%AD%A2"><span class="nav-number">9.2.2.1.</span> <span class="nav-text">群臣周人，無（因）不能止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%8B%E5%91%A8%E7%BE%A4%E8%87%A3%EF%BC%8C%EF%BC%88%E5%8D%B3%E4%BD%BF%EF%BC%89%E7%84%A1%EF%BC%88%E4%B9%9F%EF%BC%89%E4%B8%8D%E8%83%BD%E6%AD%A2"><span class="nav-number">9.2.2.2.</span> <span class="nav-text">王周群臣，（即使）無（也）不能止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%A1%E7%88%B2%E7%99%BC%E8%AA%9E%E8%A9%9E%EF%BC%8C%E4%B8%8D%E8%83%BD%E6%AD%A2"><span class="nav-number">9.2.2.3.</span> <span class="nav-text">無爲發語詞，不能止</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9E%BB%E5%8D%AC%E6%98%8A%E5%A4%A9%EF%BC%8C%E4%BA%91%E5%A6%82%E4%BD%95%E9%87%8C%EF%BC%81"><span class="nav-number">9.3.</span> <span class="nav-text">瞻卬昊天，云如何里！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%AC"><span class="nav-number">9.3.1.</span> <span class="nav-text">卬</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8C"><span class="nav-number">9.3.2.</span> <span class="nav-text">里</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E7%AB%A0%EF%BC%9A%E7%9E%BB%E5%8D%AC%E6%98%8A%E5%A4%A9%EF%BC%8C%E6%9C%89%E5%98%92%E5%85%B6%E6%98%9F%E2%80%A6%E2%80%A6"><span class="nav-number">10.</span> <span class="nav-text">八章：瞻卬昊天，有嘒其星……</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9E%BB%E5%8D%AC%E6%98%8A%E5%A4%A9%EF%BC%8C%E6%9C%89%E5%98%92%E5%85%B6%E6%98%9F%E3%80%82%E5%A4%A7%E5%A4%AB%E5%90%9B%E5%AD%90%EF%BC%8C%E6%98%AD%E5%81%87%E7%84%A1%E8%B4%8F%E3%80%82%E5%A4%A7%E5%91%BD%E8%BF%91%E6%AD%A2%EF%BC%8C%E7%84%A1%E6%A3%84%E7%88%BE%E6%88%90%E3%80%82"><span class="nav-number">10.1.</span> <span class="nav-text">瞻卬昊天，有嘒其星。大夫君子，昭假無贏。大命近止，無棄爾成。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%98%92"><span class="nav-number">10.1.1.</span> <span class="nav-text">嘒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%AD%E5%81%87-ge2"><span class="nav-number">10.1.2.</span> <span class="nav-text">昭假 ge2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AD-%E6%98%8E%EF%BC%8C%E5%81%87-%E8%87%B3"><span class="nav-number">10.1.2.1.</span> <span class="nav-text">昭-明，假-至</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AD-%E5%8A%AD%EF%BC%8C%E5%81%87-%E6%81%AA"><span class="nav-number">10.1.2.2.</span> <span class="nav-text">昭-劭，假-恪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AD%E5%81%87%E7%88%B2%E4%B8%80%E7%A7%8D%E7%A5%AD%E7%A5%80"><span class="nav-number">10.1.2.3.</span> <span class="nav-text">昭假爲一种祭祀</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%8F"><span class="nav-number">10.1.3.</span> <span class="nav-text">贏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A4%98"><span class="nav-number">10.1.3.1.</span> <span class="nav-text">餘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B7%A9"><span class="nav-number">10.1.3.2.</span> <span class="nav-text">緩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%AE%E9%8C%AF"><span class="nav-number">10.1.3.3.</span> <span class="nav-text">差錯</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E6%B1%82%E7%82%BA%E6%88%91%EF%BC%8C%E4%BB%A5%E6%88%BE%E5%BA%B6%E6%AD%A3%E3%80%82"><span class="nav-number">10.2.</span> <span class="nav-text">何求為我，以戾庶正。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%BE"><span class="nav-number">10.2.1.</span> <span class="nav-text">戾</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9E%BB%E5%8D%AC%E6%98%8A%E5%A4%A9%EF%BC%8C%E6%9B%B7%E6%83%A0%E5%85%B6%E5%AF%A7%EF%BC%81"><span class="nav-number">10.3.</span> <span class="nav-text">瞻卬昊天，曷惠其寧！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%A0"><span class="nav-number">10.3.1.</span> <span class="nav-text">惠</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A0%86%E4%B9%9F"><span class="nav-number">10.3.1.1.</span> <span class="nav-text">順也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%84%9B%E4%B9%9F"><span class="nav-number">10.3.1.2.</span> <span class="nav-text">愛也</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B0%94%E8%AF%8D"><span class="nav-number">10.3.1.3.</span> <span class="nav-text">语气词</span></a></li></ol></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="蒺藜"
-      src="/images/yinglogo.png">
-  <p class="site-author-name" itemprop="name">蒺藜</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">3</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">蒺藜</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
-
-</body>
-</html>
+]]></content>
+      <categories>
+        <category>札記</category>
+      </categories>
+      <tags>
+        <tag>詩經</tag>
+      </tags>
+  </entry>
+</search>
