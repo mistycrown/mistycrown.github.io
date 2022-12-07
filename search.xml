@@ -12,7 +12,7 @@
 <li>待切分雙頁 pdf</li>
 </ul>
 <p>大三打工的时候，從網上 copy 了一段，然後自己寫了一段。主要是用於打工。比如說把這樣的一頁，變成兩頁，实现左右分割功能。</p>
-<p><img src="D:\blog\hexo-demo\source\images\0001.jpg" alt="0001"></p>
+<p><img src="https://i0.hdslb.com/bfs/album/2af4e26f63bc8909dfa3b05ce6f80330d0044802.jpg" alt="0001"></p>
 <h1 id="源代碼"><a href="#源代碼" class="headerlink" title="源代碼"></a>源代碼</h1><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">from PyPDF2 import PdfFileReader, PdfFileWriter</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def split_pdf(infile, out_path):</span><br><span class="line">    """</span><br><span class="line">    :param infile: 待拆分的pdf文件</span><br><span class="line">    :param out_path: 拆分成单页的pdf文件的存储路径</span><br><span class="line">    :return: 无</span><br><span class="line">    """</span><br><span class="line"></span><br><span class="line">    if not os.path.exists(out_path):</span><br><span class="line">        os.makedirs(out_path)</span><br><span class="line">    with open(infile, 'rb') as infile:</span><br><span class="line"></span><br><span class="line">        pdfReader = PdfFileReader(infile)</span><br><span class="line">        number_of_pages = pdfReader.getNumPages()  # 计算此PDF文件中的页数</span><br><span class="line"></span><br><span class="line">        for i in range(number_of_pages):</span><br><span class="line">            page = pdfReader.getPage(i)</span><br><span class="line">            width = float(page.mediaBox.getWidth())</span><br><span class="line">            height = float(page.mediaBox.getHeight())</span><br><span class="line">            # print("width:"+str(width)+" Height"+str(height))</span><br><span class="line"></span><br><span class="line">            # left page</span><br><span class="line">            pdfReader = PdfFileReader(infile)  # 一定要重新读取，要不会报错。</span><br><span class="line">            pdfWriter = PdfFileWriter()  # 循环创建空白的pdf</span><br><span class="line">            page_top = pdfReader.getPage(i)</span><br><span class="line">            page_top.mediaBox.lowerLeft = (0, 0)</span><br><span class="line">            page_top.mediaBox.lowerRight = (width/2, 0)</span><br><span class="line">            page_top.mediaBox.upperLeft = (0, height)</span><br><span class="line">            page_top.mediaBox.upperRight = (width/2, height)</span><br><span class="line">            pdfWriter.addPage(page_top)</span><br><span class="line">            out_file_name = out_path + str(i + 1) + '_top.pdf'</span><br><span class="line">            with open(out_file_name, 'wb') as outfile:</span><br><span class="line">                pdfWriter.write(outfile)</span><br><span class="line"></span><br><span class="line">            # right page</span><br><span class="line">            pdfReader = PdfFileReader(infile)  # 一定要重新读取，要不会报错。</span><br><span class="line">            pdfWriter = PdfFileWriter()  # 循环创建空白的pdf</span><br><span class="line">            page_buttom = pdfReader.getPage(i)</span><br><span class="line">            page_buttom.mediaBox.lowerLeft = (width/2, 0)</span><br><span class="line">            page_buttom.mediaBox.lowerRight = (width, 0)</span><br><span class="line">            page_buttom.mediaBox.upperLeft = (width/2, height)</span><br><span class="line">            page_buttom.mediaBox.upperRight = (width, height)</span><br><span class="line"></span><br><span class="line">            pdfWriter.addPage(page_buttom)</span><br><span class="line">            out_file_name = out_path + str(i + 1) + '_bottom.pdf'</span><br><span class="line">            with open(out_file_name, 'wb') as outfile:</span><br><span class="line">                pdfWriter.write(outfile)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    in_File = r'XXX.pdf'</span><br><span class="line">    out_Path = 'C:/Users/XXX/'  # 生成输出文件夹 把斜杠（\)改成反斜杠(/)</span><br><span class="line">    split_pdf(in_File, out_Path)</span><br><span class="line">    #合并每一页pdf</span><br><span class="line">    list = []</span><br><span class="line">    for file in os.listdir(out_Path[:-1]):</span><br><span class="line">        list.append(file)</span><br><span class="line">    list.sort(key= lambda x: (int(x.split('_')[0])))</span><br><span class="line">    print(list)</span><br><span class="line">    pdfWriter = PdfFileWriter()</span><br><span class="line">    for i in list:</span><br><span class="line">        pdfye = out_Path + i</span><br><span class="line">        pdfReader = PdfFileReader(pdfye)</span><br><span class="line">        pdfWriter.addPage(pdfReader.getPage(0))</span><br><span class="line">    output = out_Path + "merged.pdf"</span><br><span class="line">    with open(output,'wb') as out:</span><br><span class="line">        pdfWriter.write(out)</span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>技術</category>
@@ -25,13 +25,15 @@
   </entry>
   <entry>
     <title>北京師範大學 PPT 模板</title>
-    <url>/2021/12/07/%E5%8C%97%E4%BA%AC%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8PPT%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>我做的，模板。<br><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%873.PNG" alt="幻灯片3"></p>
+    <url>/2022/12/07/%E5%8C%97%E4%BA%AC%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8PPT%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>我做的，模板。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/84d892d6dbb59684994ff8a11756884ccf8506d4.png" alt="幻灯片3"></p>
 <span id="more"></span>
 
 <p>疫情剛開始那一年，我大二，在家閑得發慌，開始學做 PPT。然後做了一個 PPT 模板，參加了一個小比賽。</p>
 <p><a href="https://pan.baidu.com/s/1dFGfInZD7M7hIq_hHxaFFQ">下載連接</a><br>提取码：wc6e</p>
-<p><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%874.PNG" alt="幻灯片4"><br><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%875.PNG" alt="幻灯片5"></p>
+<p><img src="https://i0.hdslb.com/bfs/album/f35a253715538c58e92a93256445358f5fd2cce9.png" alt="幻灯片4"></p>
+<p><img src="https://i0.hdslb.com/bfs/album/a7bef7cad28309c784c795ed17659e83e2ebef41.png" alt="幻灯片5"></p>
 ]]></content>
       <categories>
         <category>技術</category>
@@ -40,6 +42,32 @@
       <tags>
         <tag>PPT</tag>
         <tag>北師</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>嚶嚶閣的誕生</title>
+    <url>/2022/12/07/%E5%9A%B6%E5%9A%B6%E9%96%A3%E7%9A%84%E8%AA%95%E7%94%9F/</url>
+    <content><![CDATA[<p>在研一上快要結束的這一天，我還有很多作業沒有寫，但是受到了某种鼓舞，還是搭建了嚶嚶閣。畢竟不寫論文，幹什麽都是快樂的。</p>
+<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
+<span id="more"></span>
+
+<p>2022 年 12 月 5 日，我逛了一天赫赫文王，看到了別人的博客可好看了，於是也想擁有一個。</p>
+<p>這一天，我想起去年的雙十一，在阿裏雲買了一個服務器。在保研之後，我去 b 站先後學習了 html、css、js、flask 以及 Django，最後終於搭載出了一代嚶嚶閣。它是一個可以查字典的網站，後來還增加了查詩經的功能。前者主要是找 mdd 和 mdx 的詞典文件，然後經過清洗，就放到了網頁上；后者是我自己去找 pdf，自己編制索引，製作出的圖片詞典。最後，經過一些 copy&amp;paste 工作，搭建一個前端的頁面。</p>
+<p>非常遺憾的是，因爲我並沒有學過啥 Linix，所以最後部署的時候，靜態文件加載不出來，也不會 debug，所以整個網頁非常醜。所以我還是本地使用這個網頁，也沒有分享給我的同學們。</p>
+<p>最後的最後，服務器過期了。</p>
+<p>2022 年 12 月 6 日，剛做了兩節課《馬氏文通》的報告，才講了一半，心累了。況且，一個星期總有那麽五六天不想學習，於是開始嘗試用 hexo+next 建立一個博客。這次 copy&amp;paste 都不用了，直接 download。</p>
+<p>所以現在的嚶嚶閣，只是一個博客，依託於 github Page。這种輕量級的靜態頁面博客，也不需要數據庫了，也不用和 centos 死磕了，真好。</p>
+<p>2022 年 12 月 7 日，終於講完了已經講了三個星期的大雅雲漢，高興了一會，又不想學習了。於是繼續搭建網站。這次修改了 css 樣式，增加了許多小插件，這個博客也像那麽回事了。</p>
+<p>歷時三天，嚶嚶閣誕生了～</p>
+<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
+]]></content>
+      <categories>
+        <category>技術</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>慶祝</tag>
       </tags>
   </entry>
   <entry>
@@ -64,32 +92,6 @@
       </categories>
       <tags>
         <tag>當代文學</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>嚶嚶閣的誕生</title>
-    <url>/2022/12/07/%E5%9A%B6%E5%9A%B6%E9%96%A3%E7%9A%84%E8%AA%95%E7%94%9F/</url>
-    <content><![CDATA[<p>在研一上快要結束的這一天，我還要很多作業沒有寫，但是受到了某种鼓舞，還是搭建了嚶嚶閣。畢竟不寫論文，幹什麽都是快樂的。</p>
-<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
-<span id="more"></span>
-
-<p>2022 年 12 月 5 日，我逛了一天赫赫文王，看到了別人的博客可好看了，於是也想擁有一個。</p>
-<p>這一天，我想起去年的雙十一，在阿裏雲買了一個服務器。在保研之後，我去 b 站先後學習了 html、css、js、flask 以及 Django，最後終於搭載出了一代嚶嚶閣。它是一個可以查字典的網站，後來還增加了查詩經的功能。前者主要是找 mdd 和 mdx 的詞典文件，然後經過清洗，就放到了網頁上；后者是我自己去找 pdf，自己編制索引，製作出的圖片詞典。最後，經過一些 copy&amp;paste 工作，搭建一個前端的頁面。</p>
-<p>非常遺憾的是，因爲我並沒有學過啥 Linix，所以最後部署的時候，靜態文件加載不出來，也不會 debug，所以整個網頁非常醜。所以我還是本地使用這個網頁，也沒有分享給我的同學們。</p>
-<p>最後的最後，服務器過期了。</p>
-<p>2022 年 12 月 6 日，剛做了兩節課《馬氏文通》的報告，才講了一半，心累了。況且，一個星期總有那麽五六天不想學習，於是開始嘗試用 hexo+next 建立一個博客。這次 copy&amp;paste 都不用了，直接 download。</p>
-<p>所以現在的嚶嚶閣，只是一個博客，依託於 github Page。這种輕量級的靜態頁面博客，也不需要數據庫了，也不用和 centos 死磕了，真好。</p>
-<p>2022 年 12 月 7 日，終於講完了已經講了三個星期的大雅雲漢，高興了一會，又不想學習了。於是繼續搭建網站。這次修改了 css 樣式，增加了許多小插件，這個博客也像那麽回事了。</p>
-<p>歷時三天，嚶嚶閣誕生了～</p>
-<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
-]]></content>
-      <categories>
-        <category>技術</category>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>建站</tag>
-        <tag>慶祝</tag>
       </tags>
   </entry>
   <entry>
