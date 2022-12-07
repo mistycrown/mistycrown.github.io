@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>拆分雙頁 pdf 爲單頁 pdf | 拆分雙頁影印古籍 | 分割 pdf</title>
+    <url>/2022/12/07/pdf%E5%8F%98%E4%B8%A4%E9%A1%B5/</url>
+    <content><![CDATA[<p><img src="/images/0001.jpg" alt="0001"></p>
+<span id="more"></span>
+
+<h1 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h1><ul>
+<li>Python</li>
+<li> 安裝 PyPDF2 庫</li>
+<li>待切分雙頁 pdf</li>
+</ul>
+<p>大三打工的时候，從網上 copy 了一段，然後自己寫了一段。主要是用於打工。比如說把這樣的一頁，變成兩頁，实现左右分割功能。</p>
+<p><img src="D:\blog\hexo-demo\source\images\0001.jpg" alt="0001"></p>
+<h1 id="源代碼"><a href="#源代碼" class="headerlink" title="源代碼"></a>源代碼</h1><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">from PyPDF2 import PdfFileReader, PdfFileWriter</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def split_pdf(infile, out_path):</span><br><span class="line">    """</span><br><span class="line">    :param infile: 待拆分的pdf文件</span><br><span class="line">    :param out_path: 拆分成单页的pdf文件的存储路径</span><br><span class="line">    :return: 无</span><br><span class="line">    """</span><br><span class="line"></span><br><span class="line">    if not os.path.exists(out_path):</span><br><span class="line">        os.makedirs(out_path)</span><br><span class="line">    with open(infile, 'rb') as infile:</span><br><span class="line"></span><br><span class="line">        pdfReader = PdfFileReader(infile)</span><br><span class="line">        number_of_pages = pdfReader.getNumPages()  # 计算此PDF文件中的页数</span><br><span class="line"></span><br><span class="line">        for i in range(number_of_pages):</span><br><span class="line">            page = pdfReader.getPage(i)</span><br><span class="line">            width = float(page.mediaBox.getWidth())</span><br><span class="line">            height = float(page.mediaBox.getHeight())</span><br><span class="line">            # print("width:"+str(width)+" Height"+str(height))</span><br><span class="line"></span><br><span class="line">            # left page</span><br><span class="line">            pdfReader = PdfFileReader(infile)  # 一定要重新读取，要不会报错。</span><br><span class="line">            pdfWriter = PdfFileWriter()  # 循环创建空白的pdf</span><br><span class="line">            page_top = pdfReader.getPage(i)</span><br><span class="line">            page_top.mediaBox.lowerLeft = (0, 0)</span><br><span class="line">            page_top.mediaBox.lowerRight = (width/2, 0)</span><br><span class="line">            page_top.mediaBox.upperLeft = (0, height)</span><br><span class="line">            page_top.mediaBox.upperRight = (width/2, height)</span><br><span class="line">            pdfWriter.addPage(page_top)</span><br><span class="line">            out_file_name = out_path + str(i + 1) + '_top.pdf'</span><br><span class="line">            with open(out_file_name, 'wb') as outfile:</span><br><span class="line">                pdfWriter.write(outfile)</span><br><span class="line"></span><br><span class="line">            # right page</span><br><span class="line">            pdfReader = PdfFileReader(infile)  # 一定要重新读取，要不会报错。</span><br><span class="line">            pdfWriter = PdfFileWriter()  # 循环创建空白的pdf</span><br><span class="line">            page_buttom = pdfReader.getPage(i)</span><br><span class="line">            page_buttom.mediaBox.lowerLeft = (width/2, 0)</span><br><span class="line">            page_buttom.mediaBox.lowerRight = (width, 0)</span><br><span class="line">            page_buttom.mediaBox.upperLeft = (width/2, height)</span><br><span class="line">            page_buttom.mediaBox.upperRight = (width, height)</span><br><span class="line"></span><br><span class="line">            pdfWriter.addPage(page_buttom)</span><br><span class="line">            out_file_name = out_path + str(i + 1) + '_bottom.pdf'</span><br><span class="line">            with open(out_file_name, 'wb') as outfile:</span><br><span class="line">                pdfWriter.write(outfile)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    in_File = r'XXX.pdf'</span><br><span class="line">    out_Path = 'C:/Users/XXX/'  # 生成输出文件夹 把斜杠（\)改成反斜杠(/)</span><br><span class="line">    split_pdf(in_File, out_Path)</span><br><span class="line">    #合并每一页pdf</span><br><span class="line">    list = []</span><br><span class="line">    for file in os.listdir(out_Path[:-1]):</span><br><span class="line">        list.append(file)</span><br><span class="line">    list.sort(key= lambda x: (int(x.split('_')[0])))</span><br><span class="line">    print(list)</span><br><span class="line">    pdfWriter = PdfFileWriter()</span><br><span class="line">    for i in list:</span><br><span class="line">        pdfye = out_Path + i</span><br><span class="line">        pdfReader = PdfFileReader(pdfye)</span><br><span class="line">        pdfWriter.addPage(pdfReader.getPage(0))</span><br><span class="line">    output = out_Path + "merged.pdf"</span><br><span class="line">    with open(output,'wb') as out:</span><br><span class="line">        pdfWriter.write(out)</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>技術</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>北京師範大學 PPT 模板</title>
+    <url>/2021/12/07/%E5%8C%97%E4%BA%AC%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8PPT%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>我做的，模板。<br><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%873.PNG" alt="幻灯片3"></p>
+<span id="more"></span>
+
+<p>疫情剛開始那一年，我大二，在家閑得發慌，開始學做 PPT。然後做了一個 PPT 模板，參加了一個小比賽。</p>
+<p><a href="https://pan.baidu.com/s/1dFGfInZD7M7hIq_hHxaFFQ">下載連接</a><br>提取码：wc6e</p>
+<p><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%874.PNG" alt="幻灯片4"><br><img src="/images/%E5%B9%BB%E7%81%AF%E7%89%875.PNG" alt="幻灯片5"></p>
+]]></content>
+      <categories>
+        <category>技術</category>
+        <category>PPT</category>
+      </categories>
+      <tags>
+        <tag>PPT</tag>
+        <tag>北師</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>是你在改造我们生活的荒凉</title>
     <url>/2022/12/06/%E6%98%AF%E4%BD%A0%E5%9C%A8%E6%94%B9%E9%80%A0%E6%88%91%E4%BB%AC%E7%94%9F%E6%B4%BB%E7%9A%84%E8%8D%92%E5%87%89/</url>
     <content><![CDATA[<p>文学，在改造我们的生活。而白洋淀的文学，在改造那个时代的荒凉。新中国建立初期我们总在强调文艺与生活的结合，让工农斗争的日常渗透进文学的丝毫中。可是这种大面积的渗透又何常不是一种荒凉。白洋淀的诗人无法冲破主流叙事的笼罩，不能像《狂人日记》一般振臂高呼，发挥巨大的启蒙作用，是时代局限的束缚，但诗人们也满足于这样一种自娱自乐式的自我慰藉。潜在文学的声音虽然微小，但总保留着这一丝人情的微火，存亡绝续，燃烧着压抑中的生命力量与现代智慧，接续着新文化的传统并开启着朦胧诗的风格。这一点小小的光明，在黑暗中弥足珍贵，它展现着青春的力量和个人的启蒙，是坚冰下，延续不断的溪流。</p>
@@ -18,18 +60,62 @@
 ]]></content>
       <categories>
         <category>作業</category>
+        <category>文學</category>
       </categories>
       <tags>
         <tag>當代文學</tag>
       </tags>
   </entry>
   <entry>
-    <title>鰥</title>
-    <url>/2022/12/06/%E9%B0%A5/</url>
-    <content><![CDATA[<p>《<strong>禮記注疏・禮運</strong>》：矜寡孤獨廢疾者皆有所養。<br>鰥寡孤獨出现于经疏、经注及宋明以后著作。</p>
-<p>说文：鰥，魚也。从魚眔聲。<br>段注：見齊風。毛傳曰。大魚也。謂鰥與魴皆大魚之名也。鄭箋乃讀鰥為爾雅鯤魚子之鯤。殆非是。<strong>鰥多叚借為鰥寡字。鰥寡字葢古衹作矝。矝即憐之叚借。</strong><br>《章太炎说文解字授课笔记》：【朱一】从魚𥊽省聲。《莊子》「鯤魚」即鰥之假借。鰥寡字，《釋名》解鰥字可笑，以一切魚皆不閉目也。段氏以為矜之假 &lt;假&gt;[借]，是也。惟以為憐之假借則非。說見《新方言》「光棍」條。</p>
+    <title>嚶嚶閣的誕生</title>
+    <url>/2022/12/07/%E5%9A%B6%E5%9A%B6%E9%96%A3%E7%9A%84%E8%AA%95%E7%94%9F/</url>
+    <content><![CDATA[<p>在研一上快要結束的這一天，我還要很多作業沒有寫，但是受到了某种鼓舞，還是搭建了嚶嚶閣。畢竟不寫論文，幹什麽都是快樂的。</p>
+<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
 <span id="more"></span>
 
+<p>2022 年 12 月 5 日，我逛了一天赫赫文王，看到了別人的博客可好看了，於是也想擁有一個。</p>
+<p>這一天，我想起去年的雙十一，在阿裏雲買了一個服務器。在保研之後，我去 b 站先後學習了 html、css、js、flask 以及 Django，最後終於搭載出了一代嚶嚶閣。它是一個可以查字典的網站，後來還增加了查詩經的功能。前者主要是找 mdd 和 mdx 的詞典文件，然後經過清洗，就放到了網頁上；后者是我自己去找 pdf，自己編制索引，製作出的圖片詞典。最後，經過一些 copy&amp;paste 工作，搭建一個前端的頁面。</p>
+<p>非常遺憾的是，因爲我並沒有學過啥 Linix，所以最後部署的時候，靜態文件加載不出來，也不會 debug，所以整個網頁非常醜。所以我還是本地使用這個網頁，也沒有分享給我的同學們。</p>
+<p>最後的最後，服務器過期了。</p>
+<p>2022 年 12 月 6 日，剛做了兩節課《馬氏文通》的報告，才講了一半，心累了。況且，一個星期總有那麽五六天不想學習，於是開始嘗試用 hexo+next 建立一個博客。這次 copy&amp;paste 都不用了，直接 download。</p>
+<p>所以現在的嚶嚶閣，只是一個博客，依託於 github Page。這种輕量級的靜態頁面博客，也不需要數據庫了，也不用和 centos 死磕了，真好。</p>
+<p>2022 年 12 月 7 日，終於講完了已經講了三個星期的大雅雲漢，高興了一會，又不想學習了。於是繼續搭建網站。這次修改了 css 樣式，增加了許多小插件，這個博客也像那麽回事了。</p>
+<p>歷時三天，嚶嚶閣誕生了～</p>
+<p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
+]]></content>
+      <categories>
+        <category>技術</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>慶祝</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>這是一個模板</title>
+    <url>/2021/12/07/%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<span id="more"></span>
+
+
+]]></content>
+      <categories>
+        <category>技術</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>？？？</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鰥</title>
+    <url>/2022/12/06/%E9%B0%A5/</url>
+    <content><![CDATA[<p>原來鰥和矝就是光棍。</p>
+<span id="more"></span>
+
+<p>《<strong>禮記注疏・禮運</strong>》：矜寡孤獨廢疾者皆有所養。<br>鰥寡孤獨出现于经疏、经注及宋明以后著作。</p>
+<p>说文：鰥，魚也。从魚眔聲。<br>段注：見齊風。毛傳曰。大魚也。謂鰥與魴皆大魚之名也。鄭箋乃讀鰥為爾雅鯤魚子之鯤。殆非是。<strong>鰥多叚借為鰥寡字。鰥寡字葢古衹作矝。矝即憐之叚借。</strong><br>《章太炎说文解字授课笔记》：【朱一】从魚𥊽省聲。《莊子》「鯤魚」即鰥之假借。鰥寡字，《釋名》解鰥字可笑，以一切魚皆不閉目也。段氏以為矜之假 &lt;假&gt;[借]，是也。惟以為憐之假借則非。說見《新方言》「光棍」條。</p>
 <blockquote>
 <p> 《新方言（章氏叢書）・卷二・釋言第二》：方言：矝謂之杖。== 尋古音矝如鰥 ==，故老而無妻者，或書作矝，或書作鰥。今人謂杖為棍，即矝字之變矣。又謂凶人為光棍，尋說文檮柮〔亦作杌〕斷木也。古謂凶人曰檮柮，今謂凶人曰光棍，其義同也。左傳檮杌杜解以為即鯀，古人即名表德，堯舜桀紂皆是然。則鯀之言棍，即古矝字矣。楚辭云：鯀婞直以亡身。婞直亦與矝同義。矝為直立之物，故古人謂直為矝。論語古之矝也廉，今之矝也忿戾。又云：君子矝而不爭，廉直為矝，所謂婞也，忿戾為矝，所謂檮柮光棍也，古今語正自不異，== 又今人亦謂無室家者為光棍，則正無妻為矝之義，訓詁聲音皆同 ==〔說文鯀鰥二文相接，竝訓魚，疑本重文〕或言光蜑亦矝之切音也</p>
 </blockquote>
@@ -38,6 +124,7 @@
 ]]></content>
       <categories>
         <category>札記</category>
+        <category>小學</category>
       </categories>
       <tags>
         <tag>新方言</tag>
@@ -48,6 +135,8 @@
     <title>毛詩正義・大雅・雲漢</title>
     <url>/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/</url>
     <content><![CDATA[<p>倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？</p>
+<p>這是一篇很長很長的讀書會材料，長到講了三次讀書會。</p>
+<p>這篇裏只有注，沒有原文。</p>
 <span id="more"></span>
 
 
@@ -268,7 +357,7 @@
 <h2 id="不殄禋祀，自郊徂宮。上下奠瘞，靡神不宗。"><a href="#不殄禋祀，自郊徂宮。上下奠瘞，靡神不宗。" class="headerlink" title="不殄禋祀，自郊徂宮。上下奠瘞，靡神不宗。"></a>不殄禋祀，自郊徂宮。上下奠瘞，靡神不宗。</h2><h3 id="殄"><a href="#殄" class="headerlink" title="殄"></a>殄</h3><p>箋：為旱故絜祀不絕。</p>
 <p>《集傳》：殄，絕也。</p>
 <p><code>殄訓絕，爲訓盡引申</code>《說文・歺部》：殄，盡也。从歺 è 㐱 zhěn 聲。段注：《釋詁》《大雅・瞻卬》傳同。《邶風》：籧篨不殄。傳曰：殄絕也。此盡義之引伸也。箋云：殄當作腆。腆，善也。【按】古文假殄爲腆。《儀禮》注云腆古文作殄。是也。</p>
-<p>王筠《釋例》：「『殄』之古文<img src="/assets/image-20220916161619-2ijg7p7.png" alt="image.png">，蓋從到人，以會『靡有孑遺』之意。」（按照字所在文獻去解釋構意，是王筠釋字的獨特視角，類似說文引經釋義）</p>
+<p>王筠《釋例》：「『殄』之古文<img src="/images/image-20220916161619-2ijg7p7.png" alt="image.png">，蓋從到人，以會『靡有孑遺』之意。」（按照字所在文獻去解釋構意，是王筠釋字的獨特視角，類似說文引經釋義）</p>
 <p><code>殄-畛 異文</code>《傳疏》：《爾雅》：畛，致也。郭注云：見詩傳，<strong>疑此詩之異文。不畛禋祀，至禋祀也</strong>​，不，發聲。郭或據三家詩傳耳。<del>殄字釋義影響了不字釋義</del></p>
 <p><code>殄通腆</code>《錢研堂文集》：「殄」，古「腆」字。燕禮「寡君有不腆之酒」，注：「古文腆作殄。」詩新臺篇「蘧篨不殄」，鄭讀爲「腆」，<del>異文材料</del>​<strong>此「殄」字亦當讀爲「腆」</strong>​。不腆，謂祀神之玉幣也。</p>
 <h3 id="禋-yin1-祀"><a href="#禋-yin1-祀" class="headerlink" title="禋 yin1 祀"></a>禋 yin1 祀</h3><p>《說文・示部》：禋，潔祀也。一曰精意以享爲禋。从示垔聲。</p>
@@ -354,19 +443,19 @@
 <p>正義：《釋訓》云：“兢兢，戒也。” 以恐怖而後戒懼，故為恐也。“業業，危”，《釋訓》文。</p>
 <p>《注析》：危懼恐慌貌。</p>
 <p><code>重言词训释，整体意义是否和单字意义相关？</code></p>
-<h4 id="兢"><a href="#兢" class="headerlink" title="兢"></a>兢</h4><p>《說文》：<img src="/assets/image-20221123104142-gtm59yr.png" alt="image.png">𠓆，<u>競</u>也。从二兄。二兄，競意。从丯 jie4 聲。讀若矜。一曰<u>兢</u>，敬也。<del>（左右拆分，二兄竞争之义。一曰为敬）</del><br>段注：競者，彊語也。《小雅》無羊傳曰：矝矝兢兢，以言堅彊也。《釋文》此義其冰反。…… <strong>一曰兢</strong>，此複舉兢字。各本誤作競。今依葉抄本。集韵、類篇無此字。<strong>敬也。</strong>《小雅》：戰戰兢兢。傳曰：戰戰，恐也。兢兢，戒也。小徐本無此五字。《玉篇》引亦無。<del>（堅強的樣子、小心謹慎的樣子）</del></p>
+<h4 id="兢"><a href="#兢" class="headerlink" title="兢"></a>兢</h4><p>《說文》：<img src="/images/image-20221123104142-gtm59yr.png" alt="image.png">𠓆，<u>競</u>也。从二兄。二兄，競意。从丯 jie4 聲。讀若矜。一曰<u>兢</u>，敬也。<del>（左右拆分，二兄竞争之义。一曰为敬）</del><br>段注：競者，彊語也。《小雅》無羊傳曰：矝矝兢兢，以言堅彊也。《釋文》此義其冰反。…… <strong>一曰兢</strong>，此複舉兢字。各本誤作競。今依葉抄本。集韵、類篇無此字。<strong>敬也。</strong>《小雅》：戰戰兢兢。傳曰：戰戰，恐也。兢兢，戒也。小徐本無此五字。《玉篇》引亦無。<del>（堅強的樣子、小心謹慎的樣子）</del></p>
 <hr>
-<p>《說文》：<img src="/assets/image-20221123104032-1dwgrok.png" alt="image.png">競，彊語也。一曰逐也。从誩，从二人。</p>
+<p>《說文》：<img src="/images/image-20221123104032-1dwgrok.png" alt="image.png">競，彊語也。一曰逐也。从誩，从二人。</p>
 <p>臣鍇按：《詩》曰：「無競惟烈。」競，== 彊 == 也。《春秋傳》曰：「晉師驅衝競。」== 逐 == 也。又曰：「二惠競爽。」二人 == 俱 == 爽也。</p>
 <p>段注：競彊曡韵。彊語謂相爭。<del>（上下拆分，拆出誩字。競有彊义，上文段注已证。为扣合形体，故曰强语，实相争义。逐也，即相竞逐。）</del></p>
-<p>《說文》：<img src="/assets/image-20221123104047-5tsw3fi.png" alt="image.png">誩，競言也。从二言。凡誩之屬皆从誩。讀若競。</p>
+<p>《說文》：<img src="/images/image-20221123104047-5tsw3fi.png" alt="image.png">誩，競言也。从二言。凡誩之屬皆从誩。讀若競。</p>
 <p>《筆記》：== 誩，競二字同 ==，不必分。</p>
 <p>王筠句讀：「下文又云賣若競，則誩直是競之古文。」</p>
-<p>按：<img src="/assets/image-20220918211550-qvhj9n8.png" alt="image.png">甲骨文、金文形體像二人競技形。上部為䇂，乃奴隸標誌。說文進行了理据重構，爲了分析其形體，還拆分出了誩字。</p>
+<p>按：<img src="/images/image-20220918211550-qvhj9n8.png" alt="image.png">甲骨文、金文形體像二人競技形。上部為䇂，乃奴隸標誌。說文進行了理据重構，爲了分析其形體，還拆分出了誩字。</p>
 <hr>
 <p><code>上沟通说文内部兢相关字形，下释兢何以有敬义</code></p>
 <p>清顧藹吉《隸辨》卷二：（𠓆）「今俗作兢。」</p>
-<p>《說文新證》：「兢，戒慎，引申為《說文》一曰『敬』也；《說文》以為『競也』，<u>疑係假借</u>。鬲比盨 xu3『兢』字<img src="/assets/image-20220918211250-uuokow1.png" alt="image.png">，林義光《文源》云：『兢無二兄相競之義，丯亦非聲。二人戴重物於首，故常戒惕。』旭昇案：<strong>『兢』字本字疑當从兄从玉，會人守玉，戒慎恐懼之意。</strong>​『兄』可能也有聲符的作用。其後，或者因為做地名用，因而寫成複體，後世遂習以為常。東漢以後，二『玉』形日趨簡化，後遂作二『十』形。」</p>
+<p>《說文新證》：「兢，戒慎，引申為《說文》一曰『敬』也；《說文》以為『競也』，<u>疑係假借</u>。鬲比盨 xu3『兢』字<img src="/images/image-20220918211250-uuokow1.png" alt="image.png">，林義光《文源》云：『兢無二兄相競之義，丯亦非聲。二人戴重物於首，故常戒惕。』旭昇案：<strong>『兢』字本字疑當从兄从玉，會人守玉，戒慎恐懼之意。</strong>​『兄』可能也有聲符的作用。其後，或者因為做地名用，因而寫成複體，後世遂習以為常。東漢以後，二『玉』形日趨簡化，後遂作二『十』形。」</p>
 <h4 id="業"><a href="#業" class="headerlink" title="業"></a>業</h4><p>《說文》：業，大版也。所以飾縣鍾鼓。捷業如鋸齒，以白畫之。<strong>象其鉏鋙相承也。</strong>​从丵从巾。巾象版。《詩》曰：“巨業維樅 cong1。”（王筠《说文句读》：“捷業，叠韵。《汉书・扬雄传》作‘緁猎’。颜注：‘相差次也。’”）</p>
 <p><code>业训大，训危</code></p>
 <p>《爾雅・釋詁》：業，大也。</p>
@@ -374,7 +463,7 @@
 <p>《爾雅義疏》：《釋詁》云：大也。<u>物高則大則近危。</u></p>
 <p>《商頌・長發》：昔在中葉，有震且業。傳：業，危也。</p>
 <p><code>隉業音转</code></p>
-<p>陸錦燧《讀爾雅日記》：業訓危者，乃隉 nie4<img src="/assets/image-20220918215318-xm5xa66.png" alt="image.png">之假借字。<strong>隉業一聲之轉。</strong>​《說文》云：隉 nie4，危也。《長發》篇之 “有震且業”，毛傳云：業，危也。亦當讀曰隉。單言之曰業，累言之曰業業，其義固無殊也。（隉，疑纽月部，業，疑纽盍部）</p>
+<p>陸錦燧《讀爾雅日記》：業訓危者，乃隉 nie4<img src="/images/image-20220918215318-xm5xa66.png" alt="image.png">之假借字。<strong>隉業一聲之轉。</strong>​《說文》云：隉 nie4，危也。《長發》篇之 “有震且業”，毛傳云：業，危也。亦當讀曰隉。單言之曰業，累言之曰業業，其義固無殊也。（隉，疑纽月部，業，疑纽盍部）</p>
 <p>《說文》：隉，危也。从𨸏，从毀省。徐巡以爲：隉，凶也。賈侍中說：隉，法度也。班固說：不安也。《周書》曰：「邦之阢隉。」讀若虹蜺之蜺。</p>
 <p><code>阢隉，连绵字的多种形式</code></p>
 <p>段注：危者，在高而懼也。《秦誓》曰：邦之杌隉。易作臲卼 <del>niè wù</del>。許出部之槷𦤙，不安也。皆字異而音義同。</p>
@@ -504,8 +593,8 @@
 <p>廣雅釋詁一：“怛，驚也。” 朱駿聲日：假借爲戰。” 莊子大宗師：“叱避無怛化” 釋文：“怛，驚也。鄭衆注考工記‘不能驚怛’是也。”</p>
 </blockquote>
 <h3 id="薰"><a href="#薰" class="headerlink" title="薰"></a>薰</h3><p><code>毛传异文</code>​傳：熏，灼也。</p>
-<p><img src="/assets/image-20221129224501-b5v6gqa.png" alt="image">《說文》：薰，香艸也。从艸熏聲。</p>
-<p><img src="/assets/image-20221129224442-pk96geq.png" alt="image">《說文》：熏（燻），火煙上出也。从屮从黑。屮黑，熏黑也。</p>
+<p><img src="/images/image-20221129224501-b5v6gqa.png" alt="image">《說文》：薰，香艸也。从艸熏聲。</p>
+<p><img src="/images/image-20221129224442-pk96geq.png" alt="image">《說文》：熏（燻），火煙上出也。从屮从黑。屮黑，熏黑也。</p>
 <p><code>薰通熏，状焦灼貌。下释熏字构意略。</code>​</p>
 <p>段注：<strong>熏，火煙上出也</strong>。豳風曰：穹窒熏鼠。<strong>从屮</strong>。象煙上出。此於六書為叚借。<strong>从黑。</strong>屮黑熏象。此恐學者不達會意，故發明之曰屮，而繼之以黑。此煙上出，而煙所到處成黑色之象也。合二體為會意。單言上體則為叚借。與璗本金而从玉同意。故居部末。許云切。</p>
 <p>臣鍇曰：「物之多煙者唯艸爲甚，無根，故從屮。《詩》曰：『穹窒熏鼠。』以艸熏之也。黒非白黒之黒字，四象穴火炎上出，礙於艸，故爲熏。此言黒熏象，故知非白黒字。」</p>
@@ -513,7 +602,7 @@
 <p>《說文》：聞，知聞也。从耳門聲。䎽，古文从昏。</p>
 <h4 id="問"><a href="#問" class="headerlink" title="問"></a>問</h4><p>毛瑞辰《通釋》：聞，當讀問，問猶恤問也。</p>
 <p><code>闻问通，以语义对应、异文等论证</code>​《經義述聞》亦莫我聞 則不我聞：家大人曰：《葛藟篇》：「謂他人昆，亦莫我聞​」，<u>聞，猶問也，謂相恤問也。</u>古字「聞」與「問」通。<del>詳見《旅卦》「终莫之聞也」下。</del>上文曰「亦莫我颜」、「亦莫我有」，<del>「有」謂相親有也。</del>此曰「亦莫我聞」，顧也、有也、聞也，皆親愛之意也。《旅・象傳》曰「喪牛之凶，終莫之聞也」，謂莫之恤問也。解者多失之。<u>《大雅・雲漢篇》「群公先正，則不我聞」「聞」亦謂恤問也。上文曰『群公先正，則不我助」，下文曰「昊天上帝，則不我虞」</u>​<u><del>[</del></u>​<del>虞」亦「助」也，群見「則不我虞」下。</del>意皆相近。解者亦失之。</p>
-<p>《經義述聞》终莫之闻也：<img src="/assets/image-20221114141204-3cdhkie.png" alt="image.png">《旅・象传》丧牛之凶，终莫之闻也​。虞翻注曰，坎耳入兑，故终莫之闻。侯果曰，虽有智者，莫之告也。孔颖达《正义》曰，终无以一言告之，使闻而悟也。家大人曰：<u>闻犹问也</u>​<del>古字闻与问通。《论语・公治长》篇闻一以知十，闻本或作问。《檀弓》问丧于夫子乎，问本亦作闻。《庄子・庚桑楚》篇因失吾问，元嘉本问作闻。并见《经典释文》。又《荀子・尧问》篇不闻即物少至，杨注曰，闻或为问</del>，谓相恤问也。<u>上九居高无应，故无恤问之者。</u>《王风・葛藟》篇谓他人昆，亦莫我闻；《大雅・云汉》篇群公先正，则不我闻：亦谓不相恤问也。解者多失之<del>详见亦莫我闻下</del>。</p>
+<p>《經義述聞》终莫之闻也：<img src="/images/image-20221114141204-3cdhkie.png" alt="image.png">《旅・象传》丧牛之凶，终莫之闻也​。虞翻注曰，坎耳入兑，故终莫之闻。侯果曰，虽有智者，莫之告也。孔颖达《正义》曰，终无以一言告之，使闻而悟也。家大人曰：<u>闻犹问也</u>​<del>古字闻与问通。《论语・公治长》篇闻一以知十，闻本或作问。《檀弓》问丧于夫子乎，问本亦作闻。《庄子・庚桑楚》篇因失吾问，元嘉本问作闻。并见《经典释文》。又《荀子・尧问》篇不闻即物少至，杨注曰，闻或为问</del>，谓相恤问也。<u>上九居高无应，故无恤问之者。</u>《王风・葛藟》篇谓他人昆，亦莫我闻；《大雅・云汉》篇群公先正，则不我闻：亦谓不相恤问也。解者多失之<del>详见亦莫我闻下</del>。</p>
 <h3 id="遯"><a href="#遯" class="headerlink" title="遯"></a>遯</h3><h4 id="逃"><a href="#逃" class="headerlink" title="逃"></a>逃</h4><p>《說文・辵部》：遯，逃也。从辵从豚。</p>
 <p>箋：天曾將使我心遜遯慚愧於天下（心理上）</p>
 <p>《注析》：上天难道要使我逃避而去吗？（物理上）</p>
@@ -532,9 +621,9 @@
 <p><code>黽、孟、慔-勉</code>​《筆記》：【朱二】黽勉，《爾雅》「孟」訓勉，二字皆「勉」之借。「慔」與之對轉，虞魚模之入聲與陽唐對轉。</p>
 <p>《說文》：慔 mu4，勉也。从心莫聲。</p>
 <p>马坤：《论 “黽” 及相关诸字之古读及形体演变》，《中国语文》2021 年第 01 期：</p>
-<p><img src="/assets/image-20221106164229-u73buss.png" alt="image.png"></p>
-<p><img src="/assets/image-20221130110040-yxdh63h.png" alt="image">​</p>
-<p><img src="/assets/image-20221130110054-12nqixq.png" alt="image">​</p>
+<p><img src="/images/image-20221106164229-u73buss.png" alt="image.png"></p>
+<p><img src="/images/image-20221130110040-yxdh63h.png" alt="image">​</p>
+<p><img src="/images/image-20221130110054-12nqixq.png" alt="image">​</p>
 <hr>
 <p><code>畏-恶</code>​《通釋》：“黽勉畏去”，箋：“黽勉，急禱請也。欲使所尤畏者去。所尤畏者，魃也。” 瑞辰按：廣雅釋詁：“畏，惡也。” 畏去謂<u>苦此旱而惡去之</u>也。箋説失之。</p>
 <p><code>畏去-畏卻</code>​于省吾《新證》：<u>畏去古人連語，應讀作畏卻。</u>卻俗作却。《荀子・正論》：“捶笞臏腳” 注：“腳，古脚字。” 去之作卻，猶脚之作腳矣。《秦策》：“怒戰慄而卻” 注：“卻，退也。” 黽勉畏卻，<u>言黽勉從事猶有所畏卻，恐其無濟於事也。</u>林義光讀去爲𢜭，引《說文》訓𢜭爲勞。畏勞與黽勉之意相反。</p>
@@ -698,17 +787,18 @@
 <p>《故訓匯纂》：惠，顺也。《易・益》“有孚惠心” 焦循章句；《書・舜典》“亮采惠疇” 孔安国傅；《大禹謨》“惠迪吉” 蔡沈集傅；《皋陶謨上》“朕言惠” 孫星衍今古文注疏引《釋言》云……</p>
 <h4 id="愛也"><a href="#愛也" class="headerlink" title="愛也"></a>愛也</h4><p>《傳疏》：惠，愛也。寕，安也。言君臣愛百姓如此，<u>天何不愛而安之。</u></p>
 <p>《說文》：惠，仁也。从心从叀。</p>
-<h4 id="语气词"><a href="#语气词" class="headerlink" title="语气词"></a>语气词</h4><p>《注析》：語氣詞。吳闓生《詩義會通》：“曷惠，猶曷維也。” 按甲骨文有常用虛詞 “<img src="/assets/image-20220610131725-v1b22aa.png" alt="image.png">”，應讀爲 “惠”，既此 “惠” 字。</p>
+<h4 id="语气词"><a href="#语气词" class="headerlink" title="语气词"></a>语气词</h4><p>《注析》：語氣詞。吳闓生《詩義會通》：“曷惠，猶曷維也。” 按甲骨文有常用虛詞 “<img src="/images/image-20220610131725-v1b22aa.png" alt="image.png">”，應讀爲 “惠”，既此 “惠” 字。</p>
 <p>裘锡圭：《阅读古籍要重视考古资料》，《文史知识》1986 年第 8 期，第 3—9 页。</p>
 <blockquote>
 <p>《尚书・君奭》：公日：君，予不惠若兹多诰，予惟用闵于天越民。</p>
 <p>《伪孔传》把 “予不惠若兹多诰” 解释为 “我不顺若此多诰而已”，简直不知所云。殷墟甲骨文里有一个常用的虚词 “叀”，作用跟 “惟”（甲骨文一般作 “隹”）相似，古文字学者大都认为这个字应读为 “惠”，当可信（参看李孝定《甲骨文字集释》1431 一 1432 页、陈梦家《殷墟卜辞综述》102 页。下文引用此字时径书作 “惠”)。殷墟甲骨文里的有些占辞 (卜问后判断卜兆所示之意之辞) <strong>以 “不惟” 与 “惠” 或 “惟” 与 “不惠” 对言</strong></p>
-<p><img src="/assets/image-20220610133457-p3lsmbg.png" alt="image.png"></p>
+<p><img src="/images/image-20220610133457-p3lsmbg.png" alt="image.png"></p>
 </blockquote>
 <p>‍</p>
 ]]></content>
       <categories>
         <category>札記</category>
+        <category>原典</category>
       </categories>
       <tags>
         <tag>詩經</tag>
