@@ -3,7 +3,9 @@
   <entry>
     <title>拆分雙頁 pdf 爲單頁 pdf | 拆分雙頁影印古籍 | 分割 pdf</title>
     <url>/2022/12/07/pdf%E5%8F%98%E4%B8%A4%E9%A1%B5/</url>
-    <content><![CDATA[<p><img src="/images/0001.jpg" alt="0001"></p>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><img src="/images/0001.jpg" alt="0001"></p>
 <span id="more"></span>
 
 <h1 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h1><ul>
@@ -26,7 +28,9 @@
   <entry>
     <title>北京師範大學 PPT 模板</title>
     <url>/2022/12/07/%E5%8C%97%E4%BA%AC%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8PPT%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>我做的，模板。</p>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+我做的，模板。
+
 <p><img src="https://i0.hdslb.com/bfs/album/84d892d6dbb59684994ff8a11756884ccf8506d4.png" alt="幻灯片3"></p>
 <span id="more"></span>
 
@@ -51,7 +55,7 @@
 <p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
 <span id="more"></span>
 
-<p>2022 年 12 月 5 日，我逛了一天赫赫文王，看到了別人的博客可好看了，於是也想擁有一個。</p>
+<h1 id="一些廢話"><a href="#一些廢話" class="headerlink" title="一些廢話"></a>一些廢話</h1><p>2022 年 12 月 5 日，我逛了一天赫赫文王，看到了別人的博客可好看了，於是也想擁有一個。</p>
 <p>這一天，我想起去年的雙十一，在阿裏雲買了一個服務器。在保研之後，我去 b 站先後學習了 html、css、js、flask 以及 Django，最後終於搭載出了一代嚶嚶閣。它是一個可以查字典的網站，後來還增加了查詩經的功能。前者主要是找 mdd 和 mdx 的詞典文件，然後經過清洗，就放到了網頁上；后者是我自己去找 pdf，自己編制索引，製作出的圖片詞典。最後，經過一些 copy&amp;paste 工作，搭建一個前端的頁面。</p>
 <p>非常遺憾的是，因爲我並沒有學過啥 Linix，所以最後部署的時候，靜態文件加載不出來，也不會 debug，所以整個網頁非常醜。所以我還是本地使用這個網頁，也沒有分享給我的同學們。</p>
 <p>最後的最後，服務器過期了。</p>
@@ -60,6 +64,18 @@
 <p>2022 年 12 月 7 日，終於講完了已經講了三個星期的大雅雲漢，高興了一會，又不想學習了。於是繼續搭建網站。這次修改了 css 樣式，增加了許多小插件，這個博客也像那麽回事了。</p>
 <p>歷時三天，嚶嚶閣誕生了～</p>
 <p>最後發現，原來建博客的最大阻力是，我根本沒有什麽可以發的東西。</p>
+<h1 id="建站資料"><a href="#建站資料" class="headerlink" title="建站資料"></a>建站資料</h1><h2 id="step1-搭出一个框架"><a href="#step1-搭出一个框架" class="headerlink" title="step1 搭出一个框架"></a>step1 搭出一个框架</h2><p><a href="https://www.cnblogs.com/huanhao/p/hexobase.html">【基础篇】hexo 博客搭建教程 - huanhao - 博客园 (cnblogs.com)</a></p>
+<p><a href="https://github.com/theme-next/hexo-theme-next">theme-next/hexo-theme-next: Elegant and powerful theme for Hexo. (github.com)</a></p>
+<h2 id="step2-插件和美化"><a href="#step2-插件和美化" class="headerlink" title="step2 插件和美化"></a>step2 插件和美化</h2><p><a href="https://www.bilibili.com/video/BV16W411t7mq?p=1&amp;vd_source=26da385b1c7abd1742d76bdc415d9b93">Next 主题的启用_哔哩哔哩_bilibili</a> 一系列视频</p>
+<p><a href="http://theme-next.iissnan.com/third-party-services.html">第三方服务集成 - NexT 使用文档 (iissnan.com)</a></p>
+<p><a href="https://github.com/theme-next/awesome-next#live-preview">theme-next/awesome-next: Theme NexT, AWESOME NexT! (github.com)</a></p>
+<p>评论功能：<a href="https://livere.com/">欢迎来到来必力 (livere.com)</a></p>
+<p>统计功能：不蒜子统计</p>
+<p>搜索功能：hexo-generator-searchdb</p>
+<h2 id="step3-文章编辑功能"><a href="#step3-文章编辑功能" class="headerlink" title="step3 文章编辑功能"></a>step3 文章编辑功能</h2><p><a href="https://www.bilibili.com/video/BV16W411t7mq?p=15&amp;vd_source=26da385b1c7abd1742d76bdc415d9b93">首页文章设置阅读全文_哔哩哔哩_bilibili</a></p>
+<p>图床：</p>
+<p><a href="https://www.yuque.com/chibingerdemiao/ilzmzu/ug5r4a">Typora 上传到 bilibili 图床的方法 (yuque.com)</a></p>
+<p><a href="https://www.cnblogs.com/yangstar/articles/16688692.html">解决 hexo 博客不能显示图床图片问题 - yangstar - 博客园 (cnblogs.com)</a></p>
 ]]></content>
       <categories>
         <category>技術</category>
@@ -97,7 +113,10 @@
   <entry>
     <title>這是一個模板</title>
     <url>/2021/12/07/%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+
+<span id="more"></span>
 
 
 ]]></content>
@@ -136,7 +155,9 @@
   <entry>
     <title>毛詩正義・大雅・雲漢</title>
     <url>/2022/12/06/%E9%9B%B2%E6%BC%A2%20%E8%AE%80%E6%9B%B8%E6%9C%83/</url>
-    <content><![CDATA[<p>倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？</p>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+倬彼雲漢，昭回于天。王曰於乎！何辜今之人？天降喪亂，饑饉薦臻。靡神不舉，靡愛斯牲。圭璧既卒，寧莫我聽？
+
 <p>這是一篇很長很長的讀書會材料，長到講了三次讀書會。</p>
 <p>這篇裏只有注，沒有原文。</p>
 <span id="more"></span>
