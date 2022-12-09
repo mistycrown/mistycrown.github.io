@@ -192,14 +192,46 @@
       </tags>
   </entry>
   <entry>
-    <title>quiker 助力汉语言文字学学生完成作业！</title>
+    <title>用 quicker 一键查字典！</title>
     <url>/2022/12/09/9-quicker/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
-<p>quiker 助力汉语言文字学学生完成作业是怎么一回事呢，就是可以一键查很多很多的词典。</p>
+<p>quicker 助力汉语言文字学学生完成作业是怎么一回事呢，就是可以一键查很多很多的词典。</p>
 <p><img src="https://i0.hdslb.com/bfs/album/ebe5d1434ffa3dd83da018933fbd0fbc60805762.png" alt="image-20221208235620400"></p>
 <span id="more"></span>
 
+<p><a href="https://getquicker.net/">quicker</a> 是一个很好用的软件。可以免费用，但是我的使用频率极高，所以为了好看，我充钱了。quicker 是一个载体，它的动作库里有很多大佬编写的动作，可以实现很多功能，比如 ocr、快速搜索等等，当然也可以自己编写动作，只需要亿点点编程基础。话虽然这样说，但是简单的功能，只需要搭积木就好了。下面推荐我正在使用的动作们！</p>
+<h1 id="通用的"><a href="#通用的" class="headerlink" title="通用的"></a>通用的</h1><p><a href="https://getquicker.net/Sharedaction?code=ba82e11a-f845-4ca3-44ee-08d690b5076c">截图 OCR</a> 如题</p>
+<p><a href="https://getquicker.net/Sharedaction?code=9ec53d43-5539-4571-6886-08d8c752bfcb">剪贴版</a> 记录剪贴版内容，还可以设置置顶。对于我这种 copy&amp;paster 十分方便。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=bcf5f6df-89ec-4e8c-9b0b-08d6a6d12516">文件收藏夹</a> 快速访问一些文件夹和文件</p>
+<p><a href="https://getquicker.net/Sharedaction?code=66502c1c-6ce0-4edb-37bc-08d8346ce0f2">云板</a> 一个可以自动保存自动同步的记事本，适合随手记一些东西。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=e27f90dc-25ce-4f7e-eee1-08d81c88cb47">获取网址和标题</a> 当你需要分享一个网页给别人的时候，你需要附上标题，而不是仅仅只有一串字母数字。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=cfc572a1-47c8-4fab-2457-08d6d7620f1e">规范粘贴</a> 对于一个 copy&amp;paster，最烦人的莫过与粘贴之后需要一个一个删除的换行符和空格！</p>
+<h1 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h1><p>所有这些搜索类动作的使用方法，都是框选，然后点这个动作就好，配合轮盘菜单使用更方便。</p>
+<h2 id="动作库中有的"><a href="#动作库中有的" class="headerlink" title="动作库中有的"></a>动作库中有的</h2><p><a href="https://getquicker.net/Sharedaction?code=5ee867b0-505e-455c-6776-08d880549e56">搜哔哩</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=ee54db79-b8ce-4175-677b-08d880549e56">知乎搜索</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=df652696-5074-4c7c-ddaa-08d7cad86d77">豆瓣 ID</a> 搜豆瓣的书</p>
+<p><a href="https://getquicker.net/Sharedaction?code=0ff2475a-f714-4a96-66cd-08d710cec307">goldendict</a> 这是一个本地词典软件，使用这个动作，可以快速打开 goldendict 并且查询框选的字。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=4f8b0df2-d031-4309-173c-08d7079ea819">ever 智识</a> 应该是有很多功能，但我一般用来查百度</p>
+<p><a href="https://getquicker.net/Sharedaction?code=85f82b64-b24c-4e46-ba2c-08d6db3483c9">搜索 everything</a> 你需要安装 Everything，然后就可以实现快速搜索本地文件</p>
+<h2 id="我写的"><a href="#我写的" class="headerlink" title="我写的"></a>我写的</h2><p><a href="https://getquicker.net/Sharedaction?code=b2ca689e-848d-4c89-fa30-08dad9888ab4">查说文网</a> 就是这个网的<a href="http://www.shuowen.net/jiezi/66F8/">效果</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=f250232c-c762-4395-fa31-08dad9888ab4">查韵典网</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=350b5a6b-c74a-46f9-fa32-08dad9888ab4">查知网</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=cb9c759f-a95b-40d4-fa33-08dad9888ab4">查数字说文</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=ad3507f9-5d11-43f8-fa34-08dad9888ab4">查汉典</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=c5779fc3-2180-413b-fa35-08dad9888ab4">ctext - 先秦两汉</a> 查询中国哲学书电子化计划先秦两汉的书里面有没有框选的句子。在背不出书的时候，很好用。</p>
+<h1 id="其他有用的"><a href="#其他有用的" class="headerlink" title="其他有用的"></a>其他有用的</h1><ul>
+<li><p><a href="https://getquicker.net/Sharedaction?code=0145184a-ecba-4759-57bc-08d87e4aedb5">引文助手</a> 把知网的参考文献格式改成 GBT7714 的格式或者《历史研究》的格式，在我用 zotero 之前，还挺好用的。</p>
+</li>
+<li><p>把上古韵目和反切上字表这些需要背但是背也背不下来的动作，保存为图片或者文档，设置成动作，想不起来的时候就能快速打开……</p>
+</li>
+<li><p>轮盘功能非常好用！动动鼠标查字典！</p>
+</li>
+</ul>
+<p><img src="https://i0.hdslb.com/bfs/album/10312f1c7db1483cce417299adfa7a085e97e943.png" alt="image-20221209111258887"></p>
+<ul>
+<li>如果你心动了，可以填我的邀请码哈哈哈（图穷匕见.jpg）。注册的时候填写这一串数字，我们都能获得会员 90 天 ——585279-8831</li>
+</ul>
 ]]></content>
       <categories>
         <category>技术</category>
