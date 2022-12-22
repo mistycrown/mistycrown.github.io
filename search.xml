@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>鰥</title>
-    <url>/2022/12/06/3-guan/</url>
-    <content><![CDATA[<p>原來鰥和矝就是光棍。</p>
-<span id="more"></span>
-
-<p>《<strong>禮記注疏・禮運</strong>》：矜寡孤獨廢疾者皆有所養。<br>鰥寡孤獨出现于经疏、经注及宋明以后著作。</p>
-<p>说文：鰥，魚也。从魚眔聲。<br>段注：見齊風。毛傳曰。大魚也。謂鰥與魴皆大魚之名也。鄭箋乃讀鰥為爾雅鯤魚子之鯤。殆非是。<strong>鰥多叚借為鰥寡字。鰥寡字葢古衹作矝。矝即憐之叚借。</strong><br>《章太炎说文解字授课笔记》：【朱一】从魚𥊽省聲。《莊子》「鯤魚」即鰥之假借。鰥寡字，《釋名》解鰥字可笑，以一切魚皆不閉目也。段氏以為矜之假 &lt;假&gt;[借]，是也。惟以為憐之假借則非。說見《新方言》「光棍」條。</p>
-<blockquote>
-<p> 《新方言（章氏叢書）・卷二・釋言第二》：方言：矝謂之杖。== 尋古音矝如鰥 ==，故老而無妻者，或書作矝，或書作鰥。今人謂杖為棍，即矝字之變矣。又謂凶人為光棍，尋說文檮柮〔亦作杌〕斷木也。古謂凶人曰檮柮，今謂凶人曰光棍，其義同也。左傳檮杌杜解以為即鯀，古人即名表德，堯舜桀紂皆是然。則鯀之言棍，即古矝字矣。楚辭云：鯀婞直以亡身。婞直亦與矝同義。矝為直立之物，故古人謂直為矝。論語古之矝也廉，今之矝也忿戾。又云：君子矝而不爭，廉直為矝，所謂婞也，忿戾為矝，所謂檮柮光棍也，古今語正自不異，== 又今人亦謂無室家者為光棍，則正無妻為矝之義，訓詁聲音皆同 ==〔說文鯀鰥二文相接，竝訓魚，疑本重文〕或言光蜑亦矝之切音也</p>
-</blockquote>
-<p>1、矝：见纽真部。鰥：见纽文部。真文旁转。二字可通<br>2、檮柮（断木）- 凶人。故有杖棍义的光棍也有凶人义。<br>3、檮杌即鯀，凶兽。鲧：见纽文部。亦通。<br>4、婞直，直立义与矝同。<br>5、矝正面引申为廉直，负面引申为忿戾。<br>6、無室家者為光棍，即矝，连读成音。</p>
-<p>所以，鳏是假借字，矝是本字。鳏本义是大鱼，与无妻义无涉。矝本义是光棍，引申有无妻。二字音转而可通假。</p>
-]]></content>
-      <categories>
-        <category>札记</category>
-        <category>小学</category>
-      </categories>
-      <tags>
-        <tag>新方言</tag>
-        <tag>章太炎</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拆分双页 pdf 爲单页 pdf | 拆分双页影印古籍 | 分割 pdf</title>
     <url>/2022/12/07/1-pdf/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -69,6 +46,84 @@
       <tags>
         <tag>PPT</tag>
         <tag>北师</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zotero 导出笔记到 obsidian 后的格式化工作</title>
+    <url>/2022/12/22/10-zotero-ob/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>从 zotero 导出的注释笔记有很长的代码，但是我并不需要这很长一段代码，于是用 obsidian-regex-pipeline 插件 + quicker 实现了对导出笔记的清洗</p>
+<p><img src="https://i0.hdslb.com/bfs/album/a80e1bc5aa6931032b72252507e0a01fa86af381.png" alt="image-20221222165553080"></p>
+<span id="more"></span>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>从 zotero 导出的 md 笔记的每一句注释都有很长的代码，但是我并不需要这很长一段代码，因为点一下就弹真的很烦，而且还会显得很乱。所以想去掉这些标签，只留下中文的内容。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><ul>
+<li><p>使用 **<a href="https://github.com/No3371/obsidian-regex-pipeline">obsidian-regex-pipeline</a>** 插件进行一个正则表达式的替换。在插件市场里就可以下到。</p>
+<ul>
+<li>但是，这个插件的语法里面要用双引号将表达式括起来，但是 html 标签里全是双引号，于是只有先把双引号替换成单引号。</li>
+<li>用 quicker 模拟按键可以实现这个功能。</li>
+</ul>
+</li>
+<li><p>正则表达式的编写</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line">"<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">'highlight'</span> <span class="attr">data-annotation</span>=<span class="string">.*?</span>&gt;</span>(.*?)<span class="tag">&lt;/<span class="name">span</span>&gt;</span> .*?<span class="tag">&lt;/<span class="name">span</span>&gt;</span>\)<span class="tag">&lt;/<span class="name">span</span>&gt;</span>"-&gt;"$1"</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>顺便把 pdf 里面有时候会出现的汉字与汉字之间的空格去掉。因为 md 语法里面也有很多空格，所以编写正则表达式的时候要限定是在汉字与汉字之间的空格。这种算法应该是要替换两遍，具体我也不清楚</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">"([\u4e00-\u9fa5])[\u0020|\u3000]{1,}([\u4e00-\u9fa5])"-&gt;"$1$2"</span><br><span class="line">"([\u4e00-\u9fa5])[\u0020|\u3000]{1,}([\u4e00-\u9fa5])"-&gt;"$1$2"</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>在 quicker 中编写动作</p>
+</li>
+</ul>
+<p><img src="https://i0.hdslb.com/bfs/album/4124660959e05e59a62f93b6366262c372a3080c.png" alt="image-20221222170518066"></p>
+<p>总之，需要在 ob 的插件中编写好正则表达式，再通过 quicker 进行替换单双引号、调用命令面板等操作。</p>
+<ul>
+<li><p>插件设置</p>
+<ul>
+<li><img src="https://i0.hdslb.com/bfs/album/73f71f2c3d2cbe76796d13a5e9385912afbb5601.png" alt="image-20221222170716301"></li>
+</ul>
+</li>
+<li><p>正则编写</p>
+<ul>
+<li><img src="https://i0.hdslb.com/bfs/album/cc9ab969ec8bf25140d4b5462351654c58e8af60.png" alt="image-20221222170754906"></li>
+</ul>
+</li>
+<li><p>quicker 动作</p>
+<ul>
+<li>见上</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>zotero</tag>
+        <tag>obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鰥</title>
+    <url>/2022/12/06/3-guan/</url>
+    <content><![CDATA[<p>原來鰥和矝就是光棍。</p>
+<span id="more"></span>
+
+<p>《<strong>禮記注疏・禮運</strong>》：矜寡孤獨廢疾者皆有所養。<br>鰥寡孤獨出现于经疏、经注及宋明以后著作。</p>
+<p>说文：鰥，魚也。从魚眔聲。<br>段注：見齊風。毛傳曰。大魚也。謂鰥與魴皆大魚之名也。鄭箋乃讀鰥為爾雅鯤魚子之鯤。殆非是。<strong>鰥多叚借為鰥寡字。鰥寡字葢古衹作矝。矝即憐之叚借。</strong><br>《章太炎说文解字授课笔记》：【朱一】从魚𥊽省聲。《莊子》「鯤魚」即鰥之假借。鰥寡字，《釋名》解鰥字可笑，以一切魚皆不閉目也。段氏以為矜之假 &lt;假&gt;[借]，是也。惟以為憐之假借則非。說見《新方言》「光棍」條。</p>
+<blockquote>
+<p> 《新方言（章氏叢書）・卷二・釋言第二》：方言：矝謂之杖。== 尋古音矝如鰥 ==，故老而無妻者，或書作矝，或書作鰥。今人謂杖為棍，即矝字之變矣。又謂凶人為光棍，尋說文檮柮〔亦作杌〕斷木也。古謂凶人曰檮柮，今謂凶人曰光棍，其義同也。左傳檮杌杜解以為即鯀，古人即名表德，堯舜桀紂皆是然。則鯀之言棍，即古矝字矣。楚辭云：鯀婞直以亡身。婞直亦與矝同義。矝為直立之物，故古人謂直為矝。論語古之矝也廉，今之矝也忿戾。又云：君子矝而不爭，廉直為矝，所謂婞也，忿戾為矝，所謂檮柮光棍也，古今語正自不異，== 又今人亦謂無室家者為光棍，則正無妻為矝之義，訓詁聲音皆同 ==〔說文鯀鰥二文相接，竝訓魚，疑本重文〕或言光蜑亦矝之切音也</p>
+</blockquote>
+<p>1、矝：见纽真部。鰥：见纽文部。真文旁转。二字可通<br>2、檮柮（断木）- 凶人。故有杖棍义的光棍也有凶人义。<br>3、檮杌即鯀，凶兽。鲧：见纽文部。亦通。<br>4、婞直，直立义与矝同。<br>5、矝正面引申为廉直，负面引申为忿戾。<br>6、無室家者為光棍，即矝，连读成音。</p>
+<p>所以，鳏是假借字，矝是本字。鳏本义是大鱼，与无妻义无涉。矝本义是光棍，引申有无妻。二字音转而可通假。</p>
+]]></content>
+      <categories>
+        <category>札记</category>
+        <category>小学</category>
+      </categories>
+      <tags>
+        <tag>新方言</tag>
+        <tag>章太炎</tag>
       </tags>
   </entry>
   <entry>
@@ -189,75 +244,6 @@
       <tags>
         <tag>Python</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 quicker 一键查字典！</title>
-    <url>/2022/12/09/9-quicker/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<p>quicker 助力汉语言文字学学生完成作业是怎么一回事呢，就是可以一键查很多很多的词典。</p>
-<p><img src="https://i0.hdslb.com/bfs/album/ebe5d1434ffa3dd83da018933fbd0fbc60805762.png" alt="image-20221208235620400"></p>
-<span id="more"></span>
-
-<p><a href="https://getquicker.net/">quicker</a> 是一个很好用的软件。可以免费用，但是我的使用频率极高，所以为了好看，我充钱了。quicker 是一个载体，它的动作库里有很多大佬编写的动作，可以实现很多功能，比如 ocr、快速搜索等等，当然也可以自己编写动作，只需要亿点点编程基础。话虽然这样说，但是简单的功能，只需要搭积木就好了。下面推荐我正在使用的动作们！</p>
-<h1 id="通用的"><a href="#通用的" class="headerlink" title="通用的"></a>通用的</h1><p><a href="https://getquicker.net/Sharedaction?code=ba82e11a-f845-4ca3-44ee-08d690b5076c">截图 OCR</a> 如题</p>
-<p><a href="https://getquicker.net/Sharedaction?code=9ec53d43-5539-4571-6886-08d8c752bfcb">剪贴版</a> 记录剪贴版内容，还可以设置置顶。对于我这种 copy&amp;paster 十分方便。</p>
-<p><a href="https://getquicker.net/Sharedaction?code=bcf5f6df-89ec-4e8c-9b0b-08d6a6d12516">文件收藏夹</a> 快速访问一些文件夹和文件</p>
-<p><a href="https://getquicker.net/Sharedaction?code=66502c1c-6ce0-4edb-37bc-08d8346ce0f2">云板</a> 一个可以自动保存自动同步的记事本，适合随手记一些东西。</p>
-<p><a href="https://getquicker.net/Sharedaction?code=e27f90dc-25ce-4f7e-eee1-08d81c88cb47">获取网址和标题</a> 当你需要分享一个网页给别人的时候，你需要附上标题，而不是仅仅只有一串字母数字。</p>
-<p><a href="https://getquicker.net/Sharedaction?code=cfc572a1-47c8-4fab-2457-08d6d7620f1e">规范粘贴</a> 对于一个 copy&amp;paster，最烦人的莫过与粘贴之后需要一个一个删除的换行符和空格！</p>
-<h1 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h1><p>所有这些搜索类动作的使用方法，都是框选，然后点这个动作就好，配合轮盘菜单使用更方便。</p>
-<h2 id="动作库中有的"><a href="#动作库中有的" class="headerlink" title="动作库中有的"></a>动作库中有的</h2><p><a href="https://getquicker.net/Sharedaction?code=5ee867b0-505e-455c-6776-08d880549e56">搜哔哩</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=ee54db79-b8ce-4175-677b-08d880549e56">知乎搜索</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=df652696-5074-4c7c-ddaa-08d7cad86d77">豆瓣 ID</a> 搜豆瓣的书</p>
-<p><a href="https://getquicker.net/Sharedaction?code=0ff2475a-f714-4a96-66cd-08d710cec307">goldendict</a> 这是一个本地词典软件，使用这个动作，可以快速打开 goldendict 并且查询框选的字。</p>
-<p><a href="https://getquicker.net/Sharedaction?code=4f8b0df2-d031-4309-173c-08d7079ea819">ever 智识</a> 应该是有很多功能，但我一般用来查百度</p>
-<p><a href="https://getquicker.net/Sharedaction?code=85f82b64-b24c-4e46-ba2c-08d6db3483c9">搜索 everything</a> 你需要安装 Everything，然后就可以实现快速搜索本地文件</p>
-<h2 id="我写的"><a href="#我写的" class="headerlink" title="我写的"></a>我写的</h2><p><a href="https://getquicker.net/Sharedaction?code=b2ca689e-848d-4c89-fa30-08dad9888ab4">查说文网</a> 就是这个网的<a href="http://www.shuowen.net/jiezi/66F8/">效果</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=f250232c-c762-4395-fa31-08dad9888ab4">查韵典网</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=350b5a6b-c74a-46f9-fa32-08dad9888ab4">查知网</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=cb9c759f-a95b-40d4-fa33-08dad9888ab4">查数字说文</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=ad3507f9-5d11-43f8-fa34-08dad9888ab4">查汉典</a></p>
-<p><a href="https://getquicker.net/Sharedaction?code=c5779fc3-2180-413b-fa35-08dad9888ab4">ctext - 先秦两汉</a> 查询中国哲学书电子化计划先秦两汉的书里面有没有框选的句子。在背不出书的时候，很好用。</p>
-<h1 id="其他有用的"><a href="#其他有用的" class="headerlink" title="其他有用的"></a>其他有用的</h1><ul>
-<li><p><a href="https://getquicker.net/Sharedaction?code=0145184a-ecba-4759-57bc-08d87e4aedb5">引文助手</a> 把知网的参考文献格式改成 GBT7714 的格式或者《历史研究》的格式，在我用 zotero 之前，还挺好用的。</p>
-</li>
-<li><p>把上古韵目和反切上字表这些需要背但是背也背不下来的动作，保存为图片或者文档，设置成动作，想不起来的时候就能快速打开……</p>
-</li>
-<li><p>轮盘功能非常好用！动动鼠标查字典！</p>
-</li>
-</ul>
-<p><img src="https://i0.hdslb.com/bfs/album/10312f1c7db1483cce417299adfa7a085e97e943.png" alt="image-20221209111258887"></p>
-<ul>
-<li>如果你心动了，可以填我的邀请码哈哈哈（图穷匕见.jpg）。注册的时候填写这一串数字，我们都能获得会员 90 天 ——585279-8831</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>quicker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>这是一个模板</title>
-    <url>/2022/12/01/%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>建站</tag>
-        <tag>？？？</tag>
       </tags>
   </entry>
   <entry>
@@ -933,6 +919,75 @@
       </categories>
       <tags>
         <tag>诗经</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这是一个模板</title>
+    <url>/2022/12/01/%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>？？？</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用 quicker 一键查字典！</title>
+    <url>/2022/12/09/9-quicker/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>quicker 助力汉语言文字学学生完成作业是怎么一回事呢，就是可以一键查很多很多的词典。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/ebe5d1434ffa3dd83da018933fbd0fbc60805762.png" alt="image-20221208235620400"></p>
+<span id="more"></span>
+
+<p><a href="https://getquicker.net/">quicker</a> 是一个很好用的软件。可以免费用，但是我的使用频率极高，所以为了好看，我充钱了。quicker 是一个载体，它的动作库里有很多大佬编写的动作，可以实现很多功能，比如 ocr、快速搜索等等，当然也可以自己编写动作，只需要亿点点编程基础。话虽然这样说，但是简单的功能，只需要搭积木就好了。下面推荐我正在使用的动作们！</p>
+<h1 id="通用的"><a href="#通用的" class="headerlink" title="通用的"></a>通用的</h1><p><a href="https://getquicker.net/Sharedaction?code=ba82e11a-f845-4ca3-44ee-08d690b5076c">截图 OCR</a> 如题</p>
+<p><a href="https://getquicker.net/Sharedaction?code=9ec53d43-5539-4571-6886-08d8c752bfcb">剪贴版</a> 记录剪贴版内容，还可以设置置顶。对于我这种 copy&amp;paster 十分方便。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=bcf5f6df-89ec-4e8c-9b0b-08d6a6d12516">文件收藏夹</a> 快速访问一些文件夹和文件</p>
+<p><a href="https://getquicker.net/Sharedaction?code=66502c1c-6ce0-4edb-37bc-08d8346ce0f2">云板</a> 一个可以自动保存自动同步的记事本，适合随手记一些东西。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=e27f90dc-25ce-4f7e-eee1-08d81c88cb47">获取网址和标题</a> 当你需要分享一个网页给别人的时候，你需要附上标题，而不是仅仅只有一串字母数字。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=cfc572a1-47c8-4fab-2457-08d6d7620f1e">规范粘贴</a> 对于一个 copy&amp;paster，最烦人的莫过与粘贴之后需要一个一个删除的换行符和空格！</p>
+<h1 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h1><p>所有这些搜索类动作的使用方法，都是框选，然后点这个动作就好，配合轮盘菜单使用更方便。</p>
+<h2 id="动作库中有的"><a href="#动作库中有的" class="headerlink" title="动作库中有的"></a>动作库中有的</h2><p><a href="https://getquicker.net/Sharedaction?code=5ee867b0-505e-455c-6776-08d880549e56">搜哔哩</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=ee54db79-b8ce-4175-677b-08d880549e56">知乎搜索</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=df652696-5074-4c7c-ddaa-08d7cad86d77">豆瓣 ID</a> 搜豆瓣的书</p>
+<p><a href="https://getquicker.net/Sharedaction?code=0ff2475a-f714-4a96-66cd-08d710cec307">goldendict</a> 这是一个本地词典软件，使用这个动作，可以快速打开 goldendict 并且查询框选的字。</p>
+<p><a href="https://getquicker.net/Sharedaction?code=4f8b0df2-d031-4309-173c-08d7079ea819">ever 智识</a> 应该是有很多功能，但我一般用来查百度</p>
+<p><a href="https://getquicker.net/Sharedaction?code=85f82b64-b24c-4e46-ba2c-08d6db3483c9">搜索 everything</a> 你需要安装 Everything，然后就可以实现快速搜索本地文件</p>
+<h2 id="我写的"><a href="#我写的" class="headerlink" title="我写的"></a>我写的</h2><p><a href="https://getquicker.net/Sharedaction?code=b2ca689e-848d-4c89-fa30-08dad9888ab4">查说文网</a> 就是这个网的<a href="http://www.shuowen.net/jiezi/66F8/">效果</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=f250232c-c762-4395-fa31-08dad9888ab4">查韵典网</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=350b5a6b-c74a-46f9-fa32-08dad9888ab4">查知网</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=cb9c759f-a95b-40d4-fa33-08dad9888ab4">查数字说文</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=ad3507f9-5d11-43f8-fa34-08dad9888ab4">查汉典</a></p>
+<p><a href="https://getquicker.net/Sharedaction?code=c5779fc3-2180-413b-fa35-08dad9888ab4">ctext - 先秦两汉</a> 查询中国哲学书电子化计划先秦两汉的书里面有没有框选的句子。在背不出书的时候，很好用。</p>
+<h1 id="其他有用的"><a href="#其他有用的" class="headerlink" title="其他有用的"></a>其他有用的</h1><ul>
+<li><p><a href="https://getquicker.net/Sharedaction?code=0145184a-ecba-4759-57bc-08d87e4aedb5">引文助手</a> 把知网的参考文献格式改成 GBT7714 的格式或者《历史研究》的格式，在我用 zotero 之前，还挺好用的。</p>
+</li>
+<li><p>把上古韵目和反切上字表这些需要背但是背也背不下来的动作，保存为图片或者文档，设置成动作，想不起来的时候就能快速打开……</p>
+</li>
+<li><p>轮盘功能非常好用！动动鼠标查字典！</p>
+</li>
+</ul>
+<p><img src="https://i0.hdslb.com/bfs/album/10312f1c7db1483cce417299adfa7a085e97e943.png" alt="image-20221209111258887"></p>
+<ul>
+<li>如果你心动了，可以填我的邀请码哈哈哈（图穷匕见.jpg）。注册的时候填写这一串数字，我们都能获得会员 90 天 ——585279-8831</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>quicker</tag>
       </tags>
   </entry>
 </search>
