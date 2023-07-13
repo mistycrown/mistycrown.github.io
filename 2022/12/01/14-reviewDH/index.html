@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/apple-touch-icon-next.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mistycrown.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要：随着信息技术的发展，计算机科学技术与传统文史哲研究逐渐融合，发展出数字人文的新生态。数字人文背景下的古代经典文本研究，结合中文信息处理技术，具有大数据、多维度、互联性等特点，与传统语言文字之学的理论和方法相辅相成，其许多尝试具有开创式的意义。本文从古籍数据库、古籍智能处理、人文计算和文本挖掘三方面，概述近年来数字人文背景下的古代汉语与经典文本的相关研究，对古文信息处理技术进一步为传统语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字人文背景下的古代汉语与经典文本研究综述">
+<meta property="og:url" content="https://mistycrown.github.io/2022/12/01/14-reviewDH/index.html">
+<meta property="og:site_name" content="嚶嚶閣">
+<meta property="og:description" content="摘要：随着信息技术的发展，计算机科学技术与传统文史哲研究逐渐融合，发展出数字人文的新生态。数字人文背景下的古代经典文本研究，结合中文信息处理技术，具有大数据、多维度、互联性等特点，与传统语言文字之学的理论和方法相辅相成，其许多尝试具有开创式的意义。本文从古籍数据库、古籍智能处理、人文计算和文本挖掘三方面，概述近年来数字人文背景下的古代汉语与经典文本的相关研究，对古文信息处理技术进一步为传统语言">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-01T13:19:00.000Z">
+<meta property="article:modified_time" content="2023-07-13T12:08:47.311Z">
+<meta property="article:author" content="蒺藜">
+<meta property="article:tag" content="数字人文">
+<meta property="article:tag" content="综述">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mistycrown.github.io/2022/12/01/14-reviewDH/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数字人文背景下的古代汉语与经典文本研究综述 | 嚶嚶閣</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嚶嚶閣</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">嚶其鳴矣，求其友聲。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mistycrown.github.io/2022/12/01/14-reviewDH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yinglogo.png">
+      <meta itemprop="name" content="蒺藜">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嚶嚶閣">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数字人文背景下的古代汉语与经典文本研究综述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-01 21:19:00" itemprop="dateCreated datePublished" datetime="2022-12-01T21:19:00+08:00">2022-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-07-13 20:08:47" itemprop="dateModified" datetime="2023-07-13T20:08:47+08:00">2023-07-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">作业</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/%E5%8F%A4%E6%B1%89/" itemprop="url" rel="index"><span itemprop="name">古汉</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：随着信息技术的发展，计算机科学技术与传统文史哲研究逐渐融合，发展出数字人文的新生态。数字人文背景下的古代经典文本研究，结合中文信息处理技术，具有大数据、多维度、互联性等特点，与传统语言文字之学的理论和方法相辅相成，其许多尝试具有开创式的意义。本文从古籍数据库、古籍智能处理、人文计算和文本挖掘三方面，概述近年来数字人文背景下的古代汉语与经典文本的相关研究，对古文信息处理技术进一步为传统语言文字学提供新方法、发掘新视角的美好愿景提出展望。</p>
+<p><strong>关键词</strong>：数字人文 古代汉语 研究综述 中文信息处理</p>
+<span id="more"></span>
+
+<p>数字人文背景下的古代汉语与经典文本研究综述 </p>
+<p>数字人文是数字化、网络化、智能化的学术生态环境下人文社科的一种新形态，它是一种双向的学科交叉与融合。一方面，它将人工智能、大数据等技术运用于人文社科的研究中，为其提供了新方法与新范式；另一方面，它将人文社科的学术积累引入互联网环境中，对营造由人文精神引领的、更加丰富多元的网络信息生态有积极作用。数字人文包含了数字化技术、数据管理技术、数据分析技术、可视化技术、VR/AR 技术、机器学习等技术 [<a href="#_ftn1">①]</a>，这都为人文学科的研究带来了新的视角。</p>
+<p>在古代汉语的相关研究中，研究对象的主要是中国古代的书面文献材料，其呈现方式主要是文本。不同于传统的文字音韵训诂之学，数字人文首先需要解决数据的转化和存储问题，然后主要采用自然语言处理的方法来理解和分析文本。自然语言处理（Natural Language Processing）是人工智能和语言学的交叉学科，与数字人文关系密切，其包括理解和生成两部分内容，前者主要是探讨如何把输入的自然语言转化为可计算的符号与关系，后者主要是让计算机将数据转化为自然语言输出。近年来，中文信息处理技术不断发展，也为古代汉语的研究带来生机与活力。数字人文背景下的古代经典文本研究，结合中文信息处理技术，具有大数据、多维度、互联性等特点，与传统语言文字之学的理论和方法相辅相成，其许多尝试具有开创式的意义。</p>
+<h1 id="一、古籍数字化与数据库建设"><a href="#一、古籍数字化与数据库建设" class="headerlink" title="一、古籍数字化与数据库建设"></a>一、古籍数字化与数据库建设</h1><p>古代汉语的研究依赖于文献资料，信息时代下的文献储存和传播形态与传统的纸质媒介下的文献形态有着很大的区别。从 2006 年《国家 “十一五” 时期文化发展规划纲要》开始，国家高度重视古籍数字化工作，陆续颁布了一系列政策方针，推动古籍整理工作。在汉字字符集、全文数字化方面，古籍数字化工作已经取得了一定进展，人文工作者逐渐开始利用数据库等研究工具，用以辅助自己的研究。下面简要列举古代汉语研究所依赖的几种数据库。</p>
+<h2 id="（一）字料库建设"><a href="#（一）字料库建设" class="headerlink" title="（一）字料库建设"></a>（一）字料库建设</h2><p>文字是语言的符号，在古籍数字化从纸本文献到数字编码的过程中，古代汉语研究有一重要维度需要特别关注，即汉字的形体。因此，在汉字学研究中，用于收集特定文字及其变体的字料库在数字化的古代汉语研究中也发挥着基础性的作用。近年来字料库的相关理论、实践、应用已经取得一定进步。王平提出了 “汉字数据库” 与 “数据库汉字学” 的概念，并以魏晋南北朝石刻用字数据库与断代汉字发展史研究为例进行数据库汉字学的理论建构。[<a href="#_ftn2">②]</a> 朱翠萍等进行了基于字料库平台的字书文字整理研究，探讨字书文字整理的新任务与新方法。[<a href="#_ftn3">③]</a> 柳建钰所著《字书字料库的理论、实践与应用》在字书字料库理论建设的本体研究上有一定推进，并将理论与实践与应用相结合，进行字书字料库的实体建设。[<a href="#_ftn4">④]</a> 在实践方面，现有北京师范大学字料库（BNUZLK）、渤海大学字书字料库（CCFD）、华东师范大学中国文字智能检索网络数据库等。特定字体资料库有殷契文渊、历代碑刻数字化研究平台 [<a href="#_ftn5">⑤]</a> 等。在应用方面，王颖、毛承慈、李水英、柳建钰和史晓丹通过建立《尚书》、《诗经》、《礼记》、《集韵》、《类篇》等专书字料库，以定性和定量相结合的办法开展了基于字料库的专书汉字形体研究。[<a href="#_ftn6">⑥]</a></p>
+<h2 id="（二）工具书数据库建设"><a href="#（二）工具书数据库建设" class="headerlink" title="（二）工具书数据库建设"></a>（二）工具书数据库建设</h2><p>现有不少能为语言学研究提供工具书查找方面帮助的数字化平台。北京师范大学团队着眼于《说文解字》内部体例的系统性，构建了 “数字说文” 平台。[<a href="#_ftn7">⑦]</a> 这不仅能够更好地发挥《说文》作为语言文字学研究工具书的作用，更有利于《说文》学体例的挖掘，对《说文》学研究有重大的意义。作为古代汉语研究的辅助工具，古音小镜提供的功能更为全面，提供多种训诂工具书、韵书、字书、汉语地理、音韵、古文字等查询功能。[<a href="#_ftn8">⑧]</a> 类似的平台还有国学大师、汉典、搜韵网、韵典网等。此外还有特定学者的资料库，例如孟琢等利用信息手段建立了章太炎研究数字资源库，提供了章太炎著作、生平、研究资料等多种文献，对于研究章太炎的语言文字学思想有辅助作用。[<a href="#_ftn9">⑨]</a> 还有具有特定功能的工具库，例如柳建钰和周晓文提出的包括古籍异文、通假字资源、同义词资源等内容的古籍版本校勘资源库；[<a href="#_ftn10">⑩]</a> 史晓东基于大规模古籍数字化语料，利用人工智能训练模型，构建了大规模的异体字字典。[<a href="#_ftn11">11]</a></p>
+<h2 id="（三）古籍语料库建设"><a href="#（三）古籍语料库建设" class="headerlink" title="（三）古籍语料库建设"></a>（三）古籍语料库建设</h2><p>在古代汉语语言材料的研究中，更常用的数据库是保留语言环境和使用场景的古籍语料库，这也是古籍数字化的重点。语料库是 “一定规模的真实语言样本的集合”[<a href="#_ftn12">12]</a>，它是机器可读，经过适当的标注和加工处理的研究资料库。古代汉语的研究对象是古代书面语言，古籍数字化的发展影响着信息时代的古代汉语研究。古籍全文搜索数据库或图像数据库的建设已经取得一定规模，张三夕和毛建军在《汉语古籍电子文献知见录》中已经有详细的介绍，[<a href="#_ftn13">13]</a> 其中，现有的较大规模古代汉语语料库有北京大学 CCL 古代汉语语料库、北京语言大学 BCC 古代汉语语料库、中央研究院古汉语语料库、国家语委古代汉语语料库等。古籍全文数据库有中国哲学书电子化计划、瀚堂典藏、古联数字中华经典古籍库、北京大学 - 字节跳动数字人文开放实验室识典古籍平台等。这些数据库都提供了数据全文和索引信息，在检索和整理方面为古代汉语研究者提供便利。</p>
+<p>以上数据库虽然能够实现数据的检索功能，但结构仍然比较简单，不能提供更为丰富的语言学信息。化振红即提倡建设深加工的古代汉语语料库，对语料的选取和词的切分及规范问题作了初步的探讨。[<a href="#_ftn14">14]</a> 在语料的标注上，徐紫云总结了多层次语料的标注规范。[<a href="#_ftn15">15]</a> 宋继华等探讨了构建古今汉语平行语料库过程中关于语料设计、采集、存储、对齐、标注等问题，也为建设多维度的语料库提供了一定的参考方法。[<a href="#_ftn16">16]</a> 邱冰提出建立面向古代汉语教学的语料库，基于教学知识点和教学次序进行科学拣择和排列，也是对语料库材料进行进一步加工的范例。[<a href="#_ftn17">17]</a> 建设深加工的语料库需要较高的人力和时间成本，人工智能的引入能够帮助学者进行语料的断句、标注等工作。</p>
+<h1 id="二、古籍智能处理"><a href="#二、古籍智能处理" class="headerlink" title="二、古籍智能处理"></a>二、古籍智能处理</h1><p>在建设大规模和深层次的古籍语料库的过程中，关键技术大约有三方面：文本的断句和标点问题、文本的分词和标注以及实体命名识别的问题。古籍数量庞大，人工点校和标注需要花费众多人力和时间。基于信息技术，近年来有众多自动断句、标点、分词、标注的技术被开发出来并得以应用。</p>
+<p>在断句和标点方面，张开旭等基于条件随机场，[<a href="#_ftn18">18]</a> 张合等基于层叠 CRF，[<a href="#_ftn19">19]</a> 王博立等基于 GRU 的双向循环神经网络，[<a href="#_ftn20">20]</a> 胡韧奋等基于深层语言模型，[<a href="#_ftn21">21]</a> 洪涛等基于多头注意力机制的端到端 Transformer 模型 [<a href="#_ftn22">22]</a>，都达到了较好的训练效果，众多模型的部分训练集断句 F1 值达到了 95% 以上。借助自动断句和标点技术，再结合人机协作方法进行古籍数字整理，可以大幅度提高古籍数据库的建设效率。</p>
+<p>在分词和标注方面，有基于词表统记、机器学习的序列标注方法、深度神经网络模型、语言模型预训练和后处理方式结合等技术 [<a href="#_ftn23">23]</a>，具有代表性的有石民等用《左传》训练的 CRF 分词模型 [<a href="#_ftn24">24]</a>、王姗姗等的 CRF《诗经》分词模型 [<a href="#_ftn25">25]</a>、车超等基于词对齐的古汉语分词模型 [<a href="#_ftn26">26]</a>、程宁等的基于 BiLSTMCRF 的断句词法分析一体化模型 [<a href="#_ftn27">27]</a>、俞敬松等的非参数贝叶斯模型与 BERT 模型的联合训练的分词模型 [<a href="#_ftn28">28]</a>、张琪等构建的先秦典籍分词词性一体化标注模型 [<a href="#_ftn29">29]</a>、耿云冬等基于 SikuBERT 预训练模型的词性自动标注模型 [<a href="#_ftn30">30]</a>，这些模型的 F1 值多在 90% 以上，在算法和框架的改进研究上取得了一定的进展。</p>
+<p>要实现从文本库到知识库的深度转化，即知识图谱的搭建，还需要借助人工智能技术中的实体识别和抽取技术。古籍命名实体识别即抽取古籍中的人名、地名、机构名、书名、官职等专有名词。项洁、胡其瑞指出，历史文本词汇标记有利于计算机协助研究者进行文本的探勘和分析，并介绍了 MARKUS 和 CT Tool 两个自动标记工具。[<a href="#_ftn31">31]</a> 在实体识别算法方面，采用 CRF 进行模板统计和分布特征分析的研究有，肖磊的《左传》地名识别 [<a href="#_ftn32">32]</a>，汪青青的《左传》人名识别 [<a href="#_ftn33">33]</a> 等。采用深度学习模型诸如：崔竞烽等对菊花古诗词的实体识别模型的比较分析 [<a href="#_ftn34">34]</a>，徐晨飞对《方志产物》中实体识别模型的比较分析 [<a href="#_ftn35">35]</a>，徐嘉泽训练的基于无监督词语发现方法 TopWORDS 的古籍实体识别模型 [<a href="#_ftn36">36]</a>。</p>
+<p>另外，对于异文、引文等语料，也能够通过算法进行匹配和标注。潘铭基以中国哲学书电子化计划为例，论述了信息时代下电子文献资料库对于互见文献研究的突破作用。[<a href="#_ftn37">37]</a> 李炜等提出了一种针对古代经典文献引用查找问题的数据建构和匹配方法，对于古代汉语语料中的引文标注，有一定贡献。[<a href="#_ftn38">38]</a> 黄水清等以《论语注疏》《毛诗正义》《春秋左传正义》为研究对象，建立了能够应用于古籍文本的引书自动识别模型。[<a href="#_ftn39">39]</a></p>
+<h1 id="三、人文计算与文本挖掘"><a href="#三、人文计算与文本挖掘" class="headerlink" title="三、人文计算与文本挖掘"></a>三、人文计算与文本挖掘</h1><p>纸本古籍通过 ocr 光学识别技术及校对技术实现纸本资源的电子化，构成古籍全文库，再经由句读、标点、分词、标注工作构成古代汉语文本语料库，在文本数字化实现的基础上，如何利用计算机技术，进行知识的挖掘和提取，为人文研究者提供新的视角和研究方法，成为数字人文的最新议题。</p>
+<h2 id="（一）典籍文本的量化分析"><a href="#（一）典籍文本的量化分析" class="headerlink" title="（一）典籍文本的量化分析"></a>（一）典籍文本的量化分析</h2><p>有别于传统人文研究的精读细读，在大数据的背景下，数字人文通常采用计量分析和统计方法，从遥读的视角，宏观探求人文知识的总体趋势和规律。“数字人文的内核是计算化”[<a href="#_ftn40">40]</a>，科学化、可实证的量化分析为传统的语言文字学研究带来新的视角。通过散点图、时间轴、词频分析、词语共现分析等方式，实现对古代汉语文本的计量化统计，也能够增强语言文字学研究的客观性。量化分析的方法自 20 世级 80 年代已有使用，例如对于《红楼梦》作者的探讨，陈炳藻、李贤平两位学者都基于对《红楼梦》前 80 回及后 40 回的用字的测定，来发表观点，显得比较科学可信。[<a href="#_ftn41">41]</a></p>
+<p>近年来，借助量化分析技术的的语言文字学相关研究取得了一定的成果。在汉字学方面，梁诗尘等提出了融合部件的字词分布式表示模型，对评估汉字部件表义能力提供了一种有效的计算方法。[<a href="#_ftn42">42]</a> 胡佳佳提出了基于树模型的汉字系统定量分析方法。[<a href="#_ftn43">43]</a> 在训诂学及汉语史研究方面，欧阳剑创建了一个面向人文学科研究的古籍实时统计分析平台，并举出平台辅助古代汉语词汇首见年代考证的应用实例。[<a href="#_ftn44">44]</a> 李林芳使用正则表达式来挖掘《毛诗正义》的通例，对篇题数据进行提取和分析，并发现这种方法在校勘、数据统计方面的应用。[<a href="#_ftn45">45]</a></p>
+<p>对于缺乏大规模数据的研究对象，利用人工智能模型预测的方法，可以有效地弥补数据量的空缺，从而实现大规模的量化分析。舒蕾等建立了包含 3.87 万条数据的古汉语标注语料库，训练出了词义标注准确度 80% 左右的语言模型，此模型能够判定大规模语料的中多义词的词义，再结合时间、空间的维度，能够勾勒出词义的发展过程。为汉语史研究和辞书编纂提供了有效的辅助工具。[<a href="#_ftn46">46]</a></p>
+<h2 id="（二）网络化、可视化与知识库构建"><a href="#（二）网络化、可视化与知识库构建" class="headerlink" title="（二）网络化、可视化与知识库构建"></a>（二）网络化、可视化与知识库构建</h2><p>计算机能帮助典籍文本实现从平面的文本关系到多维度的层次关系的转化，并且能够将其进行关系化、网络化，以互联、易读的形态呈现出来。知识库和知识图谱的建构，是数字人文背景下的古代经典研究的最新热点之一。在大数据的背景下，知识图谱能够揭示出文本非直观形式的对象关联，从非结构性的文本中发现新的模式、规则、趋势。</p>
+<p>首先，借由超文本数据实现知识的可视化、关系化，能够对特定典籍或特定对象实现网络关系图建构。这些多维度的数据相对于传统的文本数据来说，在特定领域具有着增强解释力、实现可视化的积极作用。例如许超和陈小荷提取《左传》中的人物和事件，进行春秋时期社会网络分析。[<a href="#_ftn47">47]</a> 胡佳佳用现代网络分析的方法对反切系联的方法作出可视化的描述，[<a href="#_ftn48">48]</a> 以图模型描述古汉语语音系统，使古汉语的定性语音关系更容易被测量和比较。[<a href="#_ftn49">49]</a> 胡佳佳还运用话题建模和网络关系图的方式展现《论语》、《孟子》、《荀子》三部经典中的主题关系。[<a href="#_ftn50">50]</a> 朱厚望利用语义网络的概念和图形可视化技术，实现了文言虚词用法知识的可视化和关系化呈现。[<a href="#_ftn51">51]</a></p>
+<p>具有相似性质或相同主题的数据以非线性的关系聚合起来，就形成了古代经典文本的知识库，相较于古籍全文库和语料库，知识库的深层加工属性更为明显。在古代典籍为中心的知识库构建的实践方面，钱智勇等实现了《楚辞》原文、研究文献信息的聚合和《楚辞》知识抽取及语义处理等工作，建立了《楚辞》知识库。[<a href="#_ftn52">52]</a> 李斌等实现了集检索系统、时空地图、计量分析为一体《左传》知识库建立 [<a href="#_ftn53">53]</a>。对于特定性质的知识库，刘石、孙茂松曾提出建立 “中国古典知识库” 的设想，这是一种包括年代、地域、人物、社团、著述、事件等各种实体的主题词表，并能够通过这些实体及其相互关系，能够对文献进行深层的组织和知识管理。[<a href="#_ftn54">54]</a>CBDB 项目组构建的中国历代人物传记资料库即是这类知识库的一个很好的范例。</p>
+<p>综上所述，数字人文的新生态已经对传统经典研究产生了一定的影响，在古籍数据库、古籍智能处理、人文计算和文本挖掘三方面已经取得了一定进展。近年来的古文信息处理研究也朝着大数据、多维度、互联性的方向发展。但是，数字人文的发展尚处于新兴之势，在古代汉语领域的研究才刚刚起步，在深加工数据库的建立、数据的开源互联、智能处理的准确度提升、人文计算研究框架及范式建立等方面都还有进一步发展的空间。随着信息技术中算法和模型的不断迭代，以及传统语言文字学研究的理论建设和当代性转化，数字人文这一交叉的学术生态将会取得更多学术成果，使古代经典文本焕发更多新的活力与生机。</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a> 刘炜、叶鹰：《数字人文的技术体系与理论结构探讨》，《中国图书馆学报》2017 年第 5 期。</p>
+<p>[<a href="#_ftnref2">②]</a> 王平：《数据库汉字学刍议 —— 以魏晋南北朝石刻用字数据库与断代汉字发展史研究为例》，《中国文字研究》2013 年第 1 期。</p>
+<p>[<a href="#_ftnref3">③]</a> 朱翠萍、周晓文、陈莹：《基于字料库平台的字书整理研究》，《中国出版》2013 年第 23 期。</p>
+<p>[<a href="#_ftnref4">④]</a> 柳建钰：《字书字料库的理论实践与应用》，北京：中华书局，2021 年。</p>
+<p>[<a href="#_ftnref5">⑤]</a> 胡佳佳、彭炜明、柯永红：《历代碑刻数字化研究平台的构建》，《数字人文》2021 年第 3 期。</p>
+<p>[<a href="#_ftnref6">⑥]</a> 王颖：《基于字料库的〈尚书〉文字研究》，博士学位论文学位论文，北京师范大学，2012 年；毛承慈：《基于字料库的〈诗经〉文字研究》，博士学位论文学位论文，北京师范大学，2012 年；李水英：《基于字料库的〈礼记〉字形整理及研究》，博士学位论文学位论文，北京师范大学，2013 年；柳建钰、史晓丹：《〈集韵〉〈类篇〉实收字数今考》，《渤海大学学报 (哲学社会科学版)》2016 年第 3 期。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 宋继华、王宁、胡佳佳：《基于语料库方法的数字化〈说文〉学研究环境的构建》，《语言文字应用》2007 年第 1 期。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 盛一涵、田雨娇：《历史语言学的数字成像:“古音小镜” 网站 —— 兼议数字人文项目生长路径》，《数字人文研究》2022 年第 1 期。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 孟琢等：《章太炎研究数字资源库的建设与开发》，《民俗典籍文字研究》2017 年第 1 期。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 柳建钰、周晓文：《计算机辅助古籍版本校勘资源库建设浅议》，《图书馆理论与实践》2017 年第 3 期。</p>
+<p>[<a href="#_ftnref11">11]</a>Xiaodong Shi, “Automatic construction of a dictionary of variant forms of Chinese characters,” <em>Chinese Language and Discourse</em>(June 2022).</p>
+<p>[<a href="#_ftnref12">12]</a> 常宝宝、俞士汶：《语料库技术及其应用》，《外语研究》2009 年第 5 期。</p>
+<p>[<a href="#_ftnref13">13]</a> 张三夕、毛建军：《汉语古籍电子文献知见录》，世界图书出版公司，2015 年。</p>
+<p>[<a href="#_ftnref14">14]</a> 化振红：《深加工中古汉语语料库建设的若干问题》，《西南大学学报 (社会科学版)》2014 年第 3 期。</p>
+<p>[<a href="#_ftnref15">15]</a> 徐紫云：《古代汉语标注语料库的建设与应用》，《华东交通大学学报》2005 年第 6 期。</p>
+<p>[<a href="#_ftnref16">16]</a> 宋继华等：《古今汉语平行语料库的语料构建》，《现代教育技术》2008 年第 1 期。</p>
+<p>[<a href="#_ftnref17">17]</a> 邱冰、朱庆之：《面向古代汉语教学的语料库建设及教学应用研究》，2014 年，第 350–355 页。</p>
+<p>[<a href="#_ftnref18">18]</a> 张开旭、夏云庆、宇航：《基于条件随机场的古文自动断句与标点方法》，《清华大学学报 (自然科学版) 网络。预览》2009 年第 10 期。</p>
+<p>[<a href="#_ftnref19">19]</a> 张合等：《一种基于层叠 CRF 的古文断句与句读标记方法》，《计算机应用研究》2009 年第 9 期。</p>
+<p>[<a href="#_ftnref20">20]</a> 王博立、史晓东、苏劲松：《一种基于循环神经网络的古文断句方法》，《北京大学学报 (自然科学版)》2017 年第 2 期。</p>
+<p>[<a href="#_ftnref21">21]</a> 胡韧奋、李绅、诸雨辰：《基于深层语言模型的古汉语知识表示及自动断句研究》，《中文信息学报》2021 年第 4 期。</p>
+<p>[<a href="#_ftnref22">22]</a> 洪涛等：《一种基于 Transformer 模型的古籍自动标点技术》，《数字人文》2021 年第 2 期。</p>
+<p>[<a href="#_ftnref23">23]</a> 苏祺等：《古籍数字化关键技术评述》，《数字人文研究》2021 年第 3 期。</p>
+<p>[<a href="#_ftnref24">24]</a> 石民、李斌、陈小荷：《基于 CRF 的先秦汉语分词标注一体化研究》，《中文信息学报》2010 年第 2 期。</p>
+<p>[<a href="#_ftnref25">25]</a> 王姗姗等：《多维领域知识下的〈诗经〉自动分词研究》，《情报学报》2018 年第 2 期。</p>
+<p>[<a href="#_ftnref26">26]</a>ChaoChe et al., “A Word Segmentation Method of Ancient Chinese Based on Word Alignment,” Cham2019, pp. 761–772.</p>
+<p>[<a href="#_ftnref27">27]</a> 程宁等：《基于 BiLSTM-CRF 的古汉语自动断句与词法分析一体化研究》，《中文信息学报》2020 年第 4 期。</p>
+<p>[<a href="#_ftnref28">28]</a> 俞敬松等：《基于非参数贝叶斯模型和深度学习的古文分词研究》，《中文信息学报》2020 年第 6 期。</p>
+<p>[<a href="#_ftnref29">29]</a> 张琪等：《面向多领域先秦典籍的分词词性一体化自动标注模型构建》，《数据分析与知识发现》2021 年第 3 期。</p>
+<p>[<a href="#_ftnref30">30]</a> 耿云冬等：《面向数字人文的中国古代典籍词性自动标注研究 —— 以 SikuBERT 预训练模型为例》，《图书馆论坛》2022 年第 6 期。</p>
+<p>[<a href="#_ftnref31">31]</a> 项洁、胡其瑞：《历史文本的词汇标记及应用》，《数字人文研究》2021 年第 1 期。</p>
+<p>[<a href="#_ftnref32">32]</a> 肖磊：《《左传》地名研究初探》，《文教资料》2009 年第 18 期。</p>
+<p>[<a href="#_ftnref33">33]</a> 汪青青：《先秦人名识别初探》，《文教资料》2009 年第 18 期。</p>
+<p>[<a href="#_ftnref34">34]</a> 崔竞烽等：《基于深度学习模型的菊花古典诗词命名实体识别》，《情报理论与实践》2020 年第 11 期。</p>
+<p>[<a href="#_ftnref35">35]</a> 徐晨飞、叶海影、包平：《基于深度学习的方志物产资料实体自动识别模型构建研究》，《数据分析与知识发现》2020 年第 8 期。</p>
+<p>[<a href="#_ftnref36">36]</a> 徐嘉泽等：《基于 TopWORDS 方法的古文献专名识别 —— 以〈汉书〉和〈明史〉为例》，《数字人文》2020 年第 2 期。</p>
+<p>[<a href="#_ftnref37">37]</a> 潘铭基：《论信息时代下的互见文献研究》，《数字人文》2021 年第 3 期。</p>
+<p>[<a href="#_ftnref38">38]</a>Wei Li (李炜)、Yanqiu Shao (邵艳秋)、Mengxi Bi (毕梦曦)：《针对古代经典文献的引用查找问题的数据构建与匹配方法 (Data Construction and Matching Method for the Task of Ancient Classics Reference Detection)》，CCL 2022，Nanchang, China，2022 年 10 月，第 600–610 页。</p>
+<p>[<a href="#_ftnref39">39]</a> 黄水清等：《引书的自动识别及文献计量学分析》，《情报学报》2021 年第 12 期。</p>
+<p>[<a href="#_ftnref40">40]</a> 杨庆峰：《数字人文的方法理解及其反思》，《数字人文研究》2021 年第 4 期。</p>
+<p>[<a href="#_ftnref41">41]</a> 陈炳藻：《从词汇上的统计论〈红楼梦〉的作者问题》，首届国际《红楼梦》研讨会论文，麦迪逊：威斯康辛大学，1980 年；李贤平：《〈红楼梦〉成书新说》，《复旦学报 (社会科学版)》1987 年第 5 期。</p>
+<p>[<a href="#_ftnref42">42]</a> 梁诗尘等：《基于分布式表示的汉字部件表义能力测量与应用》，《中文信息学报》2021 年第 5 期。</p>
+<p>[<a href="#_ftnref43">43]</a>Jiajia Hu and Ning Wang, “Quantitative analysis of Chinese characters system based on a tree model,” <em>Glottotheory</em>, vol. 5, no. 1 (2014).</p>
+<p>[<a href="#_ftnref44">44]</a> 欧阳剑：《面向数字人文研究的大规模古籍文本可视化分析与挖掘》，《中国图书馆学报》2016 年第 2 期。</p>
+<p>[<a href="#_ftnref45">45]</a> 李林芳：《正则表达式在描述与分析古书文本通例中的应用 —— 以《毛诗正义》篇题为例》，《数字人文》2020 年第 2 期。</p>
+<p>[<a href="#_ftnref46">46]</a> 舒蕾等：《古汉语词义标注语料库的构建及应用研究》，《中文信息学报》2022 年第 5 期。</p>
+<p>[<a href="#_ftnref47">47]</a> 许超、陈小荷：《〈左传〉中的春秋社会网络分析》，《南京师范大学文学院学报》2014 年第 1 期。</p>
+<p>[<a href="#_ftnref48">48]</a> 胡佳佳：《网络分析方法在音韵学教学中的应用 —— 以〈广韵〉反切系联为例》，《励耘语言学刊》2018 年第 2 期。</p>
+<p>[<a href="#_ftnref49">49]</a>Jiajia Hu and Ning Wang, “Graph model of Old Chinese phonological system and computing,” <em>Literary and Linguistic Computing</em>, vol. 27, no. 2 (June 2012), pp. 171–181.</p>
+<p>[<a href="#_ftnref50">50]</a>Jiajia Hu, “Inheritance and Development of Three Pre-Qin Classics of Confucianism—An Application of Topic Modeling in Classical Chinese Text Analysis,” <em>Journal of Literature and Art Studies</em>, vol. 9, no. 3 (March 2019).</p>
+<p>[<a href="#_ftnref51">51]</a> 朱厚望：《基于文言虚词的知识图谱构建》，硕士学位论文学位论文，华中科技大学，2017 年。</p>
+<p>[<a href="#_ftnref52">52]</a> 钱智勇、周建忠、贾捷：《楚辞知识库构建与网站实现研究》，《图书馆理论与实践》2010 年第 10 期。</p>
+<p>[<a href="#_ftnref53">53]</a> 李斌等：《数字人文视域下的古文献文本标注与可视化研究 —— 以〈左传〉知识库为例》，《大学图书馆学报》2020 年第 5 期。</p>
+<p>[<a href="#_ftnref54">54]</a> 刘石，孙茂松：《关于建设 “中国古典知识库” 的思考》，《人民政协报》2020 年 8 月 24 日，第 8 版。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%96%87/" rel="tag"># 数字人文</a>
+              <a href="/tags/%E7%BB%BC%E8%BF%B0/" rel="tag"># 综述</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/01/11-zhongyanci-zongshu/" rel="next" title="重言词研究综述">
+      重言词研究综述 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%8F%A4%E7%B1%8D%E6%95%B0%E5%AD%97%E5%8C%96%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BB%BA%E8%AE%BE"><span class="nav-number">1.</span> <span class="nav-text">一、古籍数字化与数据库建设</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%AD%97%E6%96%99%E5%BA%93%E5%BB%BA%E8%AE%BE"><span class="nav-number">1.1.</span> <span class="nav-text">（一）字料库建设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%B7%A5%E5%85%B7%E4%B9%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BB%BA%E8%AE%BE"><span class="nav-number">1.2.</span> <span class="nav-text">（二）工具书数据库建设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%8F%A4%E7%B1%8D%E8%AF%AD%E6%96%99%E5%BA%93%E5%BB%BA%E8%AE%BE"><span class="nav-number">1.3.</span> <span class="nav-text">（三）古籍语料库建设</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%8F%A4%E7%B1%8D%E6%99%BA%E8%83%BD%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">二、古籍智能处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BA%BA%E6%96%87%E8%AE%A1%E7%AE%97%E4%B8%8E%E6%96%87%E6%9C%AC%E6%8C%96%E6%8E%98"><span class="nav-number">3.</span> <span class="nav-text">三、人文计算与文本挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B8%E7%B1%8D%E6%96%87%E6%9C%AC%E7%9A%84%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">（一）典籍文本的量化分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E7%BD%91%E7%BB%9C%E5%8C%96%E3%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E7%9F%A5%E8%AF%86%E5%BA%93%E6%9E%84%E5%BB%BA"><span class="nav-number">3.2.</span> <span class="nav-text">（二）网络化、可视化与知识库构建</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蒺藜"
+      src="/images/yinglogo.png">
+  <p class="site-author-name" itemprop="name">蒺藜</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蒺藜</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:20</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

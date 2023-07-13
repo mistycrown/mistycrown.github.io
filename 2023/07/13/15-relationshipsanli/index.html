@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/apple-touch-icon-next.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mistycrown.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="正则 + gephi 后续搞到嘤嘤阁里面，用 echarts 展示了毛传郑笺的直训系联，道理是一样的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="郑玄《三礼注》直训的提取和系联分析">
+<meta property="og:url" content="https://mistycrown.github.io/2023/07/13/15-relationshipsanli/index.html">
+<meta property="og:site_name" content="嚶嚶閣">
+<meta property="og:description" content="正则 + gephi 后续搞到嘤嘤阁里面，用 echarts 展示了毛传郑笺的直训系联，道理是一样的。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006xwpBzly1hfvjuzcqp8j31fa0o0n5s.jpg">
+<meta property="article:published_time" content="2023-07-13T12:25:00.000Z">
+<meta property="article:modified_time" content="2023-07-13T12:35:03.989Z">
+<meta property="article:author" content="蒺藜">
+<meta property="article:tag" content="数字人文">
+<meta property="article:tag" content="系联">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx2.sinaimg.cn/mw690/006xwpBzly1hfvjuzcqp8j31fa0o0n5s.jpg">
+
+<link rel="canonical" href="https://mistycrown.github.io/2023/07/13/15-relationshipsanli/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>郑玄《三礼注》直训的提取和系联分析 | 嚶嚶閣</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嚶嚶閣</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">嚶其鳴矣，求其友聲。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mistycrown.github.io/2023/07/13/15-relationshipsanli/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yinglogo.png">
+      <meta itemprop="name" content="蒺藜">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嚶嚶閣">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          郑玄《三礼注》直训的提取和系联分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-13 20:25:00 / 修改时间：20:35:03" itemprop="dateCreated datePublished" datetime="2023-07-13T20:25:00+08:00">2023-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">作业</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/%E5%8F%A4%E6%B1%89/" itemprop="url" rel="index"><span itemprop="name">古汉</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<p>正则 + gephi</p>
+<p>后续搞到嘤嘤阁里面，用 echarts 展示了毛传郑笺的直训系联，道理是一样的。</p>
+<span id="more"></span>
+
+<h1 id="郑玄《三礼注》直训的提取和系联分析"><a href="#郑玄《三礼注》直训的提取和系联分析" class="headerlink" title="郑玄《三礼注》直训的提取和系联分析"></a>郑玄《三礼注》直训的提取和系联分析</h1><h1 id="作业一：运用正则表达式提取郑玄三礼注直训材料"><a href="#作业一：运用正则表达式提取郑玄三礼注直训材料" class="headerlink" title="作业一：运用正则表达式提取郑玄三礼注直训材料"></a>作业一：运用正则表达式提取郑玄三礼注直训材料</h1><h2 id="预计实现目标"><a href="#预计实现目标" class="headerlink" title="预计实现目标"></a>预计实现目标</h2><p>运用网络爬虫技术获得网络语料，并通过正则表达式提取郑玄《三礼注》直训材料，为进一步研究提供基础材料。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、从识典古籍中爬取郑玄三礼注全文。以《礼记》为例："><a href="#1、从识典古籍中爬取郑玄三礼注全文。以《礼记》为例：" class="headerlink" title="1、从识典古籍中爬取郑玄三礼注全文。以《礼记》为例："></a>1、从识典古籍中爬取郑玄三礼注全文。以《礼记》为例：</h3><ul>
+<li>访问识典古籍，找到对应阅读页面，展开所有折叠层，显示所有章节信息，并将网页保存到本地。</li>
+<li>通过正则表达式，提取出每一章节的标题和链接。页面中的章节有多层层次结构，所以要提取出最小单位的章节作为爬取目标，否则会重复爬取。本文采用先匹配，再去除上层结构的方法，提取出较为规整的标题和链接。</li>
+<li>通过 request 库，依次访问章节链接。通过正则表达式，匹配到正文对应的<article>标签内容。</article></li>
+<li>以此类推，爬取《仪礼》《周礼》</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re,requests,time</span><br><span class="line"></span><br><span class="line"><span class="comment"># &lt;a href="?bookId=SBCK005&amp;amp;chapterId=SBCK005_4%2F4%2F5" style="color: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;士昬禮第二儀禮&lt;/a&gt;</span></span><br><span class="line">pat = re.<span class="built_in">compile</span>(<span class="string">'&lt;a href="(.*?)" style="color.*?&lt;/div&gt;&lt;div class="label-no-ellipsis"&gt;([\u4e00-\u9fa5]{0,})&lt;'</span>)</span><br><span class="line">url = <span class="string">"https://www.shidianguji.com/read"</span></span><br><span class="line">urlli = []</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"禮記index.txt"</span>,<span class="string">"r"</span>,encoding=<span class="string">"utf8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    txt = f.read()</span><br><span class="line">    li = re.findall(pat,txt)</span><br><span class="line">    <span class="built_in">print</span>(li)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li:</span><br><span class="line">    nurl = url + i[<span class="number">0</span>].replace(<span class="string">"amp;"</span>,<span class="string">""</span>) + <span class="string">"&amp;version=0"</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">"纂"</span> <span class="keyword">in</span> i[<span class="number">1</span>]:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    urlli.append([i[<span class="number">1</span>],nurl])</span><br><span class="line"><span class="built_in">print</span>(urlli)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cookies = {……</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">headers = {……</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">pat2 = re.<span class="built_in">compile</span>(<span class="string">'&lt;article id="chapter-reader" class="chapter-reader"&gt;(.*?)&lt;/article&gt;'</span>)</span><br><span class="line">num = <span class="number">18</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> urlli:</span><br><span class="line">    num+=<span class="number">1</span></span><br><span class="line">    url = i[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.get(url=url, cookies=cookies, headers=headers)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding = r.apparent_encoding</span><br><span class="line">        html = r.text</span><br><span class="line">        content = re.findall(pat2,html)</span><br><span class="line">        filename = <span class="string">"html/{} {}.html"</span>.<span class="built_in">format</span>(<span class="built_in">str</span>(num).zfill(<span class="number">2</span>),i[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filename,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(content[<span class="number">0</span>])</span><br><span class="line">        <span class="built_in">print</span>(i[<span class="number">0</span>],<span class="string">"ok!"</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(i[<span class="number">0</span>],<span class="string">"flase!"</span>)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2、清洗爬取的数据，提取出成组的经文和注文。"><a href="#2、清洗爬取的数据，提取出成组的经文和注文。" class="headerlink" title="2、清洗爬取的数据，提取出成组的经文和注文。"></a>2、清洗爬取的数据，提取出成组的经文和注文。</h3><p>因为本文关注的是郑玄的训诂系统，所以要筛选出郑玄作注的部分。为了后续阅读溯源的方便，应该存储为表格文件，对应篇章、经文、注文。故此本文使用正则表达式和 pandas 库，对初始数据进行格式化处理。</p>
+<ul>
+<li>遍历 html 文件，通过正则表达式，找到其中 style 为 line-normal 及 line-comment 的标签内容，存储到列表中。</li>
+<li>处理爬取内容的无效分段，运用条件分支语句，合并相邻的同为经文或同为注文的内容。</li>
+<li>对注文进行处理，分析文本可得”○” 后内容是陆德明音义，剔除这一部分。同时去除经文中的特殊符号”○”。</li>
+<li>存储每条数据的经文和注文，保存至 csv 文件中。</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re,os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">formatter</span>(<span class="params">filename</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"html/{}"</span>.<span class="built_in">format</span>(filename),<span class="string">"r"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        txt = f.read()</span><br><span class="line">        li = txt.split(<span class="string">"&lt;div"</span>)</span><br><span class="line">        <span class="comment">#print(li)</span></span><br><span class="line">        pat = re.<span class="built_in">compile</span>(<span class="string">'line-(normal|comment).*?&gt;(.*?)&lt;/div&gt;'</span>)</span><br><span class="line">        datapre = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> li:</span><br><span class="line">            <span class="keyword">if</span> re.findall(pat,i):</span><br><span class="line">                group = re.findall(pat,i)[<span class="number">0</span>]</span><br><span class="line">                datapre.append(group)</span><br><span class="line">        <span class="built_in">print</span>(datapre)</span><br><span class="line">    jing = <span class="string">""</span></span><br><span class="line">    zhu = <span class="string">""</span></span><br><span class="line">    data = []</span><br><span class="line">    adata = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(datapre)):</span><br><span class="line">        group = datapre[i]</span><br><span class="line">        <span class="keyword">if</span> group[<span class="number">0</span>] == <span class="string">"normal"</span>:</span><br><span class="line">            <span class="keyword">if</span> jing == <span class="string">""</span>:</span><br><span class="line">                jing = group[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                jing += group[<span class="number">1</span>]</span><br><span class="line">            <span class="comment">#print(jing)</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> i == <span class="built_in">len</span>(datapre):</span><br><span class="line">                    jing = jing.replace(<span class="string">"○"</span>,<span class="string">""</span>)</span><br><span class="line">                    adata.append(jing)</span><br><span class="line">                    jing = <span class="string">""</span></span><br><span class="line">                <span class="keyword">elif</span> datapre[i+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">"comment"</span>:</span><br><span class="line">                    jing = jing.replace(<span class="string">"○"</span>, <span class="string">""</span>)</span><br><span class="line">                    adata.append(jing)</span><br><span class="line">                    jing = <span class="string">""</span></span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                jing = <span class="string">""</span></span><br><span class="line">        <span class="keyword">if</span> group[<span class="number">0</span>] == <span class="string">"comment"</span>:</span><br><span class="line">            <span class="keyword">if</span> zhu == <span class="string">""</span>:</span><br><span class="line">                zhu = group[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                zhu += group[<span class="number">1</span>]</span><br><span class="line">            <span class="comment">#print(zhu)</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> datapre[i+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">"normal"</span>:</span><br><span class="line">                    <span class="keyword">if</span> <span class="string">"○"</span> <span class="keyword">in</span> zhu:</span><br><span class="line">                        zhu = zhu.split(<span class="string">"○"</span>)[<span class="number">0</span>]</span><br><span class="line">                    adata.append(zhu)</span><br><span class="line">                    zhu = <span class="string">""</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"adata"</span>,adata)</span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">len</span>(adata) == <span class="number">2</span>:</span><br><span class="line">                        data.append(adata)</span><br><span class="line">                    adata = []</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">if</span> i == <span class="built_in">len</span>(datapre):</span><br><span class="line">                    <span class="keyword">if</span> <span class="string">"○"</span> <span class="keyword">in</span> zhu:</span><br><span class="line">                        zhu = zhu.split(<span class="string">"○"</span>)[<span class="number">0</span>]</span><br><span class="line">                    adata.append(zhu)</span><br><span class="line">                    zhu = <span class="string">""</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"adata"</span>,adata)</span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">len</span>(adata) == <span class="number">2</span>:</span><br><span class="line">                        data.append(adata)</span><br><span class="line">                    adata=[]</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"txt/{}.txt"</span>.<span class="built_in">format</span>(filename[:-<span class="number">5</span>]),<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> fh:</span><br><span class="line">        fh.write(<span class="built_in">str</span>(data))</span><br><span class="line">        df = pd.DataFrame(data, columns=[<span class="string">'jing'</span>, <span class="string">'zhu'</span>])</span><br><span class="line">        <span class="comment">#print(df)</span></span><br><span class="line">        df.to_csv(<span class="string">"csv/{}.csv"</span>.<span class="built_in">format</span>(filename[:-<span class="number">5</span>]),encoding=<span class="string">'utf_8_sig'</span>)</span><br><span class="line"></span><br><span class="line">path = <span class="string">"html\\"</span></span><br><span class="line">filelist = os.listdir(path)</span><br><span class="line"><span class="comment">#print(filelist)</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> filelist:</span><br><span class="line">    <span class="keyword">if</span> os.path.exists(<span class="string">"csv/{}.csv"</span>.<span class="built_in">format</span>(file[:-<span class="number">5</span>])):</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    formatter(file)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3、考察三礼注注释情况，编写正则表达式匹配直训材料。"><a href="#3、考察三礼注注释情况，编写正则表达式匹配直训材料。" class="headerlink" title="3、考察三礼注注释情况，编写正则表达式匹配直训材料。"></a>3、考察三礼注注释情况，编写正则表达式匹配直训材料。</h3><ul>
+<li>pandas 库读取上一步存储的 csv 文件。</li>
+<li>遍历注文，找到有对应训诂体式，训诂用语的经注组。</li>
+<li>将匹配到的经注组存储到新的 csv 文件中。</li>
+<li>除了匹配直训材料，某读为某，某读若某，某当为某等训诂用语用例也可同理得到。</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re,os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">findpat</span>(<span class="params">pat,outcomename</span>):</span><br><span class="line">    data = []</span><br><span class="line">    <span class="comment"># 读取csv文件</span></span><br><span class="line">    path = <span class="string">"csv\\"</span></span><br><span class="line">    filelist = os.listdir(path)</span><br><span class="line">    <span class="comment">#print(filelist)</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> filelist:</span><br><span class="line">        filename = file</span><br><span class="line"></span><br><span class="line">        df = pd.read_csv(<span class="string">"csv/{}"</span>.<span class="built_in">format</span>(filename))</span><br><span class="line">        li = df.values.tolist()</span><br><span class="line">        <span class="built_in">print</span>(li)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#遍历注文，找到有对应训诂用语的经注组</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> li:</span><br><span class="line">            zhu = item[<span class="number">2</span>]</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> re.findall(pat,zhu):</span><br><span class="line">                    eg = re.findall(pat,<span class="built_in">str</span>(zhu))</span><br><span class="line">                    index = item[<span class="number">0</span>]</span><br><span class="line">                    jing = item[<span class="number">1</span>]</span><br><span class="line">                    <span class="keyword">for</span> i <span class="keyword">in</span> eg:</span><br><span class="line">                        line = [filename,index,jing,zhu,i[<span class="number">0</span>],i[<span class="number">1</span>],i[<span class="number">2</span>]]</span><br><span class="line">                        <span class="built_in">print</span>(line)</span><br><span class="line">                        data.append(line)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">"errors.txt"</span>,<span class="string">"a"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> file:</span><br><span class="line">                    mes = filename + <span class="built_in">str</span>(zhu) + <span class="string">"false!"</span></span><br><span class="line">                    file.write(mes)</span><br><span class="line">                    <span class="built_in">print</span>(mes)</span><br><span class="line">    ndf = pd.DataFrame(data,columns=[<span class="string">'file'</span>,<span class="string">'sentenceindex'</span>,<span class="string">'jing'</span>,<span class="string">'zhu'</span>,<span class="string">'example'</span>,<span class="string">'beizhu'</span>,<span class="string">'zhushi'</span>])</span><br><span class="line">    <span class="built_in">print</span>(ndf)</span><br><span class="line">    ndf.to_csv(outcomename,encoding=<span class="string">'utf_8_sig'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直训</span></span><br><span class="line">pat = re.<span class="built_in">compile</span>(<span class="string">"((.)，(.)也)"</span>)</span><br><span class="line">outcomename = <span class="string">"直训例句表.csv"</span></span><br><span class="line">findpat(pat,outcomename)</span><br><span class="line"><span class="comment"># findpat(re.compile("((.)亦?，?當爲(.))"),"當爲例句表.csv")</span></span><br><span class="line"><span class="comment"># findpat(re.compile("((.)亦?，?讀若(.))"),"讀若例句表.csv")</span></span><br><span class="line"><span class="comment"># findpat(re.compile("((.)亦?，?讀如(.))"),"讀如例句表.csv")</span></span><br><span class="line"><span class="comment"># findpat(re.compile("((.)亦?，?讀爲(.))"),"讀爲例句表.csv")</span></span><br><span class="line"><span class="comment"># findpat(re.compile("((.)亦?，?讀曰(.))"),"讀曰例句表.csv")</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4、查看匹配结果，进行人工筛选处理"><a href="#4、查看匹配结果，进行人工筛选处理" class="headerlink" title="4、查看匹配结果，进行人工筛选处理"></a>4、查看匹配结果，进行人工筛选处理</h3><p>|1799|60 郷飲酒義第四十五.csv|19 | 賔酬主人，主人酬介，介酬衆賔，少長以齒，終於沃洗者焉，知其能弟長而無遺矣。| 遺，猶脫也，忘也。| 也，忘也 | 也 | 忘 |</p>
+<p>|1531|40 雜記下第二十一鄭氏註.csv|91 | 子貢觀於蜡，孔子曰：賜也樂乎？對曰：一國之人皆若狂，賜未知其樂也。| 蜡也者，索也。𡻕十二月合聚万物而索饗之。𥙊也。囯索鬼神而𥙊祀，則黨正以礼属民而飲酒，子序以正齒位。於是時，民无不醉者如狂矣。曰：未知其樂，恠之。| 者，索也 | 者 | 索 |</p>
+<p>发现之前正则表达式无法匹配或错误匹配的情况，重新编写正则表达式，并进行人工补充和整理。</p>
+<ul>
+<li><code>pat = re.compile("^((.)，(.)也)")</code> 直训在句首的情况</li>
+<li><code>pat = re.compile("。((.)，(.)也)")</code> 直训接在一句后的情况</li>
+<li><code>pat = re.compile("((.)，.也，(.)也)")</code> 两个直训相连，识别后一个直训。</li>
+</ul>
+<h2 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h2><p>本文提取出了特定格式的直训注条及其注字与被注字，其基本格式为” 某，某也。“，重叠格式为” 某，某也，某也。“同时，通过改变正则表达式，也能提取出包含其他训诂用语的注条，如” 某当为某 “” 某读为某 “” 某读若某 “等。此方法能够提取特定格式的注条，同时提取出其正文，能够为进一步研究提供方便的材料。</p>
+<p>其局限性体现在，不能同人工一样识别各种训释注条的变例，需要人工进一步增补和调整。如 “釋，猶去也。”“犹” 字连接注字与被注字，这种关系类似直训但不同于直训，有时是义隔而通或文意训释，需要人工判断，暂时没有放入检索结果中。又如一些隐藏在句意串讲中的字义解释，难以用统一的格式提取。此外，由于直训本身的代语机制，构成直训的两个词之间可能并非词义训释，所得到的结果仍然需要人工离析。</p>
+<h1 id="作业二：运用gephi生成郑玄《三礼注》直训系联图"><a href="#作业二：运用gephi生成郑玄《三礼注》直训系联图" class="headerlink" title="作业二：运用gephi生成郑玄《三礼注》直训系联图"></a>作业二：运用 gephi 生成郑玄《三礼注》直训系联图</h1><h2 id="预计实现目标-1"><a href="#预计实现目标-1" class="headerlink" title="预计实现目标"></a>预计实现目标</h2><p>生成郑玄《三礼注》直训材料的网络关系图。以训释词为出点，以被训释词为入点，定义有向网络关系图。基于网络关系图，分析训释词和被训释词的关系。其中，特别关注有较大度和较大连出度的节点的特点，并且找到三礼注经常构成训释关系的训释词和被训释词。</p>
+<h2 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、导入数据"><a href="#1、导入数据" class="headerlink" title="1、导入数据"></a>1、导入数据</h3><ul>
+<li>根据作业一得到的直训注释字和被注释字，得到郑玄《三礼注》的有向向量表，导入 gephi 生成网络图。</li>
+<li>复制 id 列至 label 列</li>
+</ul>
+<h3 id="2、修改网络图外观"><a href="#2、修改网络图外观" class="headerlink" title="2、修改网络图外观"></a>2、修改网络图外观</h3><ul>
+<li>节点颜色：度，由黄（小）到蓝（大）</li>
+<li>节点大小：连出度，由小到大</li>
+<li>边具备节点颜色</li>
+<li>显示标签，调节字体字号</li>
+<li>调节整体布局，预览导出</li>
+</ul>
+<h2 id="结果分析及结论"><a href="#结果分析及结论" class="headerlink" title="结果分析及结论"></a>结果分析及结论</h2><p><img src="https://wx2.sinaimg.cn/mw690/006xwpBzly1hfvjuzcqp8j31fa0o0n5s.jpg" alt="12"></p>
+<p><del>例图，详见 pdf 及 gephi 文件</del></p>
+<p>关注节点：在本文的图示中，网络图中较大的节点，代表这个词连出度相对较高，即这个词经常作为注释词去训释其他词。网络中颜色较深的节点，代表这个词的度相对较高，即这个词经常出现在直训注条中，其中包括了作为注字和作为被注字的情况。颜色深、节点大的词，它们经常作为训释词去解释其他词，是语言中的基本词汇，往往具有常用性、单一性和广义性。颜色深、节点小的词，它们可以被多个训释词训释，却很少担任训释词的角色，说明其具有多义性，在多个义项上被训释，又因其多义性不适于训释其他词。颜色浅，节点小的词，为出现在直训词条中出现的频次较少的词，一方面可能为生僻词，另一方面可能是并不经常出注的常用词，只是在特定的语境下的文意训释偶然出现。</p>
+<p>关注边：本文图示中的边，连接两个节点，代表着这两个词之间构成了训释关系。边的方向由训释词指向被训释词，颜色深的词通常是多条边的发出者，颜色浅的词通常是边的接受者，并不常充当训释词。边的粗细表示这一组训释出现的频次，较粗的边则代表此组训释常常出现，为三礼常训，郑玄不烦重复训释，证明其在语境中可能引起歧义，需要每每加注以说明，或者是经典常用但语义已经不为人所熟知，需要特加说明。这些情况都是值得进一步考察的。较细的边则证明此训出现次数较少，一方面，可能是在相似的语境下，郑玄不再重复出注，为注家精简注释的做法；另一方面，也可能是该字生僻，在经文中出现较少。两种情况都符合训释的基本原则。</p>
+<p>借由计算机技术，能够实现人工难以实现的大规模计算，对于直训关系进行穷尽性的系联。通过节点大小的分析，可以归纳出训释系联的焦点词，由焦点词作为辐射点，沿着其聚合关系辐射开去，形成无数个以该词汇成分为核心的聚合网络，直观地呈现三礼直训的词汇系联体系。通过对边及边的方向的观察，又能够发现诸如互训、递训、语义场等之前需要大量人工或者人工难以发现的语言现象。这种清晰高效的系联方式，给予汉语言文字学研究极大的便利。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%96%87/" rel="tag"># 数字人文</a>
+              <a href="/tags/%E7%B3%BB%E8%81%94/" rel="tag"># 系联</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/13/13-literature_review/" rel="prev" title="文学文本与文学语境：诗词训诂研究综述">
+      <i class="fa fa-chevron-left"></i> 文学文本与文学语境：诗词训诂研究综述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/13/12-compare/" rel="next" title="比较思源笔记、logseq、obsidian">
+      比较思源笔记、logseq、obsidian <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%91%E7%8E%84%E3%80%8A%E4%B8%89%E7%A4%BC%E6%B3%A8%E3%80%8B%E7%9B%B4%E8%AE%AD%E7%9A%84%E6%8F%90%E5%8F%96%E5%92%8C%E7%B3%BB%E8%81%94%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">郑玄《三礼注》直训的提取和系联分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E4%B8%80%EF%BC%9A%E8%BF%90%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8F%90%E5%8F%96%E9%83%91%E7%8E%84%E4%B8%89%E7%A4%BC%E6%B3%A8%E7%9B%B4%E8%AE%AD%E6%9D%90%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">作业一：运用正则表达式提取郑玄三礼注直训材料</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E8%AE%A1%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87"><span class="nav-number">2.1.</span> <span class="nav-text">预计实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.2.</span> <span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E4%BB%8E%E8%AF%86%E5%85%B8%E5%8F%A4%E7%B1%8D%E4%B8%AD%E7%88%AC%E5%8F%96%E9%83%91%E7%8E%84%E4%B8%89%E7%A4%BC%E6%B3%A8%E5%85%A8%E6%96%87%E3%80%82%E4%BB%A5%E3%80%8A%E7%A4%BC%E8%AE%B0%E3%80%8B%E4%B8%BA%E4%BE%8B%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">1、从识典古籍中爬取郑玄三礼注全文。以《礼记》为例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E6%B8%85%E6%B4%97%E7%88%AC%E5%8F%96%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%8F%90%E5%8F%96%E5%87%BA%E6%88%90%E7%BB%84%E7%9A%84%E7%BB%8F%E6%96%87%E5%92%8C%E6%B3%A8%E6%96%87%E3%80%82"><span class="nav-number">2.2.2.</span> <span class="nav-text">2、清洗爬取的数据，提取出成组的经文和注文。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%80%83%E5%AF%9F%E4%B8%89%E7%A4%BC%E6%B3%A8%E6%B3%A8%E9%87%8A%E6%83%85%E5%86%B5%EF%BC%8C%E7%BC%96%E5%86%99%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%9B%B4%E8%AE%AD%E6%9D%90%E6%96%99%E3%80%82"><span class="nav-number">2.2.3.</span> <span class="nav-text">3、考察三礼注注释情况，编写正则表达式匹配直训材料。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E6%9F%A5%E7%9C%8B%E5%8C%B9%E9%85%8D%E7%BB%93%E6%9E%9C%EF%BC%8C%E8%BF%9B%E8%A1%8C%E4%BA%BA%E5%B7%A5%E7%AD%9B%E9%80%89%E5%A4%84%E7%90%86"><span class="nav-number">2.2.4.</span> <span class="nav-text">4、查看匹配结果，进行人工筛选处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E4%BA%8C%EF%BC%9A%E8%BF%90%E7%94%A8gephi%E7%94%9F%E6%88%90%E9%83%91%E7%8E%84%E3%80%8A%E4%B8%89%E7%A4%BC%E6%B3%A8%E3%80%8B%E7%9B%B4%E8%AE%AD%E7%B3%BB%E8%81%94%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">作业二：运用 gephi 生成郑玄《三礼注》直训系联图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E8%AE%A1%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87-1"><span class="nav-number">3.1.</span> <span class="nav-text">预计实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-1"><span class="nav-number">3.2.</span> <span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">1、导入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%BF%AE%E6%94%B9%E7%BD%91%E7%BB%9C%E5%9B%BE%E5%A4%96%E8%A7%82"><span class="nav-number">3.2.2.</span> <span class="nav-text">2、修改网络图外观</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90%E5%8F%8A%E7%BB%93%E8%AE%BA"><span class="nav-number">3.3.</span> <span class="nav-text">结果分析及结论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蒺藜"
+      src="/images/yinglogo.png">
+  <p class="site-author-name" itemprop="name">蒺藜</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蒺藜</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:20</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
