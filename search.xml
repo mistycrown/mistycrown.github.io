@@ -922,363 +922,22 @@
       </tags>
   </entry>
   <entry>
-    <title>三篇文本分析文献的阅读笔记</title>
+    <title>这是一篇模板</title>
     <url>/2023/07/13/%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
-<p>一篇文献笔记</p>
-<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br>[[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br>[[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
+
+
 <span id="more"></span>
 
-<h1 id="一、文献梳理"><a href="#一、文献梳理" class="headerlink" title="一、文献梳理"></a>一、文献梳理</h1><h2 id="Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57"><a href="#Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57" class="headerlink" title="Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. The Journal of Asian Studies, 77(1), 19-57."></a>Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. <em>The Journal of Asian Studies,</em> <em>77</em>(1), 19-57.</h2><p>(Nichols et al, 2018)</p>
-<h3 id="（一）研究问题"><a href="#（一）研究问题" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>介绍了遥读（distant reading）的方法，使用主题建模和机器学习方法来补充传统人文研究。在具体问题上，对《论语》、《孟子》、《荀子》三书的主题进行了分析和比较，以探讨三书的继承关系。这对传统人文研究的一些观点进行了补证，提出了一些研究问题。</p>
-<h3 id="（二）研究框架"><a href="#（二）研究框架" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>三种方法相结合：MACHINE LEARNING +EXPERIMENTAL TEXT ANALYSIS +CLOSE READING</p>
-<ul>
-<li>Distant reading<ul>
-<li>Distant-reading and machine-learning methods compute relationships between texts, terms, and topics via mathematical algorithms rather than expert judgments.</li>
-</ul>
-</li>
-<li>Experimental text analysis<ul>
-<li>Scholars code terms, classify synonyms, track associations between texts, or examine the contexts of keywords.</li>
-<li>In the context of the scientific method, but without the help of machine-learning algorithms that find patterns in texts.</li>
-</ul>
-</li>
-<li>Close readings<ul>
-<li>Produce unparalleled insights into the meaning, subtlety, beauty, and power of historical texts in a way that neither of the other methods can hope to replicate.</li>
-</ul>
-</li>
-<li>Mixed method<ul>
-<li> 三种方法各自的挑战<ul>
-<li>人爲的主观性和偏见</li>
-<li>持续的解释分歧</li>
-<li>遥读的解释性</li>
-</ul>
-</li>
-<li>三种方法结合操作步骤<ul>
-<li>遥读：提供数据</li>
-<li>利用精读解释数据</li>
-<li>实验文本分析用于减少主观性（找更多专家来解释数据）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>主题建模 [[LDA Topic Modeling]]</p>
-<ul>
-<li>代数的方法</li>
-<li>无监督学习</li>
-<li>应用不同种类的数据，不仅关注主题。<ul>
-<li>单词权重 relative size of the contribution that a word makes in a topic<ul>
-<li> 比词频更能代表这个单词在主题中的重要性（词频受到语料规模的影响）</li>
-</ul>
-</li>
-<li>语料库权重 the ratio of the sum of words in a topic over the total number of words in the corpus（主题中的单词出现总数与语料库中的单词总数之比）</li>
-<li>文本权重 the proportion of a text’s vocabulary that is assigned to a given topic, which represents how saturated a text is by a topic（sum to 1）</li>
-</ul>
-</li>
-<li>主题建模的过程<ul>
-<li>文本预处理</li>
-<li>设置主题数量 ——100 topics<ul>
-<li> 太多或太少都会影响主题质量 ——junk or chimera topics.</li>
-<li>Topic quality is typically determined by semantic coherence of the keywords in the topic—— 通常由学者解释判定</li>
-</ul>
-</li>
-<li>主题的解释 —— 招募 60 专家，以避免主观偏见<ul>
-<li>看词云判定主题</li>
-<li>对主题判定的确定性</li>
-<li>多项选择题</li>
-<li>次级多项选择题</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="（三）所采用的数据集"><a href="#（三）所采用的数据集" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>A corpus of 5.74 million characters across ninety-six ancient and medieval Chinese works<br>原因：the scope of the texts it includes, its accessibility, its familiarity, and its temporal breadth.<br>CTP（Chinese Text Project） text<br>预处理：删除标点符号，设置停用词表，分词（Tokenization），处理编码问题</p>
-<h3 id="（四）对计算结果的阐释"><a href="#（四）对计算结果的阐释" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>《论语》、《孟子》、《荀子》三书主题异同分析</p>
-<h4 id="不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）"><a href="#不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）" class="headerlink" title="不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）"></a>不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）</h4><p>![[P：第一周文献汇报 20230706 2023-07-06 10.18.01.excalidraw|1000]]</p>
-<h4 id="交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）"><a href="#交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）" class="headerlink" title="交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）"></a>交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）</h4><ul>
-<li>三者交叉<ul>
-<li> Topics 29, “Heaven, Earth, Man and the Way”; 76, “Rulers, Ability, Knowledge”; 21, “Political and Social Order”; and 63, “Ritual, Family, and Governance.”</li>
-<li> 推论<ul>
-<li>儒家思想在古代中国文学作品中有很好的传承。这些主题高于道家法家的主题。</li>
-<li>孟子荀子论语具有高度内在一致性</li>
-<li>早期儒家文本将儒家理想和高社会地位联系起来 —— 君子社会学</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>论语和荀子<ul>
-<li> Topics 34, “Ethical Rulership,” and 78, “Learning and Governance.”<ul>
-<li> 论语和荀子是外在教化，强调礼，孟子强调自我修养。</li>
-<li>来自学的、外在的精致的价值观</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>论语和孟子<ul>
-<li>论语和孟子的交叉主题也是和荀子的交叉主题，所以没有能区别开</li>
-<li> Topics 61, “Analects Stylistics,” and 33, “Knowledge, Rulership and Heaven.”</li>
-</ul>
-</li>
-</ul>
-<h3 id="（五）启发与不足"><a href="#（五）启发与不足" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
-<li>启发<ul>
-<li>主题建模的问题发掘：通过对经典文献的整体主题建模，获得整个经典文献的主题分布。然后从中选取个体对象（《论语》、《孟子》、《荀子》三书），针对其传承关系及区别特征展开关于具体问题的讨论。</li>
-<li>主题解释的方法创新（Experimental text analysis）：结合机器学习和专家知识，并通过扩大专家数量，尽力消除偏见，达到相对客观性。</li>
-<li>人文研究与数字技术的紧密结合：通过遥读技术回应人文研究问题，并通过数学统计为人文研究提供科学的可观测的数据支撑。</li>
-</ul>
-</li>
-<li>不足<ul>
-<li>指称性的而非陈述性的：以主题 86 为例，主体建模的结果能够证明孟子关注什么问题，是个名词性的主题，而非论断式的评价，义和利常常一起出现，只能说明孟子关注了什么，这很大一部分都是时代所使然，孟子需要对时代问题作出回应，但这并不能说明孟子支持什么。因爲词袋模型是忽略顺序的，作为对比的反面证据，和正面证据是不分的。也就是说，主题模型只能提取出重点，而不能解释这个重点在整体中起到的作用是什么。</li>
-<li>文本多义性导致噪声：以主题 86 为例，“文” 字出现于主题的关键词中，但并非使用常用义，而是作为 “文王” 的一个语素出现。这是古代汉语的一词多义现象及汉语字词关系复杂带来的局限性。</li>
-</ul>
-</li>
-</ul>
-<h2 id="ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28"><a href="#ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28" class="headerlink" title="ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28]."></a>ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28].</h2><p>(Allen at al, 2023)</p>
-<h3 id="（一）研究问题-1"><a href="#（一）研究问题-1" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>本文对中国古代汉语文本进行主题建模并部署在公共平台上。本文主要介绍了在汉典语料库上训练 LDA 主题模型的过程，并且此主题模型基础上进行了具体问题的研究。</p>
-<h3 id="（二）研究框架-1"><a href="#（二）研究框架-1" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>主题建模 [[LDA Topic Modeling]]</p>
-<ul>
-<li>首先介绍主题建模的基本理论和操作方法<ul>
-<li>命名：LDA is named for the 19th C. mathematician Gustav Dirichlet who laid the foundation in probability theory for the technique.</li>
-<li> 原理：把文档看成词袋，忽略所有语法结构和顺序信息。Topic modeling aims to find latent (hidden) structure among these “bags of words”, by re-representing each document as a mixture of topics.</li>
-<li> 理论依据：主题、语境、受众影响文章用词</li>
-<li>预计达到的效果<ul>
-<li>每个主题对应的关键词及其概率</li>
-<li>每个文档属于每个主题的概率（总和为 1）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>介绍本文主题建模的方法流程<ul>
-<li> For the present study we trained models with 20, 40, 60, 80, and 100 topics.—— 训练多个主题模型，满足多样需求</li>
-<li>使用 InPhO topic-explorer package：initialization of the corpus object, preparation of the corpus by filtering words according to their frequency, training the corpus models, and launching the Topic Explorer’s Hypershelf interface. <sub>初始化语料库对象、根据单词频率过滤单词来准备语料库、训练语料库模型以及启动 Topic Explorer 的 Hypershelf 界面。</sub></li>
-<li>介绍 Hypershelf 的使用方法<ul>
-<li> the Hypershelf initially provides a top level “distant reading” view of the corpus, but allows the user to zoom down to the original text.</li>
-<li>a document-centered view and a topiccentered view</li>
-<li> 个人研究示例：阴阳</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="（三）所采用的数据集-1"><a href="#（三）所采用的数据集-1" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>汉典古籍（四部，有树状分类的文本，排除了目录类书籍）</p>
-<ul>
-<li>优点：公共、可获取、数量较大</li>
-<li>缺点：格式和来源复杂</li>
-</ul>
-<h4 id="选择依据"><a href="#选择依据" class="headerlink" title="选择依据"></a>选择依据</h4><ul>
-<li>采用广泛的语料（不限于哲学文本。因为古代哲学文本并不纯粹，难以离析）<ul>
-<li>Thus, rather than try to demarcate “philosophy” from the rest, we decided to pursue our computational inquiry with as broad a corpus as we could locate.</li>
-</ul>
-</li>
-<li> 选择公共的、可获取的数据集<ul>
-<li> A secondary consideration is that we want our work to provide a public benefit by being accessible to scholars and the public.</li>
-<li> 对比 ctext 和 kanripo，最终选择了汉典古籍</li>
-<li>可获取性高于语料管理质量<ul>
-<li> For our initial goals, the benefits of accessibility, especially to Chinese users, outweighed the concerns about corpus curation quality.</li>
-<li> 汉典古籍语料的特点：多种格式、多种来源<ul>
-<li> It contains a diverse collection of different file formats, containing both traditional and simplified characters, and of varying quality because they have been crowd-sourced from many different users using many different sources, with varying degrees of scholarly care.</li>
-</ul>
-</li>
-<li> 主题建模使用词袋模型，对噪音不敏感。</li>
-<li>同样的方法可以应用到其他的语料上。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="语料预处理"><a href="#语料预处理" class="headerlink" title="语料预处理"></a>语料预处理</h4><ul>
-<li>自动（半自动）下载，统一编码格式，规范字符，繁体转成简体</li>
-<li>去除空文档</li>
-<li>分词（构建古汉语词典，不采用分字的办法）<ul>
-<li>Applying this dictionary to our corpus segmented the 125 million characters into over 104 million word tokens, comprising approximately 15,000 unique word types.</li>
-</ul>
-</li>
-<li> 设置停用词表</li>
-</ul>
-<h3 id="（四）对计算结果的阐释-1"><a href="#（四）对计算结果的阐释-1" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>得到主题建模结果后，本文进而生成主题地图，进行进一步的聚类分析。</p>
-<ul>
-<li>操作步骤<ul>
-<li>降维：isomap （reducing a high dimensional space to fewer dimensions）</li>
-<li>聚类：k-means clustering</li>
-</ul>
-</li>
-<li> 分析讨论<ul>
-<li>不同主题数量的模型之间，是否有继承关系？<ul>
-<li>有相关关系 but not strictly hierarchical</li>
-</ul>
-</li>
-<li> 比较不同模型中主题的可解释性<ul>
-<li> No one best number of topics</li>
-</ul>
-</li>
-<li> 针对某一关键词，探寻其在不同主题中的权重<ul>
-<li>例：孔 / 佛；气 / 阴阳</li>
-</ul>
-</li>
-<li>探究图中的特殊值<ul>
-<li>探究靠近中心点的主题，关于政治和国家行政</li>
-<li> 20：19 异常值</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="（五）启发与不足-1"><a href="#（五）启发与不足-1" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
-<li>启发<ul>
-<li>关于主题个数的讨论：主题建模的个数与使用者的需求有关，所以训练了主题数量个数不同的模型。使该主题模型能够为不同知识水平及需求的用户提供帮助。</li>
-<li>对古汉语文本的分词处理：不采用常用的分字处理办法，构建古汉语词典，对文本消歧有一定作用。</li>
-<li>对主题进行聚类分析：可视化呈现各主题之间的关系以及不同个数模型之间主题的关系，并且将这种可视化的分析方法应用于具体问题的讨论中。</li>
-</ul>
-</li>
-<li>不足<ul>
-<li>文本分词的具体操作并没有详细论述，标准不明。</li>
-<li>与人文研究相结合的深度不足，几个示例的研究都只是略作陈述，数据挖掘的深度有待加强。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465"><a href="#Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465" class="headerlink" title="Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465."></a>Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465.</h2><p>(Lansdall-Welfare et al, 2017)</p>
-<h3 id="（一）研究问题-2"><a href="#（一）研究问题-2" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>研究问题：构建一个具有地理信息及时间信息的期刊报纸语料库，为学者提供一种定量的数据驱动的工具，用于研究文化及社会。本文关注了政治、经济、文化、性别等议题，通过历时语料文本分析，补充了传统精读方法。<br>先前的研究的不足：主要基于单词计数，忽略了语义和上下文。没有涵盖期刊，样本数据存在偏见。<br>研究目标：</p>
-<ul>
-<li>验证和结合书籍研究的结果（verifying or contextualizing some of the findings of the study on books）</li>
-<li>利用大数据分析来发现历史的长期趋势和变化（detect long-term trends and changes in history by means of big data analysis of the vast corpora）</li>
-<li>用遥读与历史学家的仔细阅读相补充（show an approach to understanding continuity and change in history based on the distant reading of vast news corpora, which is complementary to the traditional close reading by historians）</li>
-</ul>
-<h3 id="（二）研究框架-2"><a href="#（二）研究框架-2" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><ul>
-<li>N-gram 频度统计<ul>
-<li> 1-gram/n-gram<ul>
-<li>Restricted n to three and limited our study to n-grams that occur at least 10 times within the corpus.</li>
-</ul>
-</li>
-<li> 频率而非次数<ul>
-<li>使用频率 = 出现次数除以该年语料单词总数</li>
-<li> The use frequency for an n-gram was computed by dividing the number of instances of the n-gram in a given year by the total number of words in the corpus that year.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li> 命名实体及其属性<ul>
-<li>将人名映射到职业和性别上，探讨职业和性别的时间发展趋势</li>
-<li>用地理位置信息标记语料，讨论时空发展趋势<ul>
-<li> Compiled geographical maps for the United Kingdom for each of the terms displaying a gradual increase or decline</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="（三）所采用的数据集-2"><a href="#（三）所采用的数据集-2" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>英国报纸数据</p>
-<ul>
-<li>基本信息<ul>
-<li>该语料库跨越 150 年，由数百万篇文章组成，占该时期所有英国地区文章的 14%。涵盖所有主要地区、时间段和主要媒体。（注意语料的代表性）包含地理和时间信息（eyond Counting Words）</li>
-<li>数据来源<ul>
-<li> The British Library’s newspaper collections</li>
-<li>FindMyPast 自 2010 开始数字化</li>
-<li> Joint Information Systems Committee (JISC) 补充</li>
-</ul>
-</li>
-<li>数据选择<ul>
-<li> (i) the completeness of the runs of issues, (ii) the number of years that an issue covers, (iii) the geographical region that the issue is from, (iv) the quality of the OCR output for the issue, and (v) the political bias of issues.</li>
-<li> 依据完整性、时间跨度、地理区域、ocr 质量、政治偏见综合评估选择，尽量做到平衡</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>报纸和图书的区别 <ul>
-<li>关键事件对报纸语料库的影响更明显（with newspapers offering a closer representation of historical shifts, whereas books are more reflective in nature and less time-bound）</li>
-<li>以往研究更多地关注图书语料，本文使用的是报纸语料</li>
-</ul>
-</li>
-<li>数据处理和元数据<ul>
-<li>数字化与结构提取<ul>
-<li>扫描、对比度校正、分割区域（依据内容类型）</li>
-</ul>
-</li>
-<li>Ocr 处理（对后续统计结果有影响，存在噪声）<ul>
-<li>同时输出结果和信度，以便后续评估</li>
-</ul>
-</li>
-<li>元数据标注</li>
-</ul>
-</li>
-</ul>
-<h3 id="（四）对计算结果的阐释-2"><a href="#（四）对计算结果的阐释-2" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>Open-Ended Measurements</p>
-<ul>
-<li>gender bias, geographical focus, technology, and politics, along with accurate dates</li>
-</ul>
-<p>Beyond Counting Words</p>
-<ul>
-<li>People in history.<ul>
-<li>jobs<ul>
-<li>politicians and writers are most likely to achieve notoriety within their lifetimes</li>
-</ul>
-</li>
-<li>gender<ul>
-<li>more present than females during the entire period</li>
-<li>a slow but steady increase of the presence of women after 1900</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Changes in geography<ul>
-<li>(A) British and English, (B) Liberal Party and Labour Party, (C) steam and electricity, and (D) horse and train</li>
-</ul>
-</li>
-</ul>
-<h3 id="（五）启发与不足-2"><a href="#（五）启发与不足-2" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
-<li>启发<ul>
-<li>实体命名对于量化分析的补充：不限于词频及其频度的统计，关注到词的表面形式下包含的信息，通过命名实体识别技术，探讨实体的属性，可以超越个体，联系到宏观的社会议题，为人文研究提供数据支撑。</li>
-<li>研究材料的创新：选取报纸作为研究材料，关注到了报纸对于社会时间的敏感性，从研究材料的选取上影响数据结论，从而使结论更具说服力。</li>
-<li>处理未经数字化数据的流程：引入 ocr 噪声的信度筛选高质量的语料，尽量减少噪声信息</li>
-</ul>
-</li>
-<li>不足<ul>
-<li>文中指出的局限性：无法引入上下文知识，访问语义信息，ocr 噪声等<ul>
-<li> the inability of computational methods to introduce contextual knowledge, access semantic information, or work in the presence of OCR noise or the issues related to bias in the original corpus selection are probably all issues that can be solved or accounted for over time.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="二、思考题"><a href="#二、思考题" class="headerlink" title="二、思考题"></a>二、思考题</h1><h2 id="（一）语料的选择和处理"><a href="#（一）语料的选择和处理" class="headerlink" title="（一）语料的选择和处理"></a>（一）语料的选择和处理</h2><p>如何根据研究问题确定数据的收集范围？<br>主题模型，N-gram 分析、词频分析等方法如何与人文研究相结合<br>论文是否分析了所用古籍语料的特点？对所应用方法有何影响？<br>分析在长时段的历时语料上应用这些方法的难点和要点</p>
-<h3 id="1-语料数据的收集"><a href="#1-语料数据的收集" class="headerlink" title="1.语料数据的收集"></a>1. 语料数据的收集</h3><p>(Lansdall-Welfare et al, 2017) 其研究目的为通过文本分析反应文化社会的变迁，于是选择使用了社会敏感度较高的报纸语料构建语料库。并通过 ocr 技术对报纸图像进行数字化，借由信度计算等综合维度筛选语料。<br>(Allen at al, 2023) 选用了数据规模量大，可获取度高的汉典古籍，并进行预处理。该文着重于提供一种研究方法，对具体问题的讨论较少，并期待为后来的研究提供支持，所以要建设一定规模的语料库。<br>(Nichols et al, 2018) 讨论孔孟荀三书的主题分布，但其语料库构建依靠 ctext。因为要讨论三书的主题异与同，所以要贯通三书，不能为三书建立分别的语料库。又因为主题的解释要参考这一主题在其他经典文本中的分布情况，所以不能就三书而建立一个语料库，还要包含其他典籍。<br>总体来看，语料数据的收集需要注意</p>
-<ul>
-<li>研究问题的需要</li>
-<li>语料库的规模</li>
-<li>语料的质量</li>
-<li>语料的可获取度</li>
-</ul>
-<h3 id="2-古籍语料的特点及应对方法"><a href="#2-古籍语料的特点及应对方法" class="headerlink" title="2.古籍语料的特点及应对方法"></a>2. 古籍语料的特点及应对方法</h3><p><strong>1）获取难度大：有许多古籍并未实现数字化，应用 ocr 技术的难度较大。</strong><br>策略：使用已有的语料；参考 (Lansdall-Welfare et al, 2017) 对语料 ocr 的信度进行评估后筛选语料<br><strong>2）文本预处理的难度大：分词或分字的选择问题，分词判定的标准问题。</strong><br>原生阶段、派生阶段、合成阶段<br>(Nichols et al, 2018) 采用分字，可能出现拆词情况（如 “文王”）。且古代汉语中的一些多音节单纯词（如联绵词及部分重言词）是不可拆的，如果采用分字处理，会影响整体模型效果。（[[P：重言词汇报 20230606#3、单字与重言词语义相似度对比 | 单字与重言词语义相似度对比]]）<br>(Allen at al, 2023) 采用分词，但并未详细阐述分词标准。语言学界对于古代汉语的分词标准仍待讨论，难以得出一个可实际操作的、能大规模使用的判定方法。古汉语词汇以单音节为主，一些现代汉语的双音节词可以看做是两个单音节词构成的词组。现有的许多自动分词模型基于现代汉语，会分出非最小单位的词。<br>策略：考虑采用排除法，只识别单语素构成的复音词（[[连绵词]]、叠音词）及命名实体，其他作分字处理。<br><strong>3）文本的多义性和歧义性：机器学习暂未很好地处理一词多义现象。</strong><br>通假字，字形。表面的词形到深层词义<br>词义的分析是基本的，首先对词义进行标注。主要依靠语境向量<br> (Nichols et al, 2018)“文王” 例，文本多义性产生噪声从而影响统计结果。该文采用的是先统计，再解释的方法，人为地剔除分析结论中的噪声。<br>策略：研究文本消歧技术，按照义项对古汉语词汇进行划分（[[@舒蕾等：古汉语词义标注语料库的构建及应用研究]]）</p>
-<h3 id="3-历时语料分析的重难点"><a href="#3-历时语料分析的重难点" class="headerlink" title="3.历时语料分析的重难点"></a>3. 历时语料分析的重难点</h3><p>(Lansdall-Welfare et al, 2017) 主要分析历时语料，对期刊数据进行了时间和地理信息位置的标记，并通过实体命名技术探讨了实体属性的历时变化发展。<br>然而，对于古籍文本来说，时代的确定并非容易。第一，古籍文本流传时间长，其间版本流传、传抄修订许多已不可考。第二，许多经典文本是层累性的，以《十三经注疏》为例，需要进行形成时代的离析，其经文、注文、疏文的形成时代都不同，如果仅仅视作一个时代平面的语料，会造成数据的偏差。<br>其次，该文对历时语料的分析主要依托于关键词检索，然而，词汇的发展变化是复杂的，如果仅仅对一个关键词的出现频度进行测定，容易忽略词汇的消亡、新生、演变问题。而这些问题的判定和解释则需要人文学者的经验作为支撑。所以，对研究主题进行多维度的测定是必要的，也是数据统计结果进入人文研究的难点。</p>
-<h2 id="（二）结果的分析和阐释"><a href="#（二）结果的分析和阐释" class="headerlink" title="（二）结果的分析和阐释"></a>（二）结果的分析和阐释</h2><p>主题模型的聚类结果如何提炼<br>分析结果与已有的人文研究结论的印证过程是否有效？Or 是否牵强？</p>
-<h3 id="1-主题聚类结果的提炼"><a href="#1-主题聚类结果的提炼" class="headerlink" title="1.主题聚类结果的提炼"></a>1. 主题聚类结果的提炼</h3><ul>
-<li>通过人文学者的经验及 experimental text analysis<ul>
-<li> 结合主题包含关键词</li>
-<li>结合主题在各文档中的权重</li>
-<li>增加学者的数量，减少个人偏见</li>
-</ul>
-</li>
-<li>调整主题模型的个数，寻求可解释性高的模型<ul>
-<li>对不同数量的模型进行可视化分析 (Allen at al, 2023)</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-主题分析结果与人文研究的对应"><a href="#2-主题分析结果与人文研究的对应" class="headerlink" title="2.主题分析结果与人文研究的对应"></a>2. 主题分析结果与人文研究的对应</h3><p>(Lansdall-Welfare et al, 2017) 将文化社会问题转化为某些关键词在报纸文本中的提及频度的计量问题，一定程度上能够反映媒体和社会的关注动向。<br>(Allen at al, 2023) 对主题建模数据的解释较为笼统。主要是对一特定的概念在不同文本中的分布及不同主题的分布进行探讨，主要是启示意义。<br>(Nichols et al, 2018) 讨论比较详细，从主题的相似性上来看，作者的观点是《论语》和《荀子》都强调外在的学和礼带来的道德变化，而《孟子》则注重与心、认知相关的内在道德。实际上，统计数据不代表论断，对于统计数据的解释也可以是多样的。作者的观点也只能代表一种视角，该文可以证明《论语》和《荀子》在这一议题上存在相似性，但并不能证明《论语》和《荀子》存在普遍的相似性。<br>在解读主题的过程中，作者似乎也更加关注量上的积累，而对质的区别关注不够。例如《论语》中关于仪式的主题，只能证明仪式的问题对于孔子很重要，而不能证明孔子对于仪式的态度是如何的；《孟子》关于利益和道德的主题，只能证明孟子对于义和利的问题讨论很多，也并不能证明孟子对于义和利分别是什么态度。这些主题的分布很多都是时代共同的命题，而作者并没有强调时代对其书籍内容的影响。</p>
-<h2 id="（三）数字与人文的关系"><a href="#（三）数字与人文的关系" class="headerlink" title="（三）数字与人文的关系"></a>（三）数字与人文的关系</h2><p>研究框架（Methodology）与传统人文研究的差异是什么？<br>NLP 技术应用到人文研究问题中时，与传统人文研究互相补充的关系。可针对该问题发表自己的看法。<br>Digital method 的优势和不足是什么？</p>
-<h3 id="1-数字与人文研究范式的不同"><a href="#1-数字与人文研究范式的不同" class="headerlink" title="1.数字与人文研究范式的不同"></a>1. 数字与人文研究范式的不同</h3><p>传统人文研究注重文本精读与细读。以传统语言文字学研究为例（[[@符渝：  文本细读与乾嘉考据研究 —— 以 “能不我知” 考据为例]]），文本细读是对文本的结构和语言进行充分解读，从而挖掘文本内涵。例如对考据材料的分析，本文作者通过对《经义述闻》“能不我知” 一例的结构分析和内涵挖掘，讨论其考据方法、考据思想、考据原理。对文本的细读可以达到的效果是通过一则材料，从行文结构深入到内容结构，归纳出一套可以挪用的理论方法，这个过程依赖专家丰富的阅读经验，具有较为鲜明的个人色彩。<br>数字人文研究注重数据支持下的遥读。数字人文的研究首先依靠大规模的语料库，并通过对这些语料的量化分析和处理，发现其在统计学上涌现的规律。数字人文的研究虽然与人文研究相结合（distant reading &amp; close reading (Allen at al, 2023)(Lansdall-Welfare et al, 2017)），以及三者结合 (Nichols et al, 2018)），但其应用细读方法的深度和不及传统人文研究。相比传统人文研究，数字人文研究的特点更显现在科学性和计量性。<br>对比二者的研究范式，可以从几个方面来看。<br><strong>第一，循证方式的不同</strong>：传统人文研究高度依赖个人的研究经验和阅读能力，其论证过程受到主观因素影响较大。而数字统计方法的结果是客观的，虽然在解释环节，数字人文研究仍然需要人文学者的参与及解释能力，但相对来说，数字人文研究的个人性和主观性较低。这一方面使数字人文研究具有科学性，另一方面也使其创见性不足。<br><strong>第二，问题产生的不同</strong>：传统人文研究的问题意识依靠灵感和经验，有一预设问题之后，由学者个人主导展开对个体问题的探讨，在分析归纳与推理演绎等思维过程中论证问题；而数字人文研究的问题往往是由数据驱动的，一部分问题来自数据的涌现，例如对主题的聚类分析，对特殊值的关注等 (Allen at al, 2023)，另一部分则来自对传统人文问题的迁移，主要目的是通过数据再次探讨人文研究中的某一问题 (Nichols et al, 2018)。从总体规律来说，传统人文研究包含许多自上而下的、逐步进展、先预设再论证的问题，而数字人文研究的许多命题都是自下而上的、自然涌现、先计算再解释的。（[[自上而下与自下而上]]）<br><strong>第三，文本性质的不同</strong>：传统人文研究的对待文本采取精读细读、深度挖掘的态度，致力于找到文本的深层含义，其对于文本的研究更倾向于延着纵向的路径展开，着重开掘文本的深度意蕴；数字人文研究将文本视为数据，因为在数据量上有了巨大的提升，所以倾向于进行面的延展，着重讨论众多文本中的共性与数量上涌现出的规律。传统人文研究中的文本是相对独立的个体，学者对每一个体的研究都细致精巧，对于普遍性中的个体差异性关注较多；而数字人文研究中的文本成为了众多数据中的一个点，在面的铺展下，从个体上升到整体，注重从个体性中提炼出普遍性。</p>
-<h3 id="2-数字人文相互补充的关系"><a href="#2-数字人文相互补充的关系" class="headerlink" title="2.数字人文相互补充的关系"></a>2. 数字人文相互补充的关系</h3><p>传统人文研究已经存在追求科学原理和科学方法的学者和学派。传统语言文字学的实践中已经大量采用实证的方法来增强研究的可信度和客观性。冯胜利强调了乾嘉考据学在科学原理上的追求，这种 “理必” 之学很大程度上是一种 “推理逻辑和定理派生系统”（[[@冯胜利：乾嘉 “ 理必 ” 与语言研究 的科学属性 1]]）乾嘉汉学通过可操作性、可重复性的阐释方法，力求将客观的经文、经义还原出来，具有鲜明的实证主义色彩。学者往往皓首穷经，卻由于人力所限，在考据操作中，有时也会陷入以孤例循证和主观性过强的问题（例如乾嘉 [[因声求义]] 失之过滥）。数字人文方法将科学的计算方法引入人文研究中，对增强人文研究的科学性和系统性有显著的意义。<br>在方法论意义上，<strong>一种数字与人文相结合的方式是转化式和呈现式的</strong>：借由计算机的统计技术与可视化技术，帮助典籍文本实现从平面的文本关系到多维度的层次关系的转化，并且能够将其进行关系化、网络化，以互联、易读的形态呈现出来。知识库和知识图谱的建构，是数字人文背景下的古代经典研究的最新热点之一。在大数据的背景下，知识图谱能够揭示出文本非直观形式的对象关联，从非结构性的文本中发现新的模式、规则、趋势。例如 [[@王立军：训释系联焦点词的词汇语义特征与上古汉语核心词研究]] 实际上是把传统的系联方法用计算机的方式加以呈现，其方法范式上并没有本质的创新，只是借由更科学的方式表达出来。<br><strong>另一种方法是生成式的</strong>：通过数据的汇总和计算涌现出新的问题，由此为人文领域带来新的视角。以主题建模为例，研究者或许并没有具体的预设问题，但是在数据统计结果上进行文本阅读，可能会发现新的议题。当人工智能技术介入自然语言处理之后，模型的可解释性成为一个更加值得探讨的问题，但其输出结果时卻能够带来新的启发。这种研究方式采用 “计算” 的底层思维，用 “计算” 解决人文问题，与人文研究的研究范式差别更大。<br>当然，数字方法不能取代人文研究，数字人文存在一定的方法局限。在数字方法与人文方法的互相补足中，才能推进人文领域各个特定问题的研究。</p>
-<h3 id="3-DH-方法的优势与不足"><a href="#3-DH-方法的优势与不足" class="headerlink" title="3.DH 方法的优势与不足"></a>3.DH 方法的优势与不足</h3><p>优势：在文本数字化实现的基础上，利用计算机技术，进行知识的挖掘和提取，为人文研究者提供新的视角和研究方法。<u>其一在于数据支撑的客观性</u>，弥补人文研究有时陷入主观偏见的弊病；<u>其二在于数据涌现的发掘能力</u>，人文学者因为研究兴趣和时间精力等原因，无法对所有数据进行普遍的观测，而数据自下而上的显化出一些问题，关照学者之前未曾关注，但对自身研究有所帮助的信息。这种对于宏观趋势的把握有利于对文本进行大局势的把握，避免陷入细节的纠缠之中。<br>局限：大数据的遥读方法使数字人文具有宏观的视野，但也因为面上的铺展失去了一些深度的探究。机器学习普遍使用的是表面层次上线性的语言进行训练和计量，对于深层语义的理解效果欠佳。LLM 虽然已经能够实现对人类语言的模仿，但其对语言的理解机制仍然是不可知的，所以 LLM 在应用领域的价值可能比在研究领域的价值更高。就数字人文研究来说，数字计算方法无法独立于人文研究之外，数据的解释仍然需要人文学者的深度参与，数字人文的推进不仅需要数字计算方法的改进和提升，也更需要人文学者的学术的推进，才能对模型计算结果作出有意义的阐释。</p>
-<blockquote>
-<p>[!tip]+ link</p>
-<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br> [[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br> [[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>作业</category>
-        <category>其他</category>
+        <category>文学</category>
       </categories>
       <tags>
-        <tag>数字人文</tag>
-        <tag>文献笔记</tag>
+        <tag>读书报告</tag>
+        <tag>钱穆</tag>
       </tags>
   </entry>
   <entry>
@@ -1391,7 +1050,7 @@
   </entry>
   <entry>
     <title>重言词研究综述</title>
-    <url>/2022/12/01/11-zhongyanci-zongshu/</url>
+    <url>/2023/07/13/11-zhongyanci-zongshu/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 <p> “重言” 一词字面义为重复言语，重叠的语言单位可以是音节、词语、句子。但在语言学研究中，重言词通常是指音节重叠，字形重复的复音词，即两个相同的汉字叠用成词，又可称作 “重言”“重语”“重言形况字”“叠字”“叠音词” 等。“重言” 二字可见于方以智《通雅》，历代注疏亦采用 “重言” 一词指代正文中的叠音词。</p>
@@ -1510,7 +1169,7 @@
   </entry>
   <entry>
     <title>数字人文背景下的古代汉语与经典文本研究综述</title>
-    <url>/2022/12/01/14-reviewDH/</url>
+    <url>/2023/07/13/14-reviewDH/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 <p><strong>摘要</strong>：随着信息技术的发展，计算机科学技术与传统文史哲研究逐渐融合，发展出数字人文的新生态。数字人文背景下的古代经典文本研究，结合中文信息处理技术，具有大数据、多维度、互联性等特点，与传统语言文字之学的理论和方法相辅相成，其许多尝试具有开创式的意义。本文从古籍数据库、古籍智能处理、人文计算和文本挖掘三方面，概述近年来数字人文背景下的古代汉语与经典文本的相关研究，对古文信息处理技术进一步为传统语言文字学提供新方法、发掘新视角的美好愿景提出展望。</p>
@@ -1890,7 +1549,7 @@
   </entry>
   <entry>
     <title>历史地理视角下南宋以后徽州儒学的嬗递</title>
-    <url>/2022/12/01/18-huizhou/</url>
+    <url>/2023/07/13/18-huizhou/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 <p><strong>摘要</strong>：自南宋以后，徽州地区出现了两大学术流派：新安理学与皖派朴学。二者在学术理路上虽有汉宋之别，却是在同一个区域下生成发展的，具有相同的区域地理背景，是在不同历史时期要求下形成的区域儒学发展形态。从历史地理学的角度观察新安理学与皖派朴学的发展条件，可以看到地理环境与社会条件对学术文化的重要影响，也能看到区域文化本身的发展脉络。</p>
@@ -2189,25 +1848,6 @@
       <tags>
         <tag>朴学</tag>
         <tag>科学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>钱穆《中国文化史导论》读书报告</title>
-    <url>/2023/07/13/24-wenxian/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-
-
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>作业</category>
-        <category>文学</category>
-      </categories>
-      <tags>
-        <tag>读书报告</tag>
-        <tag>钱穆</tag>
       </tags>
   </entry>
   <entry>
@@ -4314,6 +3954,366 @@
       <tags>
         <tag>语法</tag>
         <tag>以音别义</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三篇文本分析文献的阅读笔记</title>
+    <url>/2023/07/13/24-DHwenxian/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>一篇文献笔记</p>
+<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br>[[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br>[[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
+<span id="more"></span>
+
+<h1 id="一、文献梳理"><a href="#一、文献梳理" class="headerlink" title="一、文献梳理"></a>一、文献梳理</h1><h2 id="Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57"><a href="#Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57" class="headerlink" title="Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. The Journal of Asian Studies, 77(1), 19-57."></a>Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. <em>The Journal of Asian Studies,</em> <em>77</em>(1), 19-57.</h2><p>(Nichols et al, 2018)</p>
+<h3 id="（一）研究问题"><a href="#（一）研究问题" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>介绍了遥读（distant reading）的方法，使用主题建模和机器学习方法来补充传统人文研究。在具体问题上，对《论语》、《孟子》、《荀子》三书的主题进行了分析和比较，以探讨三书的继承关系。这对传统人文研究的一些观点进行了补证，提出了一些研究问题。</p>
+<h3 id="（二）研究框架"><a href="#（二）研究框架" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>三种方法相结合：MACHINE LEARNING +EXPERIMENTAL TEXT ANALYSIS +CLOSE READING</p>
+<ul>
+<li>Distant reading<ul>
+<li>Distant-reading and machine-learning methods compute relationships between texts, terms, and topics via mathematical algorithms rather than expert judgments.</li>
+</ul>
+</li>
+<li>Experimental text analysis<ul>
+<li>Scholars code terms, classify synonyms, track associations between texts, or examine the contexts of keywords.</li>
+<li>In the context of the scientific method, but without the help of machine-learning algorithms that find patterns in texts.</li>
+</ul>
+</li>
+<li>Close readings<ul>
+<li>Produce unparalleled insights into the meaning, subtlety, beauty, and power of historical texts in a way that neither of the other methods can hope to replicate.</li>
+</ul>
+</li>
+<li>Mixed method<ul>
+<li> 三种方法各自的挑战<ul>
+<li>人爲的主观性和偏见</li>
+<li>持续的解释分歧</li>
+<li>遥读的解释性</li>
+</ul>
+</li>
+<li>三种方法结合操作步骤<ul>
+<li>遥读：提供数据</li>
+<li>利用精读解释数据</li>
+<li>实验文本分析用于减少主观性（找更多专家来解释数据）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>主题建模 [[LDA Topic Modeling]]</p>
+<ul>
+<li>代数的方法</li>
+<li>无监督学习</li>
+<li>应用不同种类的数据，不仅关注主题。<ul>
+<li>单词权重 relative size of the contribution that a word makes in a topic<ul>
+<li> 比词频更能代表这个单词在主题中的重要性（词频受到语料规模的影响）</li>
+</ul>
+</li>
+<li>语料库权重 the ratio of the sum of words in a topic over the total number of words in the corpus（主题中的单词出现总数与语料库中的单词总数之比）</li>
+<li>文本权重 the proportion of a text’s vocabulary that is assigned to a given topic, which represents how saturated a text is by a topic（sum to 1）</li>
+</ul>
+</li>
+<li>主题建模的过程<ul>
+<li>文本预处理</li>
+<li>设置主题数量 ——100 topics<ul>
+<li> 太多或太少都会影响主题质量 ——junk or chimera topics.</li>
+<li>Topic quality is typically determined by semantic coherence of the keywords in the topic—— 通常由学者解释判定</li>
+</ul>
+</li>
+<li>主题的解释 —— 招募 60 专家，以避免主观偏见<ul>
+<li>看词云判定主题</li>
+<li>对主题判定的确定性</li>
+<li>多项选择题</li>
+<li>次级多项选择题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集"><a href="#（三）所采用的数据集" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>A corpus of 5.74 million characters across ninety-six ancient and medieval Chinese works<br>原因：the scope of the texts it includes, its accessibility, its familiarity, and its temporal breadth.<br>CTP（Chinese Text Project） text<br>预处理：删除标点符号，设置停用词表，分词（Tokenization），处理编码问题</p>
+<h3 id="（四）对计算结果的阐释"><a href="#（四）对计算结果的阐释" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>《论语》、《孟子》、《荀子》三书主题异同分析</p>
+<h4 id="不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）"><a href="#不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）" class="headerlink" title="不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）"></a>不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）</h4><p>![[P：第一周文献汇报 20230706 2023-07-06 10.18.01.excalidraw|1000]]</p>
+<h4 id="交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）"><a href="#交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）" class="headerlink" title="交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）"></a>交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）</h4><ul>
+<li>三者交叉<ul>
+<li> Topics 29, “Heaven, Earth, Man and the Way”; 76, “Rulers, Ability, Knowledge”; 21, “Political and Social Order”; and 63, “Ritual, Family, and Governance.”</li>
+<li> 推论<ul>
+<li>儒家思想在古代中国文学作品中有很好的传承。这些主题高于道家法家的主题。</li>
+<li>孟子荀子论语具有高度内在一致性</li>
+<li>早期儒家文本将儒家理想和高社会地位联系起来 —— 君子社会学</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>论语和荀子<ul>
+<li> Topics 34, “Ethical Rulership,” and 78, “Learning and Governance.”<ul>
+<li> 论语和荀子是外在教化，强调礼，孟子强调自我修养。</li>
+<li>来自学的、外在的精致的价值观</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>论语和孟子<ul>
+<li>论语和孟子的交叉主题也是和荀子的交叉主题，所以没有能区别开</li>
+<li> Topics 61, “Analects Stylistics,” and 33, “Knowledge, Rulership and Heaven.”</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足"><a href="#（五）启发与不足" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>主题建模的问题发掘：通过对经典文献的整体主题建模，获得整个经典文献的主题分布。然后从中选取个体对象（《论语》、《孟子》、《荀子》三书），针对其传承关系及区别特征展开关于具体问题的讨论。</li>
+<li>主题解释的方法创新（Experimental text analysis）：结合机器学习和专家知识，并通过扩大专家数量，尽力消除偏见，达到相对客观性。</li>
+<li>人文研究与数字技术的紧密结合：通过遥读技术回应人文研究问题，并通过数学统计为人文研究提供科学的可观测的数据支撑。</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>指称性的而非陈述性的：以主题 86 为例，主体建模的结果能够证明孟子关注什么问题，是个名词性的主题，而非论断式的评价，义和利常常一起出现，只能说明孟子关注了什么，这很大一部分都是时代所使然，孟子需要对时代问题作出回应，但这并不能说明孟子支持什么。因爲词袋模型是忽略顺序的，作为对比的反面证据，和正面证据是不分的。也就是说，主题模型只能提取出重点，而不能解释这个重点在整体中起到的作用是什么。</li>
+<li>文本多义性导致噪声：以主题 86 为例，“文” 字出现于主题的关键词中，但并非使用常用义，而是作为 “文王” 的一个语素出现。这是古代汉语的一词多义现象及汉语字词关系复杂带来的局限性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28"><a href="#ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28" class="headerlink" title="ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28]."></a>ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28].</h2><p>(Allen at al, 2023)</p>
+<h3 id="（一）研究问题-1"><a href="#（一）研究问题-1" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>本文对中国古代汉语文本进行主题建模并部署在公共平台上。本文主要介绍了在汉典语料库上训练 LDA 主题模型的过程，并且此主题模型基础上进行了具体问题的研究。</p>
+<h3 id="（二）研究框架-1"><a href="#（二）研究框架-1" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>主题建模 [[LDA Topic Modeling]]</p>
+<ul>
+<li>首先介绍主题建模的基本理论和操作方法<ul>
+<li>命名：LDA is named for the 19th C. mathematician Gustav Dirichlet who laid the foundation in probability theory for the technique.</li>
+<li> 原理：把文档看成词袋，忽略所有语法结构和顺序信息。Topic modeling aims to find latent (hidden) structure among these “bags of words”, by re-representing each document as a mixture of topics.</li>
+<li> 理论依据：主题、语境、受众影响文章用词</li>
+<li>预计达到的效果<ul>
+<li>每个主题对应的关键词及其概率</li>
+<li>每个文档属于每个主题的概率（总和为 1）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>介绍本文主题建模的方法流程<ul>
+<li> For the present study we trained models with 20, 40, 60, 80, and 100 topics.—— 训练多个主题模型，满足多样需求</li>
+<li>使用 InPhO topic-explorer package：initialization of the corpus object, preparation of the corpus by filtering words according to their frequency, training the corpus models, and launching the Topic Explorer’s Hypershelf interface. <sub>初始化语料库对象、根据单词频率过滤单词来准备语料库、训练语料库模型以及启动 Topic Explorer 的 Hypershelf 界面。</sub></li>
+<li>介绍 Hypershelf 的使用方法<ul>
+<li> the Hypershelf initially provides a top level “distant reading” view of the corpus, but allows the user to zoom down to the original text.</li>
+<li>a document-centered view and a topiccentered view</li>
+<li> 个人研究示例：阴阳</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集-1"><a href="#（三）所采用的数据集-1" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>汉典古籍（四部，有树状分类的文本，排除了目录类书籍）</p>
+<ul>
+<li>优点：公共、可获取、数量较大</li>
+<li>缺点：格式和来源复杂</li>
+</ul>
+<h4 id="选择依据"><a href="#选择依据" class="headerlink" title="选择依据"></a>选择依据</h4><ul>
+<li>采用广泛的语料（不限于哲学文本。因为古代哲学文本并不纯粹，难以离析）<ul>
+<li>Thus, rather than try to demarcate “philosophy” from the rest, we decided to pursue our computational inquiry with as broad a corpus as we could locate.</li>
+</ul>
+</li>
+<li> 选择公共的、可获取的数据集<ul>
+<li> A secondary consideration is that we want our work to provide a public benefit by being accessible to scholars and the public.</li>
+<li> 对比 ctext 和 kanripo，最终选择了汉典古籍</li>
+<li>可获取性高于语料管理质量<ul>
+<li> For our initial goals, the benefits of accessibility, especially to Chinese users, outweighed the concerns about corpus curation quality.</li>
+<li> 汉典古籍语料的特点：多种格式、多种来源<ul>
+<li> It contains a diverse collection of different file formats, containing both traditional and simplified characters, and of varying quality because they have been crowd-sourced from many different users using many different sources, with varying degrees of scholarly care.</li>
+</ul>
+</li>
+<li> 主题建模使用词袋模型，对噪音不敏感。</li>
+<li>同样的方法可以应用到其他的语料上。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="语料预处理"><a href="#语料预处理" class="headerlink" title="语料预处理"></a>语料预处理</h4><ul>
+<li>自动（半自动）下载，统一编码格式，规范字符，繁体转成简体</li>
+<li>去除空文档</li>
+<li>分词（构建古汉语词典，不采用分字的办法）<ul>
+<li>Applying this dictionary to our corpus segmented the 125 million characters into over 104 million word tokens, comprising approximately 15,000 unique word types.</li>
+</ul>
+</li>
+<li> 设置停用词表</li>
+</ul>
+<h3 id="（四）对计算结果的阐释-1"><a href="#（四）对计算结果的阐释-1" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>得到主题建模结果后，本文进而生成主题地图，进行进一步的聚类分析。</p>
+<ul>
+<li>操作步骤<ul>
+<li>降维：isomap （reducing a high dimensional space to fewer dimensions）</li>
+<li>聚类：k-means clustering</li>
+</ul>
+</li>
+<li> 分析讨论<ul>
+<li>不同主题数量的模型之间，是否有继承关系？<ul>
+<li>有相关关系 but not strictly hierarchical</li>
+</ul>
+</li>
+<li> 比较不同模型中主题的可解释性<ul>
+<li> No one best number of topics</li>
+</ul>
+</li>
+<li> 针对某一关键词，探寻其在不同主题中的权重<ul>
+<li>例：孔 / 佛；气 / 阴阳</li>
+</ul>
+</li>
+<li>探究图中的特殊值<ul>
+<li>探究靠近中心点的主题，关于政治和国家行政</li>
+<li> 20：19 异常值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足-1"><a href="#（五）启发与不足-1" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>关于主题个数的讨论：主题建模的个数与使用者的需求有关，所以训练了主题数量个数不同的模型。使该主题模型能够为不同知识水平及需求的用户提供帮助。</li>
+<li>对古汉语文本的分词处理：不采用常用的分字处理办法，构建古汉语词典，对文本消歧有一定作用。</li>
+<li>对主题进行聚类分析：可视化呈现各主题之间的关系以及不同个数模型之间主题的关系，并且将这种可视化的分析方法应用于具体问题的讨论中。</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>文本分词的具体操作并没有详细论述，标准不明。</li>
+<li>与人文研究相结合的深度不足，几个示例的研究都只是略作陈述，数据挖掘的深度有待加强。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465"><a href="#Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465" class="headerlink" title="Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465."></a>Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465.</h2><p>(Lansdall-Welfare et al, 2017)</p>
+<h3 id="（一）研究问题-2"><a href="#（一）研究问题-2" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>研究问题：构建一个具有地理信息及时间信息的期刊报纸语料库，为学者提供一种定量的数据驱动的工具，用于研究文化及社会。本文关注了政治、经济、文化、性别等议题，通过历时语料文本分析，补充了传统精读方法。<br>先前的研究的不足：主要基于单词计数，忽略了语义和上下文。没有涵盖期刊，样本数据存在偏见。<br>研究目标：</p>
+<ul>
+<li>验证和结合书籍研究的结果（verifying or contextualizing some of the findings of the study on books）</li>
+<li>利用大数据分析来发现历史的长期趋势和变化（detect long-term trends and changes in history by means of big data analysis of the vast corpora）</li>
+<li>用遥读与历史学家的仔细阅读相补充（show an approach to understanding continuity and change in history based on the distant reading of vast news corpora, which is complementary to the traditional close reading by historians）</li>
+</ul>
+<h3 id="（二）研究框架-2"><a href="#（二）研究框架-2" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><ul>
+<li>N-gram 频度统计<ul>
+<li> 1-gram/n-gram<ul>
+<li>Restricted n to three and limited our study to n-grams that occur at least 10 times within the corpus.</li>
+</ul>
+</li>
+<li> 频率而非次数<ul>
+<li>使用频率 = 出现次数除以该年语料单词总数</li>
+<li> The use frequency for an n-gram was computed by dividing the number of instances of the n-gram in a given year by the total number of words in the corpus that year.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 命名实体及其属性<ul>
+<li>将人名映射到职业和性别上，探讨职业和性别的时间发展趋势</li>
+<li>用地理位置信息标记语料，讨论时空发展趋势<ul>
+<li> Compiled geographical maps for the United Kingdom for each of the terms displaying a gradual increase or decline</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集-2"><a href="#（三）所采用的数据集-2" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>英国报纸数据</p>
+<ul>
+<li>基本信息<ul>
+<li>该语料库跨越 150 年，由数百万篇文章组成，占该时期所有英国地区文章的 14%。涵盖所有主要地区、时间段和主要媒体。（注意语料的代表性）包含地理和时间信息（eyond Counting Words）</li>
+<li>数据来源<ul>
+<li> The British Library’s newspaper collections</li>
+<li>FindMyPast 自 2010 开始数字化</li>
+<li> Joint Information Systems Committee (JISC) 补充</li>
+</ul>
+</li>
+<li>数据选择<ul>
+<li> (i) the completeness of the runs of issues, (ii) the number of years that an issue covers, (iii) the geographical region that the issue is from, (iv) the quality of the OCR output for the issue, and (v) the political bias of issues.</li>
+<li> 依据完整性、时间跨度、地理区域、ocr 质量、政治偏见综合评估选择，尽量做到平衡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>报纸和图书的区别 <ul>
+<li>关键事件对报纸语料库的影响更明显（with newspapers offering a closer representation of historical shifts, whereas books are more reflective in nature and less time-bound）</li>
+<li>以往研究更多地关注图书语料，本文使用的是报纸语料</li>
+</ul>
+</li>
+<li>数据处理和元数据<ul>
+<li>数字化与结构提取<ul>
+<li>扫描、对比度校正、分割区域（依据内容类型）</li>
+</ul>
+</li>
+<li>Ocr 处理（对后续统计结果有影响，存在噪声）<ul>
+<li>同时输出结果和信度，以便后续评估</li>
+</ul>
+</li>
+<li>元数据标注</li>
+</ul>
+</li>
+</ul>
+<h3 id="（四）对计算结果的阐释-2"><a href="#（四）对计算结果的阐释-2" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>Open-Ended Measurements</p>
+<ul>
+<li>gender bias, geographical focus, technology, and politics, along with accurate dates</li>
+</ul>
+<p>Beyond Counting Words</p>
+<ul>
+<li>People in history.<ul>
+<li>jobs<ul>
+<li>politicians and writers are most likely to achieve notoriety within their lifetimes</li>
+</ul>
+</li>
+<li>gender<ul>
+<li>more present than females during the entire period</li>
+<li>a slow but steady increase of the presence of women after 1900</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changes in geography<ul>
+<li>(A) British and English, (B) Liberal Party and Labour Party, (C) steam and electricity, and (D) horse and train</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足-2"><a href="#（五）启发与不足-2" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>实体命名对于量化分析的补充：不限于词频及其频度的统计，关注到词的表面形式下包含的信息，通过命名实体识别技术，探讨实体的属性，可以超越个体，联系到宏观的社会议题，为人文研究提供数据支撑。</li>
+<li>研究材料的创新：选取报纸作为研究材料，关注到了报纸对于社会时间的敏感性，从研究材料的选取上影响数据结论，从而使结论更具说服力。</li>
+<li>处理未经数字化数据的流程：引入 ocr 噪声的信度筛选高质量的语料，尽量减少噪声信息</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>文中指出的局限性：无法引入上下文知识，访问语义信息，ocr 噪声等<ul>
+<li> the inability of computational methods to introduce contextual knowledge, access semantic information, or work in the presence of OCR noise or the issues related to bias in the original corpus selection are probably all issues that can be solved or accounted for over time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="二、思考题"><a href="#二、思考题" class="headerlink" title="二、思考题"></a>二、思考题</h1><h2 id="（一）语料的选择和处理"><a href="#（一）语料的选择和处理" class="headerlink" title="（一）语料的选择和处理"></a>（一）语料的选择和处理</h2><p>如何根据研究问题确定数据的收集范围？<br>主题模型，N-gram 分析、词频分析等方法如何与人文研究相结合<br>论文是否分析了所用古籍语料的特点？对所应用方法有何影响？<br>分析在长时段的历时语料上应用这些方法的难点和要点</p>
+<h3 id="1-语料数据的收集"><a href="#1-语料数据的收集" class="headerlink" title="1.语料数据的收集"></a>1. 语料数据的收集</h3><p>(Lansdall-Welfare et al, 2017) 其研究目的为通过文本分析反应文化社会的变迁，于是选择使用了社会敏感度较高的报纸语料构建语料库。并通过 ocr 技术对报纸图像进行数字化，借由信度计算等综合维度筛选语料。<br>(Allen at al, 2023) 选用了数据规模量大，可获取度高的汉典古籍，并进行预处理。该文着重于提供一种研究方法，对具体问题的讨论较少，并期待为后来的研究提供支持，所以要建设一定规模的语料库。<br>(Nichols et al, 2018) 讨论孔孟荀三书的主题分布，但其语料库构建依靠 ctext。因为要讨论三书的主题异与同，所以要贯通三书，不能为三书建立分别的语料库。又因为主题的解释要参考这一主题在其他经典文本中的分布情况，所以不能就三书而建立一个语料库，还要包含其他典籍。<br>总体来看，语料数据的收集需要注意</p>
+<ul>
+<li>研究问题的需要</li>
+<li>语料库的规模</li>
+<li>语料的质量</li>
+<li>语料的可获取度</li>
+</ul>
+<h3 id="2-古籍语料的特点及应对方法"><a href="#2-古籍语料的特点及应对方法" class="headerlink" title="2.古籍语料的特点及应对方法"></a>2. 古籍语料的特点及应对方法</h3><p><strong>1）获取难度大：有许多古籍并未实现数字化，应用 ocr 技术的难度较大。</strong><br>策略：使用已有的语料；参考 (Lansdall-Welfare et al, 2017) 对语料 ocr 的信度进行评估后筛选语料<br><strong>2）文本预处理的难度大：分词或分字的选择问题，分词判定的标准问题。</strong><br>原生阶段、派生阶段、合成阶段<br>(Nichols et al, 2018) 采用分字，可能出现拆词情况（如 “文王”）。且古代汉语中的一些多音节单纯词（如联绵词及部分重言词）是不可拆的，如果采用分字处理，会影响整体模型效果。（[[P：重言词汇报 20230606#3、单字与重言词语义相似度对比 | 单字与重言词语义相似度对比]]）<br>(Allen at al, 2023) 采用分词，但并未详细阐述分词标准。语言学界对于古代汉语的分词标准仍待讨论，难以得出一个可实际操作的、能大规模使用的判定方法。古汉语词汇以单音节为主，一些现代汉语的双音节词可以看做是两个单音节词构成的词组。现有的许多自动分词模型基于现代汉语，会分出非最小单位的词。<br>策略：考虑采用排除法，只识别单语素构成的复音词（[[连绵词]]、叠音词）及命名实体，其他作分字处理。<br><strong>3）文本的多义性和歧义性：机器学习暂未很好地处理一词多义现象。</strong><br>通假字，字形。表面的词形到深层词义<br>词义的分析是基本的，首先对词义进行标注。主要依靠语境向量<br> (Nichols et al, 2018)“文王” 例，文本多义性产生噪声从而影响统计结果。该文采用的是先统计，再解释的方法，人为地剔除分析结论中的噪声。<br>策略：研究文本消歧技术，按照义项对古汉语词汇进行划分（[[@舒蕾等：古汉语词义标注语料库的构建及应用研究]]）</p>
+<h3 id="3-历时语料分析的重难点"><a href="#3-历时语料分析的重难点" class="headerlink" title="3.历时语料分析的重难点"></a>3. 历时语料分析的重难点</h3><p>(Lansdall-Welfare et al, 2017) 主要分析历时语料，对期刊数据进行了时间和地理信息位置的标记，并通过实体命名技术探讨了实体属性的历时变化发展。<br>然而，对于古籍文本来说，时代的确定并非容易。第一，古籍文本流传时间长，其间版本流传、传抄修订许多已不可考。第二，许多经典文本是层累性的，以《十三经注疏》为例，需要进行形成时代的离析，其经文、注文、疏文的形成时代都不同，如果仅仅视作一个时代平面的语料，会造成数据的偏差。<br>其次，该文对历时语料的分析主要依托于关键词检索，然而，词汇的发展变化是复杂的，如果仅仅对一个关键词的出现频度进行测定，容易忽略词汇的消亡、新生、演变问题。而这些问题的判定和解释则需要人文学者的经验作为支撑。所以，对研究主题进行多维度的测定是必要的，也是数据统计结果进入人文研究的难点。</p>
+<h2 id="（二）结果的分析和阐释"><a href="#（二）结果的分析和阐释" class="headerlink" title="（二）结果的分析和阐释"></a>（二）结果的分析和阐释</h2><p>主题模型的聚类结果如何提炼<br>分析结果与已有的人文研究结论的印证过程是否有效？Or 是否牵强？</p>
+<h3 id="1-主题聚类结果的提炼"><a href="#1-主题聚类结果的提炼" class="headerlink" title="1.主题聚类结果的提炼"></a>1. 主题聚类结果的提炼</h3><ul>
+<li>通过人文学者的经验及 experimental text analysis<ul>
+<li> 结合主题包含关键词</li>
+<li>结合主题在各文档中的权重</li>
+<li>增加学者的数量，减少个人偏见</li>
+</ul>
+</li>
+<li>调整主题模型的个数，寻求可解释性高的模型<ul>
+<li>对不同数量的模型进行可视化分析 (Allen at al, 2023)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-主题分析结果与人文研究的对应"><a href="#2-主题分析结果与人文研究的对应" class="headerlink" title="2.主题分析结果与人文研究的对应"></a>2. 主题分析结果与人文研究的对应</h3><p>(Lansdall-Welfare et al, 2017) 将文化社会问题转化为某些关键词在报纸文本中的提及频度的计量问题，一定程度上能够反映媒体和社会的关注动向。<br>(Allen at al, 2023) 对主题建模数据的解释较为笼统。主要是对一特定的概念在不同文本中的分布及不同主题的分布进行探讨，主要是启示意义。<br>(Nichols et al, 2018) 讨论比较详细，从主题的相似性上来看，作者的观点是《论语》和《荀子》都强调外在的学和礼带来的道德变化，而《孟子》则注重与心、认知相关的内在道德。实际上，统计数据不代表论断，对于统计数据的解释也可以是多样的。作者的观点也只能代表一种视角，该文可以证明《论语》和《荀子》在这一议题上存在相似性，但并不能证明《论语》和《荀子》存在普遍的相似性。<br>在解读主题的过程中，作者似乎也更加关注量上的积累，而对质的区别关注不够。例如《论语》中关于仪式的主题，只能证明仪式的问题对于孔子很重要，而不能证明孔子对于仪式的态度是如何的；《孟子》关于利益和道德的主题，只能证明孟子对于义和利的问题讨论很多，也并不能证明孟子对于义和利分别是什么态度。这些主题的分布很多都是时代共同的命题，而作者并没有强调时代对其书籍内容的影响。</p>
+<h2 id="（三）数字与人文的关系"><a href="#（三）数字与人文的关系" class="headerlink" title="（三）数字与人文的关系"></a>（三）数字与人文的关系</h2><p>研究框架（Methodology）与传统人文研究的差异是什么？<br>NLP 技术应用到人文研究问题中时，与传统人文研究互相补充的关系。可针对该问题发表自己的看法。<br>Digital method 的优势和不足是什么？</p>
+<h3 id="1-数字与人文研究范式的不同"><a href="#1-数字与人文研究范式的不同" class="headerlink" title="1.数字与人文研究范式的不同"></a>1. 数字与人文研究范式的不同</h3><p>传统人文研究注重文本精读与细读。以传统语言文字学研究为例（[[@符渝：  文本细读与乾嘉考据研究 —— 以 “能不我知” 考据为例]]），文本细读是对文本的结构和语言进行充分解读，从而挖掘文本内涵。例如对考据材料的分析，本文作者通过对《经义述闻》“能不我知” 一例的结构分析和内涵挖掘，讨论其考据方法、考据思想、考据原理。对文本的细读可以达到的效果是通过一则材料，从行文结构深入到内容结构，归纳出一套可以挪用的理论方法，这个过程依赖专家丰富的阅读经验，具有较为鲜明的个人色彩。<br>数字人文研究注重数据支持下的遥读。数字人文的研究首先依靠大规模的语料库，并通过对这些语料的量化分析和处理，发现其在统计学上涌现的规律。数字人文的研究虽然与人文研究相结合（distant reading &amp; close reading (Allen at al, 2023)(Lansdall-Welfare et al, 2017)），以及三者结合 (Nichols et al, 2018)），但其应用细读方法的深度和不及传统人文研究。相比传统人文研究，数字人文研究的特点更显现在科学性和计量性。<br>对比二者的研究范式，可以从几个方面来看。<br><strong>第一，循证方式的不同</strong>：传统人文研究高度依赖个人的研究经验和阅读能力，其论证过程受到主观因素影响较大。而数字统计方法的结果是客观的，虽然在解释环节，数字人文研究仍然需要人文学者的参与及解释能力，但相对来说，数字人文研究的个人性和主观性较低。这一方面使数字人文研究具有科学性，另一方面也使其创见性不足。<br><strong>第二，问题产生的不同</strong>：传统人文研究的问题意识依靠灵感和经验，有一预设问题之后，由学者个人主导展开对个体问题的探讨，在分析归纳与推理演绎等思维过程中论证问题；而数字人文研究的问题往往是由数据驱动的，一部分问题来自数据的涌现，例如对主题的聚类分析，对特殊值的关注等 (Allen at al, 2023)，另一部分则来自对传统人文问题的迁移，主要目的是通过数据再次探讨人文研究中的某一问题 (Nichols et al, 2018)。从总体规律来说，传统人文研究包含许多自上而下的、逐步进展、先预设再论证的问题，而数字人文研究的许多命题都是自下而上的、自然涌现、先计算再解释的。（[[自上而下与自下而上]]）<br><strong>第三，文本性质的不同</strong>：传统人文研究的对待文本采取精读细读、深度挖掘的态度，致力于找到文本的深层含义，其对于文本的研究更倾向于延着纵向的路径展开，着重开掘文本的深度意蕴；数字人文研究将文本视为数据，因为在数据量上有了巨大的提升，所以倾向于进行面的延展，着重讨论众多文本中的共性与数量上涌现出的规律。传统人文研究中的文本是相对独立的个体，学者对每一个体的研究都细致精巧，对于普遍性中的个体差异性关注较多；而数字人文研究中的文本成为了众多数据中的一个点，在面的铺展下，从个体上升到整体，注重从个体性中提炼出普遍性。</p>
+<h3 id="2-数字人文相互补充的关系"><a href="#2-数字人文相互补充的关系" class="headerlink" title="2.数字人文相互补充的关系"></a>2. 数字人文相互补充的关系</h3><p>传统人文研究已经存在追求科学原理和科学方法的学者和学派。传统语言文字学的实践中已经大量采用实证的方法来增强研究的可信度和客观性。冯胜利强调了乾嘉考据学在科学原理上的追求，这种 “理必” 之学很大程度上是一种 “推理逻辑和定理派生系统”（[[@冯胜利：乾嘉 “ 理必 ” 与语言研究 的科学属性 1]]）乾嘉汉学通过可操作性、可重复性的阐释方法，力求将客观的经文、经义还原出来，具有鲜明的实证主义色彩。学者往往皓首穷经，卻由于人力所限，在考据操作中，有时也会陷入以孤例循证和主观性过强的问题（例如乾嘉 [[因声求义]] 失之过滥）。数字人文方法将科学的计算方法引入人文研究中，对增强人文研究的科学性和系统性有显著的意义。<br>在方法论意义上，<strong>一种数字与人文相结合的方式是转化式和呈现式的</strong>：借由计算机的统计技术与可视化技术，帮助典籍文本实现从平面的文本关系到多维度的层次关系的转化，并且能够将其进行关系化、网络化，以互联、易读的形态呈现出来。知识库和知识图谱的建构，是数字人文背景下的古代经典研究的最新热点之一。在大数据的背景下，知识图谱能够揭示出文本非直观形式的对象关联，从非结构性的文本中发现新的模式、规则、趋势。例如 [[@王立军：训释系联焦点词的词汇语义特征与上古汉语核心词研究]] 实际上是把传统的系联方法用计算机的方式加以呈现，其方法范式上并没有本质的创新，只是借由更科学的方式表达出来。<br><strong>另一种方法是生成式的</strong>：通过数据的汇总和计算涌现出新的问题，由此为人文领域带来新的视角。以主题建模为例，研究者或许并没有具体的预设问题，但是在数据统计结果上进行文本阅读，可能会发现新的议题。当人工智能技术介入自然语言处理之后，模型的可解释性成为一个更加值得探讨的问题，但其输出结果时卻能够带来新的启发。这种研究方式采用 “计算” 的底层思维，用 “计算” 解决人文问题，与人文研究的研究范式差别更大。<br>当然，数字方法不能取代人文研究，数字人文存在一定的方法局限。在数字方法与人文方法的互相补足中，才能推进人文领域各个特定问题的研究。</p>
+<h3 id="3-DH-方法的优势与不足"><a href="#3-DH-方法的优势与不足" class="headerlink" title="3.DH 方法的优势与不足"></a>3.DH 方法的优势与不足</h3><p>优势：在文本数字化实现的基础上，利用计算机技术，进行知识的挖掘和提取，为人文研究者提供新的视角和研究方法。<u>其一在于数据支撑的客观性</u>，弥补人文研究有时陷入主观偏见的弊病；<u>其二在于数据涌现的发掘能力</u>，人文学者因为研究兴趣和时间精力等原因，无法对所有数据进行普遍的观测，而数据自下而上的显化出一些问题，关照学者之前未曾关注，但对自身研究有所帮助的信息。这种对于宏观趋势的把握有利于对文本进行大局势的把握，避免陷入细节的纠缠之中。<br>局限：大数据的遥读方法使数字人文具有宏观的视野，但也因为面上的铺展失去了一些深度的探究。机器学习普遍使用的是表面层次上线性的语言进行训练和计量，对于深层语义的理解效果欠佳。LLM 虽然已经能够实现对人类语言的模仿，但其对语言的理解机制仍然是不可知的，所以 LLM 在应用领域的价值可能比在研究领域的价值更高。就数字人文研究来说，数字计算方法无法独立于人文研究之外，数据的解释仍然需要人文学者的深度参与，数字人文的推进不仅需要数字计算方法的改进和提升，也更需要人文学者的学术的推进，才能对模型计算结果作出有意义的阐释。</p>
+<blockquote>
+<p>[!tip]+ link</p>
+<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br> [[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br> [[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>数字人文</tag>
+        <tag>文献笔记</tag>
       </tags>
   </entry>
 </search>
