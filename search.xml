@@ -922,21 +922,363 @@
       </tags>
   </entry>
   <entry>
-    <title>这是一个模板</title>
-    <url>/2022/12/01/%E6%A8%A1%E6%9D%BF/</url>
+    <title>三篇文本分析文献的阅读笔记</title>
+    <url>/2023/07/13/%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
-
+<p>一篇文献笔记</p>
+<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br>[[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br>[[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
 <span id="more"></span>
 
+<h1 id="一、文献梳理"><a href="#一、文献梳理" class="headerlink" title="一、文献梳理"></a>一、文献梳理</h1><h2 id="Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57"><a href="#Nichols-R-Slingerland-E-Nielbo-K-Bergeton-U-Logan-C-amp-Kleinman-S-2018-Modeling-the-Contested-Relationship-between-Analects-Mencius-and-Xunzi-Preliminary-Evidence-from-a-Machine-Learning-Approach-The-Journal-of-Asian-Studies-77-1-19-57" class="headerlink" title="Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. The Journal of Asian Studies, 77(1), 19-57."></a>Nichols, R., Slingerland, E., Nielbo, K., Bergeton, U., Logan, C., &amp; Kleinman, S. (2018). Modeling the Contested Relationship between Analects, Mencius, and Xunzi: Preliminary Evidence from a Machine-Learning Approach. <em>The Journal of Asian Studies,</em> <em>77</em>(1), 19-57.</h2><p>(Nichols et al, 2018)</p>
+<h3 id="（一）研究问题"><a href="#（一）研究问题" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>介绍了遥读（distant reading）的方法，使用主题建模和机器学习方法来补充传统人文研究。在具体问题上，对《论语》、《孟子》、《荀子》三书的主题进行了分析和比较，以探讨三书的继承关系。这对传统人文研究的一些观点进行了补证，提出了一些研究问题。</p>
+<h3 id="（二）研究框架"><a href="#（二）研究框架" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>三种方法相结合：MACHINE LEARNING +EXPERIMENTAL TEXT ANALYSIS +CLOSE READING</p>
+<ul>
+<li>Distant reading<ul>
+<li>Distant-reading and machine-learning methods compute relationships between texts, terms, and topics via mathematical algorithms rather than expert judgments.</li>
+</ul>
+</li>
+<li>Experimental text analysis<ul>
+<li>Scholars code terms, classify synonyms, track associations between texts, or examine the contexts of keywords.</li>
+<li>In the context of the scientific method, but without the help of machine-learning algorithms that find patterns in texts.</li>
+</ul>
+</li>
+<li>Close readings<ul>
+<li>Produce unparalleled insights into the meaning, subtlety, beauty, and power of historical texts in a way that neither of the other methods can hope to replicate.</li>
+</ul>
+</li>
+<li>Mixed method<ul>
+<li> 三种方法各自的挑战<ul>
+<li>人爲的主观性和偏见</li>
+<li>持续的解释分歧</li>
+<li>遥读的解释性</li>
+</ul>
+</li>
+<li>三种方法结合操作步骤<ul>
+<li>遥读：提供数据</li>
+<li>利用精读解释数据</li>
+<li>实验文本分析用于减少主观性（找更多专家来解释数据）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>主题建模 [[LDA Topic Modeling]]</p>
+<ul>
+<li>代数的方法</li>
+<li>无监督学习</li>
+<li>应用不同种类的数据，不仅关注主题。<ul>
+<li>单词权重 relative size of the contribution that a word makes in a topic<ul>
+<li> 比词频更能代表这个单词在主题中的重要性（词频受到语料规模的影响）</li>
+</ul>
+</li>
+<li>语料库权重 the ratio of the sum of words in a topic over the total number of words in the corpus（主题中的单词出现总数与语料库中的单词总数之比）</li>
+<li>文本权重 the proportion of a text’s vocabulary that is assigned to a given topic, which represents how saturated a text is by a topic（sum to 1）</li>
+</ul>
+</li>
+<li>主题建模的过程<ul>
+<li>文本预处理</li>
+<li>设置主题数量 ——100 topics<ul>
+<li> 太多或太少都会影响主题质量 ——junk or chimera topics.</li>
+<li>Topic quality is typically determined by semantic coherence of the keywords in the topic—— 通常由学者解释判定</li>
+</ul>
+</li>
+<li>主题的解释 —— 招募 60 专家，以避免主观偏见<ul>
+<li>看词云判定主题</li>
+<li>对主题判定的确定性</li>
+<li>多项选择题</li>
+<li>次级多项选择题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集"><a href="#（三）所采用的数据集" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>A corpus of 5.74 million characters across ninety-six ancient and medieval Chinese works<br>原因：the scope of the texts it includes, its accessibility, its familiarity, and its temporal breadth.<br>CTP（Chinese Text Project） text<br>预处理：删除标点符号，设置停用词表，分词（Tokenization），处理编码问题</p>
+<h3 id="（四）对计算结果的阐释"><a href="#（四）对计算结果的阐释" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>《论语》、《孟子》、《荀子》三书主题异同分析</p>
+<h4 id="不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）"><a href="#不同主题（WHAT-TOPICS-MAKE-ANALECTS-MENCIUS-AND-XUNZI-EACH-UNIQUE-）" class="headerlink" title="不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）"></a>不同主题（WHAT TOPICS MAKE ANALECTS, MENCIUS, AND XUNZI EACH UNIQUE?）</h4><p>![[P：第一周文献汇报 20230706 2023-07-06 10.18.01.excalidraw|1000]]</p>
+<h4 id="交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）"><a href="#交叉主题（whether-the-contents-of-Mencius-or-Xunzi-most-resemble-the-contents-of-Analects-）" class="headerlink" title="交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）"></a>交叉主题（whether the contents of Mencius or Xunzi most resemble the contents of Analects.）</h4><ul>
+<li>三者交叉<ul>
+<li> Topics 29, “Heaven, Earth, Man and the Way”; 76, “Rulers, Ability, Knowledge”; 21, “Political and Social Order”; and 63, “Ritual, Family, and Governance.”</li>
+<li> 推论<ul>
+<li>儒家思想在古代中国文学作品中有很好的传承。这些主题高于道家法家的主题。</li>
+<li>孟子荀子论语具有高度内在一致性</li>
+<li>早期儒家文本将儒家理想和高社会地位联系起来 —— 君子社会学</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>论语和荀子<ul>
+<li> Topics 34, “Ethical Rulership,” and 78, “Learning and Governance.”<ul>
+<li> 论语和荀子是外在教化，强调礼，孟子强调自我修养。</li>
+<li>来自学的、外在的精致的价值观</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>论语和孟子<ul>
+<li>论语和孟子的交叉主题也是和荀子的交叉主题，所以没有能区别开</li>
+<li> Topics 61, “Analects Stylistics,” and 33, “Knowledge, Rulership and Heaven.”</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足"><a href="#（五）启发与不足" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>主题建模的问题发掘：通过对经典文献的整体主题建模，获得整个经典文献的主题分布。然后从中选取个体对象（《论语》、《孟子》、《荀子》三书），针对其传承关系及区别特征展开关于具体问题的讨论。</li>
+<li>主题解释的方法创新（Experimental text analysis）：结合机器学习和专家知识，并通过扩大专家数量，尽力消除偏见，达到相对客观性。</li>
+<li>人文研究与数字技术的紧密结合：通过遥读技术回应人文研究问题，并通过数学统计为人文研究提供科学的可观测的数据支撑。</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>指称性的而非陈述性的：以主题 86 为例，主体建模的结果能够证明孟子关注什么问题，是个名词性的主题，而非论断式的评价，义和利常常一起出现，只能说明孟子关注了什么，这很大一部分都是时代所使然，孟子需要对时代问题作出回应，但这并不能说明孟子支持什么。因爲词袋模型是忽略顺序的，作为对比的反面证据，和正面证据是不分的。也就是说，主题模型只能提取出重点，而不能解释这个重点在整体中起到的作用是什么。</li>
+<li>文本多义性导致噪声：以主题 86 为例，“文” 字出现于主题的关键词中，但并非使用常用义，而是作为 “文王” 的一个语素出现。这是古代汉语的一词多义现象及汉语字词关系复杂带来的局限性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28"><a href="#ALLEN-C-LUO-H-MURDOCK-J-et-al-Topic-Modeling-the-Han-dian-Ancient-Classics-J-x2F-OL-Journal-of-Cultural-Analytics-2017-2-1-2023-05-28" class="headerlink" title="ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28]."></a>ALLEN C, LUO H, MURDOCK J, et al. Topic Modeling the Hàn diăn Ancient Classics [J/OL]. Journal of Cultural Analytics, 2017, 2(1)[2023-05-28].</h2><p>(Allen at al, 2023)</p>
+<h3 id="（一）研究问题-1"><a href="#（一）研究问题-1" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>本文对中国古代汉语文本进行主题建模并部署在公共平台上。本文主要介绍了在汉典语料库上训练 LDA 主题模型的过程，并且此主题模型基础上进行了具体问题的研究。</p>
+<h3 id="（二）研究框架-1"><a href="#（二）研究框架-1" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><p>主题建模 [[LDA Topic Modeling]]</p>
+<ul>
+<li>首先介绍主题建模的基本理论和操作方法<ul>
+<li>命名：LDA is named for the 19th C. mathematician Gustav Dirichlet who laid the foundation in probability theory for the technique.</li>
+<li> 原理：把文档看成词袋，忽略所有语法结构和顺序信息。Topic modeling aims to find latent (hidden) structure among these “bags of words”, by re-representing each document as a mixture of topics.</li>
+<li> 理论依据：主题、语境、受众影响文章用词</li>
+<li>预计达到的效果<ul>
+<li>每个主题对应的关键词及其概率</li>
+<li>每个文档属于每个主题的概率（总和为 1）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>介绍本文主题建模的方法流程<ul>
+<li> For the present study we trained models with 20, 40, 60, 80, and 100 topics.—— 训练多个主题模型，满足多样需求</li>
+<li>使用 InPhO topic-explorer package：initialization of the corpus object, preparation of the corpus by filtering words according to their frequency, training the corpus models, and launching the Topic Explorer’s Hypershelf interface. <sub>初始化语料库对象、根据单词频率过滤单词来准备语料库、训练语料库模型以及启动 Topic Explorer 的 Hypershelf 界面。</sub></li>
+<li>介绍 Hypershelf 的使用方法<ul>
+<li> the Hypershelf initially provides a top level “distant reading” view of the corpus, but allows the user to zoom down to the original text.</li>
+<li>a document-centered view and a topiccentered view</li>
+<li> 个人研究示例：阴阳</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集-1"><a href="#（三）所采用的数据集-1" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>汉典古籍（四部，有树状分类的文本，排除了目录类书籍）</p>
+<ul>
+<li>优点：公共、可获取、数量较大</li>
+<li>缺点：格式和来源复杂</li>
+</ul>
+<h4 id="选择依据"><a href="#选择依据" class="headerlink" title="选择依据"></a>选择依据</h4><ul>
+<li>采用广泛的语料（不限于哲学文本。因为古代哲学文本并不纯粹，难以离析）<ul>
+<li>Thus, rather than try to demarcate “philosophy” from the rest, we decided to pursue our computational inquiry with as broad a corpus as we could locate.</li>
+</ul>
+</li>
+<li> 选择公共的、可获取的数据集<ul>
+<li> A secondary consideration is that we want our work to provide a public benefit by being accessible to scholars and the public.</li>
+<li> 对比 ctext 和 kanripo，最终选择了汉典古籍</li>
+<li>可获取性高于语料管理质量<ul>
+<li> For our initial goals, the benefits of accessibility, especially to Chinese users, outweighed the concerns about corpus curation quality.</li>
+<li> 汉典古籍语料的特点：多种格式、多种来源<ul>
+<li> It contains a diverse collection of different file formats, containing both traditional and simplified characters, and of varying quality because they have been crowd-sourced from many different users using many different sources, with varying degrees of scholarly care.</li>
+</ul>
+</li>
+<li> 主题建模使用词袋模型，对噪音不敏感。</li>
+<li>同样的方法可以应用到其他的语料上。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="语料预处理"><a href="#语料预处理" class="headerlink" title="语料预处理"></a>语料预处理</h4><ul>
+<li>自动（半自动）下载，统一编码格式，规范字符，繁体转成简体</li>
+<li>去除空文档</li>
+<li>分词（构建古汉语词典，不采用分字的办法）<ul>
+<li>Applying this dictionary to our corpus segmented the 125 million characters into over 104 million word tokens, comprising approximately 15,000 unique word types.</li>
+</ul>
+</li>
+<li> 设置停用词表</li>
+</ul>
+<h3 id="（四）对计算结果的阐释-1"><a href="#（四）对计算结果的阐释-1" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>得到主题建模结果后，本文进而生成主题地图，进行进一步的聚类分析。</p>
+<ul>
+<li>操作步骤<ul>
+<li>降维：isomap （reducing a high dimensional space to fewer dimensions）</li>
+<li>聚类：k-means clustering</li>
+</ul>
+</li>
+<li> 分析讨论<ul>
+<li>不同主题数量的模型之间，是否有继承关系？<ul>
+<li>有相关关系 but not strictly hierarchical</li>
+</ul>
+</li>
+<li> 比较不同模型中主题的可解释性<ul>
+<li> No one best number of topics</li>
+</ul>
+</li>
+<li> 针对某一关键词，探寻其在不同主题中的权重<ul>
+<li>例：孔 / 佛；气 / 阴阳</li>
+</ul>
+</li>
+<li>探究图中的特殊值<ul>
+<li>探究靠近中心点的主题，关于政治和国家行政</li>
+<li> 20：19 异常值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足-1"><a href="#（五）启发与不足-1" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>关于主题个数的讨论：主题建模的个数与使用者的需求有关，所以训练了主题数量个数不同的模型。使该主题模型能够为不同知识水平及需求的用户提供帮助。</li>
+<li>对古汉语文本的分词处理：不采用常用的分字处理办法，构建古汉语词典，对文本消歧有一定作用。</li>
+<li>对主题进行聚类分析：可视化呈现各主题之间的关系以及不同个数模型之间主题的关系，并且将这种可视化的分析方法应用于具体问题的讨论中。</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>文本分词的具体操作并没有详细论述，标准不明。</li>
+<li>与人文研究相结合的深度不足，几个示例的研究都只是略作陈述，数据挖掘的深度有待加强。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465"><a href="#Lansdall-Welfare-T-Sudhahar-S-Thompson-J-Lewis-J-FindMyPast-Newspaper-Team-and-Cristianini-N-2017-Content-analysis-of-150-years-of-British-periodicals-Proceedings-of-the-National-Academy-of-Sciences-114-4-pp-E457-E465" class="headerlink" title="Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465."></a>Lansdall-Welfare, T., Sudhahar, S., Thompson, J., Lewis, J., FindMyPast Newspaper Team and Cristianini, N., 2017. Content analysis of 150 years of British periodicals. Proceedings of the National Academy of Sciences, 114(4), pp.E457-E465.</h2><p>(Lansdall-Welfare et al, 2017)</p>
+<h3 id="（一）研究问题-2"><a href="#（一）研究问题-2" class="headerlink" title="（一）研究问题"></a>（一）研究问题</h3><p>研究问题：构建一个具有地理信息及时间信息的期刊报纸语料库，为学者提供一种定量的数据驱动的工具，用于研究文化及社会。本文关注了政治、经济、文化、性别等议题，通过历时语料文本分析，补充了传统精读方法。<br>先前的研究的不足：主要基于单词计数，忽略了语义和上下文。没有涵盖期刊，样本数据存在偏见。<br>研究目标：</p>
+<ul>
+<li>验证和结合书籍研究的结果（verifying or contextualizing some of the findings of the study on books）</li>
+<li>利用大数据分析来发现历史的长期趋势和变化（detect long-term trends and changes in history by means of big data analysis of the vast corpora）</li>
+<li>用遥读与历史学家的仔细阅读相补充（show an approach to understanding continuity and change in history based on the distant reading of vast news corpora, which is complementary to the traditional close reading by historians）</li>
+</ul>
+<h3 id="（二）研究框架-2"><a href="#（二）研究框架-2" class="headerlink" title="（二）研究框架"></a>（二）研究框架</h3><ul>
+<li>N-gram 频度统计<ul>
+<li> 1-gram/n-gram<ul>
+<li>Restricted n to three and limited our study to n-grams that occur at least 10 times within the corpus.</li>
+</ul>
+</li>
+<li> 频率而非次数<ul>
+<li>使用频率 = 出现次数除以该年语料单词总数</li>
+<li> The use frequency for an n-gram was computed by dividing the number of instances of the n-gram in a given year by the total number of words in the corpus that year.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 命名实体及其属性<ul>
+<li>将人名映射到职业和性别上，探讨职业和性别的时间发展趋势</li>
+<li>用地理位置信息标记语料，讨论时空发展趋势<ul>
+<li> Compiled geographical maps for the United Kingdom for each of the terms displaying a gradual increase or decline</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）所采用的数据集-2"><a href="#（三）所采用的数据集-2" class="headerlink" title="（三）所采用的数据集"></a>（三）所采用的数据集</h3><p>英国报纸数据</p>
+<ul>
+<li>基本信息<ul>
+<li>该语料库跨越 150 年，由数百万篇文章组成，占该时期所有英国地区文章的 14%。涵盖所有主要地区、时间段和主要媒体。（注意语料的代表性）包含地理和时间信息（eyond Counting Words）</li>
+<li>数据来源<ul>
+<li> The British Library’s newspaper collections</li>
+<li>FindMyPast 自 2010 开始数字化</li>
+<li> Joint Information Systems Committee (JISC) 补充</li>
+</ul>
+</li>
+<li>数据选择<ul>
+<li> (i) the completeness of the runs of issues, (ii) the number of years that an issue covers, (iii) the geographical region that the issue is from, (iv) the quality of the OCR output for the issue, and (v) the political bias of issues.</li>
+<li> 依据完整性、时间跨度、地理区域、ocr 质量、政治偏见综合评估选择，尽量做到平衡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>报纸和图书的区别 <ul>
+<li>关键事件对报纸语料库的影响更明显（with newspapers offering a closer representation of historical shifts, whereas books are more reflective in nature and less time-bound）</li>
+<li>以往研究更多地关注图书语料，本文使用的是报纸语料</li>
+</ul>
+</li>
+<li>数据处理和元数据<ul>
+<li>数字化与结构提取<ul>
+<li>扫描、对比度校正、分割区域（依据内容类型）</li>
+</ul>
+</li>
+<li>Ocr 处理（对后续统计结果有影响，存在噪声）<ul>
+<li>同时输出结果和信度，以便后续评估</li>
+</ul>
+</li>
+<li>元数据标注</li>
+</ul>
+</li>
+</ul>
+<h3 id="（四）对计算结果的阐释-2"><a href="#（四）对计算结果的阐释-2" class="headerlink" title="（四）对计算结果的阐释"></a>（四）对计算结果的阐释</h3><p>Open-Ended Measurements</p>
+<ul>
+<li>gender bias, geographical focus, technology, and politics, along with accurate dates</li>
+</ul>
+<p>Beyond Counting Words</p>
+<ul>
+<li>People in history.<ul>
+<li>jobs<ul>
+<li>politicians and writers are most likely to achieve notoriety within their lifetimes</li>
+</ul>
+</li>
+<li>gender<ul>
+<li>more present than females during the entire period</li>
+<li>a slow but steady increase of the presence of women after 1900</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changes in geography<ul>
+<li>(A) British and English, (B) Liberal Party and Labour Party, (C) steam and electricity, and (D) horse and train</li>
+</ul>
+</li>
+</ul>
+<h3 id="（五）启发与不足-2"><a href="#（五）启发与不足-2" class="headerlink" title="（五）启发与不足"></a>（五）启发与不足</h3><ul>
+<li>启发<ul>
+<li>实体命名对于量化分析的补充：不限于词频及其频度的统计，关注到词的表面形式下包含的信息，通过命名实体识别技术，探讨实体的属性，可以超越个体，联系到宏观的社会议题，为人文研究提供数据支撑。</li>
+<li>研究材料的创新：选取报纸作为研究材料，关注到了报纸对于社会时间的敏感性，从研究材料的选取上影响数据结论，从而使结论更具说服力。</li>
+<li>处理未经数字化数据的流程：引入 ocr 噪声的信度筛选高质量的语料，尽量减少噪声信息</li>
+</ul>
+</li>
+<li>不足<ul>
+<li>文中指出的局限性：无法引入上下文知识，访问语义信息，ocr 噪声等<ul>
+<li> the inability of computational methods to introduce contextual knowledge, access semantic information, or work in the presence of OCR noise or the issues related to bias in the original corpus selection are probably all issues that can be solved or accounted for over time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="二、思考题"><a href="#二、思考题" class="headerlink" title="二、思考题"></a>二、思考题</h1><h2 id="（一）语料的选择和处理"><a href="#（一）语料的选择和处理" class="headerlink" title="（一）语料的选择和处理"></a>（一）语料的选择和处理</h2><p>如何根据研究问题确定数据的收集范围？<br>主题模型，N-gram 分析、词频分析等方法如何与人文研究相结合<br>论文是否分析了所用古籍语料的特点？对所应用方法有何影响？<br>分析在长时段的历时语料上应用这些方法的难点和要点</p>
+<h3 id="1-语料数据的收集"><a href="#1-语料数据的收集" class="headerlink" title="1.语料数据的收集"></a>1. 语料数据的收集</h3><p>(Lansdall-Welfare et al, 2017) 其研究目的为通过文本分析反应文化社会的变迁，于是选择使用了社会敏感度较高的报纸语料构建语料库。并通过 ocr 技术对报纸图像进行数字化，借由信度计算等综合维度筛选语料。<br>(Allen at al, 2023) 选用了数据规模量大，可获取度高的汉典古籍，并进行预处理。该文着重于提供一种研究方法，对具体问题的讨论较少，并期待为后来的研究提供支持，所以要建设一定规模的语料库。<br>(Nichols et al, 2018) 讨论孔孟荀三书的主题分布，但其语料库构建依靠 ctext。因为要讨论三书的主题异与同，所以要贯通三书，不能为三书建立分别的语料库。又因为主题的解释要参考这一主题在其他经典文本中的分布情况，所以不能就三书而建立一个语料库，还要包含其他典籍。<br>总体来看，语料数据的收集需要注意</p>
+<ul>
+<li>研究问题的需要</li>
+<li>语料库的规模</li>
+<li>语料的质量</li>
+<li>语料的可获取度</li>
+</ul>
+<h3 id="2-古籍语料的特点及应对方法"><a href="#2-古籍语料的特点及应对方法" class="headerlink" title="2.古籍语料的特点及应对方法"></a>2. 古籍语料的特点及应对方法</h3><p><strong>1）获取难度大：有许多古籍并未实现数字化，应用 ocr 技术的难度较大。</strong><br>策略：使用已有的语料；参考 (Lansdall-Welfare et al, 2017) 对语料 ocr 的信度进行评估后筛选语料<br><strong>2）文本预处理的难度大：分词或分字的选择问题，分词判定的标准问题。</strong><br>原生阶段、派生阶段、合成阶段<br>(Nichols et al, 2018) 采用分字，可能出现拆词情况（如 “文王”）。且古代汉语中的一些多音节单纯词（如联绵词及部分重言词）是不可拆的，如果采用分字处理，会影响整体模型效果。（[[P：重言词汇报 20230606#3、单字与重言词语义相似度对比 | 单字与重言词语义相似度对比]]）<br>(Allen at al, 2023) 采用分词，但并未详细阐述分词标准。语言学界对于古代汉语的分词标准仍待讨论，难以得出一个可实际操作的、能大规模使用的判定方法。古汉语词汇以单音节为主，一些现代汉语的双音节词可以看做是两个单音节词构成的词组。现有的许多自动分词模型基于现代汉语，会分出非最小单位的词。<br>策略：考虑采用排除法，只识别单语素构成的复音词（[[连绵词]]、叠音词）及命名实体，其他作分字处理。<br><strong>3）文本的多义性和歧义性：机器学习暂未很好地处理一词多义现象。</strong><br>通假字，字形。表面的词形到深层词义<br>词义的分析是基本的，首先对词义进行标注。主要依靠语境向量<br> (Nichols et al, 2018)“文王” 例，文本多义性产生噪声从而影响统计结果。该文采用的是先统计，再解释的方法，人为地剔除分析结论中的噪声。<br>策略：研究文本消歧技术，按照义项对古汉语词汇进行划分（[[@舒蕾等：古汉语词义标注语料库的构建及应用研究]]）</p>
+<h3 id="3-历时语料分析的重难点"><a href="#3-历时语料分析的重难点" class="headerlink" title="3.历时语料分析的重难点"></a>3. 历时语料分析的重难点</h3><p>(Lansdall-Welfare et al, 2017) 主要分析历时语料，对期刊数据进行了时间和地理信息位置的标记，并通过实体命名技术探讨了实体属性的历时变化发展。<br>然而，对于古籍文本来说，时代的确定并非容易。第一，古籍文本流传时间长，其间版本流传、传抄修订许多已不可考。第二，许多经典文本是层累性的，以《十三经注疏》为例，需要进行形成时代的离析，其经文、注文、疏文的形成时代都不同，如果仅仅视作一个时代平面的语料，会造成数据的偏差。<br>其次，该文对历时语料的分析主要依托于关键词检索，然而，词汇的发展变化是复杂的，如果仅仅对一个关键词的出现频度进行测定，容易忽略词汇的消亡、新生、演变问题。而这些问题的判定和解释则需要人文学者的经验作为支撑。所以，对研究主题进行多维度的测定是必要的，也是数据统计结果进入人文研究的难点。</p>
+<h2 id="（二）结果的分析和阐释"><a href="#（二）结果的分析和阐释" class="headerlink" title="（二）结果的分析和阐释"></a>（二）结果的分析和阐释</h2><p>主题模型的聚类结果如何提炼<br>分析结果与已有的人文研究结论的印证过程是否有效？Or 是否牵强？</p>
+<h3 id="1-主题聚类结果的提炼"><a href="#1-主题聚类结果的提炼" class="headerlink" title="1.主题聚类结果的提炼"></a>1. 主题聚类结果的提炼</h3><ul>
+<li>通过人文学者的经验及 experimental text analysis<ul>
+<li> 结合主题包含关键词</li>
+<li>结合主题在各文档中的权重</li>
+<li>增加学者的数量，减少个人偏见</li>
+</ul>
+</li>
+<li>调整主题模型的个数，寻求可解释性高的模型<ul>
+<li>对不同数量的模型进行可视化分析 (Allen at al, 2023)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-主题分析结果与人文研究的对应"><a href="#2-主题分析结果与人文研究的对应" class="headerlink" title="2.主题分析结果与人文研究的对应"></a>2. 主题分析结果与人文研究的对应</h3><p>(Lansdall-Welfare et al, 2017) 将文化社会问题转化为某些关键词在报纸文本中的提及频度的计量问题，一定程度上能够反映媒体和社会的关注动向。<br>(Allen at al, 2023) 对主题建模数据的解释较为笼统。主要是对一特定的概念在不同文本中的分布及不同主题的分布进行探讨，主要是启示意义。<br>(Nichols et al, 2018) 讨论比较详细，从主题的相似性上来看，作者的观点是《论语》和《荀子》都强调外在的学和礼带来的道德变化，而《孟子》则注重与心、认知相关的内在道德。实际上，统计数据不代表论断，对于统计数据的解释也可以是多样的。作者的观点也只能代表一种视角，该文可以证明《论语》和《荀子》在这一议题上存在相似性，但并不能证明《论语》和《荀子》存在普遍的相似性。<br>在解读主题的过程中，作者似乎也更加关注量上的积累，而对质的区别关注不够。例如《论语》中关于仪式的主题，只能证明仪式的问题对于孔子很重要，而不能证明孔子对于仪式的态度是如何的；《孟子》关于利益和道德的主题，只能证明孟子对于义和利的问题讨论很多，也并不能证明孟子对于义和利分别是什么态度。这些主题的分布很多都是时代共同的命题，而作者并没有强调时代对其书籍内容的影响。</p>
+<h2 id="（三）数字与人文的关系"><a href="#（三）数字与人文的关系" class="headerlink" title="（三）数字与人文的关系"></a>（三）数字与人文的关系</h2><p>研究框架（Methodology）与传统人文研究的差异是什么？<br>NLP 技术应用到人文研究问题中时，与传统人文研究互相补充的关系。可针对该问题发表自己的看法。<br>Digital method 的优势和不足是什么？</p>
+<h3 id="1-数字与人文研究范式的不同"><a href="#1-数字与人文研究范式的不同" class="headerlink" title="1.数字与人文研究范式的不同"></a>1. 数字与人文研究范式的不同</h3><p>传统人文研究注重文本精读与细读。以传统语言文字学研究为例（[[@符渝：  文本细读与乾嘉考据研究 —— 以 “能不我知” 考据为例]]），文本细读是对文本的结构和语言进行充分解读，从而挖掘文本内涵。例如对考据材料的分析，本文作者通过对《经义述闻》“能不我知” 一例的结构分析和内涵挖掘，讨论其考据方法、考据思想、考据原理。对文本的细读可以达到的效果是通过一则材料，从行文结构深入到内容结构，归纳出一套可以挪用的理论方法，这个过程依赖专家丰富的阅读经验，具有较为鲜明的个人色彩。<br>数字人文研究注重数据支持下的遥读。数字人文的研究首先依靠大规模的语料库，并通过对这些语料的量化分析和处理，发现其在统计学上涌现的规律。数字人文的研究虽然与人文研究相结合（distant reading &amp; close reading (Allen at al, 2023)(Lansdall-Welfare et al, 2017)），以及三者结合 (Nichols et al, 2018)），但其应用细读方法的深度和不及传统人文研究。相比传统人文研究，数字人文研究的特点更显现在科学性和计量性。<br>对比二者的研究范式，可以从几个方面来看。<br><strong>第一，循证方式的不同</strong>：传统人文研究高度依赖个人的研究经验和阅读能力，其论证过程受到主观因素影响较大。而数字统计方法的结果是客观的，虽然在解释环节，数字人文研究仍然需要人文学者的参与及解释能力，但相对来说，数字人文研究的个人性和主观性较低。这一方面使数字人文研究具有科学性，另一方面也使其创见性不足。<br><strong>第二，问题产生的不同</strong>：传统人文研究的问题意识依靠灵感和经验，有一预设问题之后，由学者个人主导展开对个体问题的探讨，在分析归纳与推理演绎等思维过程中论证问题；而数字人文研究的问题往往是由数据驱动的，一部分问题来自数据的涌现，例如对主题的聚类分析，对特殊值的关注等 (Allen at al, 2023)，另一部分则来自对传统人文问题的迁移，主要目的是通过数据再次探讨人文研究中的某一问题 (Nichols et al, 2018)。从总体规律来说，传统人文研究包含许多自上而下的、逐步进展、先预设再论证的问题，而数字人文研究的许多命题都是自下而上的、自然涌现、先计算再解释的。（[[自上而下与自下而上]]）<br><strong>第三，文本性质的不同</strong>：传统人文研究的对待文本采取精读细读、深度挖掘的态度，致力于找到文本的深层含义，其对于文本的研究更倾向于延着纵向的路径展开，着重开掘文本的深度意蕴；数字人文研究将文本视为数据，因为在数据量上有了巨大的提升，所以倾向于进行面的延展，着重讨论众多文本中的共性与数量上涌现出的规律。传统人文研究中的文本是相对独立的个体，学者对每一个体的研究都细致精巧，对于普遍性中的个体差异性关注较多；而数字人文研究中的文本成为了众多数据中的一个点，在面的铺展下，从个体上升到整体，注重从个体性中提炼出普遍性。</p>
+<h3 id="2-数字人文相互补充的关系"><a href="#2-数字人文相互补充的关系" class="headerlink" title="2.数字人文相互补充的关系"></a>2. 数字人文相互补充的关系</h3><p>传统人文研究已经存在追求科学原理和科学方法的学者和学派。传统语言文字学的实践中已经大量采用实证的方法来增强研究的可信度和客观性。冯胜利强调了乾嘉考据学在科学原理上的追求，这种 “理必” 之学很大程度上是一种 “推理逻辑和定理派生系统”（[[@冯胜利：乾嘉 “ 理必 ” 与语言研究 的科学属性 1]]）乾嘉汉学通过可操作性、可重复性的阐释方法，力求将客观的经文、经义还原出来，具有鲜明的实证主义色彩。学者往往皓首穷经，卻由于人力所限，在考据操作中，有时也会陷入以孤例循证和主观性过强的问题（例如乾嘉 [[因声求义]] 失之过滥）。数字人文方法将科学的计算方法引入人文研究中，对增强人文研究的科学性和系统性有显著的意义。<br>在方法论意义上，<strong>一种数字与人文相结合的方式是转化式和呈现式的</strong>：借由计算机的统计技术与可视化技术，帮助典籍文本实现从平面的文本关系到多维度的层次关系的转化，并且能够将其进行关系化、网络化，以互联、易读的形态呈现出来。知识库和知识图谱的建构，是数字人文背景下的古代经典研究的最新热点之一。在大数据的背景下，知识图谱能够揭示出文本非直观形式的对象关联，从非结构性的文本中发现新的模式、规则、趋势。例如 [[@王立军：训释系联焦点词的词汇语义特征与上古汉语核心词研究]] 实际上是把传统的系联方法用计算机的方式加以呈现，其方法范式上并没有本质的创新，只是借由更科学的方式表达出来。<br><strong>另一种方法是生成式的</strong>：通过数据的汇总和计算涌现出新的问题，由此为人文领域带来新的视角。以主题建模为例，研究者或许并没有具体的预设问题，但是在数据统计结果上进行文本阅读，可能会发现新的议题。当人工智能技术介入自然语言处理之后，模型的可解释性成为一个更加值得探讨的问题，但其输出结果时卻能够带来新的启发。这种研究方式采用 “计算” 的底层思维，用 “计算” 解决人文问题，与人文研究的研究范式差别更大。<br>当然，数字方法不能取代人文研究，数字人文存在一定的方法局限。在数字方法与人文方法的互相补足中，才能推进人文领域各个特定问题的研究。</p>
+<h3 id="3-DH-方法的优势与不足"><a href="#3-DH-方法的优势与不足" class="headerlink" title="3.DH 方法的优势与不足"></a>3.DH 方法的优势与不足</h3><p>优势：在文本数字化实现的基础上，利用计算机技术，进行知识的挖掘和提取，为人文研究者提供新的视角和研究方法。<u>其一在于数据支撑的客观性</u>，弥补人文研究有时陷入主观偏见的弊病；<u>其二在于数据涌现的发掘能力</u>，人文学者因为研究兴趣和时间精力等原因，无法对所有数据进行普遍的观测，而数据自下而上的显化出一些问题，关照学者之前未曾关注，但对自身研究有所帮助的信息。这种对于宏观趋势的把握有利于对文本进行大局势的把握，避免陷入细节的纠缠之中。<br>局限：大数据的遥读方法使数字人文具有宏观的视野，但也因为面上的铺展失去了一些深度的探究。机器学习普遍使用的是表面层次上线性的语言进行训练和计量，对于深层语义的理解效果欠佳。LLM 虽然已经能够实现对人类语言的模仿，但其对语言的理解机制仍然是不可知的，所以 LLM 在应用领域的价值可能比在研究领域的价值更高。就数字人文研究来说，数字计算方法无法独立于人文研究之外，数据的解释仍然需要人文学者的深度参与，数字人文的推进不仅需要数字计算方法的改进和提升，也更需要人文学者的学术的推进，才能对模型计算结果作出有意义的阐释。</p>
+<blockquote>
+<p>[!tip]+ link</p>
+<p>[[@Nichols et al：Modeling the Contested Relationship between Analects, Mencius, and Xunzi： Preliminary Evidence from a Machine-Learning Approach]]<br> [[@Lansdall et al：Content analysis of 150 years of British periodicals]]<br> [[@Allen et al：Topic Modeling the Hàn diăn Ancient Classics (汉典古籍)]]</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>技术</category>
-        <category>Web</category>
+        <category>作业</category>
+        <category>其他</category>
       </categories>
       <tags>
-        <tag>建站</tag>
-        <tag>？？？</tag>
+        <tag>数字人文</tag>
+        <tag>文献笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1373,6 +1715,2605 @@
       <tags>
         <tag>训诂</tag>
         <tag>综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>王筠汉字教育实践的学理面向</title>
+    <url>/2023/07/13/17-wangyun/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：王筠的汉字教育实践集中体现在《文字蒙求》一书的编纂上。《文字蒙求》以 “象形、指事、会意、形声” 前四书分卷，每卷下各依据构形方式分正例与变例，每一字头将楷书与古文字形同列，有意识地从形体上进行说解。从汉字学理论的角度，《文字蒙求》是依于《说文》，将汉字形义统一原理、类聚与系联思想、字际关系分析原理、六书理论融合的一本实例说解之书。从汉字教学的实践看，《文字蒙求》是运用字理教学和集中识字，对儿童具有引导和启发作用的，又能遵循儿童心理发展规律的一本创新式的蒙学书籍。《文字蒙求》这一汉字教学实践，对今天的识字教育仍然有借鉴作用。</p>
+<p><strong>关键词</strong>：王筠 《文字蒙求》 字理教学 汉字教学 《说文解字》</p>
+<span id="more"></span>
+
+<p>王筠汉字教育实践的学理面向</p>
+<p>—— 以《文字蒙求》为中心</p>
+<p>《文字蒙求》一书，是王筠应好友陈山嵋之约，为教习陈氏二孙识字而编写。道光 18 年初版，名为《字学蒙求》，道光 26 年再经订补，改名《文字蒙求》。《文字蒙求》是一本儿童识字课本，但并不同于以前的蒙学教材，它是以《说文解字》许说为基础，再加王筠辑录删改补订而成的一本字理教学实践手册。它不仅是体现王筠《说文》学观点的重要著作，更是一份当今汉字字理教学的优秀范例。本文将结合王筠的《说文》学研究和汉字教学观念，分析《文字蒙求》一书中的学理面向和实践路径。</p>
+<h1 id="一、《文字蒙求》的基本体例"><a href="#一、《文字蒙求》的基本体例" class="headerlink" title="一、《文字蒙求》的基本体例"></a>一、《文字蒙求》的基本体例</h1><h2 id="（一）选字和编排"><a href="#（一）选字和编排" class="headerlink" title="（一）选字和编排"></a>（一）选字和编排</h2><p>《文字蒙求》选字以《说文解字》为基础，以六书的前四书 “象形、指事、会意、形声” 为纲，选择 2036 字分列其中。各大类下，又根据事物种类或构字理据各分正例与变例，纲张目举，始成条贯。其条目大体如下：</p>
+<p>象形：天地、人、动物、植物、衣服器械屋宇五种正例。一字象两物形、兼声意之象形等九种变例。</p>
+<p>指事：纯体指事一种正例。以会意定指事、即意即事者八种变例。</p>
+<p>会意：顺递为意、并峙为意等九种正例。省文会意、反文会意等十一种变例。</p>
+<p>形声：楷已变篆、为它字之统率、声意胶葛及声不谐、从省声四种。</p>
+<p>首先，《文字蒙求》的编排方式打破了《说文》540 部首的排列方式，采取了一种有层次的理论建构方法，将两千余个基本汉字填充于王筠的汉字构形理论之中。如果说，王筠的《说文释例》是打破《说文》原有顺序，以各种条例和问题辑成专书，重点在于 “以字证例”。那么《文字蒙求》则是采取前四书的编排顺序，有又有机融入了《说文释例》所谈及的各种条例，重点在于 “以例说字”。以前四书为纲，一方面符合理论上汉字生成的顺序，即从独体到合体的发展规律，另一方面也符合儿童识字从易到难，从部件到整体的认知心理。</p>
+<p>其次，大类下分正例与变例，有助于读者把握主干，亦识得支流。除了象形的正例是以义类划分出五类，其余的正变例皆是从汉字构形构意上分析得来。例如，会意字下分 “形、事、声无所兼者” 为正例九类，其余为变例十一类。正例中 “顺递为义”“并峙为义”“即字之部件见意” 是关于构件的构意如何参与整字构意的生成，“叠二成字” 等是关于重复部件的多少；变例中 “兼象形”“会意兼声” 等是关于构件的多重作用，“省文会意”“反文会意” 等是关于构件在整字中发挥表义作用的不同形式。这些都是从汉字构形的角度对汉字的分类，尽管王筠的分类标准不够统一，层次结构也不太分明，但仍然体现了他对于汉字构形的精细化思考。</p>
+<p>另外，在每章的具体内容和字头排列上，《文字蒙求》每卷卷首先列说明，对该卷选取标准和分类界定进行概述。次而列举经典常用字，这些字头先按照王筠总结的正例与变例进行类聚，小类中的排序按照前两卷 “象形”“指事”，列字以类聚，后两卷 “会意”“形声”，列字不能以类聚，则依《说文》本次的标准，进行排布。</p>
+<h2 id="（二）字头和说解"><a href="#（二）字头和说解" class="headerlink" title="（二）字头和说解"></a>（二）字头和说解</h2><p>《文字蒙求》每一字条首列楷书，次列小篆，有时增补古文字字头，下接说解。《文字蒙求》的字头部分，首先考虑普及和教学功能，列楷书字头。多数情况加小篆与之对应，字形间取钟鼎，可见王筠对《说文》并非全采，而是有所去取。</p>
+<p>《文字蒙求》的说解部分包括注音、构形分析、释义、字际关系辨析等部分，大体以《说文》为基础，而又加以简化，力求平时易读。在注音时，采用常用字不注音，其他字多用反切，间用直音的方法。在解说字形时，用平实的语言拆解构件和解说字理，相较《说文》简短凝练的语言更易理解。在解说字义时，对简单字不加释义，其余多延用说文注释，又更加注重古今语的沟通，补充相关文化常识。在说解字际关系时，对该字涉及的正俗字、通假字、古今字、异体字等现象都加以说明。</p>
+<p>《文字蒙求》的说解具有独特的风格。在说解时，王筠一般采用简洁又不失形象的话语，在解释汉字构形的同时激发学生的想象力。如 “月                                ，月圆时少，阙时多，且让日，故作上下弦时形也。中一笔本是地影，词藻家所谓顾兔桂树也。” 在说解 “月” 时，王筠不仅描述了勾勒缺月形态的线条，紧扣 “象形” 这一造字法，而且将古文字形中一点解释 “地影”，更延申到 “顾兔桂树”。这一点是王筠基于《说文》“太阴之精” 的推阐。张衡《灵宪》曰：“月者，阴精，积而成兽，像蛤兔焉。” 月中看上去有阴影，古人附之以传说故事，认为是阴气聚积而成兽。王筠未采用抽象的阴阳概念，代之以形象的故事，则有利于激发儿童兴趣与加深儿童记忆。</p>
+<h1 id="二、《文字蒙求》的汉字学学理分析"><a href="#二、《文字蒙求》的汉字学学理分析" class="headerlink" title="二、《文字蒙求》的汉字学学理分析"></a>二、《文字蒙求》的汉字学学理分析</h1><h2 id="（一）系统条理：类聚系联之法"><a href="#（一）系统条理：类聚系联之法" class="headerlink" title="（一）系统条理：类聚系联之法"></a>（一）系统条理：类聚系联之法</h2><p>尽管自许慎开始，传统文字学已经能用形义统一的方法分析汉字字形，并通过形义的标准对汉字进行有规律的系联，将形体相近或具有相同部件的字类聚起来，但是将这一方法运用到儿童汉字教学中的比较少见。王筠的这一尝试，实属汉字教学领域的一大开创。</p>
+<p>王筠在说解汉字时，有时会对具有同一构件的字进行列举，以便使用者类化记忆。如 “舌…… 适、栝、话、刮、髻、活、聒、括从之。” 对于形体相近的字，也会编排到一起，如 “本”“末”“朱” 三字，“本者木之根也，末者木之梢也，朱者木之心也。皆有形而形不可象，故以一记其处谓在上在下在中而已。” 此三字因为形体相近，造字法同为指事，所以王筠直接将三字列为一条共同说解。王筠在对比中清晰地说明了三字中的 “一” 都是指事符号，这就能让儿童能够在字例的关系中理解造字法。如果在不同字形中构意不同的构件，王筠也会加以对比说明，如 “果  ，从木，田象果形生成之物多圆，小者  以象之，金卤是也，大者  以象之，石是也。” 这种环围式的构件，以其大小不同在构形时发挥的象形作用也不同，王筠联系多个字头，互相补充，互相证明。</p>
+<p>王筠依据构形构意对汉字进行类聚和说解的做法，与《说文》的编排体例有继承关系，又有所创新。在整体的字头排布上，首先考虑造字法和构意，再考虑形体与意义，就将汉字学理论提到首要位置，体现了王筠对《说文》体系的精熟与贯通。在集中识字的教学安排下，王筠同时又显性地将《说文》内在的汉字学理论展现出来，使初学者易知易懂。在具体字形的排列和说解上，他也注重字与字的关系和对比，在顺序与解释中多加考量。如此《文字蒙求》才能成为一部将汉字理论与汉字教学有机关联的识字课本。</p>
+<h2 id="（二）字际关系：正俗古今之别"><a href="#（二）字际关系：正俗古今之别" class="headerlink" title="（二）字际关系：正俗古今之别"></a>（二）字际关系：正俗古今之别</h2><p>《文字蒙求》对汉字的各种用字现象都作了说明，在说解中融入了王筠对于正俗字、通假字、古今字、异体字的看法。如：</p>
+<p>正俗字：霸，此生魄死魄之正字。</p>
+<p>通假字：甫，古多借父为甫。</p>
+<p>古今字：它，迁何切。古蛇字。今分蛇音食遮切。</p>
+<p>异体字：看，從手下目，亦作  。</p>
+<p>《文字蒙求》用 “x，某之正字”“x，借为 x”“x，古 x 字”“x，亦作 x” 等用语沟通字际关系，在区分汉字不同形体之间的关系上对学者有一定的帮助。《文字蒙求》与王筠的汉字学研究密切相关，以相对固定的用语，在实例的讲解中，使学者能了解古书中的用字现象，不仅在汉字学本体上明晰汉字形体的演变过程，而且在实用角度为阅读古书打下基础。</p>
+<p>王筠提出了分别字和累增字的概念，“字有不须偏旁而义已足者，则其偏旁为后人递加也。其加偏旁而义遂异者，是为分别文。”“其加偏旁而字仍不异者，是谓累增字。”[<a href="#_ftn1">①]</a> 分别文是通过加偏旁而分化源字职能的孳乳字，累增字是增加偏旁而职能不变的异体字。王筠的这一对于汉字孳乳的发展规律的见解在《文字蒙求》中则体现为他对古今字和异体字的说解。如 “巨，古矩字，亦作榘。”“巨”“矩” 是借义分化的区别字，“矩”“榘” 是累增字，王筠用 “古 x 字”“亦作 x” 的用语来沟通三个字形，并且对两种关系作了一定的区分，虽然或因为简明考虑，并未明确提出 “区别字”“累增字” 的概念，但仍然可见其对于字际关系的清晰把握。</p>
+<h2 id="（三）六书理论：经纬与兼书之论"><a href="#（三）六书理论：经纬与兼书之论" class="headerlink" title="（三）六书理论：经纬与兼书之论"></a>（三）六书理论：经纬与兼书之论</h2><p>王筠在《说文释例》中提出了六书的经纬理论：“文统象形指事二体。字者孳乳而浸多也。合数字以成一字者皆是，即会意形声二体也。四者为经，造字之本也。转注假借为纬，用字之法也。”[<a href="#_ftn2">②]</a> 他认同班固《艺文志》的六书顺序，而不采《说文》和《周礼》郑注，这是因为从汉字生成的角度，班固的次序具有可解释性。王筠的这种经纬理论实际上与 “四体二用” 理论相通，他按照四书顺序来编排《文字蒙求》，可以看作是戴震 “四体二用” 说的一种实践。</p>
+<p>王筠还在《文字蒙求》中展现了他的兼书理论。《文字蒙求》卷一有正例一，变例九，变例中有纯形三，通为一类，都是 “不兼它字以成之”，另有 “以会意定象形”“以会意定象形而别加一形者”“兼声意之象形”“似会意之象形”“全无形而以意声为形者”，实际上已经有了一定分离看待构件的构意，而不是笼统地划分整字的造字法的意识。汉字构形方法复杂多样，并非六书能完全概括，所以王筠必须立下繁杂的分类来离析六书中同一种造字法下的不同次类，同时提出兼书理论，将兼书作为六书理论框架下的权宜之法，也是他过于笃信说文的局限性。</p>
+<p>依据王宁先生提出的汉字构形学 [<a href="#_ftn3">③]</a>，如果采用结构 - 功能分析法来分析六书，在十一种构形模式中，“以会意定象形” 可归为形义合成字，“兼声意之象形” 可归为形音合成字。虽然《文字蒙求》的编排框架仍然在六书理论体系之内，但是在变例与正例的区别中，王筠已经能够认识到对某一书内部存在不同构造方式的字形，并且能够归纳出条例，由此也能看出他的相对进步性。</p>
+<h1 id="三、《文字蒙求》的汉字教学理论应用"><a href="#三、《文字蒙求》的汉字教学理论应用" class="headerlink" title="三、《文字蒙求》的汉字教学理论应用"></a>三、《文字蒙求》的汉字教学理论应用</h1><h2 id="（一）提纲挈领：开字理教学之先河"><a href="#（一）提纲挈领：开字理教学之先河" class="headerlink" title="（一）提纲挈领：开字理教学之先河"></a>（一）提纲挈领：开字理教学之先河</h2><p>王宁先生在《汉字教学的原理与各类教学方法的科学运用》中归纳了几种主要的识字教学方法及其学理依据，其中韵语识字是中国传统的识字教学法，有利于语感的形成和兴趣的培养，适用于汉字教学的初期积累阶段；字理识字是利用汉字形义统一的原理，易于培养归纳和演绎的思维能力，适用于汉字教学的中后期积累阶段。[<a href="#_ftn4">④]</a> 传统的识字课本如《仓颉篇》、《千字文》、《三字经》等，都以韵文的形式呈现，辅以生活常识、典故事迹等内容填充，包含一定的教化意义，强调记诵之功而少分析之力。字理教学恰好可以弥补韵语识字教育的空白，从汉字构形理据出发，培养学生思辨能力和举一反三的能力。</p>
+<p>王筠在《文字蒙求》卷首引雪堂语：“人之不识字也，病于不能分。苟能分一字为数字，则点画必不可以增减，且易记而难忘矣。苟于童蒙时，先令知某为象形，某为指事，而会意字即合此二者以成之，形声字即合此三者以成之，岂非执简御繁之法乎？”[<a href="#_ftn5">⑤]</a> 可见王筠已经对字理教学的条贯之用有了一定的认识。他一改以往韵语教学的常例，以汉字学理论统摄全书，以六书理论提纲挈领，编排字头，以《说文》字训为基，简略成文，为童蒙识字教学提供了一 “执简御繁之法”，可谓 “训蒙之捷径”。</p>
+<p>王筠的字理教学体现在两个方面，一是从字源上看，列出隶定字的篆字，兼及金文、甲骨文等，通过对字形的溯源来教学。许多象形字、指事字的古文字的形义关系更为明确，能够据形索义，对儿童来说更有趣味。回归古文字，能够更好的恢复笔意从而为构字的说解提供条件。二是从构字上看，按照六书和构件排列和说解，通过对同样造字法和相似构意部件的类聚，能够在关联和比较中强化儿童的认知。同时，由独体到合体字的学习顺序，在后期会意字和形声字的教学中，更能体现出尊重汉字规律性的汉字教学法对于学习效率的提升作用。</p>
+<p>李运富教授在《字理与字理教学》指出，“字源的追溯和形体演变的分析可以配合系统讲解，也可以济系统之穷，是讲解现代汉字构形理据的重要方法。”“字理教学应该跟别的识字方法相辅相成，并行不悖。”[<a href="#_ftn6">⑥]</a> 由此可见，王筠以其《说文》学的研究成果编制一本字理教科书，以方法和规律统率汉字教学，形成了科学的童蒙汉字教育体系，这是符合教育心理学和认知习得规律的，可供今天的汉字教学工作参考。</p>
+<h2 id="（二）诱读说文：立《说文》学之根基"><a href="#（二）诱读说文：立《说文》学之根基" class="headerlink" title="（二）诱读说文：立《说文》学之根基"></a>（二）诱读说文：立《说文》学之根基</h2><p>李慈铭的《越缦堂读书记》评价《文字蒙求》时说：“取《说文》象形、指事、会意、形声四类中二千余字，分类编纂，以便初学，俾识造字之原，为读《说文》者之纲领。其说解务取简要，多有异于许君者，篆亦间取钟鼎，体例甚善，心得为多，惟所说亦有臆决支离者。”[<a href="#_ftn7">⑦]</a> 可见《文字蒙求》与《说文》的密切联系，一方面，《文字蒙求》是作为《说文》的纲领和导读，发挥着帮助初学者掌握《说文》形义统一与汉字说解思路的作用，另一方面，它也结合了王筠自己的汉字学思想对许书进行阐发与修正，同时也不可避免带上王筠本人的主观性与随意性。</p>
+<p>王筠自言：“说解取其简，或直不加注，兼以诱之读《说文》也。” 这不仅代表着王筠不欲将此书作为一本艰深的文字学著作，不以其学理性取代其汉字教学的实用性和可读性的考虑，更代表着王筠是将此书作为《说文》的先导和引子，诱导读者学习《说文》的深思。</p>
+<p>不同于传统的蒙学课本在教授汉字时辅之以道德规范与社会准则，《文字蒙求》更倾向于向儿童普及百科知识，培养其思维能力。《文字蒙求》的教育是具有延续性的。该书不但以科学的教育方法，使儿童掌握两千余个基本汉字，而且能激发其主观能动性，把举一反三、思辨推理的方法运用到今后的学习中。此外，浅近文言的行文风格，使儿童能逐渐习惯书面语与口语的不同，形成基础的语感。所以，学习过《文字蒙求》的儿童更容易进入经典世界。这种以理教学，启发为主的识字方法对于培养学生的文献阅读素养以及长期的思考能力有很大的帮助。</p>
+<h2 id="（三）以人为本：循儿童发展之阶梯"><a href="#（三）以人为本：循儿童发展之阶梯" class="headerlink" title="（三）以人为本：循儿童发展之阶梯"></a>（三）以人为本：循儿童发展之阶梯</h2><p>王筠认为 “学生是人，不是猪狗。读书而不讲，是念藏经也，嚼木札也，钝者或俯首受驱使，敏者必不甘心；人皆寻乐，谁肯寻苦？读书虽不如嬉戏乐，然书中得有乐趣，亦相从矣。”[<a href="#_ftn8">⑧]</a> 这种反对死记硬背，以学生为主体，激发学生兴趣的方式体现了王筠以人为本的教育观念。</p>
+<p>《文字蒙求》虽然立足于《说文》，但并未照搬《说文》，王筠除了对《说文》中比较迂曲或不合常理的观点进行了改造和纠偏，同时也对某些深涩抽象的说解进行了改写或重构。如《文字蒙求》：“车，当横看，方者舆，长者轴，夹舆者输。自后观之，则见两输如绳直也。”《说文》：“舆轮之緫名。夏后时奚仲所造。象形。” 王筠描述的是不同角度看到的车舆的形象，与车的构形产生联系，能使学生在生动的想象中识记汉字，而《说文》仅是结合史事进行客观描述，相对之下，《文字蒙求》对于儿童心理的把握就更为精准。</p>
+<p>王筠的识字教学安排很好地考虑到了知识传授的阶次性，采用循序渐进的办法，使学生的能力渐次上升。他在《教童子法》中指出：“先取象形指事之纯体教之。识‘日’、‘月’字，即以天上日月告之；识‘上、下’字，即以在上在下之物告之：乃为切实。纯体字既识，乃教以合体字，又须先易讲者，而后及难讲者，讲又不必尽说正义，但须说入童子之耳，不可出之我口，便算了事。” 教儿童习字，首要切实，所以要从身边物象的象形字开始，进而由独体字到合体字，按照从易到难的顺序讲解，最重要的是 “入童子之耳”，不必追求完全的精确全备。全书选取两千余汉字，字量适中，并不构成教学速度上的压力，那么就能留出更多的消化理解时间。同时，循序渐进的教材安排以及形象生动的说解指导，也让学生能够在识字学习中培养兴趣、获得成就感。</p>
+<p>综上所述，王筠的汉字教育实践拥有两重学理面向。一面勾系以其《说文》学研究为代表的汉字形义学研究成果，运用汉字学理论方法指导汉字教学；另一面基于应用需要，面向读者对汉字学理论体系进行筛选和精简，以满足教育实践的需求。王力在《中国语言学史》中说道：“《说文》四大家当中，王筠是唯一注意文字学普及工作的。”[<a href="#_ftn9">⑨]</a> 王筠的《说文》学研究，姜聿华评价其 “主于整理归纳，间有创见，但其主要特点是重视普及工作。”[<a href="#_ftn10">⑩]</a> 在《文字蒙求》这一汉字教学实践中，我们可以看出王筠对于汉字普及工作的思考与创新，本书虽然精简短小、面向童蒙，却仍然包含着王筠的汉字学思想，又能考虑的汉字教学的需要，实际上对所有《说文》初学者都能发挥不错的引领之功，对当代汉字教学仍然有着参考价值。</p>
+<p>参考文献</p>
+<p>[1]  李运富。字理与字理教学 [J]. 吉首大学学报 (社会科学版), 2005 (02): 129-134.</p>
+<p>[2]  （清）王筠，沈薇薇，邵长霞，等。文字蒙求 外一种 [M]. 哈尔滨：黑龙江人民出版社，2009.</p>
+<p>[3]  顾姗姗. 《训蒙字会》与《文字蒙求》编纂的理念 —— 当代汉字教学的启示 [J]. 忻州师范学院学报，2021, 37 (1): 54-61.</p>
+<p>[4]  徐青. 《文字蒙求》與《澄衷蒙学堂字课图说》比較研究 [D]. 深圳大学，2017.</p>
+<p>[5]  徐颍. 《文字蒙求》研究 [D]. 天津师范大学，2013.</p>
+<p>[6]  路凤华. 《文字蒙求》研究 [D]. 内蒙古师范大学，2008.</p>
+<p>[7]  陈晓霞. 《文字蒙求》研究 [D]. 福建师范大学，2009.</p>
+<p>[8]  何迎竹. 《文字蒙求》研究 [D]. 东北师范大学，2012.</p>
+<p>[9]  马景仑. 《文字蒙求》的实用价值及其学术贡献 [J]. 南京师大学报 (社会科学版), 1995 (04): 88-91.</p>
+<p>[10] 钟明彦。试论传统「六书」在汉字教学中的重构：以图符字为例 [C]// 第七届汉字与汉字教育国际研讨会论文摘要集。高雄师范大学华语文教学研究所等，2017: 254-272.</p>
+<p>[11] 王真如。清末识字教材《文字蒙求》研究 [D]. 青岛大学，2021.</p>
+<p>[12] 符渝。论《文字蒙求》的识字教育理论 [J]. 陕西师范大学学报 (哲学社会科学版), 2004 (5): 103-106.</p>
+<p>[13] 王立军。谈王筠 “会意字” 分类问题 [J]. 河南师范大学学报 (哲学社会科学版), 1998 (4): 23-26.</p>
+<p>[14] 陈淑梅。试论王筠对汉字学的贡献──读王筠《说文释例》[J]. 古汉语研究，2001 (1): 45-49.</p>
+<p>[15] 张玉梅。王筠 “形声兼会意” 述论 [J]. 古汉语研究，2010 (1): 48-55+96.</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a> 徐世昌等编纂，沈芝盈、梁运华点校：《清儒学案・卷一百四十五》，中华书局，2008 年 10 月，第 1 版，第 5669 页。</p>
+<p>[<a href="#_ftnref2">②]</a> 王筠：《说文释例》，北京：中国书店，1983 年，第 3 页。</p>
+<p>[<a href="#_ftnref3">③]</a> 王宁：《汉字构形学导论》，商务印书馆，2015 年，第 139 页。</p>
+<p>[<a href="#_ftnref4">④]</a> 王宁：《汉字教学的原理与各类教学方法的科学运用 (下)》，《课程。教材。教法》2002 年第 11 期。</p>
+<p>[<a href="#_ftnref5">⑤]</a> ［清］王筠等：《文字蒙求 外一种》，哈尔滨：黑龙江人民出版社，2009 年。</p>
+<p>[<a href="#_ftnref6">⑥]</a> 李运富：《字理与字理教学》，《吉首大学学报 (社会科学版)》2005 年第 02 期。</p>
+<p>[<a href="#_ftnref7">⑦]</a> ［清］李慈铭撰，由云龙辑：《越缦堂读书记・文字蒙求》，北京：中华书局，2006 年 9 月，第 2 版，第 545 页。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 王筠撰、王云五主编：《教童子法及其他三种》，北京：商务印书馆，民国 26 年。下同。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 王力：《中国语言学史》，山西：山西人民出版社，1981 年，第 133 页。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 姜聿华：《中国传统语言学要籍述论》，北京：书目文献出版社，1992 年，第 362 页。</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>古汉</category>
+      </categories>
+      <tags>
+        <tag>汉字</tag>
+        <tag>教育</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>近十年（2012-2022）汉字信息化研究综述</title>
+    <url>/2023/07/13/16-reviewhanzi/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>汉字学作业，为什么所有课的作业都让写综述</p>
+<span id="more"></span>
+
+<p>近十年（2012-2022）汉字信息化研究综述</p>
+<p>随着计算机技术的革新，电子计算机技术赋予语言文字信息以新的载体，中文信息处理的理论和技术亟需进一步发展以满足社会交流与传承语言文化的需要。汉字信息化是中文信息处理的重要课题之一。一方面，计算机语言学是 “通过建立形式化的计算模型来分析、理解和处理自然语言的学科”（宋继华等，2011）, 包括对字、词、短语、句、篇章的输入、输出、识别、转换等各方面的处理技术（张效祥和李三立，1998）。汉字是记录汉语的符号，汉字信息化则是中文信息处理的基础环节；另一方面，汉字信息化是应用文字学的重要课题，在科学的汉字学理论指导下，计算机技术方法能够不断改善汉语信息的输入、输出、存储、交流、检索等一系列操作方法，更好地适应现代化建设的需要。近十年来，学界对此广泛关注，在多个方面和层次取得了丰硕的学术成果。本文将聚焦于汉字这一信息传递的基本要素在计算机信息交换和处理过程中的出现的重要问题，对相关最新研究成果进行简要综述。</p>
+<h1 id="一、-集外字编码问题"><a href="#一、-集外字编码问题" class="headerlink" title="一、 集外字编码问题"></a>一、 集外字编码问题</h1><p>数码汉字包括码、形、音、义四个要素。汉字编码即 “按照一定的规则对指定的汉字 [汉语词语] 集内的元素编制相应的代码”。自 1980 年到 2000 年，我国相继制定了五个汉字编码的国家标准（GB2312-80、GB12345-90、GB13000.1-1993、GBK1.0-1995、GB18030-2000），体现了国家对汉字信息化的高度重视。自 1978 年至今，CJK（中日韩越统一表意文字（CJKV Unified Ideographs），2020 年 3 月 10 日已公布至 Unicode 13.0）收录的扩展 A-G 区已经基本完成了楷体汉字和部分古文字的编码工作，反映了汉字编码标准国际化的重大进展。</p>
+<p>常用汉字进入计算机的问题早已解决，但是在汉字信息化的过程中，由于汉字的特殊性和传承性，在常用汉字之外，还需要处理许多生僻字、异体字、俗体字。从 2006 年《国家 “十一五” 时期文化发展规划纲要》开始，国家高度重视古籍数字化工作，陆续颁布了一系列政策方针，推动古籍整理工作。随着中文信息处理技术的发展和信息技术对学术研究方法的改变，社会对于古籍用字、专业用字、古文字编码的需求也日益强烈。这些难以输入、交换、显示的字形，对数字化时代下古籍信息化的汉字学研究造成了一些困难。汉字信息化较为通用的是 Unicode 字符集，字符集不包含的文字即集外字。这些集外字需要特定的方法以输入和处理。对此，学者们采用了不同的处理办法，肖禹（2013）概括为造字法、替换法、描述法。本文将结合近十年研究成果，从学科发展的角度，尝试分论几种方法的进步和发展。</p>
+<h2 id="（一）-从私用区造字到扩大字库"><a href="#（一）-从私用区造字到扩大字库" class="headerlink" title="（一） 从私用区造字到扩大字库"></a>（一） 从私用区造字到扩大字库</h2><p>私用区造字是一种常用的集外字处理办法。Unicode 为字符集未收字预留了私用区（Private Use Area）码位，许多古籍数字化产品都采用了私用区造字的方法，例如中华经典古籍库、《文渊阁四库全书电子版 3.0 版》、引得市古文字缺字资料库、古联瀚字输入法字库等。造字法的缺点在于字库容量有限，无法直接复用和动态管理，同时，不同古籍库的私用区码位不统一，造字法的通用性也存在着明显不足。</p>
+<p>近十年来，有依然采用私用区造字处理办法的研究，如唐杰等（2022）以里耶秦简为例，对现已出土文献这一封闭范围内的集外字进行编码，建立字库并生成集外字输入法，最后以 jieba 分词对所生成的文本数据进行校验，达到了较好的效果。</p>
+<p>解决集外字的根本方法，是建立更大型更多维的字库，以涵盖更多字形。中华字库工程致力于 “建立全部汉字及少数民族文字的编码和主要字体字符库”，其字形取样范围包括甲骨文、金文、楚简帛书文字、石刻文字、手写文献用字、版刻楷体字书用字等并逐步纳入国家标准。经过十余年的探索，已经在超大汉字字符集的建立上成果斐然。另外，刘根辉和张晓霞（2016）以甲骨文和金文已识字为例，将古文字和现代汉字编码一一对应，建立不同的子字库，实现了分类别、分层次的通用古文字字库。在算法方面，高宜琛等（2021）建立了一种基于部件拼接和复用思想的矢量中文字库压缩方法，可以使原始字库的体积降低至 20% 左右，对提高中文大字库存储交换上的可用性有一定积极意义。</p>
+<h2 id="（二）从符号替换到汉字认同"><a href="#（二）从符号替换到汉字认同" class="headerlink" title="（二）从符号替换到汉字认同"></a>（二）从符号替换到汉字认同</h2><p>替换法是指用集内字、符号（“□”“■” 等）、图形等内容代替集外字。例如，《瀚堂典藏》采用 Unicode 5.0 字符集，将 Unicode 5.0 以外的字认同为集内字。数字方志项目除了集内字替换外，还将模糊字替换成 “□”，无法认同的集外字替换为图形。特定情况下的集内字替换不失为一种简捷直接的办法，但字与字之间的替换关系仍需厘清，相关内容在下文另有论述。此种方法不利于数据库检索和管理，符号替换和集内字替换都会影响文字原貌，丢失语言文字信息；图形替换还可能会增加数据内存占用，数据迁移也可能遇到问题。所以，在社会通用领域，替换法仍然可用，但是字际关系的系联和汉字认同问题需要进一步整理；而在古籍研究领域，替换法的弊端则比较明显。</p>
+<h2 id="（三）从描述序列到动态生成"><a href="#（三）从描述序列到动态生成" class="headerlink" title="（三）从描述序列到动态生成"></a>（三）从描述序列到动态生成</h2><p>描述法是用一个描述符序列对汉字构造进行说明。例如，CBETA 大正藏采用十个符号描述集外字的构件及其结构关系。Unicode IDS（表意文字描述序列（Ideographic Description Sequences））采用 12 个表意文字结构符描述集外字字形结构。借助动态组字工具，描述内容可以显示为一个汉字。肖禹和王昭（2013）阐述过 IDS 在古籍数字化中的应用，认为动态组字在集外字显示和生僻字输入上有一定潜力。但是这种方法尚存在一些不足：拆解不统一，用户学习成本过高，在阅读的过程中需要额外软件的支持，也不利于检索功能的实现。在计算机存储的过程中，占用字节数量也大量增加。同时，在将描述语言转化为汉字时，组件的大小、比例和写法并非一成不变，组构字可能与原字存在差别。</p>
+<p>大部分汉字系统皆基于字库模式，其规模、覆盖面和稳定性、易用性之间始终存在着矛盾。描述法虽然只是一种表示集外字的权宜之计，但其拆分组构的思路开辟了一条不依赖字库而是借助生成技术的思路。丘志文（2008）、梁添才（2008）、刘明友（2010）已经提出，要建立一种基于认知机理的智能造字系统，鄢琦等（2012）用统计分析的方法，预估 10 万汉字中汉字基元的数量，进一步证实了这种以汉字基元库代替汉字字库的方法的可行性。另外，栗青生等（2012）开发了一种甲骨文字形动态描述的方法，利用有向笔段和笔元对甲骨文进行动态的描述，吴琴霞和栗青生（2014a; 2014b）进一步开发了基于语义构件的甲骨文字库自动生成技术，能够实现甲骨文无字库输入的实现。又将此动态描述库应用到更多集外字之上，在动态矢量化描述的基础上提取汉字字形骨架，由骨架上的特征点动态生成文字。这些研究虽然沿用了描述法的解决思路，但都不依赖于大规模字库的建立，而是根据一定的规则进行动态生成，相较传统的集外字描述方法有着较大的创新。</p>
+<p>由上可知，近十年的集外字编码工作朝着两个方向进行，一是建立大型全面的字库，减少集外字，以求囊括更多的古文字和异体字，二是通过动态生成的办法，用笔画、构件的组构生成字符，实现集外字的输入和输出。另外还涉及到了汉字字际关系整理问题，将在下节详述。</p>
+<h1 id="二、-信息化汉字整理问题"><a href="#二、-信息化汉字整理问题" class="headerlink" title="二、 信息化汉字整理问题"></a>二、 信息化汉字整理问题</h1><p>字符编码是一个应用性问题，早期并未在科学的文字学理论指导下系统进行，存在着部分历史遗留问题。尉迟治平（2020）就指出 CJK 汉字由多个国家提交，采用字源分离原则（Source Separation Rule），存在着字和字形认定不统一、兼容变体造成一字多个码位等问题，希望可以研制一个更理想的中文汉字字符国家标准。</p>
+<p>所以，追求大而全的汉字编码字符集与进行汉字异体认同和整理两项工作应当是同时进行，相辅相成的。王宁先生（1994）曾指出 “建立一个计算机的古籍字库，不是毫无整理地堆积汉字字形就可以完成的。‘多多宜善’不是建立古籍字库的唯一原则。” 超大字库中字符的认同整理问题，涉及到数据库的建构和信息检索的结果等各个方面。在扩大字库收字范围的同时，将大量的生僻字、异体字、俗体字、古文字关联至通用文字上，也是汉字信息化的一项重要工作。辛睿龙和王雅坤（2017）即高度重视古籍数字化中的汉字认同工作，即 “根据现有的古籍数字平台所使用 Unicode 的字符集，在尽量保持古籍原书字形的基础上，参照一定的规则，有控制地将集外字中的异体字、俗体字与集内字中的正体字进行认同。”</p>
+<p>在信息化汉字的整理方面，近年有不少成果。一方面，确定规范汉字形体，以便建立异体对照关系。继教育部国家语言文字工作委员会《通用规范汉字表》（2013）收录 8105 个简化字及其繁体对照字形，2021 年，国家颁布《古籍印刷通用字规范字形表》(GB/Z40637-2021)，规定了古籍印刷通用字收字和宋体字形规范原则，并给出规范用字的字形、字音和国际编码码位。另一方面，要建立异体字和规范字的对照关系。齐霄鹏（2013）指出大字符集存在诸多文字学角度的问题，并对 ISO 10646 收录楷书汉字的异体字进行整理，为以后电脑字符集的建设提供参考。王米娜（2017）以《汉语大字典》（第二版）中的全同异体关系为研究对象，建立异体字字库，以实现异体字的文本检索。中华字库工程在着力建设超大汉字字库的同时，也提供汉字属性库，对汉字横向的异体关系和纵向的历史传承关系进行全面系统的整理，建立了《楷书汉字异体关系总表》和《汉字历史传承关系总表》，对推进字际关系认同有重大意义（张翼飞，2016）。</p>
+<h1 id="三、-字料库建设问题"><a href="#三、-字料库建设问题" class="headerlink" title="三、 字料库建设问题"></a>三、 字料库建设问题</h1><p>字料库这一概念由李国英、周晓文（2009）提出，其定义是 “以文字的整理和文字学的研究为目标，按照语言学和文字学的原则，收集实际使用中能够代表特定文字或文字变体的真实出现过的文字书写形态，运用计算机技术建成的具有一定规模的大型电子文字资源库。” 随后，王平（2013）也提出了 “汉字数据库” 与 “数据库汉字学” 的概念，并以魏晋南北朝石刻用字数据库与断代汉字发展史研究为例进行数据库汉字学的理论建构。朱翠萍等（2013）进行了基于字料库平台的字书文字整理研究，探讨字书文字整理的新任务与新方法。柳建钰（2017）讨论了汉字字料库作为一种学科交叉的综合研究方法，对汉字整理研究实践有重大影响。柳建钰（2021）所著《字书字料库的理论、实践与应用》在字书字料库理论建设的本体研究上有一定推进，并将理论与实践与应用相结合，进行字书字料库的实体建设。史晓丹（2017）综述了近年来的汉字字料库相关研究，并指出了字料库理论和实践中存在的不足。近十年，字料库理论建设走向深化。</p>
+<p>在字料库建设的实践方面，周晓文等（2014；2015）在操作层面展示了 BNUZLK 字料库系统的建设过程，对字料库建设的重点问题有所谈论。又建设了基于字料库的开放式异体字整理平台，为异体字整理工作提供了新型平台。柳建钰（2015a； 2015b）对字料库系统建设的七个阶段进行了具体论述，并对字书字料库标注中出现的一些问题进行讨论。林可欣和柳建钰（2022）提出建立构件讹混规则库来帮助整理汉字讹混现象和完善字书字料库建设，柳建钰和秦冕（2022）使用拓扑图以展示异体关系层级系统。冯宝成（2022）考察了字书字料库中的汉字本借关系字段，丁明（2021）关注到字书字料库中的繁简关系对应。除了对字料库建成操作和实践技术的讨论，一些大型字料库也逐步建成和完善，例如北京师范大学字料库（BNUZLK）、渤海大学字书字料库（CCFD）、华东师范大学中国文字智能检索网络数据库等。</p>
+<p>在字料库的应用方面，王颖（2012）、毛承慈（2012）、李水英（2013）、柳建钰和史晓丹（2016）通过建立《尚书》、《诗经》、《礼记》、《集韵》、《类篇》等专书字料库，以定性和定量相结合的办法开展基于字料库的专书汉字形体研究。他们采用与信息科学交叉的学科视角，是汉字学研究的一股新生力量。张健（2021）提倡建立大规模统一字料库，以指导古籍数字化工作中的认同别异工作，确立字形处理标准。娄力文和柳建钰（2021）还将字料库运用于汉字教学，发现字料库在提供字音、字形、字义信息方面的价值。这都证明了字料库应用领域的广泛性。</p>
+<p>综上所述，汉字超大字库的逐步建成，集外字输入输出方法的改进完善，汉字整理规范与信息化的结合与字料库理论、实践和应用方面的诸多成果，都昭示着当前汉字信息化在诸多方面已经取得了可喜的成就，汉字信息化技术在汉字应用、教学、研究领域的运用正方兴未艾。同时，集外字编码、信息化汉字整理和字料库建设这几方面也是相互关联的，大量集外字进入字库，必然需要和规范汉字建立联系，而字库容量的有限性以及汉字整理研究的需要，势必要求字料库担任更多字形贮存的工作。诚然，当前的研究还存在一些问题，但汉字信息化的当代价值是不可忽视的。针对当前汉字信息化的发展现状，我们提出以下展望：</p>
+<p>1、以汉字学理论和方法指导汉字信息化实践，使汉字信息化工作更为科学、系统、规范。</p>
+<p>2、加强资源共享建设，倡导开源精神，打破信息壁垒，建设大型且公开可用的字料库，实现字料资源的效益最大化。</p>
+<p>3、追求行业内普遍共识，促进汉字信息化标准的建设，统筹协调各方面信息化处理和研究工作。</p>
+<p>4、借助汉字信息化研究成果，拓宽汉字学研究领域，开阔汉字学研究视野。将汉字信息化真正融入人文科学的研究之中，开拓新的发展思路。</p>
+<p>总之，经过四十多年的发展，汉字信息化作为中文信息处理的一项基础性工作，已经有了一定的积淀，而近年对于部分难点问题的探讨，也展示了充分的创新性和进步性。汉字信息化工作正朝着标准化、系统化、公开化、深层化的方向发展，为建设现代化的汉语言文字学科贡献力量。</p>
+<p>参考文献</p>
+<p>[1] 陈力。数字人文视域下的古籍数字化与古典知识库建设问题 [J]. 中国图书馆学报，2022, 48 (2): 36–46.   </p>
+<p>[2] 丁明。字书字料库繁简关系标注相关问题刍议 [C]// 第十届汉字与汉字教育国际研讨会论文集，陝西师范大学人文社会科学高等研究院、陕西师范大学文学院、中国高等教育学会教师教育分会，2021: 186–197.  </p>
+<p>[3] 冯宝成。字书字料库汉字本借关系类型字段研究 [J]. 唐山学院学报，2022, 35 (1): 91–97.   </p>
+<p>[4] 高宜琛，连宙辉，唐英敏，肖建国。一种新的矢量中文字库自动压缩方法 [J]. 图学学报，2021, 42 (3): 426–431. </p>
+<p>[5] 教育部国家语言文字工作委员会。通用规范汉字表 [M]. 北京：语文出版社，2013.   </p>
+<p>[6] 李国英，周晓文。字料库建设的必要性与可行性 [J]. 北京师范大学学报 (社会科学版), 2009 (5): 48–53.   </p>
+<p>[7] 李水英。基于字料库的《礼记》字形整理及研究 [D]. 北京师范大学，2013. </p>
+<p>[8] 栗青生，吴琴霞，王蕾。基于甲骨文字形动态描述库的甲骨文输入方法 [J]. 中文信息学报，2012, 26 (4): 28–33.   </p>
+<p>[9] 梁添才。基于认知机理的汉字智能造字研究 [D]. 华南理工大学，2008. </p>
+<p>[10] 林可欣，柳建钰。字料库中构件讹混规则库建设相关问题刍议 [J]. 辽宁工业大学学报 (社会科学版), 2022, 24 (3): 62–66.  </p>
+<p>[11] 刘根辉，张晓霞。古文字字形整理与通用古文字字库开发研究 [J]. 古汉语研究，2016 (3): 51–56.   </p>
+<p>[12] 刘明友。认知模式识别理论及无字库智能造字研究 [D]. 华南理工大学，2010.  </p>
+<p>[13] 柳建钰。试论汉字字料库理论的提出背景及其价值 [J]. 渤海大学学报 (哲学社会科学版), 2017, 39 (1): 82–87. </p>
+<p>[14] 柳建钰。字书字料库的理论 实践与应用 [M]. 北京：中华书局，2021. </p>
+<p>[15] 柳建钰。字书字料库中字料标注若干问题刍议 [J]. 语言文字应用，2015 (3): 133–140. </p>
+<p>[16] 柳建钰，秦冕。字书字料库异体关系拓扑图的设计与实现 [J]. 宁夏大学学报 (人文社会科学版), 2022, 44 (3): 44–51.    </p>
+<p>[17] 柳建钰，史晓丹. 《集韵》《类篇》实收字数今考 [J]. 渤海大学学报 (哲学社会科学版), 2016, 38 (3): 70–75. </p>
+<p>[18] 柳建钰，王晓旭。试论字料库系统建设的七个阶段 [J]. 渤海大学学报 (哲学社会科学版), 2015, 37 (6): 75–79. </p>
+<p>[19] 娄力文，柳建钰。字料库在汉字教学中的应用初探 —— 以渤海大学 CCFD 为例 [J]. 辽宁科技学院学报，2021, 23 (6): 57–61.  </p>
+<p>[20] 毛承慈。基于字料库的《诗经》文字研究 [D]. 北京师范大学，2012.  </p>
+<p>[21] 齐霄鹏. ISO 10646 楷书汉字异体字整理 [D]. 河北大学，2013.   </p>
+<p>[22] 丘志文。基于认知机理的汉字智能造字之汉字基元研究 [D]. 华南理工大学，2008.  </p>
+<p>[23] 史晓丹。近十年来汉字字料库研究综论 [J]. 辽宁工业大学学报 (社会科学版), 2017, 19 (3): 55–58.</p>
+<p>[24] 宋继华，杨尔弘，王强军。中文信息处理教程 [M]. 北京：高等教育出版社，2011.   </p>
+<p>[25] 唐杰，刘铭，陈镱文。基于出土文献数据库的集外字数字化处理方法研究 [J]. 商洛学院学报，2022, 36 (2): 73–78. </p>
+<p>[26] 王米娜。基于《汉语大字典》（第二版）的全同异体字字库建设与检索系统开发 [D]. 华中科技大学，2017. </p>
+<p>[27] 王宁。计算机古籍字库的建立与汉字的理论研究 [J]. 语言文字应用，1994 (1): 54–59. </p>
+<p>[28] 王平。数据库汉字学刍议 —— 以魏晋南北朝石刻用字数据库与断代汉字发展史研究为例 [J]. 中国文字研究，2013, 17 (1): 159–165.   </p>
+<p>[29] 王颖。基于字料库的《尚书》文字研究 [D]. 北京师范大学，2012. </p>
+<p>[30] 尉迟治平。再论中文汉字字符集 [J]. 语言研究，2020, 40 (1): 78–89.   </p>
+<p>[31] 吴琴霞，栗青生。一种基于动态描述库的集外汉字输入和显示方法 [J]. 计算机应用与软件，2014, 31 (11): 71–74. </p>
+<p>[32] 吴琴霞，栗青生，高峰。基于语义构件的甲骨文字库自动生成技术研究 [J]. 北京大学学报 (自然科学版), 2014, 50 (1): 161–166.   </p>
+<p>[33] 肖禹。古籍数字化中的集外字处理问题研究 [J]. 图书馆研究，2013, 43 (5): 27–30.   </p>
+<p>[34] 肖禹，王昭。动态组字的发展及其在古籍数字化中的应用 [J]. 科技情报开发与经济，2013, 23 (5): 118–122.  </p>
+<p>[35] 辛睿龙，王雅坤。古籍数字化中汉字处理的现状、问题及策略 [J]. 图书馆理论与实践，2017 (9): 103–107.   </p>
+<p>[36] 鄢琦，骆仁波，皮佑国。无字库智能造字中汉字基元的统计分析与预测 [J]. 计算机技术与发展，2012, 22 (4): 33–36.    </p>
+<p>[37] 张健。字料库视角下古籍数字化的字形处理标准 [J]. 中国出版，2021 (22): 55–59.   </p>
+<p>[38] 张效祥，李三立。计算机科学技术百科全书 [M]. 北京：清华大学出版社，1998. </p>
+<p>[39] 张翼飞。古籍数字化中的字符集问题与解决方案 [J]. 出版发行研究，2016 (3): 77–80. </p>
+<p>[40] 周晓文，李国英，王颖，毛承慈. BNUZLK 字料库系统的建构与应用 [J]. 民俗典籍文字研究，2014 (1): 111-122+224-225. </p>
+<p>[41] 周晓文，李国英，朱翠萍，陈莹。基于字料库的开放式异体字整理平台的设计与实现 [J]. 中国文字学报，2015 (0): 280–291. </p>
+<p>[42] 朱翠萍，周晓文，陈莹。基于字料库平台的字书整理研究 [J]. 中国出版，2013 (23): 55–58. </p>
+<p>[43] CBETA 经文数位化工作流程 [EB/OL] . <a href="http://www.cbeta.org/workflow/rarewords.php">http://www.cbeta.org/workflow/rarewords.php</a> </p>
+<p>[44] GB/T 12200.1-1990, 汉语信息处理词汇 01 部分：基本术语 [S]. 北京：国家标准出版，1990. </p>
+<p>[45] GB/Z40637-2021, 古籍印刷通用字规范字形表 [S]. 北京：国家标准出版社，2021.   </p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>古汉</category>
+      </categories>
+      <tags>
+        <tag>数字人文</tag>
+        <tag>综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>历史地理视角下南宋以后徽州儒学的嬗递</title>
+    <url>/2022/12/01/18-huizhou/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：自南宋以后，徽州地区出现了两大学术流派：新安理学与皖派朴学。二者在学术理路上虽有汉宋之别，却是在同一个区域下生成发展的，具有相同的区域地理背景，是在不同历史时期要求下形成的区域儒学发展形态。从历史地理学的角度观察新安理学与皖派朴学的发展条件，可以看到地理环境与社会条件对学术文化的重要影响，也能看到区域文化本身的发展脉络。</p>
+<p><strong>关键词</strong>：徽州 新安理学 皖派朴学 历史地理</p>
+<span id="more"></span>
+
+<p>历史地理视角下南宋以后徽州儒学的嬗递</p>
+<p>—— 以新安理学到皖派朴学的转变为中心</p>
+<p>徽州这一行政区划始于宋，即晋时新安郡，秦时黟、歙二县。随着宋代以后中国经济重心的南移，在江浙地区逐渐形成了 “人文渊薮” 的文化重心。由于学术传承和地域联系等原因，各地逐渐形成了许多地域性的学派。在今安徽、浙江、江西的交界地带，即先后出现了新安理学和皖派朴学两个具有代表性的学术派别，其学术虽在同一地缘上生成，却具有治学取向上的汉宋之别。本文试从历史文化地理的角度，以新安理学和皖派朴学为例，分析徽州地区儒学派别的发展嬗递。</p>
+<h1 id="一、汉宋之别：新安理学与皖派朴学的不同范式"><a href="#一、汉宋之别：新安理学与皖派朴学的不同范式" class="headerlink" title="一、汉宋之别：新安理学与皖派朴学的不同范式"></a>一、汉宋之别：新安理学与皖派朴学的不同范式</h1><h2 id="（一）新安理学"><a href="#（一）新安理学" class="headerlink" title="（一）新安理学"></a>（一）新安理学</h2><p><strong>新安理学是自宋至清这一时期以新安地方的理学家为主干的理学流派</strong>，因程颢、程颐、朱熹的祖籍都在歙县篁墩，于是有 “程朱阙里” 之说。新安理学宗祖的朱熹：“徽国文公朱先生，终身不忘父母邦，姓名之上，必书‘新安’。身建心徽，所居标‘紫阳’二字，诚乡关常在目。”[<a href="#_ftn1">①]</a> 朱熹之父朱松在福建为官，所以朱熹出生和成长于福建。但是，对祖籍新安的眷念，是朱熹一生都无法放下的。朱熹以其祖籍所在自称 “新安朱熹”，后学亦以朱子为宗，形成了一个以发明朱子学为志业的学术流派。</p>
+<p>程瞳的《新安学系录》记录了 101 位徽州学者的传记生平，并绘制有《新安学系图》，系统地展示了新安理学的师承脉络：始自二程朱子，而 “中兴绝学之大儒与夫左右之者”[<a href="#_ftn2">②]</a>，代代绵延不绝。如此即勾勒出一支地方理学流派的学术群体发展史。</p>
+<p>新安理学历经南宋至清初 7 个世纪的时间，其 “发展演变呈现出明显的阶段性，各阶段特色有别，而总体上又宗旨一贯。”[<a href="#_ftn3">③]</a> 南宋时期，朱门弟子及朱熹学友以继承朱熹的四书学、易学为主，又旁及佛道，圆融三教。元代的新安理学家多固守朱子之学，倪士毅即言：“非仁义道德之说，素论定于郡先师朱子者，不以教人”[<a href="#_ftn4">④]</a>，他们的教学活动多以朱子学为准绳，排除异说，以维护朱子学的纯净性。明代新安理学逐渐形成了探求真知、会和朱陆的学术取向，对元代学者固守门户之见的弊端有所纠偏。明代末期，整个思想界发生了汉宋之争的重大变化，新安理学也走向衰落。</p>
+<h2 id="（二）皖派朴学"><a href="#（二）皖派朴学" class="headerlink" title="（二）皖派朴学"></a>（二）皖派朴学</h2><p><strong>皖派学者是乾嘉汉学的流派之一，与吴派相对而言。</strong>皖派以戴震为代表，覆盖地域亦涉及到徽州附近的江苏金坛等地。主要成员有程瑶田、金榜、洪榜、汪绂、段玉裁、王念孙、孔广森等。皖派实际上是以徽州地区为中心，戴震弟子为骨干的注重训诂与考据的汉学学术群体。皖派与以惠栋为代表的吴派的主要区别在于，虽强调汉代家法旧注，但非一味尊古，而是以求实求是为宗，对故训中的谬误并非全然跟从，反而有所纠偏。在语言文字的考订、名物制度的考证、古文献的校勘方面皖派朴学多有科学性的见解。</p>
+<p>皖派学者的共同追求是求真务实。钱大昕强调：“通儒之学，必自实事求是始。”[<a href="#_ftn5">⑤]</a> 阮元自言治经之准则：“余之说经，推明古训，实事求是而已，非敢立异也。”[<a href="#_ftn6">⑥]</a> 乾嘉之学以考据著称，“考” 即考核、考察，“据” 即证据，一般指文献证据。乾嘉考据之学要求学者有包括天文、地理、礼制、算学、博物、音韵等多方面的知识，在具体的操作上也体现出鲜明的实证性和科学性。学者们真正地将实事求是上升为一种理论方法的自觉，这不仅仅是在与宋学的对举中获得的，更是学术积累到一定阶段的产物。</p>
+<h1 id="二、汉宋之交：学术转向的内在理路"><a href="#二、汉宋之交：学术转向的内在理路" class="headerlink" title="二、汉宋之交：学术转向的内在理路"></a>二、汉宋之交：学术转向的内在理路</h1><p>新安理学至宋发展至明代，经历了漫长的发展演变过程，而尊崇朱子，附翼作疏的学术风格已经无法延续，学派阵容也逐渐萎缩。<strong>“朱子之学” 内部已经难以焕发出新的生机，至明代中后期，新安理学儒者已经较少再有创见，呈现出门派凋零的景象。</strong>同时，明清之际的整个思想界的汉宋之争也影响着徽州地区学术思想的转变。社会政治的动荡使理学末流的保守和王学一脉的空疏弊端日益显现，清初的 “经世致用” 的思潮即是从清算理学流弊开始的，顾炎武、黄宗羲、王夫之、朱之瑜、傅山、李颙、颜元等学者将儒家思想和社会生活各方面结合起来，都开始认识到理学发展到后期的僵化和凝滞，反对空谈性理的唯心世界观，致力于将学术探究和社会现实联系起来。他们一度对封建专制制度展开批判，设计了一些很有价值的社会改革方案，力图将人们的思考重心从内心世界转到客观世界来。<strong>在这种实学的学术潮流影响下，新安理学逐渐向皖派朴学转型。</strong></p>
+<p>从新安理学到皖派朴学，其学术旨趣的转向并非一蹴而就，而是渐进变化的。<strong>朴学的求真求实的学术追求，实际上已经孕育在晚期新安理学学者的著述之中。</strong>元明的新安理学经历了从 “羽翼朱子” 到 “求真是” 的转向 [<a href="#_ftn7">⑦]</a>。例如明初的朱升，就已经认识到了固守朱学所导致的僵化教条习气：“学者往往循途守辙，不复致思其已明者。既不求其真知，而未明者遂谓卒不可知。”[<a href="#_ftn8">⑧]</a> 朱升站在朱子学的立场上，而又不盲从朱子，认为应当探求知识之所由来，了解事物之所当然，而不是因循朱子之旧说，不再探寻朱子未指明的道理。朱升认为，“求真知” 才是真正的 “朱子之学”，这对打破朱子成说的教条有着积极意义。郑玉也对当时学界陆王之学的门户之见大加批驳，认为他们 “未知本领所在，先立异同”[<a href="#_ftn9">⑨]</a>，也是要反对盲从，主张用独立的思考来获取理学的真知。</p>
+<p>从新安理学到皖派朴学的过渡人物，以江永、程瑶田、戴震为代表。<strong>他们不仅已经有了不唯朱子是宗而求实求是的学术追求，在学术旨趣和研究方法上也有很大的突破。</strong>江永、程瑶田二人，皆兼及义理之学与考据之学。一方面，他们精通义理之学，例如江永编写《礼经纲目》，以竟朱子未竟之绪，另一方面，他们也深谙考据之学，有着由宋入汉的学术倾向，江永的《古韵标准》《四声切韵表》《春秋地理考实》等涉及天文、地理、声韵等学科的著作，都超出了朱子学的研究范围，程瑶田的《果蠃转语记》《禹贡三江考》等著作，也推动了新安理学向皖派朴学的过渡。而戴震的学术转变则更为彻底，他已经对新安理学的宗朱立场产生怀疑，举起反理学的大旗，提出 “由字以通其词，由词以通其道”[<a href="#_ftn10">⑩]</a> 的学术路径。在出发点上，戴震的学术是以文字训诂为根基的，这与谈论性与天道的理学学风已经迥乎不同，他重视《说文解字》、《尔雅》等小学经典，主张在文字、音韵、训诂的基础上求得正确的字义，以此为基点通晓经典。而在最终追求上，他虽仍然精熟于义理，著《孟子字义疏证》《原善》等以彰明性命，但他是本着求真求实的态度于先秦儒家经典中求道，又得出了与朱子不同的观点。</p>
+<p><strong>从新安理学到皖派朴学，其间的汉宋之别看似执其两端，实际上有着自身的发展脉络和演进规律。</strong>中国传统学术的发展总是以儒家经学为主导，而其间又存在着训诂之学（汉学）与义理之学（宋学）的消长交替，即《四库全书总目》所说的 “汉学、宋学，两家互为胜负。”[<a href="#_ftn11">11]</a> 在徽州这一地域性的平面上看，儒家之学内部汉宋学术的消长更替，是有利于学术保持活力和生机的，这同时也体现着地域学术风尚的随时运转，与世更迭。</p>
+<h1 id="三、汉宋之聚：徽州地区的文化地理分析"><a href="#三、汉宋之聚：徽州地区的文化地理分析" class="headerlink" title="三、汉宋之聚：徽州地区的文化地理分析"></a>三、汉宋之聚：徽州地区的文化地理分析</h1><p>新安理学和皖派朴学都是在徽州这一地域展开学术活动的，其生成演变不仅有儒学内在的发展理路，也有徽州地域文化地理背景的影响。将新安理学和皖派朴学作为个案加以比较，观察徽州在一特定的历史时间和地理空间中的文化面貌，是历史地理学给予传统学术研究的一个新视角。我们可以看到徽州的政治、经济、文化、地理、教育的各个因素都与徽州的学术思想形成了互相影响、互相交融的局面。</p>
+<h2 id="（一）徽州地理环境与社会条件"><a href="#（一）徽州地理环境与社会条件" class="headerlink" title="（一）徽州地理环境与社会条件"></a>（一）徽州地理环境与社会条件</h2><p>徽州地区下辖歙县、黟县、休宁、祁门、绩溪、婺源六县，气候属亚热带季风气候，植被多常绿阔叶林。徽州依山傍水，温暖湿润，这种地理环境为当地政治、经济、文化的发展造成了多方面的影响。</p>
+<p>1、<strong>士族南迁的目的地</strong>：徽州地处皖南丘陵，险阻四塞，因地形崎岖，易守难攻，而少兵祸之乱，为中原士族的迁入提供可能性。自西晋永嘉之乱至北宋靖康之乱，中原士族为躲避战乱而迁入南方，徽州地区人口与日俱增。经历了唐末五代十国的动乱与赵宋南迁的历史进程，中国古代的经济文化中心有南移的趋势，儒学发展的脉络也向南迁移，在江南地区形成了多个儒学学术派别。徽州地区则形成了独特的朱子学传统。大量汉族士人的迁入，带来了中原地区的儒学与教化，使徽州地区的文化从山野俚俗走向礼乐诗书。人口的充实与稳定，也有利于地域经济社会的渐次发展。</p>
+<p>2、<strong>进取精神的磨砺</strong>：因为徽州平原数量有限，而山地土质多不适于农耕，人民的生存实际上面临着众多挑战。县志中描述道：“徽州介万山之中，地狭人稠，耕获三不赡一，即丰年亦仰食江、楚，十居六七，勿论岁饥也。”[<a href="#_ftn12">12]</a> 谚有云 “七山一水一分田，一分道路和庄园。” 这种艰难的自然条件反而铸就了徽州人民刻苦坚毅的品格的奋发不屈的精神，这也是儒家思想的积极入世得以在此盛行的思想土壤。他们或勤于耕种，黾勉营生，或经商游历，开拓出路，或精研苦学，以求仕进，都体现出在自然环境磨砺下更加熠熠生光的生命力量，徐道彬即指出：“本无生存之境的徽州人凭着勤苦、坚韧和儒家的进取精神，走过了百十年的风雨历程，不仅贾能厚利，而且儒能名高”[<a href="#_ftn13">13]</a>，在中国历史上发挥着重要的作用。</p>
+<p>3、<strong>徽商经济的发展</strong>：徽州农业发展条件有限，所以只能依赖水运资源，开展商业活动，则形成了独特的徽商群体。顾炎武考察徽州时曾言：“小民多执技艺，或贩负就食他郡者，常十九。转他郡粟给老幼，自桐江，自饶河，自宣池者，舰相接肩相摩也。田少而直昂，又生齿日益，庐舍坟墓不毛之地日多。山萌水激，滨河被冲者，即废为沙碛，不复成田。以故中家而下，皆无田可业。徽人多商贾，盖其势然也。”[<a href="#_ftn14">14]</a> 智慧的徽商人民仰赖水运便利的交通条件，不仅使本地的手工业得到发展，商品经济活跃，也能开发水利条件，使文人的交游、学术的流通成为可能。较为坚实的经济基础为文化的发展提供了有利条件。经济富足则不事生产的人数就多，他们有更多的余裕来钻研经术。而对于相对穷苦的学者来说，他们能够向拥有丰富藏书的族人借书，也是徽商之富足给予的有利条件 [<a href="#_ftn15">15]</a>。</p>
+<p>4、<strong>区域团体的形成</strong>：徽州地势多山，区域边缘的山地成为了徽州与其他地域的自然分界线；徽州内部水系纵横，区域内部的人员物资交流则比较方便。可见，边缘的山地对文化向外扩散有一定的阻隔作用，内部水系又对区域学术一体的形成着推动作用。另外，“盆地地形的向心结构和相对封闭性，易使人们产生一种特殊的环境感应心理”[<a href="#_ftn16">16]</a>，这种 “盆地心理” 也使徽州的学术文化具有内聚性，有助于学术团体的凝聚和发展。</p>
+<h2 id="（二）新安文化认同的建构与易帜"><a href="#（二）新安文化认同的建构与易帜" class="headerlink" title="（二）新安文化认同的建构与易帜"></a>（二）新安文化认同的建构与易帜</h2><p><strong>新安地域文化经历了从 “尚武” 到 “右文” 的转变。</strong>朱熹在《休宁县新安道院记》中写道，新安 “山峭厉而水清激，故禀其气、食其土，以有生者，其情性习尚，不能不过刚而喜斗。然而君子则务以其刚为高行奇节，而尤以不义为羞，故其俗难以力服，而易以理胜。苟吾之所为者，出于公论之所是，则虽或拂于其私，而卒不敢以为非也。” [<a href="#_ftn17">17]</a> 朱熹从地理因素和社会风尚的角度讲述了新安之人尚武刚强的品质，并加以义理上的肯定。因为新安的地理位置在山谷之间，当地人多有以武力护卫家乡之能，而随着南宋衣冠南渡，大规模移民进入徽州，经过一段时间的发展，当地社会经济政治以及人口结构都逐渐稳定，教化渐浸而文化犹兴，徽州风俗始而转向文士之乡。“尚武之风，显于梁陈；右文之习，振于唐宋。”[<a href="#_ftn18">18]</a> 由此，“自移跸吴会，新安在甸服三百里，教化所渐，益近且先，故休宁百年来比屋诗书，衣冠鼎盛之士，由学致身者，踵武相属。”[<a href="#_ftn19">19]</a> 徽州地区文教大兴，名臣大家辈出。</p>
+<p><strong>浓厚的读书氛围，使徽州地区士人群体集中，在重视文化的整体社会环境下，就容易因为师友、亲族、地缘等关系形成学术团体。</strong>一方面，如二程、朱熹、戴震等文人领袖的出现不仅促进了当地的儒学发展，更使得文化发展出现群体效应，他们的朋友、后学成为儒学发展的有生力量。另一方面，社会整体富足，则从事文化事业的人群基数就大。明清时期，徽州地区的科举人才十分兴盛，进士数量就超过千人 [<a href="#_ftn20">20]</a>。这些读书人都为地方学派的发展贡献了直接或间接的力量。同时，儒学学派的兴起，也改变着当地的民风民俗，新安理学形成的时间里，“虽田里山谷之民，莫不知有纲常之重”[<a href="#_ftn21">21]</a>，而这些受到理学熏陶的民众，作为精英文化之外的另一环节，又为构建整个地域的文化认同发挥了重要的作用。</p>
+<p>徽州地区的文化精英对于塑造徽州地域文化的作用是显著的，卞利和马德璟指出，徽州地区的知识精英 “在致力于理学等学术探讨的同时，至迟从北宋中叶开始，有意识地建构以‘东南邹鲁’中心的徽州地域文化认同，并在明代中后期完成了东南邹鲁、徽州学术谱系、程朱阙里和以《文公家礼》为中心的民间礼仪认同的建构任务。”[<a href="#_ftn22">22]</a><strong> 这种强烈的地域认同有利于地区文化力量的团结发展，但在发展后期也可能造成党同伐异、罔顾事实等弊端。</strong>由学缘和地缘建构起的学术派别，“家法重根底、别门户、开风气的传统，使得学脉绵延，学术因争鸣而繁荣，研究趋于精密，但谨遵传统、严守门户又会妨碍学术的会通与发展，并使门派内的研究趋于僵化或繁琐。”[<a href="#_ftn23">23]</a> 皖派朴学的出现，一面打破了某些新安士绅构筑起的用于排除异己、自我标榜、设立门户的学术谱系，突破了唯朱子是从的僵化思想；另一面作为新安学术发展的新生力量，重新建构其求真求实的学术体系和方法论，将理性作为学术团体凝结的重要精神，对重整地域文化有着积极作用。</p>
+<p>综上所述，新安理学和皖派朴学虽然具有训诂和义理的不同学术追求，但是都是在徽州的地理环境、社会条件、人文风尚的影响下形成的儒学学术流派，同时又能反过来影响和改善徽州地域民风民俗。<strong>二者同根同源，只是在不同的历史时期和发展阶段有着不同的呈现形式，实际上都是徽州地域文化的有机组成部分。</strong>从历史地理的角度看待新安理学和皖派朴学，我们不仅能够把握区域文化与整体文化的关系，了解徽州学术在整个中国思想史的地位和意义，同时也能在地理、经济、社会、文化等多方面因素动态交织的区域内部，观察各个要素之间的相互影响，相互制约。</p>
+<p>主要参考文献</p>
+<p>[1] 刘墨。乾嘉学术十论 [M]. 生活・读书・新知三联书店，2006.</p>
+<p>[2] 周晓光，唐丽丽。徽州：12-18 世纪中国传统学术文化典范之区 —— 徽州传统学术文化地理研究刍议 [J]. 黄山学院学报，2006 (1): 1-6.</p>
+<p>[3] 周晓光。徽州传统学术文化地理研究 [D]. 复旦大学，2005.</p>
+<p>[4] 刘成群。元代新安理学从 “羽翼朱子” 到 “求真是” 的转向 [J]. 江汉论坛，2012 (1): 73-78.</p>
+<p>[5] 李霞。论新安理学的形成、演变及其阶段性特征 [J]. 中国哲学史，2003 (1): 95-102.</p>
+<p>[6] 卞利，马德璟。从东南邹鲁、程朱阙里到新安理学：宋元明清时期徽州地域文化认同的建构 [J]. 安徽大学学报 (哲学社会科学版), 2022, 46 (1): 1-11.</p>
+<p>[7] 周晓光。试论新安理学向皖派经学的转变 [J]. 安徽师大学报 (哲学社会科学版), 1988 (4): 35-42.</p>
+<p>[8] 丁进. “皖派经学” 观念的形成及其经学史意义 [J]. 湖南大学学报 (社会科学版), 2012, 26 (4): 20-26.</p>
+<p>[9] 徐道彬。皖派学术与传承 [M]. 合肥：黄山书社，2012.</p>
+<p>[10] 邵鹏宇。学缘、血缘与地缘 [D]. 华东师范大学，2015.</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a>［元］陈栎:《定宇集》卷 2《序・送汪存耕之建宁医序》,《景印文渊阁四库全书》第 1205 册，第 174 页。</p>
+<p>[<a href="#_ftnref2">②]</a>［清］程曈撰；王国良，张健点校：《新安学系录》，合肥：黄山书社，2006 年，第 2 页。</p>
+<p>[<a href="#_ftnref3">③]</a> 李霞：《论新安理学的形成、演变及其阶段性特征》，《中国哲学史》2003 年第 1 期。</p>
+<p>[<a href="#_ftnref4">④]</a>［清］黄宗羲原撰，［清］全祖望补修，陈金生、梁运华点校：《宋元学案・卷七十　沧洲诸儒学案下・定宇门人・隐君倪道川先生士毅》，北京：中华书局，1986 年，第 2359 页。</p>
+<p>[<a href="#_ftnref5">⑤]</a>［清］钱大昕着，陈文和主编：《潜研堂文集・序言》，江苏：凤凰出版社，2016 年，第 9 页。</p>
+<p>[<a href="#_ftnref6">⑥]</a>［清］阮元撰，邓经元点校：《揅经室集・点校说明》，北京：中华书局，1993 年，第 1 页。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 刘成群：《元代新安理学从 “羽翼朱子” 到 “求真是” 的转向》，《江汉论坛》2012 年第 1 期。</p>
+<p>[<a href="#_ftnref8">⑧]</a>［明］朱升撰，刘尚恒校注：《朱枫林集・卷九・学士朱升传》，合肥：黄山书社，1992 年，第 137 页。</p>
+<p>[<a href="#_ftnref9">⑨]</a>［清］黄宗羲原撰，［清］全祖望补修，陈金生、梁运华点校：《宋元学案・卷九十四　师山学案・夏吴门人・隐君郑师山先生玉・师山文集》，北京：中华书局，1986 年，第 3127 页。</p>
+<p>[<a href="#_ftnref10">⑩]</a>［清］戴震撰，赵玉新点校：《戴震文集・卷第九・与是仲明论学书》，北京：中华书局，1980 年，第 140 页。</p>
+<p>[<a href="#_ftnref11">11]</a>［清］永瑢等撰：《四库全书总目・卷一》，北京：中华书局，1965 年，第 1 页。</p>
+<p>[<a href="#_ftnref12">12]</a> 何应松修：《休宁县志・风俗》，道光三年刊本。</p>
+<p>[<a href="#_ftnref13">13]</a> 徐道彬：《皖派学术与传承》，合肥：黄山书社，2012 年，第 13 页。</p>
+<p>[<a href="#_ftnref14">14]</a> ［清］顾炎武撰：《天下郡国利病书》徽州志，四部丛刊三编影印手稿本。</p>
+<p>[<a href="#_ftnref15">15]</a>《戴东原年谱》：“明末流寇之乱，徽地以僻处山中，独获完善，休养生息，至乾隆朝，故徽属最称殷富。维时族之人多务商业，以豪侈相尚，虽未知为学之道，而故家大户藏书颇富。公父为族人经营布业于江西之南丰。家素寒，无力购置之本，多向族人假借。”</p>
+<p>[<a href="#_ftnref16">16]</a> 周晓光：《徽州传统学术文化地理研究》，博士学位论文，复旦大学，2005 年。</p>
+<p>[<a href="#_ftnref17">17]</a>［明］程敏政辑撰；何庆善，于石点校:《新安文献志》卷 12《记・休宁县新安道院记》，合肥：黄山书社，2004 年，第 332 页。</p>
+<p>[<a href="#_ftnref18">18]</a> 《歙县志》卷 1《舆地志・风土》，1937 年，民国铅印本。</p>
+<p>[<a href="#_ftnref19">19]</a>［宋］程珌：《洺水集》卷 7《休宁县学记》，《景印文渊阁四库全书》第 1171 册，第 314 页。</p>
+<p>[<a href="#_ftnref20">20]</a> 李琳琦：《明清徽州进士数量、分布特点及其原因分析》，《安徽师范大学学报 (人文社会科学版)》2001 年第 1 期。</p>
+<p>[<a href="#_ftnref21">21]</a> 景泰《新安程氏诸谱会通・程氏外谱》，清初抄明景泰二年本。</p>
+<p>[<a href="#_ftnref22">22]</a> 卞利、马德璟：《从东南邹鲁、程朱阙里到新安理学：宋元明清时期徽州地域文化认同的建构》，《安徽大学学报 (哲学社会科学版)》2022 年第 1 期。</p>
+<p>[<a href="#_ftnref23">23]</a> 罗福惠：《江南经学家的学派家法与地缘》，《鄂州大学学报》2006 年第 5 期。</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>文学</category>
+      </categories>
+      <tags>
+        <tag>文化地理</tag>
+        <tag>朴学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>钱穆《中国文化史导论》读书报告</title>
+    <url>/2023/07/13/19-qianmu/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>摘要：《中国文化史导论》一书系统阐述了钱穆先生对于中国文化的看法，立足于中国文化的发展特点和发展脉络，将中国历史划分为四个阶段：宗教与哲学时期、政治与经济时期、文学与艺术时期、科学与工业时期，并对每个时期的文化主流作了详实的阐发。本书反映了钱穆对于中国文化观念的洞见以及他在文化历史上建立民族认同的努力，其观点和章太炎宣扬国粹、激励种姓的思想形成历史的呼应。</p>
+<p>关键词：《中国文化史导论》 钱穆 文化民族 历史民族 章太炎</p>
+<span id="more"></span>
+
+<p>钱穆《中国文化史导论》读书报告</p>
+<p>钱穆先生一直怀着对中国历史文化的温情与敬意，期待以历史研究对中国文化的独特性进行梳理，发掘出中华民族性格中善良温存的特质与中国历史文化中精粹闪光的思想，以对抗五四新文化狂飙突进中对本族文化的虚无与否定。借由《中国文化史导论》，钱穆先生提纲挈领式地讲解了中国文化史发展的四个阶段，每一阶段皆承续不辍，在旧质的基础上完成了新质的生成。又将中国文化与西方文化加以历史比较，对救亡图存的时代命题加以回应，完成历史与当下的交际。本文将对《中国文化史导论》一书进行简要的内容梳理，并对书中关于中国文化观念的内容进行探讨和引申，将钱穆先生与太炎先生关于文化、民族、历史的观点加以比较，从中见得中国文化历史的自根自生，以及体悟 “文化民族” 与 “历史民族” 的形成过程。</p>
+<h1 id="一、内容综述"><a href="#一、内容综述" class="headerlink" title="一、内容综述"></a>一、内容综述</h1><p>《中国文化史导论》基于钱穆先生民国三十年在重庆中央训练团的演讲稿《中国文化传统之演进》而写成，全书按照内容分章，论中国文化之地理、国家、民族、观念、学术、政治、文学艺术等多方面内容，但深层次的线索却是钱穆先生已在演讲中提出的，中国文化发展的四个历史阶段的分期（宗教与哲学时期、政治与经济时期、文学与艺术时期、科学与工业时期）。中国文化随历史演进而绵延，这是纵向的积淀，得以成今日之中国。同时，在中西文化碰撞的时代背景下，钱穆先生也不得不在中西文化比较的视域下，对本国文化的特质进行概括和探讨，以求新时代民族发展之道路，这是横向比较视域下的中国文化。下面从共时和历时两方面，简述本书主要内容 [1]：</p>
+<h2 id="（一）横向的比较：中西文化之差异"><a href="#（一）横向的比较：中西文化之差异" class="headerlink" title="（一）横向的比较：中西文化之差异"></a>（一）横向的比较：中西文化之差异</h2><h3 id="1、地理环境与文化生成"><a href="#1、地理环境与文化生成" class="headerlink" title="1、地理环境与文化生成"></a>1、地理环境与文化生成</h3><p>本书第一章聚焦于中国文化的生成阶段，强调了中国文化的孤立性和特殊性。黄河的众多支流，形成了许多两水相交的三角地带，成为了中国古代文化的摇篮。这些纵横交错，极大极复杂的水系，使中国文化走向一个能够互相联系的大局面，孕育了东方的农耕文化。在作者看来，这种文化是一种时间的、生长的、自我绵延的，不求富强但求安足的，同时又勤奋耐劳的文化，中国文化于此奠基，代代延续。</p>
+<p>不同于农耕文化，西方的土地由于地理屏障的隔绝，往往独立而分裂，其商业文明又要求着开拓与进取，所以不能建立一个统一的大格局。在敌我的对待中，西方文化提倡空间、权力与向外扩展，要求自由与革新，其文化也不存在一以贯之的延续性，每一个政治上的更替，都导致着国家与人民的彻底转变。</p>
+<p>中西地理环境的差异，影响着中西文化的生成方式和演变路径。这种影响体现在政体上的统一或分割、经济上的重农或重商、哲学上的综合混融或分析对待、生活上的自足安乐或进取冒险等方面。本书在第一章论及此，是为了在源头上厘清中西文化的差异性，以避免一种迷狂钦羡下的盲从。</p>
+<h3 id="2、中西接触与文化更新"><a href="#2、中西接触与文化更新" class="headerlink" title="2、中西接触与文化更新"></a>2、中西接触与文化更新</h3><p>作者对于中西文化比较的论述集中还在第十章，这是基于当下中国文化遇到的挑战而言，从如何认识中西文化的接触与文化的更新这一问题展开的。作者首从中西文化交流的历史谈起，论中国自古以来对外来文化便有一种开放包容的心态，从魏晋南北朝及唐朝的历史既可看出，中国人是以一种活泼广大的兴趣来对待异族文化的。而明清以来的中西文化交融，始于传教，进而演变为经商，和中国文化本有之需要并不十分契合，因此从上帝到自然科学，接受的内容仍然是有限的。</p>
+<p>直到坚船利炮叩开国门，中国人被迫认识到西方工业科技革命的成果，人们才开始集中讨论中国本土是否存在科学与怎样学习西方科学的问题。从文化观念来看，中国人的科学意识确乎不同于西方的 “科学”，中国的思维向内看，并不寻求界限与分别，这种融通的、灵感的人文演进迥异于逻辑的、分析的科学精神。从古代中国的众多发明来看，我们不可谓中国人没有科学才能，只是未能从本国国土上生发出同西方近代科学。从效用上看，中国确乎落后了，但中国一向是高兴接受外来新元素而仍可无害其原有的旧组织的，所以作者仍抱有一种乐观的希望，认为只要中国人以一种纯真理的眼光看待西方科学知识，中国的科学一定会有机高速地发展。</p>
+<h2 id="（二）纵向的积淀：中国文化之演进"><a href="#（二）纵向的积淀：中国文化之演进" class="headerlink" title="（二）纵向的积淀：中国文化之演进"></a>（二）纵向的积淀：中国文化之演进</h2><h3 id="1、先秦：大同理想之确立"><a href="#1、先秦：大同理想之确立" class="headerlink" title="1、先秦：大同理想之确立"></a>1、先秦：大同理想之确立</h3><p>钱穆先生一直强调中国文化演进的一线相承，传统不辍，从上古至近代，主干大流一直存在，并不断吸收融合。中国文化具有坚强的持续性和伟大的同化力，国家、民族皆为文化而存在。他从华夏民族的开始讲起，又论及禅让时代、封建时代的政治形态，叙述了一个统一的多民族国家的建立过程及民族融合的发生发展。</p>
+<p>中国古代似乎并不以民族与国家作为身份认同的主要标识，区分华夷的主要标准是是否具有相似的文化系统，这体现在民族观念、宗教观念、国家观念以及人道观念等方面。塑造华夏文化的一大重要的因素就是儒家思想。孔子整理经典，创立私学，此后代代儒家学者则将 “仁”、“礼”、“大同” 等概念化入中国文化精神。如此，在文化、国家、民族的多种因素影响下，中国人便确立下人生大群的共同理想和信念。</p>
+<h3 id="2、汉唐：政治经济之筑基"><a href="#2、汉唐：政治经济之筑基" class="headerlink" title="2、汉唐：政治经济之筑基"></a>2、汉唐：政治经济之筑基</h3><p>在大同理想的基础上，中国在汉唐完成了文治政府的创建、政治体制的改革以及类似于社会主义的经济政策的建立与改良。政治采用民主精神的文治政府，经济主张财富平衡的自由社会。在面对外来新民族和新宗教的加入时，中国也显得开放包容，兼收并蓄，从而吸纳新质后继续演进。钱穆先生在《中国历代政治得失》中也谈及，古代中国的政治并非以 “专制黑暗” 可以一以概之的。文治士人政府一方面是和君主权力的一种平衡，一方面又在擢选中迈向流动的平民社会。由此，则在政治经济上筑基，开启下一阶段的发展绵延。</p>
+<h3 id="3、宋元明清：文学艺术之发展"><a href="#3、宋元明清：文学艺术之发展" class="headerlink" title="3、宋元明清：文学艺术之发展"></a>3、宋元明清：文学艺术之发展</h3><p>在经济政治制度大体成形之后，文学艺术与个性伸展就成为可能。这一时期，文化的发展大体呈现出文化融合与普及的两个特点。</p>
+<p>1、文化融合。一方面，在面对外来文化时，中国人以本土的思想加以改造发挥，例如佛教之禅宗就一改悲观厌世的人生观，转在现实人生中认取天机与神通了。另一方面，本土文化亦吸收外来文化之精粹，使旧质焕发出新的光彩，例如儒家之道学理学对宇宙论、本体论的申发也受到了佛学理论的启发，从而获得了对现实生活更强的解释力。</p>
+<p>2、文化普及。科举制度、印刷术、新儒学、书院制度与讲学风气，都在推动着社会文化的再普及和再深入。贵族世家逐渐退出历史舞台，读书人皆可通过考试进入仕途，新儒家的天道性命之学又给予他们莫大的鼓励。在日常生活中，白话文学的兴起，日用工艺美术的发展，也代表者平民社会文学艺术的极大发展。</p>
+<p>以上是钱穆先生对近代之前的中国文化史的分期及主要特点的把握。第四阶段及近代中国的科学与工业的时代，主要冲击在于中西文化的碰撞，上文已述。以下对本书中一以贯之的 “文化观念” 作一专题性的探讨。</p>
+<h1 id="三、第三章评述：中国文化观念之自根自生"><a href="#三、第三章评述：中国文化观念之自根自生" class="headerlink" title="三、第三章评述：中国文化观念之自根自生"></a>三、第三章评述：中国文化观念之自根自生</h1><p>身处于中西方文化剧烈的碰撞中，在革故鼎新的振臂高呼中，钱穆先生对于五四以来新文化运动对传统文化偏激的否定，是竭力反对的。他深切地感受到，当如 “自秦以来二千年，皆专制黑暗之历史”[2] 这样的历史虚无认识侵占了青年人的思想领域，则一个民族也不复生机与发展之希望，实乃一种东方主义的文化殖民侵略下的民族自卑。如果用单纯的文野之辨来理解东西方文化的差距，从而觉得西方文明优于中国文明，以浅薄狂妄的文明进化论来认识本国固有的历史，从而坚持今天是站在最高点俯瞰历史，那么此种温情敬意便荡然无存，民族的历史传统也就无从接续了。</p>
+<p>《中国文化史导论》正是聚焦于中国文化发展绵延性和独特性来展开论述的。追溯中国文化发展历史，是恢复中国民族情感的第一步，也是平等认识文化差异的第一步。“唯天下至诚，为能尽其性。能尽其性，则能尽人之性。能尽人之性，则能尽物之性。能尽物之性，则可以赞天地之化育。可以赞天地之化育，则可以与天地参矣。” 钱穆先生创新性地将《中庸》一句解释为宗教精神、科学精神与儒家精神的结合，儒家一方面承认超人类的力量，赞天地之化育，认识客观世界，尽物之性，另一方面又把 “人” 和 “己” 安放到最切近的地方，通过尽自己的性来向外推扩，以达到天人合一和心物合一。由这种艺术哲学化的观念出发，中国文化在对待人类社会各项事务之时，便采取了与西方文明不一样的视角。作者在第三章详细论述了古代观念与古代生活，结合全书，我们可以概括出以下几方面内容：</p>
+<p><strong>1****、以文化代民族</strong>：古代中国因为地理环境的相对一致，各地的文化也相类似，例如都为农业社会与城市国家，参与和平同盟，有相似的生活习惯与政治方式等，于是华夏民族在自我与他者的文化区别中形成了一种身份认同与民族认同。中国自古不强调血统论，唯以文化论夷狄，也并没有形成近代民族国家的概念，拥有界限清晰的民族界线。故其面对外来文化时，仍能以一种开放包容的心理接受之，改造之，又增添为自己文化内部的新质。</p>
+<p><strong>2****、以天下代国家</strong>：古代中国民族观念既以文化同一性构建认同，对于政治集合体之国家的认同也比较平淡。超乎国家的观念是 “天下”，对于士大夫来说，何处得以施展抱负，便前往此处，对于民众来说，一国得行仁政，则襁负而至，或箪食壶浆以迎之，他们都不自限于狭隘的国家观念，而是在更广大的天下视角，寻找合于人性与道理的政治地域。</p>
+<p><strong>3****、以伦理与艺术代宗教</strong>：中国的宗教信仰并未像西方一样，取得彻底的统治地位。古老的天命祖先信仰虽然与政治有联系，但 “天命靡常，天视自我民视，天听自我民听。” 中国人观念中的上帝，是人类大群体所公有的，不为一姓一族所私有。中国人的宗教观念是或隐或显的，在儒家伦理与文学艺术并存的中国社会里，宗教并不能发挥它的全部功用。儒家思想追求现世性，一切向前，修齐治平的同时敬鬼神而远之，只讲人道而不讲神道，给人一种刚性的力量；文学艺术是解脱性的，代表对一种超现实的更宽大平和的境界的憧憬，在清凉静退中给予柔性的支持。所以，伦理和艺术在中国社会中承担了宗教的功用，宗教并不能在中国产生长期深远的严重影响。</p>
+<p>以上三点，统而言之，都可以与人道观念产生联系。因为重视人的生命，人的性，故不以狭隘的政治国家与民族血统区别人；又因重视现世的生活，不盲目追求彼岸与来世的恩泽，而关注当下的人。仁礼孝悌，乃人性之光辉，伦理家族，乃生命之绵延。“人与人之间，全以诚挚恳殷的忠恕与爱敬相待”，这是传统社会对于人性的美好期待与理想。</p>
+<p>本书第三章，大略地分析了中国古代的观念与西方文化之不同，尽管并没有显性地充当本书中 “中国文化史” 中某一朝代的时间性内容，但却成为全书每一历史时期的思想性纲领，因为观念无一不刻影响着人们的行事，影响着整个民族的走向。由此章遍观群书，结合钱穆先生的其他著作加以排比分析，可以发现全书之作意所在。</p>
+<p>《中国文化史导论》以 “史” 命名，原因在于 “史” 延续性与当下性。钱穆认为 “历史乃一时间性的学问”[3]，这一时间不是物理性的时间，历史时间具有持续性与绵延性，在持续变动发展中有一种凝然常在的特殊性，故此，历史时间中的过去与未来都交织于现在，“历史上之过去非过去，而历史上之未来非未来，历史学者当凝合过去未来为一大现在”。中华文化这一大整体，乃是生生不息的生命体，包含了过去、现在、未来。</p>
+<p>《中国文化史导论》讲论的是 “文化” 的 “史”，原因在于文化也是一种生命，也有发展历程，而且塑造人、改变人。“文化是指集体的大群的人类生活而言。在某一地区、某一集团、某一社会或某一民族之集合的大群的人生，指其生活之各部门各方面综合的全体性而言，始得目之为文化。”[4] 文化亦不同于文明，文明偏在外，属物质方面，文明偏在内，属精神方面，所以文明可以向外传播与接受，而文化必须由其群体内部精神累积而产生。</p>
+<p>文化是一种生命，钱穆先生在《中国文化精神》中还提到，每一人的生命，都有小生命与大生命。“人之生命，先是由外向里。由宇宙万物，大群社会，取求供养，这才造成了一个‘小我’。”“同时我们的生命，又必从里向外，合从一个小生命发出行动、工作、思想，一切来向外贡献，这可称为‘大生命’。”[5] 我们的小生命，处于这种文化环境之中，我们又贡献出自己的力量，去构筑这一大文化。钱穆先生以 “保卫我的生命” 一样保卫文化，从情感而发，则句句真挚恳切。当然，这并不是全然理性客观的，但是他也绝非想要绝对客观。我们应该认识到的是，中国作为一个生命体的性质，我们都是大生命中的一点，如若此大生命断绝，那每个个体的灵魂也就无从依附。所以，中国社会的改进，不能从外来的文化中随意扦插，也须得中国文化的根上生发，才得以健康茁壮。</p>
+<p>《中国文化史论》着重讲中国文化的历史，亦与西方文化作一比较，是要在民族文化危机的背景下，寻求一种平等对话之可能。章太炎先生曾在《齐物论释》中阐释真正的平等：“终举世法差违，俗有都野。野者自安其陋，都者得意于娴，两不相伤，乃为平等。”[6] 破除文野的偏执，随顺制宜的俗情，不以文明进化的借口施行压迫，使各民族得其自根自生，方才彻证真如，契入平等。面对学术界套用西方理论来笼统片面地批判中国历史文化的浪潮，钱穆先生和太炎先生一样，意识到了东方主义的文明论的害处，逆流而上，正本清源。《中国文化史导论》虽然只是一本概览性质的小书，但其鲜明的立场已经昭然揭示：只有坚守本民族文化的主体性，才得真正彻见平等，以理性的态度为人民求得生活的福祉与精神的富足。</p>
+<h1 id="四、历史的民族：章太炎与钱穆历史文化观之探讨"><a href="#四、历史的民族：章太炎与钱穆历史文化观之探讨" class="headerlink" title="四、历史的民族：章太炎与钱穆历史文化观之探讨"></a>四、历史的民族：章太炎与钱穆历史文化观之探讨</h1><p>在清末的民族主义思潮中，章太炎作为 “有学问的革命家”，将民族历史文化资源作为革命的资材，强调 “用宗教发起信心，增进国民的道德”“用国粹激动种性，增进爱国的热肠”[7]。他对国家命运深切关怀，具有身先士卒的精神，开展革命实践。同时也在学术与文化领域寻求国家的出路，其学术也具有着鲜明的现实关切和革命底色，例如齐物哲学赋予本来不具有公共性的佛学以现实关切，乾嘉而来的小学也具有了保存文化火种的作用。</p>
+<p>钱穆先生与太炎先生的史学思想颇为相似，他们都是一国之文化绵延，制度与人事的活动与融合这一历时过程来建构民族这一概念的，也强调历史文化在当下社会的重要意义。以历史塑造民族，自传统而开新这一理论框架虽然并未在民国真正得到施行，但今天的我们仍然可以看到他们思想在当时时代背景下的深度与张力，他们留下的著述，依旧在历史的湖面上不断泛起圈圈涟漪。</p>
+<p>章太炎和钱穆的民族观念都与近代民族国家主义不同，他们都在论述一种 “历史的民族”，并不是从一抽象层面强调一民族的存续发展，而是强调一种在历史流变的人事中自然兴盛的文化认同感。故此，这样的民族是流动的，开放的，也是具有极强生命力的。另外，区别于笼统的 “文化民族” 论，他们并不将文化这一因素本质化和排除历史上的制度、疆域、人事等要素，而是更着于政治、经济、地理等客观因素与文化的互相影响。</p>
+<p>钱穆先生是太炎先生的后辈，1936 年太炎逝世后，钱穆曾撰文纪念，称 “平时而能博大，不为放言高论，而能真为民族文化爱好者。”[8] 而犹赞其史学。钱穆认同章太炎的民族主义思想，亦以弘扬中国历史精神为毕生目标，期待以中国历史作为一种良性的、正面的引导民众的力量。他一生以著书讲学为主要志业，一生笔耕不辍，著作等身，虽并未亲身奔走革命，针砭时弊，其学术也并不像太炎那样锋芒毕露，但却有循循善诱、温润如玉的儒者风度。二者虽然都以历史与文化论民族，但具体治学取向不同，各取传统文化之数端加以申发，论证的理路和经世之途径有所差异。</p>
+<p>太炎先生倡导之国粹内容有三：语言文字、典章制度、人物事迹。语言文字包含了小学与文辞，乃是民族历史的书面载体，凝聚着民族传统与文化，是为众同分心传续所在。典章制度是建立国家政治的框架，需得知道中国历代政治得失，才能走出新路。人物事迹在于铭记众多 “民族的脊梁”，标志榜样，以 “人” 为据，既不至于使民众历史虚无，也可发起 “舜，何人也，禹，何人也，有为者亦若是” 的道德尊严与自信。以上三条，叫中国人要去爱惜自己国家的历史，不要亵渎古人，厚诬前贤。同时，教育的根本也要从自国自心发出来，“自国的人，该讲自国的学问，施自国的教育，像水火柴米一个样儿，贵也是要用，贱也是要用，只问要用，不问外人贵贱的品评。” 中国教育的根本应是依自不依他的，要从民族传统的深层挖掘出新的活力，激活每个人的道德自觉，而不需要外在的主宰。如此，激励民族自信心与凝聚力，才能促使整个民族社会的发展。</p>
+<p>钱穆先生的学术经历了从朴学到理学、从历史考据学研究到历史文化研究的转向。在史学研究方面，他注重 “以记诵考订派之功夫（注重材料的克集与考订）而达宣传革新派之目的的史学路向，以史通今。” 在文化研究方面，他提倡中国历史文化精神和中华文化传统，将 “文化救国” 具体体现为 “以儒救国”。在《中国文化史导论》中，他多次提到儒家精神之可贵，将性道合一、修齐致平、仁义孝悌等思想作为彰显中国文化特征的重要因素，也毕生追求着儒者的 “为天地立心”“以天下为已任” 的境界。钱穆强调的是一种儒家心性之美，他赞叹圣贤人格与大同理想，犹重义理致用，期待一个人人相亲相敬，政府施政行仁的理想社会。这样的遐想神思，虽然缺乏足够的实践依据与逻辑论证，却不乏真切善良的鼓舞力量。</p>
+<p>太炎先生与钱穆先生的学术体系都是旁博而深入的，本文并不能一一详述。不论是寄托于语言文字之学还是追求儒家心性之美，或是寄托于民族历史的建构与延续，都是先生们为保存国粹，保护民族信心所做的努力。他们沿着经世致用的脉络，在历史兴亡中探索当下发展的可能性，为民族和国家的延续贡献学问与智识。</p>
+<p>如果单从学术上考量，这种以汉文化为主体而建构的历史文化自然是具有强大感召力的，这种略有倾向性的观念也是时代背景之使然。而在当下的中国，如何构建起民族国家的认同，凝聚群体共同的信念，也是社会发展亟需解决的重大问题。采用文化中心主义或种族主义似乎都无法符合当今中国国情。多元文化与多元族群的分歧与冲突，成为了中国历史叙事需要考虑的因素，也在警醒着我们思考，文化认同、民族认同、国家认同、政治认同等多方面的问题是否一致。</p>
+<p>“一生为故国招魂”，此乃钱穆先生一生之写照。面对 20 世纪中国文化之困境，钱先生能与太炎之心志会合，以整个身心投入了捍卫弘扬民族文化精神的弘伟志业中。人同此心，心同此理。后之览者，或许也能与此心此志，心有戚戚焉。“天地生一世人，自足了一世事。” 我们也有自己需要面临的时代困境，从历史文化上求，或可为与？</p>
+<p>参考文献</p>
+<p>[1]  钱穆。中国文化史导论 [M]. 北京：商务印书馆，1994.</p>
+<p>[2]  钱穆。中国历代政治得失 [M]. 九州出版社，2012.</p>
+<p>[3]  钱穆。中国今日所需要之新史学与新史学家 [J]. 思想与时代，1943 (18).</p>
+<p>[4]  钱穆。文化学大义 [M]. 九州出版社，2012.</p>
+<p>[5]  钱穆。中国文化精神 [M]. 九州出版社，2011.</p>
+<p>[6]  孟琢. 《齐物论释》疏证 [M]. 上海人民出版社，2019.</p>
+<p>[7]  章炳麟。章太炎的白话文 [M]. 辽宁教育出版社，2003.</p>
+<p>[8]  钱穆。中国学术思想史论丛 [M]. 九州出版社，2011.</p>
+<p>[9]  宋薇. “温情与敬意” 的文化情怀 —— 钱穆文化思想浅析 [J]. 天津市社会主义学院学报，2004 (03): 44-46.</p>
+<p>[10] 王锐。历史叙事与政治文化认同 —— 章太炎的 “历史民族” 论再检视 [J]. 人文杂志，2020 (05): 119-128.</p>
+<p>[11] 陈勇。略论钱穆的历史思想与史学思想 [J]. 史学理论研究，1994 (2): 47-62.</p>
+<p>[12] 喻长友。钱穆 “民族文化本位” 思想论析 [J]. 哈尔滨师范大学社会科学学报，2022, 12 (2): 16-21.</p>
+<p>[13] 牛军。文化传统与时代之间的回响 —— 钱穆儒家心性美育思想研究 [J]. 河北工业大学学报 (社会科学版), 2021, 13 (4): 35-41.</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>文学</category>
+      </categories>
+      <tags>
+        <tag>读书报告</tag>
+        <tag>钱穆</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>再论 “因为” 词类</title>
+    <url>/2023/07/13/21-yinwei/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：本文从学界对于 “因为” 词类划分问题的分歧出发，讨论 “因为” 一词的多种语法分布情况，兼而讨论连词和介词的判断标准。“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为（+np）+vp” 逐渐由介词向连词转化。当 “因为” 后接的主谓结构具有了句子的特点，“因为” 就已经完全成为连词。</p>
+<p><strong>关键词</strong>：“因为” 词类 连词 介词 复句</p>
+<span id="more"></span>
+
+<p>再论 “因为” 词类</p>
+<h1 id="一、“因为”词类划分的分歧"><a href="#一、“因为”词类划分的分歧" class="headerlink" title="一、“因为”词类划分的分歧"></a>一、“因为” 词类划分的分歧</h1><p>自《马氏文通》起，学界对连词的划分问题一直有所讨论。《马氏文通》中分出连字、介字、状字，但无法界限分明地划定三者的区别，导致他在分析过程时常有纠缠，标准不一。赵元任也指出 “中文里的连接词跟介词、副词很难分得开…… 事实上中文里连接词的性质很难确定，所以龙索夫索性不把他当作独立的一个词类来看。”[<a href="#_ftn1">①]</a> 因为语法分布的相似和兼类词的存在，连词与介词、副词在某些情况难以区分。</p>
+<p>例如，《现代汉语八百词》中的 “因为” 分为两种词性：介词、连词。本书并未明确指出两种词性的判断依据，但是根据其阐释和例句可以大体推断出，介词的 “因为” 连接的是体词性成分，连词的 “因为” 连接的是谓词性成分。《现代汉语词典》、沈阳和郭锐的《现代汉语》也列出了 “因为” 的两种词性，分类标准和《八百词》大体一致。但是，宋绍年、章欣提出，要对 “因为” 一词的词性进行重新思考，他们认为 “因为” 可以作为介词连接谓词性成分，并且对汉语偏正复句的合理性提出质疑 [<a href="#_ftn2">②]</a>[<a href="#_ftn3">③]</a>。</p>
+<p>词类划分主要是以语法分布及语法功能为依据的，要考察 “因为” 的词类，首先要分析 “因为” 在语境中的语法分布。本文对 BCC 及 CCL 语料库中包含 “因为” 的现代汉语语料进行句法结构分析，提取 “因为” 所在结构的主干成分，得到以下三种句法结构模式：</p>
+<table>
+<thead>
+<tr>
+<th>语法结构</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>因为 + np</td>
+<td> 但因为固执于地方自治学说的缘故，《宪草》所规定是十分凌杂的。</td>
+</tr>
+<tr>
+<td>因为 + vp</td>
+<td> 山东有个中学有些学生因为过分用功，经常头痛。</td>
+</tr>
+<tr>
+<td>因为 + np+vp</td>
+<td> 厂领导因为我无故矿工，给我记大过处分，并且把我赶出了工厂宿舍。</td>
+</tr>
+</tbody></table>
+<p>其中，“因为 + np” 模式没有争议，学界普遍认为这一结构中的 “因为” 是介词，因为介词连接体词性短语是其常规语法功能，而偏正复句中的连词不具有这项功能。第二种情况 “因为 + vp”，陆俭明在论述表示主从关系的连词时曾提出 “在表示主从关系的连词中，有少部分能用来连接主语和谓语。”[<a href="#_ftn4">④]</a> 那么 “因为 + vp” 应是 “因为 + np+vp” 的一种简略形式，属于连词 + 分句的一种特殊情况。第三种情况 “因为 + np+vp” 已经有了较为完整的主谓结构，大多数学者都将之视为一个分句，从而认为 “因为” 是连接分句与分句的连词。而章欣则认为，由于三种 “因为” 结构后接成分皆为指称性成分，并无本质区别，所以后二种情况的 “因为” 皆属介词。</p>
+<p>可以看出，关于 “因为” 的词类划分的分歧主要集中于 “因为 + vp” 和 “因为 + np+vp” 结构，下面主要讨论这两种结构中的 “因为” 词类。</p>
+<h1 id="二、“因为（-np）-vp”与“介词-谓宾”同理"><a href="#二、“因为（-np）-vp”与“介词-谓宾”同理" class="headerlink" title="二、“因为（+np）+vp”与“介词+谓宾”同理"></a>二、“因为（+np）+vp” 与 “介词 + 谓宾” 同理</h1><p>介词将自己的宾语引介给谓语，整个介宾词组在句中充当状语。连词能够连接词或词以上的语言单位，表示各种逻辑关系。在复句中，连词主要用于分句与分句的连接。“因为（+np）+vp” 属连词的观点是将 “因为 + np” 的模式与 “因为（+np）+vp” 分开，认为介词不能连接谓词性短语从而获得 “因为” 作为连词的合理性。然而，这种分类方法存在局限，“因为（+np）+vp” 实际上与 “介词 + 谓宾” 同理。</p>
+<p><strong>1****、根据后接成分区别连词介词的局限</strong></p>
+<p>根据后接成分的性质来区分介词和连词的方法实际上来自印欧语法。以英语为例，介词的后接成分只能是名词性的宾语，如果后接从句，则应该将该词归为连词。这一规则成立的前提条件是英语具有严格的形态变化，有着定式动词和不定式动词的区分。当一个兼类词连接一个带有动词的结构时，可以通过动词是否具有不定式动词的形式来判断这个结构是从句还是名词性宾语。但是汉语不具有形态变化，所以当一个兼类词连接含有谓词性成分的结构时，无法从形式上判断该结构是作为宾语还是作为分句存在的，主流的观点将这种情况直接归入连词类，是值得商榷的。</p>
+<p><strong>2****、“因为” 后接 “指称成分”</strong></p>
+<p>朱德熙在《语法讲义》中用指称和陈述来说明体词性成分和谓词性成分在特定句法位置上的语义功能。汉语中的动词和形容词可以直接充任主宾语而无需形态变化，但是在语义上有已经事物化和没有事物化的区别。具有指称功能的成分可以用 “什么” 指代，具有陈述功能的成分可以用 “怎么样” 指代。[<a href="#_ftn5">⑤]</a> 章欣基于此，认为 “位于‘因为’之后的谓词性成分全部已经指称化了，并且其意义跟谓词性结构的原因有关，都表示转指意义。”[<a href="#_ftn6">⑥]</a> 由此，“因为” 的三种结构皆能被 “因为 + 指称成分” 容纳。</p>
+<p>朱德熙已经指出，汉语中词类和句法成分没有一一对应的关系，并且以陈述和指称来划定词的语义功能。沈家煊的 “名动包含” 说则更进一步，说明汉语陈述语用作指称语是 “构成关系” 而非 “实现关系”，汉语的陈述语是指称语的一个次类，汉语动词是名词的一个次类。[<a href="#_ftn7">⑦]</a> 那么，不论是从语义还是词类功能的角度，谓词充当宾语的合法性已经显而易见，“因为” 后接的谓词性成分，是可以作为介词宾语而存在的。</p>
+<p>*<em>3</em>***、“因为 +** <strong>谓词性成分” 能够成立</strong></p>
+<p>汉语词类与句子成分没有一一对应的关系，谓词性成分可以充当谓语、主语、宾语多种句子成分。朱德熙在《语法讲义》中提出体宾动词和谓宾动词的概念，打破了传统语法中认为动词不能带谓宾的观点。介词由动词虚化而来，应当具有与动词相似的语法功能。那么介词是否能够容纳谓宾，具有和动词相似的语法功能？</p>
+<p>学者们已经对 “介词 + 谓宾” 结构进行了一定的研究。马杜娟分析出包含 “[对 + 谓词性成分]+ 谓词性成分” 的语块 [<a href="#_ftn8">⑧]</a>。蒋瑾媛考察了 “通过”、“经过”、“自从”“关于” 等介词，能够和动宾短语、主谓短语组合，从而论证 “为了” 只有介词词性 [<a href="#_ftn9">⑨]</a>。陈昌来的《介词与介引功能》将介词分为两类：只介引体词性宾语的介词和也能够介引谓词性宾语的介词 [<a href="#_ftn10">⑩]</a>。由此可证 “介词 + 谓宾” 是具有合理性的。</p>
+<p>综上所述，因为 “动词 + vp”、“介词 + vp” 的结构能够成立，而 “连词 + vp” 的结构只能看成省略的特殊情况，所以 “因为 + vp” 结构中的 “因为” 如果被视为介词，会更加具有语法系统上的规整性。所以，本文更倾向于将 “因为 +（np+）+vp” 结构分析为介宾短语。</p>
+<h1 id="三、单复句划分与“因为”词类"><a href="#三、单复句划分与“因为”词类" class="headerlink" title="三、单复句划分与“因为”词类"></a>三、单复句划分与 “因为” 词类</h1><p>“因为（+np）+vp” 结构中 “因为” 的词类划分问题，还受到学者们对于汉语单复句划分的认识的影响。若 “因为” 为连词，则承认以谓词结构划分单复句，若为介词，则不认可谓词结构独立成一分句。对于单复句的划分问题，学界尚存在一些分歧。综合来看，学者们通过小句结构上的互相独立、小句间的语音停顿、连词的使用、意义的关联等标准对单复句进行划分 [<a href="#_ftn11">11]</a>，但是仍然存在许多单复句界限不明的情况。刑福义指出了单句与复句在界限上互有瓜葛的诸多情况 [<a href="#_ftn12">12]</a>。孙良朋则主张汉语句子不再分单、复句，应该按照句法结构、语义关系对所谓 “复句” 进行分析 [<a href="#_ftn13">13]</a>。汉语单复句的划分问题，在古代汉语语法研究中犹为突出，刘利曾指出句子边界的不清以及复句与紧缩、连动、介词结构、代词复指结构的纠缠，都会导致单复句划分的不明 [<a href="#_ftn14">14]</a>。</p>
+<p>古代汉语中，“分句” 这一概念并不常用。《马氏文通》连字章有一重要概念 “读”，在语法分布上，与现代汉语中偏正复句中的偏句相类似。然而，在现代汉语复句语法中，偏正复句的偏句和复句都是小句，在语法单位层级体系中的地位相同。然而，“读” 虽然可以具有起词和语词这样与 “句” 类似的主谓结构，但是马建忠并未给予 “读” 以 “句” 的同等地位，“读” 实际上是在核心结构之外的一个谓词性结构，在句中作一个指称性的成分。在古人的汉语实践中并未有单复句的观念，他们往往使用一些标记关系的虚词（有关联作用的副词、连词、介词）来表示逻辑语义关系。所以，马氏实际上是根据汉语的特点，以 “读” 代替了小句这一级语法单位。《文通》中的连字章也并不等同于现代意义上的 “连词”，而是将具有关联作用的虚词都吸纳进来，大约等同于 “关联词”。</p>
+<p>但是，现代汉语相对于古代汉语发展出了更多语法范畴和形式手段，在一个句子中，一个主谓结构需要加上一些结构成分，才能构成一个意义完整的句子。例如 “夫子哂之” 可以成立，而 “夫子笑他” 就不太能说。在 “因为” 连接的结构中，有许多比单纯的主谓结构中更为复杂的形式。如果说 “因为 + np+vp” 结构大致能被介词结构容纳，那么当 “因为” 的后接部分包含了表示语气范畴、否定范畴、情态范畴、意愿范畴、时体范畴等完句成分时 [<a href="#_ftn15">15]</a>，就不能称之为动宾或主谓短语，只能称之为分句了。所以，主张取消复句的观点，在现代汉语研究中就显得执其一端了。</p>
+<p> ①多元化总是优于单一化，因为多元化包含了各单一化的优点，而避免了它的缺点。<br>②有的人因为他们不正确地忽视或排斥教育为社会需要服务的职能就予以全盘否定。<br>③原则上，他并不鼓励学生读历史，因为历史系毕业后出路很窄。</p>
+<p>以上三句，“因为” 的后接成分都不是简单的主谓结构。在形式上，有几点与主谓短语相区别的特点：其一，具有语气范畴、否定范畴、程度范畴等完句成分；其二，结构内部可能有多个主谓结构，语气有停顿，结构相对复杂，本身就可以是复句；其三，该结构可以后置，并不出现在介宾短语的典型位置。由此我们可以判断，不同于 “因为（+np）+vp” 简单结构的模棱两可，这些结构中的 “因为” 已经完全成为连词了。</p>
+<h1 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a>四、结论</h1><p>在 “因为” 词类的探讨过程中，本文注意到以下两个方面的问题：其一，至少在共时层面上，基于汉语特点，我们能对 “因为（+np）+vp” 结构中 “因为” 词性进行重新探讨，将之归于介词和连词的过渡状态。其二，通过对古代汉语和现代汉语中复句的划分操作中的区别进行讨论，可以明确的是，从一些形式特征判断，一部分的 “因为” 已经从介词转化成连词。由此，我们需要在三类 “因为” 的语法结构之外另立一类 “因为 + 句”，尽管这一类的主干仍是主谓结构，但已经具有句子的特点。</p>
+<p> <img src="D:\blog\hexo-demo\source\images\图片1.png" alt="image-20230713205659028"></p>
+<p>本文最后得出的结论是，“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为 + vp” 由于 “介词 + 谓宾” 结构的合法性可以将 “因为” 看作是介词，但是已经开始向连词转化。“因为 + np+vp” 已经具有了主谓结构，但仍然是一指称性成分，处于介词和连词的过渡地带。而当 “因为” 后接的主谓结构具有了句子的特点（完句范畴、语调、结构复杂度等），它已经不能为介宾结构所容纳，那么 “因为” 就已经完全成为了连词。</p>
+<p>参考文献</p>
+<p>[1] 陈昌来。介词与介引功能 [M]. 安徽教育出版社，2002.</p>
+<p>[2] 李泉。试论现代汉语完句范畴 [J]. 语言文字应用，2006 (1): 56-63.</p>
+<p>[3] 贺阳。汉语完句成分试探 [J]. 语言教学与研究，1994 (4): 26-38.</p>
+<p>[4] 孙良明。研究汉语单复句划分应当明了的问题 [J]. 语言教学与研究，2007 (2): 56-63.</p>
+<p>[5] 郭中平。单句复句的划界问题 [M]// 胡裕树主编。现代汉语参考资料 （下册）: 上海教育出版社，1982: 743-762.</p>
+<p>[6] 李宏玲，王用源。介词 “因”“由” 的连词化与词汇化 [J]. 现代语文，2020 (5): 47-52.</p>
+<p>[7] 朱德熙，盧甲文。关于动词形容词 “名物化” 的问题 [J]. 北京大学学报 (人文科学), 1961 (4): 53-66.</p>
+<p>[8] 储泽祥，陶伏平。汉语因果复句的关联标记模式与 “联系项居中原则”[J]. 中国语文，2008 (5): 410-422+479-480.</p>
+<p>[9] 刘利，朱光鑫。汉语历史语法研究中判定复句的标准问题 [J]. 华夏文化论坛，2022 (1): 168-176.</p>
+<p>[10] 宋绍年。吸收与创新 ——《马氏文通》介词和连词问题的研究给我们的启迪 [J]. 湖北大学学报 (哲学社会科学版), 2007 (4): 18-21.</p>
+<p>[11] 陆俭明。汉语中表示主从关系的连词 [J]. 北京大学学报 (哲学社会科学版), 1983 (3): 91-97+30.</p>
+<p>[12] 江蓝生。汉语连 — 介词的来源及其语法化的路径和类型 [J]. 中国语文，2012 (4): 291-308+383.</p>
+<p>[13] 章欣。从 “因为” 看汉语介词、连词的分野 [J]. 语文研究，2015 (3): 51-54.</p>
+<p>[14] 沈家煊。我看汉语的词类 [J]. 语言科学，2009, 8 (1): 1-12.</p>
+<p>[15] 朱德熙。自指和转指 —— 汉语名词化标记 “的、者、所、之” 的语法功能和语义功能 [J]. 方言，1983 (1): 16-31.</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a> 刘梦溪主编；胡明扬，王启龙编校.：《中国现代学术经典 赵元任卷》，石家庄：河北教育出版社，，1996 年，第 652 页。</p>
+<p>[<a href="#_ftnref2">②]</a> 宋绍年：《吸收与创新 ——《马氏文通》介词和连词问题的研究给我们的启迪》，《湖北大学学报 (哲学社会科学版)》2007 年第 04 期。</p>
+<p>[<a href="#_ftnref3">③]</a> 章欣：《从 “因为” 看汉语介词、连词的分野》，《语文研究》2015 年第 3 期。下同。</p>
+<p>[<a href="#_ftnref4">④]</a> 这里的直接连接主语不同于 “因为 + np” 结构，因为主语是作为句子成分出现在连词结构内的，而不是一个单独的名词性成分。所谓的直接连接主语或谓语，是整句的一种省略。</p>
+<p>[<a href="#_ftnref5">⑤]</a> 朱德熙：《语法讲义》，北京：商务印书馆，1982 年，第 124 页。</p>
+<p>[<a href="#_ftnref6">⑥]</a> 章欣：《从 “因为” 看汉语介词、连词的分野》。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 沈家煊：《我看汉语的词类》，《语言科学》2009 年第 1 期。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 马杜娟：《基于语料库的现代汉语介词语块探讨 —— 以介词 “对” 为例》，《国际汉语学报》2014 年第 2 期。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 蒋瑾媛：《关于 “为了” 的词性》，《四川教育学院学报》2002 年第 3 期。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 陈昌来：《介词与介引功能》，安徽教育出版社，2002 年。</p>
+<p>[<a href="#_ftnref11">11]</a> 郭中平：《单句复句的划界问题》，《现代汉语参考资料 （下册）》，1982 年，第 743–762 页。</p>
+<p>[<a href="#_ftnref12">12]</a> 邢福义：《汉语复句与单句的对立和纠结》，《世界汉语教学》1993 年第 1 期。</p>
+<p>[<a href="#_ftnref13">13]</a> 孙良明：《研究汉语单复句划分应当明了的问题》，《语言教学与研究》2007 年第 2 期。</p>
+<p>[<a href="#_ftnref14">14]</a> 刘利、朱光鑫：《汉语历史语法研究中判定复句的标准问题》，《华夏文化论坛》2022 年第 1 期。</p>
+<p>[<a href="#_ftnref15">15]</a> 完句范畴的分类来自贺阳：《汉语完句成分试探》，《语言教学与研究》1994 年第 4 期。</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>现汉</category>
+      </categories>
+      <tags>
+        <tag>词类</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>事与理：乾嘉汉学的求实性与科学性</title>
+    <url>/2023/07/13/23-shili/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>这是一篇新中特课的水作业</p>
+<span id="more"></span>
+
+<p>事与理：乾嘉汉学的求实性与科学性</p>
+<p><strong>摘要</strong>：乾嘉汉学承汉代古文经学，在考据学上卓有建树。在特定的历史环境下，其学术虽不能呈现出鲜明的现实面向，但在学术上能采用相对实证的、科学理念和方法，从而在经学的阐释、史学的考订、小学的论述上都呈现出求实、求理的倾向。借助马克思主义原理和社会科学方法论，本文首先从 “经世致用” 思想在清代的消长论乾嘉汉学的发展背景，次从求实、求理两方面论乾嘉汉学中论证材料、论证理路的科学性和进步性。</p>
+<p><strong>关键词</strong>：乾嘉 汉学 实事求是 科学性</p>
+<p>乾嘉之学又称 “朴学”，其学术建立在对中国古代社会历史文献的考据之上，文风朴实简洁，重视在充分论据的基础上得出结论。不同于重视心性与义理的宋明理学，乾嘉学术上承汉代古文经学，在经学的阐释、史学的考订、小学的论述上都呈现出求实、求理的科学精神。乾嘉汉学的考据学风自明代中期已有所发端，至清末仍有余绪。是故本文所论 “乾嘉汉学”，指的是一较广的时间段中，具有求实求理这种学风的众多学人及其著述。</p>
+<p>从马克思主义原理和社会科学方法论的视角，乾嘉学术已经与辩证唯物主义思想有某种程度的契合，其理论具有丰富的思想内涵，对建构基于事实和论据的当代社会科学和人文科学理论体系有一定的参考意义。</p>
+<h1 id="一、转向考据：“经世致用”说的显隐浮沉"><a href="#一、转向考据：“经世致用”说的显隐浮沉" class="headerlink" title="一、转向考据：“经世致用”说的显隐浮沉"></a>一、转向考据：“经世致用” 说的显隐浮沉</h1><p>明末清初，中国政治和社会都出现了激烈的动荡，这也促使着思想文化领域出现变化与创新。顾炎武、黄宗羲、王夫之、朱之瑜、傅山、李颙、颜元等学者，都开始认识到理学发展到后期的僵化和凝滞，<strong>反对空谈性理的唯心世界观，致力于将学术探究和社会现实联系起来</strong>。顾炎武即倡导 “明道救世” 之学，明确否定 “置四海之困穷不言，而终日讲危微精一之说” 的腐朽学风，认为 “自一身以至于天下国家，皆学之事也”[<a href="#_ftn1">①]</a>。他考察各地山川风俗，疾苦利病，著成《天下郡国利病书》；历览二十一史，十三朝实录，从故事史实中求得改善民生之法；著《日知录》，将最终意旨归于 “明学术，正人心”，对世道人心产生积极作用。顾炎武在考据学上颇有见地和成就，被视为乾嘉考据学的宗师。值得注意的是，他的经学与考据学都是面向现实民生的，与乾嘉学术的时代风尚有较大的区别。</p>
+<p>到 18 世纪三四十年代以后，即乾隆初叶以后，<strong>汉学逐渐走向经史考证，不复顾炎武的 “通经致用” 学风。</strong>章太炎先生在《清儒》中论及这种学术的形成过程：“清世，理学之言竭而无余华；多忌，故歌诗文史楛；愚民，故经世先王之志衰。（原注：三事皆有作者，然其弗逮宋明远甚。）家有智慧，大凑于说经，亦以纾死，而其术近工眇踔善矣。”[<a href="#_ftn2">②]</a> 一方面，由于理学的理论枯竭，已经难以有大的发展和进步；另一方面，政治上的高压导致学术研究的禁忌过多，乾嘉学者只能埋首故纸，以免死祸。同时，总体稳定的社会环境和逐渐发展的社会经济为学者的研究提供了比较有利的物质生活条件。尽管戴震等乾嘉学者仍然反对礼教与理学对人性的压迫，但段玉裁、王念孙等许多后学，他们的现实关照和指向，大都被掩盖在考订与札记之中。</p>
+<p>清代 “经世致用” 的思潮是从清算理学流弊开始的，学者将儒家思想和社会生活各方面结合起来，一度对封建专制制度展开批判，设计了一些很有价值的社会改革方案，力图将人们的思考重心从内心世界转到客观世界来。中国传统学术的发展总是以儒家经学为主导，而其间又存在着训诂之学（汉学）与义理之学（宋学）的消长交替，即《四库全书总目》所说的 “汉学、宋学，两家互为胜负。” <strong>这种事物内部矛盾两端互为制约，互相影响，不断运动和发展的运行状态，正是符合马克思主义唯物辩证法的。</strong></p>
+<p>由于清廷政治的影响，倾向于改造世界的 “经世致用” 不具有可能的历史环境，这种针砭时弊的学问注定不能成为当时显学。乾嘉以后，经学考据愈加脱离现实实际，只是为了考据而考据。而经世致用的思想，直到清末才在内外忧患的历史现实中，在今文经学的回向中得以生机复现。<strong>从经世致用在清代不同时期的显隐浮沉可以看出，经济政治条件对学术的影响是巨大且深刻的。</strong>乾嘉汉学一脉，虽有此方面之传承，但囿于社会环境的限制，并不能现实政治中有若干建树，但却形成了一种切实有据的学术风气，他们在学术上的求实性与科学性，对今天的人文科学建设仍然有重要意义，下二节将详述之。</p>
+<h1 id="二、实事求是：材料、方法的充分与切当"><a href="#二、实事求是：材料、方法的充分与切当" class="headerlink" title="二、实事求是：材料、方法的充分与切当"></a>二、实事求是：材料、方法的充分与切当</h1><p>乾嘉学术的考据之学，是一种实事求是之学。崔发展从阐释主体、阐释对象、阐释方法、阐释目标四个方面将乾嘉汉学的实事求是概括为：“要自己（‘实事求是者’）从坚实的、客观的阐释对象（‘实事’）出发，通过可操作性、可重复性的阐释方法（‘求’），就能将客观的经文、经义或儒道（‘是’）阐释或还原出来。”[<a href="#_ftn3">③]</a> 一方面，乾嘉学者所求的目标是 “是”，力求还原经典原意，而非推阐圣人之意，走向 “六经注我”，另一方面，求的方法是用 “实事”，这就要求学者做到论必有据，具有严谨的实证主义观念。<strong>总而论之，要实现从宋学的 “尊德性” 为先，到汉学的 “道问学” 为先，首先要贯彻实事求的观念和方法。</strong></p>
+<p><strong>在理念上，乾嘉学者大都有求真务实的理论自觉。</strong>“实事求是” 始见于《汉书・河间献王刘德传》：“修学好古，实事求是。” 颜师古注：“务得事实，每求真是也。”[<a href="#_ftn4">④]</a> 是形容学者依据充分的事实依据得出结论的一种严谨治学，务求真谛的态度。尽管实事求是可以算作历代学者的一个普遍理念，但是，直到乾嘉汉学，学者们才真正明确地将实事求是上升为一种理论方法的自觉，钱大昕强调：“通儒之学，必自实事求是始。”[<a href="#_ftn5">⑤]</a> 阮元自言治经之准则：“余之说经，推明古训，实事求是而已，非敢立异也。”[<a href="#_ftn6">⑥]</a> 这种自觉不仅仅是在与宋学的对举中获得的，更是学术积累到一定阶段的产物。</p>
+<p><strong>乾嘉汉学的实事求是原则不仅体现在观念上，更体现在操作层面。</strong>乾嘉之学以考据著称，“考” 即考核、考察，“据” 即证据，一般指文献证据。乾嘉考据之学要求学者有天文、地理、礼制、算学、博物、音韵等多方面的知识，戴震曾言：“诵《尧典》数行至‘乃命羲和’，不知恒星七政所以运行，则掩卷不能卒业；诵《周南》、《召南》自《关雎》而往，不知古音，徒强以协韵，则龃龉失读；诵古礼经，先《士冠礼》，不知古者宫室衣服等制，则迷于其方，莫辨其用；不知古今地名沿革，则《禹贡》、《职方》失其处所；不知‘少广’、‘旁要’，则《考工》之器不能因文而推其制；不知鸟兽虫鱼草木之状类名号，则比兴之意乖。”[<a href="#_ftn7">⑦]</a> 这些知识都是基于对客观世界与历史事实的观察得来的，相比宋学的求心求己，在研究方法上，具有更明确的崇实风尚。</p>
+<p><strong>在研究方法上，乾嘉汉学运用在众多文献中排比分析，总结出了一套切实可行的考证办法。</strong>例如，在历史研究当中，乾嘉史家注重征实而慎言褒贬，提倡 “实事求是” 的治史学风。对于历代史书，他们全面审查其中对 “有是事而不如是书” 和 “无是事而如是书” 的谬误，采用的主要方法有比较考证、参互考证、两重考证、归纳考证、征实考证、溯源考证等 [<a href="#_ftn8">⑧]</a>。如此则对历代史书中的 “非实” 情况进行了考异、纠谬、辨伪、祛疑，其重要学术论著如《廿二史考异》《古文尚书疏证》《古今伪书考》等，不仅为当今学术界提供了可靠的结论，更成为了史学实证研究的范式。在语言文字学研究中，乾嘉学者们更是善于排比经注，推索陈迹，在众多语言用例中得出征实的结论。他们不仅为许多经典古籍和小学专书编订新注，如孙诒让《周礼正义》、郝懿行《尔雅义疏》、段玉裁《说文解字注》，体现了扎实的文献功底和极强的排比综合能力；同时也在笔记和札记中记录考证要点，如俞樾《群经平议》、钱大昕《十驾斋养新录》、王引之《经义述闻》，这些札记无一不是从文献用例出发， 对前说进行补证或反驳，做到了事必有因、理必有据。</p>
+<h1 id="三、学尚理必：理路、逻辑的科学与严谨"><a href="#三、学尚理必：理路、逻辑的科学与严谨" class="headerlink" title="三、学尚理必：理路、逻辑的科学与严谨"></a>三、学尚理必：理路、逻辑的科学与严谨</h1><p>乾嘉汉学的求理追求，是建立在充足的文献历史论据之上的。<strong>另外，在考证过程和推理逻辑上，乾嘉学者也具有了推理分析的意识。</strong>冯胜利教授根据乾嘉汉学在科学原理方面的贡献将其概括为 “理必之学”，认为 “乾嘉的语文考据之学在很大程度上也是一种‘推演逻辑和定理派生系统’的科学探索。”[<a href="#_ftn9">⑨]</a>“理必” 是 “演绎” 的结果，是传统学术走向当代科学的起始。本文兹举几例，以证乾嘉学者在语言文字之学的考证上，已经具有初步的科学理论及方法。</p>
+<p>段玉裁《说文解字注》对许慎《说文解字》进行了校订，并对其条例进行了精详的阐发，在引申义、字形字义的古今变化等理论方面多有推进。段玉裁将其语言文字学思想融入对《说文》的注释工作中，在说解时，常使用 “断、必、当、本” 等属于进行逻辑推断，其中即蕴含了他的 “理必” 思想。例如：“琅字只可貌清朗小声，非其状也，音不足以貌义，则断知其字之误矣。” 这是根据语音象征说，认为音大则貌大，音小则貌小，所以 “琅” 字为阳声韵，必不可能形容清朗小声。<strong>这种推断不是基于单个语言用例而偶然得出的，而是建立在段玉裁对于系统事实和语言演变规律的认识上推理得出的</strong>，可以看到，其中逻辑推断的三段论是成立的，自然难以驳倒。</p>
+<p>再如王念孙的《广雅疏证》，这也是对传统语言文字学著作进行注释工作的典例，但也蕴含着王念孙的科学推理观念，犹其是他的生成类比逻辑，已经成为乾嘉理必之学的重要理论之一。生成类比法即是通过词义的比较互证，在引申义列中观察不同词的各个义项之间的平行关系。举例来说，“般” 与 “凯” 都有 “乐” 义，而 “凯” 有大义，又 “乐则气舒”，所以 “般” 也有 “大” 义。这种关系可抽象表达为：“Ｘ和Ｙ都具有属性ｐ，ｑ，ｒ，Ｘ具有特征Ｆ，所以，Ｙ也具有特征Ｆ”[<a href="#_ftn10">⑩]</a> 同时，X 和 Y 之间还具有词义运动中的衍生关系，所以这种类比关系具有了一定的必然性。是故，<strong>王念孙的生成类比逻辑具有较高程度的自觉性和复杂度，拓宽了传统词义理论的分析方法，在科学性上更进一步。</strong></p>
+<p><strong>由此可见，乾嘉学术的 “理必” 观念，已经具有了一定的科学的创建和突破，对于突破传统训诂学的感性和零散，有着突出的贡献。</strong>盛成曾概括汉学的精神：“我们汉学家庭，有十六个字真传 — 平、实、精、详，实事求是，卑毋高论，通经致用 — 汉学之精神，即在实事求是，精益求精，不厌详举；此与科学相同。”[<a href="#_ftn11">11]</a> 正道出了汉学与科学的相通之处。在乾嘉学者的努力下，传统语言文字之学逐渐具有科学性和条理性。直至章太炎、黄季刚二位先生倡导发明之学，呼吁揭明现象背后的规律，语言文字之学始从经学中独立出来，成为自有系统条贯的学术，这亦是基于乾嘉学者们的研究方法和研究理论而获得的创见，在科学性上又更推进一步。</p>
+<p>乾嘉学术的求实求理的精神，在中西文化碰撞的年代，被视作引进西方科学的重要资材。胡适在《清代学者的治学方法》中提到：“中国旧有的学术，只有清代‘朴学’确有科学精神。”[<a href="#_ftn12">12]</a> 梁启超将乾嘉汉学称为 “科学的古典学派”[<a href="#_ftn13">13]</a>，对清代汉学的考证成就大加推举，认为他们从事着 “以复古求解放” 的事业。尽管乾嘉汉学的考证对象仅限于古籍，不同于科学家对世界的认知和改造，又仍然是在崇古的观念下进行的古典注释工作，不能够超越时代进行一些额外的工作。但是乾嘉汉学所采用的研究方法，已经具有备了一定的科学性。虽然这种实践与当代理论和方法皆较为系统完备的科学还有一定差距，但在当时的社会环境下，有此萌孽，已经弥足珍贵。从马克思主义原理与社会科学方法论的角度看乾嘉汉学，我们应该肯定其价值，亦认识到其时代局限性，沿着他们求实、求理的学术追求，不断建设和发展中国的人文社会科学。</p>
+<p>参考文献</p>
+<p>[1] 何佑森。清代经世思潮 [J]. 孔子研究，1996 (1): 53-60.</p>
+<p>[2] 张晋藩。清初经世致用的思想与实学的学风 [J]. 安徽师范大学学报 (人文社会科学版), 2007 (3): 292-297.</p>
+<p>[3] 姜广辉。乾嘉考据学成因诸问题再探讨 [J]. 哲学研究，2008 (11): 52-61.</p>
+<p>[4] 崔发展. “实事求是” 作为经学阐释命题的定性 —— 乾嘉汉学的阐释学考察 [J]. 前沿，2011 (11): 54-57.</p>
+<p>[5] 何刚刚。从乾嘉汉学论儒家科学精神的兴起 —— 以戴震为中心 [J]. 人文天下，2019 (1): 51-56.</p>
+<p>[6] 冯胜利。乾嘉 “理必” 与语言研究的科学属性 [J]. 中文学术前沿，2015 (2): 89-107.</p>
+<p>[7] 王用源，施向东，冯胜利。段玉裁《说文解字注》科学研究方法例证 [J]. 南开语言学刊，2017 (1): 82-90.</p>
+<p>[8] 冯胜利。王念孙 “生成类比逻辑” 中的必然属性及当代意义 [J]. 励耘语言学刊，2018 (1): 1-26.</p>
+<p>[9] 陈国庆。顾炎武与中国传统学术的转型 [J]. 河南社会科学，2006 (2): 39-43.</p>
+<p>[10] 崔发展. “实事求是” 作为经学阐释命题的展开 —— 乾嘉汉学的阐释学考察 [J]. 孔子研究，2012 (1): 104-114.</p>
+<p>[11] 罗炳良。清代乾嘉史家的 “实事求是” 方法论 [J]. 安庆师范学院学报 (社会科学版), 2007 (01): 84-88.</p>
+<p>[12] 陈祖武，朱彤窗。乾嘉学派研究 [M]. 河北人民出版社，2007.</p>
+<p>[13] 罗炳良。从 “实事求是” 到唯物史观 —— 中国史学理论的发展演变及其评价 [J]. 高校理论战线，2006 (06): 49-53.</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a>［清］顾炎武撰，华忱之点校：《顾亭林诗文集・亭林文集・卷之三・与友人论学书》，北京：中华书局，1983 年，第 40 页。</p>
+<p>[<a href="#_ftnref2">②]</a> 章太炎：《訄书》，上海：古典文学出版社，1958 年，第 30 页。</p>
+<p>[<a href="#_ftnref3">③]</a> 崔发展：《“实事求是” 作为经学阐释命题的定性 —— 乾嘉汉学的阐释学考察》，《前沿》2011 年第 11 期。</p>
+<p>[<a href="#_ftnref4">④]</a>［汉］班固撰，［唐］颜师古注，中华书局编辑部点校：《汉书・卷五十三　景十三王传第二十三・河间献王刘德》，北京：中华书局，1962 年，第 2410 页。</p>
+<p>[<a href="#_ftnref5">⑤]</a>［清］钱大昕著，陈文和主编：《潜研堂文集・序言》，江苏：凤凰出版社，2016 年，第 9 页。</p>
+<p>[<a href="#_ftnref6">⑥]</a>［清］阮元撰，邓经元点校：《揅经室集・点校说明》，北京：中华书局，1993 年，第 1 页。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 李敖主编：《戴震集 雕菰集 严复集》，天津：天津古籍出版社，2016 年，第 157 页。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 罗炳良：《清代乾嘉史家的 “实事求是” 方法论》，《安庆师范学院学报 (社会科学版)》2007 年第 01 期。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 冯胜利：《乾嘉 “理必” 与语言研究的科学属性》，《中文学术前沿》2015 年第 2 期。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 冯胜利：《王念孙 “生成类比逻辑” 中的必然属性及当代意义》，《励耘语言学刊》2018 年第 1 期。</p>
+<p>[<a href="#_ftnref11">11]</a> 盛成：《盛成文集》，北京：北京语言文化大学出版社，1997 年，第 368 页。</p>
+<p>[<a href="#_ftnref12">12]</a> 胡适：《胡适文存》（一集），安徽：黄山书社，1996 年，第 285 页。</p>
+<p>[<a href="#_ftnref13">13]</a> 梁启超：《梁启超论清学史二种》，上海：复旦大学出版社， 1985 年，第 116 页。</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>通选</category>
+      </categories>
+      <tags>
+        <tag>朴学</tag>
+        <tag>科学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>钱穆《中国文化史导论》读书报告</title>
+    <url>/2023/07/13/24-wenxian/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+
+
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>文学</category>
+      </categories>
+      <tags>
+        <tag>读书报告</tag>
+        <tag>钱穆</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《马氏文通》名动字辨音述论</title>
+    <url>/2023/07/13/20-mashi/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：《马氏文通》在实字卷之二 “名字二之一” 中 “同字异音” 部分及实字卷之五 “动字辨音五之二” 共列 203 条名动字辨音实例，从中可以看出，马氏在分析名动字辨音现象时，将传统的 “四声别义” 纳入汉语语法体系的尝试。他第一次将词类与变读联系起来，并采用了相对统一的用语进行说解。同时，马氏对于名动字辨音的认识也存在着字词不分、论述较略、分类较粗的局限性。《马氏文通》为后来的研究提供了较新的思考角度和集中的例证，如今 “四声别义” 相关问题研究已经取得较多成果。</p>
+<p><strong>关键词</strong>：《马氏文通》 名字辨音 动字辨音 破读</p>
+ <span id="more"></span>
+
+
+
+<p>《马氏文通》名动字辨音述论</p>
+<p>马建忠在《马氏文通》提出了 “名字辨音” 和 “动字辨音” 的概念，其实质是一字具有不同音义并通过音来区别意义的现象。据统计，《马氏文通》在实字卷之二 “名字二之一” 中 “同字异音” 部分及实字卷之五 “动字辨音五之二” 共列 203 条名动字辨音实例（不计重复共 201 条）。本文将对这 201 条实例进行分析和归纳，由此梳理出马氏对名动字辨音的看法，讨论《马氏文通》在此问题上的进步性和局限性。</p>
+<h1 id="一、名动字辨音的基本性质"><a href="#一、名动字辨音的基本性质" class="headerlink" title="一、名动字辨音的基本性质"></a>一、名动字辨音的基本性质</h1><p>名动字辨音的所指的现象起源已久。这种一字具有不同音义并通过音来区别意义这类现象的称说方式有 “异读”、“又音”、“破读”、“四声别义”、“以音别义” 等。关于这种现象，较早的文献资料见于《颜氏家训・音辞篇》：“夫物体自有精麤，精麤谓之好恶；人心有所去取，去取谓之好恶。（原注：上呼号下乌故反）此音见于葛洪、徐邈。”“江南学士读左传，口相传述，自为凡例，军自败曰败，打破人军曰败。”[<a href="#_ftn1">①]</a> 可见当时的语音中，应当存在以音别义的现象。陆德明的《经典释文》也论及了 “好”“恶”“誉” 等字的不同音义，认为其 “此等或近代始分，或古已为别，相仍积习，有自来矣。”[<a href="#_ftn2">②]</a> 黄侃也指出，“一字或有数音，古今所同也”“其起原远在太古”[<a href="#_ftn3">③]</a>。</p>
+<p>自宋代开始，四声别义的合理性开始遭到质疑。而在清代，顾炎武、钱大昕、卢文弨、段玉裁等学者展开了更加激烈的论辩，他们明确地提出四声别义起源于六朝经师人为的活动。顾炎武 “先儒两声各义之说不尽然”[<a href="#_ftn4">④]</a> 首发其声，他们认为，破读并非自然语言现象，而是起源于六朝经师强生分别，故不可依从。顾炎武认为，破读的两个意义之间存在着密切关系，“考诸义则二字固可一”[<a href="#_ftn5">⑤]</a>，钱大昭亦云 “人之观我与我之观于人，义本相因”[<a href="#_ftn6">⑥]</a>，故得出 “虚实动静之分，皆六朝俗师，妄生分別，古人固未有之也” 的结论。即认为以音别义的 “义” 是可以统一的，自然语言没有必要存在两个音来区别这些意义，所以音的区别只能是人为规定。</p>
+<p>《马氏文通》“名字二之一” 言：“至同一字而或为名字，或为别类之字，惟以四声为区别者，皆后人强为之耳。稽之古籍，字同义异者，音不异也。”[<a href="#_ftn7">⑦]</a> 显然也是受到了清代诸儒的影响，他认为通过四声来区别名字和别类之字是一种后人强加的分别。但是，他也仍然承认，“虽然，音韵之书，今详于古，亦学者所当切究。而况声律之文，惟此之务乎？” 又在下 “动字辨音五之二” 下言 “更有以音异而区为静字与动字者，或区为内、外动字者，或区为受动与外动者，且有区为其他字类者。” 同时，他列举了大量字例，注明了这些字作为不同字类以及表达不同意义时的四声或反切，这又显示了他对四声别义现象客观存在的认可。由此我们大致得出结论，在起源问题上，马氏部分同意清儒的观点，认为四声别义至少不完全是自然形成，应当有经师人为规定的成分。在陈述这一观点上，马氏的论述显得模棱两可。但是，在客观的叙述和例证中，他仍然注意到了汉语四声别义这一独特现象，并予之一定的重视。</p>
+<h1 id="二、《马氏文通》名动字辨音例证分析"><a href="#二、《马氏文通》名动字辨音例证分析" class="headerlink" title="二、《马氏文通》名动字辨音例证分析"></a>二、《马氏文通》名动字辨音例证分析</h1><p>《马氏文通》对于名动字辨音现象的论述少而例证多，分析其所举例证，可见马氏对四声别义现象的认识。名动字辨音可以从两方面来观察，一是从读音的角度，关注多个读音之间是哪一个或哪几个语音要素的差别起到区别读音的作用；二是从别义的功能角度，关注多个读音区别的是词的什么功能，不同读音的同一个字在句子中的词汇意义和语法意义有什么不同。</p>
+<p>从字头读音的区别来看，马氏所举例证以四声区别为主，声韵的变化为辅。201 条例证中，196 条都包含有 “平读”“上读”“去读”“入读” 等表示声调的用语，只有 6 条不含关于声调的描述，用反切标示字的读音。[<a href="#_ftn8">⑧]</a> 这 6 条例子使用反切法代替标调法的原因在于，字头的多个读音区别不在于声调的不同，而是在于声母和韵母的区别，如此声调则不能发挥 “别义” 的作用。例如，“越” 字读云母月韵及匣母末韵，二音的声纽和韵部不同，但都同属入声，所以使用反切法更为合适。当字头的多个读音在音调和声韵多个语音要素都有区别时，马氏仍然采用标调法，例如 “畜” 字有徹彻母宥韵去声和晓母屋韵入声两读，马氏用声调的区别提示韵部的区别，并未使用反切法。此外，有 8 例字头的多个读音区别不在声调，马氏使用了标调法和反切法结合的方法。[<a href="#_ftn9">⑨]</a> 同时，在四声别义中，以平 - 去的变化最为常见，马氏所举例证中有 110 条都包含了平声与去声的变读。由此可见，马氏在名动字辨音部分所举例证的论述过程中，注意到四声在名动字辨音的主导作用，又不排除特殊情况。在声、韵、调三个语音要素中，马氏更加重视声调的作用，以声调提示整个音节的变化。</p>
+<p>在名动字辨音所区别的意义及功能方面，马氏聚焦于语法功能的不同，特别是词类的不同。在 201 条例证中，根据读音所表示的区别功能可大致分为三类，一类是区别名字与动字、名字与静字、动字与静字或区别其他字类的，共 134 例，其中，名动字区别的有 105 例，名静字区别的有 5 例，动静字区别的有 24 例，其他字类区别的有 16 例，包含多种字类区别的有 11 例；一类是区别动字内部不同语法功能的，共 23 例，主要是内动字与外动字的区别；一类是相同的词类但是词义不同的，共 19 例。从马氏的分析中可以看出四声别义在字类区别上的重要作用，特别是名字与动字的相互转化。</p>
+<h1 id="三、《马氏文通》名动字辨音的评价"><a href="#三、《马氏文通》名动字辨音的评价" class="headerlink" title="三、《马氏文通》名动字辨音的评价"></a>三、《马氏文通》名动字辨音的评价</h1><h2 id="（一）《马氏文通》名动字辨音的进步性"><a href="#（一）《马氏文通》名动字辨音的进步性" class="headerlink" title="（一）《马氏文通》名动字辨音的进步性"></a>（一）《马氏文通》名动字辨音的进步性</h2><p> 马氏对于以音别义材料的纂集建立在前人资料的基础上。其一是散见于各种经籍中的经师训诂材料，其二是小学专书中对破读材料的初步纂集归类。宋人贾昌朝有《群经音辨》“辨字音清浊”“辨彼此异音”“辨字音疑混” 三门，纂集故训，分立门类，但有不少错乱，条例也比较含糊。元人刘鉴《经史正音切韵指南》附 “经史动静字音” 将一个字具有的多个音义中比较稳定的音义称为 “静字”，而由静字派生出来有所变动的音义称为 “动字”。马氏结合训诂材料和前代小学专书中的相关内容，归纳出 201 条名动字辨音实例，标注读音、字类、意义、例句，提供了比较丰富、集中的四声别义研究材料。</p>
+<p>马氏相对于前人的资料纂集的一大突破，就是将其置于整个汉语语法理论框架之下，通过语法体系的统摄对零散的字例进行分析和整理。马氏自陈其所举用例中有：区别名字和动字的（集中于名字辨音部分），区别静字与动字的，区别动字内部分类的以及区别其他字类的（集中于动字辨音部分）。这显然是对用例进行了一定程度的归纳和总结，并且放置于不同的章节之中。四声别义与汉语表义性质和 “一字多音” 现象密切相关，是汉语的异于印欧语法的一大特点。马氏在借鉴印欧语法体系时，将这一特点融合入他的系统语法理论的尝试和努力中，这体现了马氏对汉语特点具有一定程度的自觉。同时，不同于以往的四声别义研究，马氏将名动字辨音的作用聚焦到了语法作用上，包括词类的不同或同一词类中语法功能的不同。相比以往浑仑地以 “义” 字概括不同读音之间的区别，马氏对于语法功能的描述和归纳就显得更为精准。</p>
+<p>马氏对四声别义现象分析的推进还体现在他的分析用语上。马氏在分析字例的时候习用 “平读”“上读”“去读”“入读” 和 “动字”“名字”“静字” 相搭配。一方面，用四声代替反切，已经表明他对以音别义现象在音韵上的主要特征有所把握，大多数字例都是通过对声调的变化来区别意义。另一方面，将四声与字类匹配，表明了他认识到了变调在词法和句法中的重要作用，可以通过改变声调表示不同词类及不同语法意义的词。马氏的这一分析用语是基本程式化的，可见他对整体性规律的追求，这也是在《马氏文通》整书理论体系构建影响下形成的用语习惯。</p>
+<p>总之，马氏在分析名动字辨音现象时，第一次将词类与变读联系起来，分析角度特别强调声调的别音作用，从他相对统一的分析用语可以看到他对此现象的类化认识。同时，他也为后来的研究提供了思考的角度和集中的例证。</p>
+<h2 id="（二）《马氏文通》名动字辨音的局限性"><a href="#（二）《马氏文通》名动字辨音的局限性" class="headerlink" title="（二）《马氏文通》名动字辨音的局限性"></a>（二）《马氏文通》名动字辨音的局限性</h2><p>在承认马氏在理论和用语上的进步性的同时，也需看到马氏的历史局限性及未精审之处。</p>
+<p>首先，马氏没有分清字和词的关系，将不同语言单位放到一起列举，未能离析。例如，马氏在分析 “比” 字时，将 “皋比” 中的 “比” 当成 “比” 字的一个音义，但 “皋比” 中的 “比” 的实质是一个语素，并不是独立的词，与表示 “比较” 和 “亲近” 的 “比” 不在一个语言单位的层次上，不能同时分析。“僧尼” 之 “尼” 在音译词中表示一个音节，不具有实义，也是相似的例子。此外，字词不分的另一表现是，马氏未能辨别一词多义与通假字之间的区别，将字的通假现象归纳入词的引申现象中。例如，“钞” 字、“创” 字的平去两读，虽然有名动字的区别，但表示的意义毫不相关，其中的一个读音只是音近假借别的词的意义，并不能和该字本有的意义互相比较。吕淑湘也在《马氏文通札记》中评价道：“前人未分清字和词，也区分不清语言与文字，常把文字通假跟一词多义混淆。”[<a href="#_ftn10">⑩]</a> 马氏也出现了这样的问题。以上都是中国古代 “字” 的多重含义以及马氏对于 “字” 的概念的混淆，从而导致的分析不当。</p>
+<p>同时，马氏也没有区别词汇意义不同与语法意义不同。周祖谟言：“夫古人创以声别义之法，其用有二：一在分辨文法之词性，一在分辨用字之意义。前者属于文法学之范畴，后者属于语义学之范畴。依其功用之不同，可分为两类：一因词性不同而变调者，一因意义不同而变调者。”[<a href="#_ftn11">11]</a> 马氏仅是对不同情况进行列举，粗疏地将 201 条例子置于名字章与动字章，分类标准大致是区别名字和动字的为一类，区别动字和其他字类、动字内部区别以及其他情况的为另一类，这样的分类是不符合以音别义现象的基本性质的。马氏的例子中虽然包含了词汇意义不同和语法意义不同的两类实例，但是马氏在论述中并没有对这两类进行区别。另外，他在论述读音区别词类这一现象时，又混入了读音区别意义的情况，容易使读者产生困惑，不够条理和明晰。</p>
+<h2 id="（三）名动字辨音的学术推进"><a href="#（三）名动字辨音的学术推进" class="headerlink" title="（三）名动字辨音的学术推进"></a>（三）名动字辨音的学术推进</h2><p>自清代以来，关于名动字辨音现象的实质，主要存在两种相对立的观点。其一，认为这是一种经师的人为规定，不存在客观的基于语言事实的根据；其二，认为这与汉语表义性质和 “一字多音” 现象密切相关，是一种语言的自然呈现。经师人为说在清代拥有了极大的话语权，而持语言自然说的学者则在近代以来逐渐壮大。周祖谟、殷焕先 [<a href="#_ftn12">12]</a>、孙玉文等学者都认可 “以音别义” 是自然的语言现象。也有持中的观点，如黄坤尧 [<a href="#_ftn13">13]</a>、周法高 [<a href="#_ftn14">14]</a>、任铭善 [<a href="#_ftn15">15]</a> 等，他们认为其间有自然的语音区别，也有六朝经师的类比模仿而创造出来的读音。这些近现代学者重新认识了以音别义现象，并结合现代语言学的理论方法，提出了新的解释。</p>
+<p>现代学者对四声别义现象进行了更为深入的探讨。其一，是对四声别义起源的追溯。周祖谟通过大量的文献例证证明汉代已有破读现象，[<a href="#_ftn16">16]</a> 孙玉文《汉语变调构词研究》一书，也从韵文押韵、谐声材料、异文故训等各种文献例证中证明了上古以音别义现象的客观存在。[<a href="#_ftn17">17]</a> 其二，是对四声别义材料的分析分类，相比马氏，近现代学者的分类更为细致精审，他们或从音韵区别的角度探讨四声在材料中的分布情况，或从意义的角度探讨词汇意义和语法意义的区别情况。其三，是对四声别义现象性质的判定，或以之为一种历时的引申分化，如蒋彰明 [<a href="#_ftn18">18]</a>、黄志强 [<a href="#_ftn19">19]</a>，或以之为一种共时的形态变化，如梅祖麟 [<a href="#_ftn20">20]</a>、潘悟云 [<a href="#_ftn21">21]</a>。这些学者都在马氏提出问题的基础上更进一步，在四声别义问题上有了更深入的学术推进。</p>
+<p>综上所述，马氏虽然在名动字辨音问题上观点比较模糊，但在材料列举和分析上，有了一定的进步性，对后续的四声别义研究提供了一定的参考。马氏以独特的视角关注到了四声别义这一彰显汉语特点，又涉及到语音、词义、语法的问题，当代学者应该客观地认识马氏的进步性与局限性。</p>
+<p>附录 《马氏文通》名动字辨音例字表</p>
+<table>
+<thead>
+<tr>
+<th><strong>序号</strong></th>
+<th><strong>字头</strong></th>
+<th><strong>原文</strong></th>
+<th><strong>来源</strong></th>
+<th><strong>平声</strong></th>
+<th><strong>上声</strong></th>
+<th><strong>去声</strong></th>
+<th><strong>入声</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 1</td>
+<td> 比</td>
+<td>比。“皋比”，虎皮也，名也，當<strong>平讀</strong>。禮學記之 “比物醜類”，解比較也，則<strong>動字</strong>矣，當<strong>上讀</strong>。而周禮夏官 “大國比小國”，解親近之義，亦<strong>動字</strong>也，則<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td><strong>動字</strong></td>
+<td><strong>動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>2</td>
+<td> 分</td>
+<td>分。易繫辭上 “物以群分”，別也，<strong>動字</strong>，<strong>平讀</strong>。禮禮運 “禮達而分定”，名分也，則<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>3</td>
+<td> 王</td>
+<td>王。名用，<strong>平讀</strong>。詩大雅皇矣 “王此大邦”，<strong>動字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>4</td>
+<td> 尼</td>
+<td>尼。“僧尼”，名也，<strong>平讀</strong>。孟子梁惠王上 “止戓尼之”，<strong>動字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>5</td>
+<td> 令</td>
+<td>令。<strong>動字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>6</td>
+<td> 衣</td>
+<td>衣。名則<strong>平讀</strong>。<strong>動字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>7</td>
+<td> 妻</td>
+<td>妻。名則<strong>平讀</strong>。<strong>動字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>8</td>
+<td> 空</td>
+<td>空。詩小雅白駒 “在彼空谷”，<strong>靜字</strong>也，<strong>平讀</strong>。考工記函人 “視其鑽空”，<strong>名字</strong>也，<strong>上讀</strong>。論語先進 “回也其庶乎！屢空”，窮也，亦<strong>靜字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>靜字</td>
+<td>名字</td>
+<td>靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>9</td>
+<td> 思</td>
+<td>思。名用。<strong>去讀</strong>。<strong>動字</strong>，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>10</td>
+<td> 除</td>
+<td>除。解殿陛也，<strong>平讀</strong>。晝泰誓 “除惡務本 “，漢晝田蚡傳” 君除吏盡未 “，皆<strong>動字</strong>，<strong>平讀</strong>。惟詩唐風蟋蟀” 今我不樂，日月其除 “，解去也，則<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字、名字</strong></td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>11</td>
+<td> 慮</td>
+<td>慮。淮南子道訓 “澹然無慮”，解思慮，名用，<strong>平讀</strong>。晝太甲下 “弗胡獲”，<strong>動字</strong>也，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>12</td>
+<td> 冠</td>
+<td>冠。名用。<strong>去讀</strong>。<strong>動字</strong>，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>13</td>
+<td> 咽</td>
+<td>咽。曰 “咽喉”，名也，<strong>平讀</strong>。曰 “哽咽”，<strong>動字</strong>，<strong>入讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 動字</strong></td>
+</tr>
+<tr>
+<td> 14</td>
+<td> 庭</td>
+<td>庭。易節 “不出户庭，<strong>名字</strong>，<strong>平讀</strong>。莊子逍遙游” 大有逕庭 “，<strong>靜字</strong>，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td> 靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>15</td>
+<td> 衷</td>
+<td>衷。晝湯誥 “降衷於下民 “，解方寸所蘊也，<strong>名字</strong>，<strong>平讀</strong>。左傳隱公九年 “衷戎師”，當也，<strong>動字</strong>，<strong>去讀</strong>。惟史記孔子世家贊 “折衷於夫子”，此 “衷” 字平仄兼讀。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>16</td>
+<td> 扇</td>
+<td>扇。禮月扇 “乃修闔扇”，又箑也，<strong>名字</strong>，<strong>去讀</strong>。束晳補亡詩 “四時遞謝，八風代扇”，<strong>動字</strong>，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>17</td>
+<td> 釘</td>
+<td>釘。名也，<strong>平讀</strong>。<strong>動字</strong>，以釘釘也，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>18</td>
+<td> 乘</td>
+<td>乘。詩小雅六月 “元戎十乘”，名也，<strong>去讀</strong>。易亁 “時乘六龍以御天”，解駕也。孟子公孫丑上 “不如乘勢”，解因也。詩豳風七月 “亟其乘屋”，解治也，皆<strong>動字</strong>，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>19</td>
+<td> 奏</td>
+<td>奏。掦雄解嘲 “獨可抗疏時道是非”，解奏疏也，名也，<strong>去讀</strong>。孟子滕文公上 “禹疏九河”，解通也。禮祭義 “祭不欲疏”，解稀也，一為<strong>動字</strong>，一為<strong>靜字</strong>，皆<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字、靜字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>20</td>
+<td> 培</td>
+<td>培。<strong>名字</strong>，<strong>去讀</strong>。左傳襄公二十四年 “培塿無松柏””，小阜也，名也，<strong>去讀</strong>。禮中庸 “栽者培之”，養也，<strong>動字</strong>也，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>21</td>
+<td> 牽</td>
+<td>牽。挽舟索也，通 “縴”，名也，<strong>去讀</strong>。易夬 “牽羊悔亡”，引也，<strong>動字</strong>，<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>22</td>
+<td> 教</td>
+<td>教。易觀 “聖人以神道設教”，解所以教也，名也，<strong>去讀</strong>。解教之也，動字也，平讀。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>23</td>
+<td> 荷</td>
+<td>荷。芙蕖也，名也，<strong>平讀</strong>。論語憲問 “有荷蕢而過孔氏之門者”，<strong>動字</strong>也，<strong>上讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>24</td>
+<td> 盛</td>
+<td>盛。晝泰誓 “犧牲粢盛”，祀器中之黍稷也，名也，<strong>平讀</strong>。易繫辭上，“日新盛德”，<strong>靜字</strong>也，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td> 靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>25</td>
+<td> 屏</td>
+<td>屏。名也，<strong>平讀</strong>，詩大雅板 “大邦維屏”。<strong>動字</strong>，<strong>上讀</strong>，禮王制 “屏之遠方”，解除去也。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>26</td>
+<td> 鈔</td>
+<td>鈔。名也，<strong>去讀</strong>，楮貨名，一貫二貫三貫五貫十貫謂 “大鈔”，一百二百三百五百七百謂 “小鈔”，見宋史食貨志。<strong>動字</strong>，<strong>平讀</strong>，漢晝公孫 #傳 “# 期會日攻鈔郡縣”，略取也。又與俗 “抄” 字同解。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>27</td>
+<td> 創</td>
+<td>創。名也，<strong>平讀</strong>。史記蕭相國世家 “身被七十創”，解傷也。<strong>動字</strong>，<strong>去讀</strong>。孟子梁惠王下 “創業垂統”，解始也，造也。晝益稷 “予創若時”，懲也。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>28</td>
+<td> 湯</td>
+<td>湯。名也，<strong>平讀</strong>。楚辭九歌 “浴蘭湯兮沐芳”。又 “殷湯”。<strong>去讀</strong>，<strong>動字</strong>也，熱水沃也。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>29</td>
+<td> 量</td>
+<td>量。名也，晝舜典 “同律度量衡”。<strong>動字</strong>，<strong>平讀</strong>，丈量，商量也，周禮夏官 “量人”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>30</td>
+<td> 喪</td>
+<td>喪。<strong>平讀</strong>，名也，論語八佾 “臨喪不哀”，持服曰 “喪”。<strong>去讀</strong>，<strong>動字</strong>也，又 “二三子何患於喪乎？” 又子罕 “天之將喪斯文也。”</td>
+<td> 名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>31</td>
+<td> 楷</td>
+<td>楷。<strong>平讀</strong>，名也，孔林之木。<strong>上讀</strong>，<strong>動字</strong>也，禮儒行 “今世行之，后世以為楷”，式也，法也，又 “模楷”。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>32</td>
+<td> 聞</td>
+<td>聞。<strong>去讀</strong>，名也，聲所至也，詩大雅卷阿 “今聞今望”。又 “聲聞”。<strong>平讀</strong>，<strong>動字</strong>也，晝堯典 “俞，予聞如何”，聞知也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>33</td>
+<td> 傳</td>
+<td>傳。<strong>去讀</strong>，名也，“經傳” 與 “驛傳”“列傳” 之類。<strong>平讀</strong>，<strong>動字</strong>也，續也，布也，禮曲禮上 “七十曰老而傳”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>34</td>
+<td> 號</td>
+<td>號。<strong>去讀</strong>，名也，“號令”“稱號” 之類，易渙 “渙汗其大號”。又斎語 “使周游於四方，以號召天下之賢士”。<strong>平讀</strong>，<strong>動字</strong>也。詩大雅蕩 “式號式呼”，大呼也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>35</td>
+<td> 膏</td>
+<td>膏。<strong>平讀</strong>，名也，“脂膏”。又肥也，孟子告子上 “所以不顧人之膏梁之味也”。<strong>去讀</strong>，<strong>動字</strong>也，詩曹風下泉 “陰雨膏之”。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>36</td>
+<td> 稱</td>
+<td>稱。<strong>去讀</strong>，名也，權衡也，俗作 “秤”。又度也。作<strong>動字</strong>用，易繫辭上 “君子以稱物平施”，適可之也。<strong>平讀</strong>，<strong>動字</strong>也，禮月令 “蠶事既登，分繭稱絲，效功以共郊廟之服”，知輕重也。又掦也，禮表記 “稱人之美則爵之”。又言也，禮檀弓 “言在不稱微”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>37</td>
+<td> 剤</td>
+<td>剤。<strong>平讀</strong>，名也，“質剤”，券晝也。<strong>去讀</strong>，<strong>動字</strong>也，“調劑”“藥劑” 之意。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>38</td>
+<td> 鋪</td>
+<td>鋪。<strong>去讀</strong>，名也，賈肆，俗作 “舗”。<strong>平讀</strong>，<strong>動字</strong>也，詩序 “賦之言鋪陳今之政教善惡”，解布也。而 “金鋪”，則門之銜環者，亦名也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>39</td>
+<td> 墳</td>
+<td>墳。<strong>平讀</strong>，名也，禮檀弓 “古者墓而不墳”。仄讀，<strong>靜字</strong>也。晝禹貢 “白墳”，“赤墳”，土膏肥也。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td>靜字</td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>40</td>
+<td> 論</td>
+<td>論。<strong>平讀</strong>，名也，“評論”“魯論”“斎論” 之類。<strong>去讀</strong>，<strong>動字</strong>也，晝周官 “論道經邦”。禮王制 “凡官民材，必先論之”。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>41</td>
+<td> 彈</td>
+<td>彈。<strong>去讀</strong>，名也，行丸也，又 “彈丸”。<strong>平讀</strong>，<strong>動字</strong>，鼓爪也，史記屈原列傳 “新沐者必彈冠” 又糾劾也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>42</td>
+<td> 緣</td>
+<td>緣。<strong>去讀</strong>，名也，衣純也。漢晝公孫弘傳 “緣飾以儒術”，注云：“猶衣加純緣也”。<strong>平讀</strong>，<strong>動字</strong>，循也，“緣木求魚”，又因也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>43</td>
+<td> 監</td>
+<td>監。<strong>平讀</strong>，名也。禮王制 “天子使其大夫為三監”。詩小雅賓之初筵 “既立之監”。<strong>去讀</strong>，<strong>動字</strong>，視也，詩大雅皇矣 “監視四方”。又 “監”“鑒” 通，晝酒誥 “人無于水監，當于民監”。而官寺為 “監”，名也，<strong>去讀</strong>。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字、名字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>44</td>
+<td> 縫</td>
+<td>縫。<strong>去讀</strong>，名也，禮檀弓 “古者冠縮縫，今也衡縫”。<strong>平讀</strong>，<strong>動字</strong>，以針 #衣也，詩召南羔羊 “羔羊之縫”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>45</td>
+<td> 親</td>
+<td>親。<strong>去讀</strong>，名也，“親家”“姻親” 之屬，左傳桓公二年 “庶人工商各有分親”。<strong>平讀</strong>，<strong>動字</strong>，近也，愛也，“身親庶務”，又論語學而 “因不失其親”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>46</td>
+<td> 橈</td>
+<td>橈。<strong>平讀</strong>，名也，博雅 “楫謂之橈”。<strong>去讀</strong>，<strong>動字</strong>，易大過 “棟橈”，枉也。又禮月令 “乃命有司申嚴百刑，斬殺必當，毋或枉橈”。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>47</td>
+<td> 燒</td>
+<td>燒。<strong>去讀</strong>，名也，野火曰燒。<strong>平讀</strong>，<strong>動字</strong>，燒也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>48</td>
+<td> 操</td>
+<td>操。<strong>去讀</strong>，名也，“節操”“琴操” 之屬。<strong>平讀</strong>，<strong>動字</strong>，禮曲禮上 “必操几杖以從之”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>49</td>
+<td> 磨</td>
+<td>磨。<strong>去讀</strong>，名也，石磑也。隋晝天文志 “如蟻旋磨”。<strong>平讀</strong>，<strong>動字</strong>，詩 #風淇奧 “如琢如磨”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>50</td>
+<td> 興</td>
+<td>興。<strong>去讀</strong>，名也，趣也，“詩興”“乘興” 之屬，而 “比興” 讀亦同。<strong>平讀</strong>，<strong>動字</strong>，詩 #風氓 “夙興夜寐。” 又<strong>靜字</strong>，盛也，詩小雅天保 “天保定爾，以暮不興”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>51</td>
+<td> 擔</td>
+<td>擔。<strong>去讀</strong>，名也，左傳莊公二十二年 “弛於負擔”。<strong>平讀</strong>，<strong>動字</strong>，國策秦策》“負晝擔橐</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>52</td>
+<td> 騎</td>
+<td>騎。<strong>去讀</strong>，名也，“車騎 “驃騎” 之類。<strong>平讀</strong>，<strong>動字</strong>，跨馬也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>53</td>
+<td> 難</td>
+<td>難。<strong>去讀</strong>，名也，禮曲禮上 “臨難毋苟免”，患難也。又詰 #之解，則<strong>動字</strong>矣，<strong>平讀</strong>。“難易” 之解，<strong>靜字</strong>也，亦<strong>平讀</strong>。</td>
+<td>名字辨音</td>
+<td><strong>靜字、動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>54</td>
+<td> 藏</td>
+<td>藏。<strong>去讀</strong>，名也，禮中庸 “寶藏興焉”。<strong>平讀</strong>，<strong>動字</strong>，匿也，易文言 “陽氣潛藏”。又蓄也，易繫辭 “君子藏器於身”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>55</td>
+<td> 籠</td>
+<td>籠。<strong>去讀</strong>，藏也，“箱籠”“藥籠”。<strong>平讀</strong>，<strong>動字</strong>，漢晝食貨志：“盡籠天下之貨物”。而盛矢之器曰 “籠”，亦名也。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>56</td>
+<td> 觀</td>
+<td>觀。<strong>去讀</strong>，名也，“宮觀”“京觀” 之稱，卦名同。<strong>平讀</strong>，<strong>動字</strong>，晝盤庚上 “予若觀火”。</td>
+<td>名字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>57</td>
+<td> 鹽</td>
+<td>鹽。<strong>平讀</strong>，名也，周禮天官 “鹽人掌鹽之政令，以供百事之鹽”。<strong>去讀</strong>，<strong>動字</strong>，禮內則 “屑桂與薑，以灑諸上而鹽之”。</td>
+<td>名字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>58</td>
+<td> 中</td>
+<td>中 <strong>平讀靜字</strong>也。書大禹謨：允執厥中。 <strong>去讀</strong>外<strong>動字</strong>，矢中的也。史周本紀：養由基去柳葉射之，百發百中。①孟：其中非爾力也。</td>
+<td>動字辨音</td>
+<td>靜字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>59</td>
+<td> 恫</td>
+<td>恫 <strong>平讀</strong>個<strong>動字</strong>，痛也。詩大雅思齊：神罔時恫。 <strong>去讀靜字</strong>，不得志也。史蘇秦列傳：是故恫疑虛喝。</td>
+<td>動字辨音</td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+<td> 靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>60</td>
+<td> 總</td>
+<td>總 <strong>平讀名字</strong>，縫也。詩召南羔羊：素絲五總。 <strong>上讀</strong>外<strong>動字</strong>，合也。書伊訓：百官總己。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>61</td>
+<td> 逢</td>
+<td>逢 在東韻，<strong>狀字</strong>，鼓聲也。詩大雅靈臺：鼉鼓逢逢。 在冬、江兩韻，外<strong>動字</strong>，值也。在宣三：不逢不若。若從「夅」則音龐，姓也。孟子離下：逄蒙學射於羿。 故顔氏家訓有云：‘「逢」「逄」之別，豈可雷同？’</td>
+<td>動字辨音</td>
+<td><strong>狀字、外動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>62</td>
+<td> 重</td>
+<td>重 <strong>平讀</strong>外<strong>動字</strong>，複也。易文言：九三重剛在不中。 <strong>上讀靜字</strong>，不輕之謂也。禮王制：輕任幷，重任分。 又<strong>去讀</strong>亦外<strong>動字</strong>，因其重在重之也。禮祭統：所以明周公之德而又以重其國也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td>靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>63</td>
+<td> 從</td>
+<td>從 <strong>平讀</strong>外<strong>動字</strong>，相聽也。書益稷：汝無面從。 又就也。易文言：雲從龍，風從虎。又自也。詩小雅何人斯：伊誰云從。 <strong>去讀名字</strong>。書冏命：其侍御僕從。「放縱」之解則爲外<strong>動字</strong>，亦<strong>去讀</strong>也。論八佾：從之純如也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 名字、外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>64</td>
+<td> 共</td>
+<td>共 <strong>平讀</strong>外<strong>動字</strong>，敬也。漢王褒傳：共惟春秋法五始之要。其解公同之義者亦外<strong>動字</strong>，則<strong>去讀</strong>矣。禮王制：爵人於朝，與衆共之。而「共給」「共養」有平去二音，音別義同。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>65</td>
+<td> 縱</td>
+<td>縱 <strong>平讀靜字</strong>，南北曰縱，亦作「從」字。賈誼過秦論：合從締交。 假爲外動者亦<strong>平讀</strong>。詩齊風南山：衡縱其畝。<strong>去讀</strong>外<strong>動字</strong>。說文云：舍也，緩也。 玉篇云：放也，恣也。書太甲：縱敗禮。又「操縱」亦<strong>去讀</strong>。</td>
+<td>動字辨音</td>
+<td><strong>外動字、靜字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>66</td>
+<td> 降</td>
+<td>降 <strong>平讀</strong>內<strong>動字</strong>，降伏也。左莊八：師及齊日圍<em>，</em>降于齊師。 <strong>去讀</strong>外動之，升降也。語云：降心相從。</td>
+<td>動字辨音</td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>67</td>
+<td> 爲</td>
+<td>爲 <strong>平讀</strong>外<strong>動字</strong>。爾雅釋言云：作，造，爲也。書益稷：予欲宣力四方，汝爲。 <strong>去讀</strong>介字，以也，緣也。書咸有一德：臣爲上爲德，爲下爲民。釋文云：「爲上」「爲下」之「爲」，于 * 反。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td> 介字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>68</td>
+<td> 吹</td>
+<td>吹 <strong>平讀</strong>外動。玉篇云：出氣急也。莊逍遙游：生物之以息相吹也。詩小雅鹿鳴：鼓瑟吹笙。 <strong>去讀名字</strong>。禮月令：上丁命樂正入學習吹。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>69</td>
+<td> 施</td>
+<td>施 <strong>平讀</strong>外<strong>動字</strong>，設也，用也。書益稷：以五采彰施于五色。<strong>去讀</strong>亦<strong>動字</strong>，惠也，與也。易文言：雲行雨施。禮曲禮：其次務施報。又及也。詩周南葛覃：施于中谷。又邪行也。孟離下：施從良人之所之。 惟「施與」之施，平仄兼讀。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>70</td>
+<td> 遲</td>
+<td>遲 <strong>平讀</strong>。說文云：徐行也。則爲<strong>狀字</strong>。詩邶風谷風：行道遲遲。 緩也，則爲<strong>靜字</strong>。禮玉藻：君子之容舒遲。久也，亦<strong>靜字</strong>，常語也。 <strong>去讀</strong>外<strong>動字</strong>，待也。後漢章帝紀：朕思遲直士，側席異聞。</td>
+<td>動字辨音</td>
+<td>狀字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>71</td>
+<td> 遣</td>
+<td>遣 <strong>平讀</strong>受<strong>動字</strong>。說文云：亡也。詩小雅谷風：棄予如遺。又餘也。禮樂記：有遺音者矣。 <strong>去讀</strong>外<strong>動字</strong>，投贈也。</td>
+<td>動字辨音</td>
+<td><strong>受動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>72</td>
+<td> 差</td>
+<td>差 <strong>平讀</strong>叉茲切，<strong>靜字</strong>，不齊也。孟萬下：其祿以是爲差。詩周南關雎：參差荇菜。 初佳切，則爲外<strong>動字</strong>，差使也。初加切，則爲內<strong>動字</strong>。說文云：貳也，不相值也。廣韻云：舛也。漢東方朔傳：失之毫釐，差以千里。</td>
+<td>動字辨音</td>
+<td><strong>靜字、外動字、內動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>73</td>
+<td> 衰</td>
+<td>衰 <strong>平讀</strong>所危切，滅也，弱也。榖梁序云：昔周道衰陵。 讀「崔」音則爲<strong>名字</strong>，同「縗」字，喪服。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>74</td>
+<td> 追</td>
+<td>追 <strong>平讀</strong>中葵切，外<strong>動字</strong>，隨也，逮也，送也。詩周頌有客：薄言追之。 說文云：逐也。左莊十八：公追戎于濟西。都雷切亦外<strong>動字</strong>，治玉也。詩大雅棫樸：追琢其章。 又，「母追」，冠名，與「頧」字通。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>75</td>
+<td> 治</td>
+<td>治 凡「治之」之「治」<strong>平讀</strong>，外<strong>動字</strong>也，「治國」「治人」之類。而「已治」之「治」<strong>去讀</strong>，受<strong>動字</strong>也，「國治」「邑治」之屬。故州郡所駐曰「治」，則用爲<strong>名字</strong>矣。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 受動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>76</td>
+<td> 推</td>
+<td>推 <strong>平讀</strong>川錐切，外<strong>動字</strong>，順遷也。易繫辭：寒暑相推而歲成焉。 又擇也，奉也，獎也，亦進之也。書周官：推賢讓能，庶官乃和。 又通回切，排也。左襄十四：或 * 之，或推之。 注云：後送曰推。又讓所有以予人也。史淮陰侯列傳：解衣衣我，推食食我。 又移也。詩大雅雲漢：旱既太甚，則不可推。疏云：不可令之移去也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>77</td>
+<td> 居</td>
+<td>居 <strong>平讀</strong>居之切，助字。禮檀弓：何居？ 斤於切，內<strong>動字</strong>，安也，坐也。書盤庚：奠厥攸居。禮曾子問：居，吾語女。又積蓄也。書益稷：懋遷有無化居。注云：化易也。謂交易其所居積也。</td>
+<td>動字辨音</td>
+<td><strong>助字、內動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>78</td>
+<td> 戲</td>
+<td>戲 <strong>平讀</strong>嘆字。又莊子「伏羲」作「伏戲」。<strong>去讀</strong>內<strong>動字</strong>，弄也。禮坊記：閨門之內，戲而不嘆。 又謔也。詩衛風淇奧：善戲謔兮。</td>
+<td>動字辨音</td>
+<td>嘆字</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>79</td>
+<td> 委</td>
+<td>委 <strong>平讀靜字</strong>，雍容自得之貌。詩召南羔羊：委蛇委蛇。 <strong>去讀</strong>外<strong>動字</strong>，任也，屬也。左昭元：徐吾犯之妹美，公孫楚聘之矣，公孫黑又使強委禽焉。又棄置也。孟公下：委而去之。</td>
+<td>動字辨音</td>
+<td>靜字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>80</td>
+<td> 幾</td>
+<td>幾 <strong>平讀靜字</strong>。說文云：微也。易繫辭：幾者動之微。 <strong>上讀狀字</strong>，幾何也。左僖二十七：靖諸內而敗諸外，所獲幾何。<strong>去讀</strong>外<strong>動字</strong>，覬也。左哀十六：國人望君如望歲焉，日月以幾。</td>
+<td>動字辨音</td>
+<td>靜字</td>
+<td>狀字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>81</td>
+<td> 予</td>
+<td>予 <strong>平讀代字</strong>，我也。 <strong>上讀</strong>外<strong>動字</strong>，賜也。詩小雅采菽：君子來朝，何錫予之。</td>
+<td>動字辨音</td>
+<td>代字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>82</td>
+<td> 與</td>
+<td>與 <strong>平讀</strong>助字。<strong>上讀名字</strong>。說文云：黨也。管子八觀篇：請謁得於上，則黨與成於下。又外<strong>動字</strong>，善也。禮禮運：諸侯以禮相與。又許也，從也。論先進：吾與點也。又施與也。禮曲禮：與人者不問其所欲。 <strong>去讀</strong>介字。論學而：與朋友交而不信乎？</td>
+<td>動字辨音</td>
+<td>助字</td>
+<td>名字</td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>83</td>
+<td> 躇</td>
+<td>躇 <strong>平讀狀字</strong>，「躊躇」，猶豫不定之容。 <strong>入讀</strong>外<strong>動字</strong>。公宣七：躇階而走。釋文：「躇」與「踱」同。又注云：猶超遽不暇以次。</td>
+<td>動字辨音</td>
+<td>狀字</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+</tr>
+<tr>
+<td> 84</td>
+<td> 輸</td>
+<td>輸 <strong>平讀</strong>外<strong>動字</strong>，以物送之也。左僖十三：秦於是乎輸粟于晉。 又隳也。詩小雅正月：載輸爾載。又俗謂「勝負」爲「輸嬴」。 <strong>去讀名字</strong>，指所送之物也。韻會云：漢有三輔委輸官。謂委所輸之物之官也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>85</td>
+<td> 汙</td>
+<td>汙 <strong>平讀</strong>汪胡切，同「洿」，<strong>名字</strong>。說文云：濁水不流也，一曰窊下。詩小雅十月之交：田卒汙萊。 又烏瓜切，外<strong>動字</strong>，鑿地也。禮禮運：汙尊而杯飮。 <strong>去讀</strong>烏故切，亦外<strong>動字</strong>，染也，又去垢也。詩周南葛覃：薄汙我私。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>86</td>
+<td> 惡</td>
+<td>惡 <strong>平讀</strong>詢問<strong>代字</strong>，又<strong>狀字</strong>，何也。 <strong>去讀</strong>外<strong>動字</strong>，憎也。左隱三：周鄭交惡。 <strong>入讀靜字</strong>，不善也，又陋也。</td>
+<td>動字辨音</td>
+<td>代字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>靜字</td>
+</tr>
+<tr>
+<td> 87</td>
+<td> 嘔</td>
+<td>嘔 <strong>平讀</strong>匈于切，<strong>狀字</strong>。史淮陰侯列傳：言語嘔嘔，漢書作「姁姁」。又烏侯切，內<strong>動字</strong>，小兒語。 又通「謳」。漢朱買臣傳：其妻亦負戴要隨，數止買臣毋歌嘔道中。</td>
+<td>動字辨音</td>
+<td><strong>狀字、內動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>88</td>
+<td> 反</td>
+<td>反 <strong>平讀</strong>受<strong>動字</strong>，斷獄平反也，猶云定案爲反回也。漢食貨志：杜周治之，獄少反者。<strong>上讀</strong>個<strong>動字</strong>。史陳勝列傳：使者五反。孟子梁下：反其旄倪。則用爲外<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td><strong>受動字</strong></td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>89</td>
+<td> 怨</td>
+<td>怨 <strong>平讀名字</strong>。禮儒行：外舉不避怨。 <strong>去讀</strong>外<strong>動字</strong>：怨天尤人。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>90</td>
+<td> 攤</td>
+<td>攤 <strong>平讀</strong>外<strong>動字</strong>，開也，一曰手布也。世說云：王戎滿牀攤書。 <strong>去讀</strong>亦外<strong>動字</strong>，按也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>91</td>
+<td> 還</td>
+<td>還 <strong>平讀</strong>胡關切，內<strong>動字</strong>，反也。詩小雅何人斯：爾還而入，我心易也。 又旬宣切，同「旋」，亦內<strong>動字</strong>也。</td>
+<td>動字辨音</td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>92</td>
+<td> 閒</td>
+<td>閒 <strong>平讀</strong>居顔切，<strong>名字</strong>。說文：隙也。莊子山木：周將處乎材與不材之閒。 又何艱切，<strong>靜字</strong>，安也。漢司馬相如傳：雍容閒雅甚都。 <strong>去讀</strong>外<strong>動字</strong>，代也。詩周頌桓：皇以閒之。又廁也。左隱三：石碏曰：‘遠閒親，新閒舊。’又迭也。書益稷：笙鏞以閒。「閒」者，迭奏也。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>93</td>
+<td> 先</td>
+<td>先 <strong>平讀名字</strong>、<strong>靜字</strong>皆通用。老子：象帝之先。 <strong>去讀</strong>外<strong>動字</strong>，在後而先之也。易文言：先天而天弗違。</td>
+<td>動字辨音</td>
+<td>名字、靜字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>94</td>
+<td> 穿</td>
+<td>穿 <strong>平讀</strong>外<strong>動字</strong>。說文曰：穴也，通也。詩召南行露：何以穿我屋？ <strong>去讀</strong>亦外<strong>動字</strong>，貫也，連也。漢司馬遷傳：貫穿經傳。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>95</td>
+<td> 濺</td>
+<td>濺  <strong>平讀狀字</strong>，水疾流貌。 <strong>去讀</strong>外<strong>動字</strong>，水激也。史藺相如傳：相如請得以頸血濺大王矣。</td>
+<td>動字辨音</td>
+<td>狀字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>96</td>
+<td> 挑</td>
+<td>挑 <strong>平讀</strong>他彫切，外<strong>動字</strong>，俗謂肩荷曰「挑」。 又取也。今揀人物亦謂之「挑」。 又他羔切，<strong>靜字</strong>，挑達也，同「佻」。荀子彊國篇：其服不挑。 <strong>上讀</strong>外<strong>動字</strong>，引也，撥也。史項羽本紀：願與漢王挑戰決雌雄。</td>
+<td>動字辨音</td>
+<td><strong>外動字、靜字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>97</td>
+<td> 調</td>
+<td>調 <strong>平讀</strong>田聊切，外<strong>動字</strong>，和也。禮月令：調竽笙竾簧。又張流切，<strong>靜字</strong>，朝也。詩周南汝墳：惄如調飢。毛傳云：調，朝也，又作「辀」。<strong>去讀</strong>外<strong>動字</strong>，選調也。史秦始皇本紀：下調郡縣轉輸菽粟芻藁。 又<strong>名字</strong>，賦也。正字通云：民賦曰調。由是「音調」之謂樂律，「才調」之謂韻致，皆<strong>名字</strong>也。</td>
+<td>動字辨音</td>
+<td><strong>外動字、靜字</strong></td>
+<td> /</td>
+<td><strong> 外動字、名字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>98</td>
+<td> 要</td>
+<td>要 <strong>平讀</strong>外<strong>動字</strong>，約也。論憲問：久要不忘生平之言。 又求也，勒也。 <strong>去讀靜字</strong>，緊要也。孝經：先生有至德要道。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td> 靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>99</td>
+<td> 漂</td>
+<td>漂 <strong>平讀</strong>外<strong>動字</strong>，漂浮也。書武成：血流漂杵。 又吹也。詩鄭風蘀兮：風其漂女。 <strong>去讀</strong>內<strong>動字</strong>，水中擊絮也。史淮陰侯列傳：竟漂數十日。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>100</td>
+<td> 徼</td>
+<td>徼 <strong>平讀</strong>外<strong>動字</strong>，要也，求也。左昭三：徼福于大公。禮中庸：小人行險以徼幸。 又抄也。論陽貨：惡徼以爲知音。注云：抄人之意以爲己有也。 <strong>去讀</strong>亦外<strong>動字</strong>，循也。漢百官表：中尉秦官，掌徼循京師。至「游徼」，邏卒也。 又「徼」解邊塞，與西都賦之「徼道綺錯」解小道，得爲名矣。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>101</td>
+<td> 料</td>
+<td>料 <strong>平讀</strong>外<strong>動字</strong>，量也。史孔子世家：嘗爲季氏史，料量平。又度也，理也，計也。周語：乃料民於太原。史李斯列傳：君侯他料。晉書王徽之傳：比當相料理。 <strong>去讀</strong>如「材料」「物料」「意料」「詩料」之類，皆<strong>名字</strong>也。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>102</td>
+<td> 摽</td>
+<td>摽 <strong>平讀</strong>外<strong>動字</strong>，麾也。孟萬下：摽使者出諸大門之外。 上去兼讀皆外<strong>動字</strong>，同義，擊也，落也。詩召南摽有梅：摽有梅。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td><strong>外動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>103</td>
+<td> 剽</td>
+<td>剽 <strong>平讀名字</strong>。爾雅釋樂：大木謂之鏞，其中謂之剽。疏云：其不大不小者名剽。 <strong>去讀</strong>外<strong>動字</strong>，掠也。史酷吏列傳：嘗與張次公俱攻剽爲羣盜。 又<strong>靜字</strong>，急也，輕也。漢地理志：自全晉時已患其剽悍。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>104</td>
+<td> 教</td>
+<td>教 <strong>平讀</strong>外<strong>動字</strong>，俗解「使令」也，如「悔教」「肯教」之屬。 <strong>去讀名字</strong>兼<strong>動字</strong>，訓也，令也，下所效法也。易觀：聖人以神道設教。又「教訓」。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 名字、動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>105</td>
+<td> 勞</td>
+<td>勞 <strong>平讀名字</strong>，勤也。易兌：民忘其勞。 又事功曰勞。禮儒行：先勞而後祿。 <strong>去讀</strong>外<strong>動字</strong>，慰問也。禮曲禮：君勞之得拜。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>106</td>
+<td> 和</td>
+<td>和 <strong>平讀名字</strong>，又<strong>靜字</strong>也。易乾：保合太和。禮中庸：發而皆中節謂之和。又詩小雅蓼蕭：和鸞雝雝。和，鈴之在軾也。 <strong>去讀</strong>外<strong>動字</strong>，聲相應也。易中孚：鳴鶴在陰，其子和之。又調也。禮檀弓：竽笙備而不和。至禮禮運云：五味六和十二食，還相爲質也。禮器云：甘受和。兩「和」字雖<strong>去讀</strong>而用如<strong>名字</strong>矣。</td>
+<td>動字辨音</td>
+<td>名字、靜字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>107</td>
+<td> 荷</td>
+<td>荷 <strong>平讀名字</strong>，荷蕖也。 <strong>上讀</strong>外<strong>動字</strong>，擔也。論憲問：有荷蕢而過孔氏之門者。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>108</td>
+<td> 過</td>
+<td>過 <strong>平讀</strong>內<strong>動字</strong>，經也。 <strong>去讀</strong>外<strong>動字</strong>，度也，越也。易繫辭：範圍天地之化而不過。又過失也，則<strong>名字</strong>矣。</td>
+<td>動字辨音</td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>109</td>
+<td> 瘥</td>
+<td>瘥 <strong>平讀名字</strong>，病也。詩小雅節南山：天方薦瘥。 <strong>去讀</strong>內<strong>動字</strong>，疾愈也。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>110</td>
+<td> 相</td>
+<td>相 <strong>平讀代字</strong>，所指不一也。孟滕下：出入相友。又<strong>名字</strong>，質也。詩大雅棫樸：金玉其相。 <strong>去讀</strong>外<strong>動字</strong>，視也。左隱十一：相時而動。又助也。易泰：輔相天地之宜。</td>
+<td>動字辨音</td>
+<td>代字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>111</td>
+<td> 強</td>
+<td>強 <strong>平讀靜字</strong>，禮曲禮：四十曰強而仕。 <strong>上讀</strong>外<strong>動字</strong>。庸：或勉強而行之。</td>
+<td>動字辨音</td>
+<td>靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>112</td>
+<td> 行</td>
+<td>行 <strong>平讀</strong>寒岡切，<strong>名字</strong>，列也，二十五人爲「行」。 又「中行」「太行」，皆本名。 何庚切，內<strong>動字</strong>，人之步趨也。 <strong>去讀</strong>戶浪切，<strong>名字</strong>，行輩也。 又：行行如也。則爲<strong>狀字</strong>，下孟切。又爲<strong>名字</strong>，如「德行」「言行」之類。</td>
+<td>動字辨音</td>
+<td><strong>名字、內動字</strong></td>
+<td> /</td>
+<td> 名字、靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>113</td>
+<td> 慶</td>
+<td>慶 <strong>平讀</strong>音羌，<strong>名字</strong>，福也。易文言：必有餘慶。<strong>去讀</strong>邱竟切，亦訓「福」。 而「賀慶」則<strong>動字</strong>矣。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 名字、動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>114</td>
+<td> 將</td>
+<td>將 <strong>平讀狀字</strong>，甫始之辭。易繫辭：是以君子將有爲也，將有行也。 又外<strong>動字</strong>，養也。詩小雅四牡：不遑將父。送也。又召南鵲巢：百兩將之。 又鄭風有女同車：佩玉將將。 又大雅緜：應門將將。皆<strong>狀字</strong>也。 <strong>去讀</strong>則<strong>名字</strong>，「將軍」「將帥」之屬。</td>
+<td>動字辨音</td>
+<td>狀字</td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>115</td>
+<td> 傍</td>
+<td>傍 <strong>平讀靜字</strong>，通「旁」，側也。 <strong>去讀</strong>外<strong>動字</strong>，倚也。</td>
+<td>動字辨音</td>
+<td>靜字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>116</td>
+<td> 當</td>
+<td>當 <strong>平讀</strong>外<strong>動字</strong>，值也，任也。論衛靈：當仁不讓於師。又敵也。禮王制：次國之上卿，位當大國之中。 又遇也。又曲禮：當食不嘆。又學記：當其可之謂時。 <strong>去讀</strong>內<strong>動字</strong>，合宜也。又樂記：天地順而四時當。又出物質錢謂之當。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>117</td>
+<td> 攘</td>
+<td>攘 <strong>平讀</strong>外<strong>動字</strong>，竊也。論子路：其父攘羊。 <strong>去讀</strong>亦外<strong>動字</strong>，擾也。漢陳平傳：傾側擾攘楚魏之間。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>118</td>
+<td> 迎</td>
+<td>迎 <strong>平讀</strong>外<strong>動字</strong>，人來而接之也。禮中庸：送往迎來。 <strong>去讀</strong>則人未來而迓之也。詩大雅大明：親迎于渭。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>119</td>
+<td> 應</td>
+<td>應 <strong>平讀</strong>助<strong>動字</strong>，當也。又料度之辭。 <strong>去讀</strong>外<strong>動字</strong>，答也，物相應也。易咸：二氣感應以相與。</td>
+<td>動字辨音</td>
+<td><strong>助動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>120</td>
+<td> 勝</td>
+<td>勝 <strong>平讀</strong>外<strong>動字</strong>，任也，舉也，堪也。孟告下：有人於此，力不能勝一匹雛。 <strong>去讀</strong>內<strong>動字</strong>，勝負也。史魏世家：百戰百勝。③</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>121</td>
+<td> 留</td>
+<td>留 <strong>平讀</strong>外<strong>動字</strong>，止也，遲也。易旅：君子以明慎 刑而不留獄。楚語：舉國留之。 又伺便也。莊山木：執彈而留之。禮儒行：悉數之乃留更僕未可終也。上「留」字解久也。「留落」「遮留」同韻。 <strong>去讀</strong>內<strong>動字</strong>，停待也。漢郊祀志：宿留海上。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>122</td>
+<td> 臨</td>
+<td>臨 <strong>平讀</strong>外<strong>動字</strong>，視也。詩邶風日月：照臨下土。 又以尊至卑曰臨。禮曲禮：臨諸侯，畛于鬼神。 <strong>去讀</strong>內<strong>動字</strong>，喪哭也。左宣十二：卜臨于大宮，且巷出車，吉。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>123</td>
+<td> 任</td>
+<td>任 <strong>平讀</strong>外<strong>動字</strong>，當也。左僖十五：重怒難任。又負也。詩小雅黍苗：我任我輩。又<strong>名字</strong>，以恩相信也。周之大司徒：孝友睦姻任卹。 <strong>去讀名字</strong>，所負也。論泰伯：仁以爲己任。</td>
+<td>動字辨音</td>
+<td><strong>外動字、名字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>124</td>
+<td> 禁</td>
+<td>禁 <strong>平讀</strong>受<strong>動字</strong>，受制也。漢咸宣傳：猶弗能禁。又勝也，當也。至天子所在曰禁，猶云被禁之地，則<strong>名字</strong>矣。 <strong>去讀</strong>外<strong>動字</strong>，制也，戒也。易繫辭：禁民爲非曰義。</td>
+<td>動字辨音</td>
+<td><strong>受動字、名字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>125</td>
+<td> 占</td>
+<td>占 <strong>平讀</strong>外<strong>動字</strong>，視兆問也。 <strong>去讀</strong>亦外<strong>動字</strong>，著位也，擅據也。漢宣帝紀：流民自占八萬餘口。 又隱度其辭口以授人曰「口占」。又陳遵傳：召善書吏十人於前，治私書謝京師故人，遵憑凡口占書吏，且治省事，書數百封，親疏各有意。又有也。韓進學解：占小善者率以錄。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>126</td>
+<td> 漸</td>
+<td>漸 <strong>平讀</strong>外字字，浸也，染也。漢董仲舒傳：漸民以仁。 又內<strong>動字</strong>，流入也。書禹貢：東漸于海。 <strong>去讀狀字</strong>，凡物變移徐而不速之貌。</td>
+<td>動字辨音</td>
+<td><strong>外動字、內動字</strong></td>
+<td> /</td>
+<td> 狀字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>127</td>
+<td> 厭</td>
+<td>厭 <strong>平讀狀字</strong>，安舒貌。 <strong>去讀</strong>外<strong>動字</strong>，滿也，足也。漢王莽傳：克厭上帝之心。 <strong>入讀</strong>伏也，壓也。左昭二十六：將以厭衆。</td>
+<td>動字辨音</td>
+<td>狀字</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 128</td>
+<td> 帆</td>
+<td>帆 <strong>平讀名字</strong>，所以使風也。 <strong>去讀</strong>內<strong>動字</strong>，船使風也。</td>
+<td>動字辨音</td>
+<td>名字</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>129</td>
+<td> 種</td>
+<td>種 <strong>上讀名字</strong>，所種也。詩大雅生民：誕降嘉種。 <strong>去讀</strong>外<strong>動字</strong>，種之也，布也。書大禹謨：臯陶邁種德。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>130</td>
+<td> 恐</td>
+<td>恐 <strong>上讀</strong>內<strong>動字</strong>，懼也。禮中庸：恐懼乎其所不聞。 <strong>去讀</strong>亦內<strong>動字</strong>，疑也，慮也，億度也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>131</td>
+<td> 累</td>
+<td>累 <strong>上讀</strong>外<strong>動字</strong>，增也。史吳王濞列傳：脅肩絫足。「絫」古「累」字。又律曆志：權輕重者不失黍絫。則<strong>名字</strong>矣。<strong>去讀</strong>亦外<strong>動字</strong>，緣坐也。左隱十：相時而動，無累後人。書旅獒：終累大德。 <strong>平讀</strong>同纍。孟梁下：係累其子弟。趙注云：係累，猶縛結也。外<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td><strong>外動字</strong></td>
+<td><strong>外動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>132</td>
+<td> 使</td>
+<td>使 <strong>上讀</strong>令也，役也。禮曲禮：六十曰耆，指使。 <strong>去讀名字</strong>，爲所使也。漢韓信傳：然後發一乘之使，奉咫又之書以使燕。</td>
+<td>動字辨音</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>133</td>
+<td> 始</td>
+<td>始 <strong>上讀名字</strong>，本始之始也。易乾：萬物資始。漢王褒傳：共惟春秋法五始之要。 <strong>去讀動字</strong>，方始之始也。禮月令：桃始華∣蟬始鳴。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>134</td>
+<td> 被</td>
+<td>被 <strong>上讀</strong>內<strong>動字</strong>，言論了。詩大雅公劉：于時語語。 <strong>去讀</strong>外<strong>動字</strong>，以言告人也。論陽貨：居，吾語女。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>135</td>
+<td> 處</td>
+<td>處 <strong>上讀</strong>內<strong>動字</strong>，居也。詩召南殷其靁：莫或遑處。 <strong>去讀名字</strong>，所也，所於處也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>136</td>
+<td> 女</td>
+<td>女 <strong>上讀名字</strong>。 <strong>去讀</strong>外<strong>動字</strong>，以女妻人也。孟離上：涕出而女於吳。書堯典：女于時。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>137</td>
+<td> 去</td>
+<td>去 <strong>上讀</strong>外<strong>動字</strong>，除也。禮中庸：去讒遠色。 <strong>去讀</strong>內<strong>動字</strong>，人相違也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>138</td>
+<td> 雨</td>
+<td>雨 <strong>上讀名字</strong>，所雨也。 <strong>去讀</strong>無主<strong>動字</strong>。詩小雅大田：雨我公田。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>無主動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>139</td>
+<td> 吐</td>
+<td>吐 <strong>上讀</strong>外<strong>動字</strong>。詩大雅烝民：剛則吐之。 <strong>去讀</strong>內<strong>動字</strong>，嘔也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>140</td>
+<td> 樹</td>
+<td>樹 <strong>上讀</strong>外<strong>動字</strong>，種也。 <strong>去讀名字</strong>，所樹也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>141</td>
+<td> 數</td>
+<td>數 <strong>上讀</strong>外<strong>動字</strong>，計也。詩小雅巧言：心焉數之。 <strong>去讀名字</strong>，算數也。易節：君子以制數度議德行。 <strong>入讀靜字</strong>，頻數也。禮祭義：祭不欲數，數則煩。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td>靜字</td>
+</tr>
+<tr>
+<td> 142</td>
+<td> 悔</td>
+<td>悔 <strong>上讀名字</strong>。 <strong>去讀</strong>外<strong>動字</strong>。正字通云：凡言人有悔吝，此「悔」字上聲讀；凡言人能改悔，此「悔」字去聲讀。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>143</td>
+<td> 采</td>
+<td>采 <strong>上讀</strong>外<strong>動字</strong>。詩周南卷耳：采采卷耳。又擇也。禮昏義：納采問名。又「采色」，皆讀上聲。 <strong>去讀名字</strong>，臣食邑也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>144</td>
+<td> 載</td>
+<td>載 <strong>上讀名字</strong>，年也。 <strong>去讀</strong>外<strong>動字</strong>，乘也。易大有：大車以載。又「覆載」「記載」從同。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>145</td>
+<td> 引</td>
+<td>引 <strong>上讀</strong>外<strong>動字</strong>，開弓也。又演也。易繫辭：引而伸之。 又相薦達曰「引」。 <strong>去讀名字</strong>，牽牛綍也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>146</td>
+<td> 準</td>
+<td>準 <strong>上讀</strong>外<strong>動字</strong>，平也。書立政：準人。 又仿也。易繫辭：易與天地準。 <strong>入讀名字</strong>，鼻也。史高祖本紀：隆準而龍顔。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+<td> 名字</td>
+</tr>
+<tr>
+<td> 147</td>
+<td> 近</td>
+<td>近 <strong>上讀靜字</strong>，不遠也。易繫辭：近取諸身。<strong>去讀</strong>居吏切，辭也。詩大雅崧高：往近王舅。 又巨靳切，親也，近之也。書五子之歌：民可近，不可下。兩<strong>去讀</strong>皆外<strong>動字</strong>而異義。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>148</td>
+<td> 遠</td>
+<td>遠 <strong>上讀靜字</strong>。 <strong>去讀</strong>外<strong>動字</strong>，遠之也。論雍也：敬鬼神而遠之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>149</td>
+<td> 飯</td>
+<td>飯 <strong>上讀</strong>外<strong>動字</strong>，餐飯也。禮曲禮：飯黍毋以箸。 <strong>去讀名字</strong>，所食也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>150</td>
+<td> 散</td>
+<td>散 <strong>上讀名字</strong>，「閑散」「藥散」之類。 <strong>去讀</strong>外<strong>動字</strong>，離也，布也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>151</td>
+<td> 善</td>
+<td>善 <strong>上讀靜字</strong>。 <strong>去讀</strong>外<strong>動字</strong>，善之也。孟梁下：王如善之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>152</td>
+<td> 轉</td>
+<td>轉 <strong>上讀</strong>自反<strong>動字</strong>。詩周南關雎：輾轉反側。 <strong>去讀</strong>外<strong>動字</strong>。凡物自轉則上聲，以力轉物則去聲。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 自反動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>153</td>
+<td> 選</td>
+<td>選 <strong>上讀</strong>外<strong>動字</strong>。禮禮運：選賢與能。 <strong>去讀</strong>受<strong>動字</strong>。又王制：命鄉論秀士，升之司徒，曰選士。 又「少選」，<strong>狀字</strong>，讀上聲。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>受動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>154</td>
+<td> 好</td>
+<td>好 <strong>上讀靜字</strong>。詩鄭風女曰鷄鳴：琴瑟在御，莫不靜好。 <strong>去讀</strong>外<strong>動字</strong>，愛而不釋 也，好之也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>155</td>
+<td> 造</td>
+<td>造 <strong>上讀</strong>外<strong>動字</strong>，建也，作也。書大誥：予造天役。注云：予之所作，皆天所役使也。<strong>去讀</strong>受<strong>動字</strong>，造就也。詩大雅思齊：小子有造。禮王制：升于學者，不在于司徒，曰造士。 又內<strong>動字</strong>，詣也，進也。周禮秋官司儀：凡四方之賓客造焉則以告。 又詩大雅大明：造舟爲梁。連舟而爲橋梁以渡也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>受動字、內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>156</td>
+<td> 倒</td>
+<td>倒 <strong>上讀</strong>內<strong>動字</strong>，仆也，如「絕倒」「傾倒」之類。 <strong>去讀</strong>外<strong>動字</strong>，翻也。詩齊風東方未明：顛之倒之，自公召之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>157</td>
+<td> 左</td>
+<td>左 <strong>上讀靜字</strong>，定位之序，左昭右穆。 <strong>去讀</strong>外<strong>動字</strong>。左襄十：天子所右，寡君亦右之，所左亦左之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>158</td>
+<td> 輠</td>
+<td>輠<strong>上讀</strong>胡果切，<strong>名字</strong>，車盛膏器。「炙輠」者，言言之不盡，如輠之常有膏也。又尺馬切，外<strong>動字</strong>，迴轉也。禮雑 記：叔孫武叔朝見輪人，以其杖關轂論者。謂以杖穿轂而轉其輪也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 名字、外動字</strong></td>
+<td> /</td>
+<td>/</td>
+</tr>
+<tr>
+<td>159</td>
+<td> 下</td>
+<td>下 <strong>上讀靜字</strong>。 <strong>去讀</strong>內<strong>動字</strong>，降也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>160</td>
+<td> 瀉</td>
+<td>瀉 <strong>上讀</strong>外<strong>動字</strong>，傾也。周禮地官稻人：以澮瀉水。 <strong>去讀</strong>司夜切，<strong>靜字</strong>，卥也。論衡書解：地無毛則爲瀉土。 又「吐瀉」爲內<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>161</td>
+<td> 仰</td>
+<td>仰 <strong>上讀</strong>外<strong>動字</strong>，舉首望也。 <strong>去讀</strong>亦外<strong>動字</strong>，恃也，資也。史平準書：衣食仰給縣官。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>162</td>
+<td> 放</td>
+<td>放 <strong>上讀</strong>內<strong>動字</strong>，升也。孟離下：放乎四海。又梁下：放於琅邪。 <strong>去讀</strong>外<strong>動字</strong>，逐也，棄也。書舜典：放驩兜于崇山。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>163</td>
+<td> 上</td>
+<td>上 <strong>上讀</strong>內<strong>動字</strong>，升也。易需：雲上於天。 <strong>去讀靜字</strong>。又文言：本乎天者親上。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td>靜字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>164</td>
+<td> 請</td>
+<td>請 <strong>上讀</strong>外<strong>動字</strong>，求也，謁也。禮曲禮：請業則起。 <strong>去讀名字</strong>，春朝秋請也。又「延請」同。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+<td> /</td>
+</tr>
+<tr>
+<td>165</td>
+<td> 首</td>
+<td>首 <strong>上讀名字</strong>，易說卦：乾爲首。 <strong>去讀</strong>「自首」爲外<strong>動字</strong>。「首向」爲內<strong>動字</strong>。禮玉藻：君子之居恒當戶，寢恒東首。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字、內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>166</td>
+<td> 後</td>
+<td>後 <strong>上讀靜字</strong>。又用如<strong>名字</strong>。左桓二：臧孫達其有後於魯乎？<strong>去讀</strong>外<strong>動字</strong>，後心也。老子：自後者人先之。論衛靈：事君敬其事而後其食。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>167</td>
+<td> 走</td>
+<td>走 <strong>上讀</strong>內<strong>動字</strong>，趨也。文選報任少卿書：太史公牛馬走。班固答賓戲：走亦不任廁技於彼列。兩「走」字解「僕」也，則<strong>名字</strong>矣。  <strong>去讀</strong>疾趨也，亦內<strong>動字</strong>。詩大雅緜：予曰有奔走。孟梁下：棄甲曳兵而走。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>內動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>168</td>
+<td> 右</td>
+<td>右 <strong>上讀靜字</strong>。 <strong>去讀</strong>外<strong>動字</strong>，同「左」字。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>169</td>
+<td> 飮</td>
+<td>飮 <strong>上讀</strong>內<strong>動字</strong>。周禮天官饍夫：飮用六淸。 <strong>去讀</strong>外<strong>動字</strong>，飮之也。禮檀弓：酌而飮寡人。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>170</td>
+<td> 枕</td>
+<td>枕 <strong>上讀名字</strong>。 <strong>去讀</strong>外<strong>動字</strong>，枕之也。論述而：曲肱而枕之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>171</td>
+<td> 濫</td>
+<td>濫 <strong>上讀</strong>泉名。爾雅釋水：濫泉正出。 <strong>去讀</strong>外<strong>動字</strong>，氾也。家語：其源可以濫觴。 又浮辭失實也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>172</td>
+<td> 帥</td>
+<td>帥 <strong>去讀名字</strong>，「將帥」也。 <strong>入讀</strong>外<strong>動字</strong>。易帥：長子帥師。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 173</td>
+<td> 刺</td>
+<td>刺 從刀束，<strong>去讀</strong>外<strong>動字</strong>，直傷也。又「刺史」官名，「投刺」柬也，皆爲<strong>名字</strong>。 <strong>入讀</strong>亦外<strong>動字</strong>，針黹也。史貨殖傳：刺綉文不如倚市門。又偵伺也。漢燕王旦傳：陰刺候朝廷事。⑤又撑也。史陳平世家：平恐，乃躶而佐刺船。至「刺」字從束<strong>入讀</strong>，郎達切，<strong>靜字</strong>，戾也。漢杜欽傳：無乖刺之心。 又謚法：暴戾無親曰刺。 至「撥刺」張弓聲，「跋刺」魚躍聲，皆<strong>狀字</strong>。⑥</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td><strong>靜字、外動字</strong></td>
+</tr>
+<tr>
+<td> 174</td>
+<td> 識</td>
+<td>識 <strong>上讀</strong>記也。書益稷：書用識哉！ <strong>入讀</strong>認也。左襄二十九：如舊相識。皆外<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+<td> /</td>
+<td><strong> 外動字</strong></td>
+</tr>
+<tr>
+<td> 175</td>
+<td> 食</td>
+<td>食 <strong>去讀名字</strong>。論爲政：有酒食。 <strong>入讀</strong>外<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 176</td>
+<td> 積</td>
+<td>積 <strong>去讀名字</strong>，儲蓄也，所積也。詩大雅公劉：乃積乃倉。 <strong>入讀</strong>外<strong>動字</strong>，聚也。易升：積小以高大。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 177</td>
+<td> 出</td>
+<td>出 正韻云：凡物自出則入聲，非自出而出之得去聲，然亦有互用者。此內外動之別也。爾雅釋親：男子謂姊妹之子爲出。 <strong>入讀</strong>，<strong>名字</strong>也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 動字</strong></td>
+<td><strong>名字、動字</strong></td>
+</tr>
+<tr>
+<td> 178</td>
+<td> 咥</td>
+<td>咥 許既切，<strong>去讀</strong>內<strong>動字</strong>，大笑也。詩衛風氓：兄弟不知，咥其笑矣。 <strong>入讀</strong>徒結切，外<strong>動字</strong>，齧也。易履：履虎尾，不咥人，亨。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 179</td>
+<td> 度</td>
+<td>度 <strong>去讀名字</strong>，法制也。 <strong>入讀</strong>外<strong>動字</strong>，謀也，量也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 180</td>
+<td> 厝</td>
+<td>厝 <strong>去讀</strong>外<strong>動字</strong>，置也。漢賈誼傳：夫抱火厝之積薪之下。<strong>入讀名字</strong>，厲石也。詩大雅鶴鳴：可以爲厝。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+</tr>
+<tr>
+<td> 181</td>
+<td> 錯</td>
+<td>錯 <strong>去讀</strong>外<strong>動字</strong>，置也。易繫辭：苟錯諸地而可矣。史周本紀：刑錯是十餘年不用。 <strong>入讀</strong>外<strong>動字</strong>，如「錯雑」「錯亂」「錯綜」「錯誤」之屬。「錯刀」者，說文云：金涂也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 182</td>
+<td> 切</td>
+<td>切 <strong>去讀</strong>音砌，<strong>代字</strong>，衆也，「一切」，大凡也。 <strong>入讀</strong>外<strong>動字</strong>，刌也。禮少儀：聶而切之爲膾。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 代字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 183</td>
+<td> 畫</td>
+<td>畫 <strong>去讀</strong>圖物也。 <strong>入讀</strong>分界也。皆外<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 184</td>
+<td> 殺</td>
+<td>殺 <strong>去讀靜字</strong>。禮禮器：不豐不殺。 <strong>入讀</strong>外<strong>動字</strong>，戳也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 185</td>
+<td> 喝</td>
+<td>喝 <strong>去讀</strong>噎塞也。後漢竇憲傳：憲陰喝不能對。 <strong>入讀</strong>訶也。史蘇秦傳：恫疑虛喝。 去入皆內<strong>動字</strong>。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 內動字</strong></td>
+<td><strong>內動字</strong></td>
+</tr>
+<tr>
+<td> 186</td>
+<td> 塞</td>
+<td>塞 <strong>去讀名字</strong>，邊界也。禮月令：條件邊竟，完要塞。  <strong>入讀</strong>外<strong>動字</strong>，填也，隔也。又：天地不通，閉塞而成冬。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 187</td>
+<td> 約</td>
+<td>約 <strong>去讀名字</strong>，所要約也。漢禮樂志：明德鄉治本約。 <strong>入讀</strong>外<strong>動字</strong>，纏束也，約束也。又「約劑」者，要盟之載詞也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 188</td>
+<td> 樂</td>
+<td>樂 <strong>去讀</strong>外<strong>動字</strong>，喜好也。論雍也：仁者樂山。又季氏：益者三樂。 <strong>入讀名字</strong>，聲音總名。又內<strong>動字</strong>，喜也。孟梁下：與民同樂也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+</tr>
+<tr>
+<td> 189</td>
+<td> 較</td>
+<td>較 <strong>去讀</strong>外<strong>動字</strong>，比也。又<strong>狀字</strong>，著明貌。漢孔光傳：較然甚明。 <strong>入讀名字</strong>，車騎上曲銅也。詩：猗重較兮。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td>名字</td>
+</tr>
+<tr>
+<td> 190</td>
+<td> 覺</td>
+<td>覺 <strong>去讀</strong>內<strong>動字</strong>，夢醒也。詩王風兔爰：尚寐無覺。 <strong>入讀</strong>外<strong>動字</strong>，曉也。孟子上：使先知覺後知。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 內動字</strong></td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 191</td>
+<td> 背</td>
+<td>背 <strong>去讀</strong>補妹切，「補」聲促，<strong>名字</strong>，脊也。又「堂北」。詩衛風伯兮：言樹之背。 又薄昧切，「薄」聲舒，外<strong>動字</strong>，違也，棄也。書太甲：既往背師保之訓。 此以聲之舒促而用異者。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 名字、外動字</strong></td>
+<td> /</td>
+</tr>
+<tr>
+<td>192</td>
+<td> 暴</td>
+<td>暴 <strong>去讀靜字</strong>。書泰誓：敢行暴虐。 <strong>入讀</strong>外<strong>動字</strong>，日乾也。孟告上：一日暴之。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 靜字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 193</td>
+<td> 冒</td>
+<td>冒 <strong>去讀</strong>外<strong>動字</strong>，覆也。又假稱也。漢衛青傳：故青冒姓爲衛氏。 <strong>入讀靜字</strong>，貪也。左昭三十一：貪冒之民。 又「冒頓」同音。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td>靜字</td>
+</tr>
+<tr>
+<td> 194</td>
+<td> 藉</td>
+<td>藉 <strong>去讀</strong>外<strong>動字</strong>，祭藉也。易大過：藉白茅。 又「憑藉」「慰藉」爲外<strong>動字</strong>。 「蘊藉」則爲<strong>靜字</strong>。 <strong>入讀狀字</strong>，「狼藉」，雑亂離披貌。漢江都易王傳：國中口語藉藉，⑧無復至江都。又「藉田」同音。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字、靜字</strong></td>
+<td>狀字</td>
+</tr>
+<tr>
+<td> 195</td>
+<td> 射</td>
+<td>射 <strong>去讀名字</strong>。說文謂：弓弩發于身而中于遠也。禮射義：是故古都天子以射遠諸侯卿大夫士，射者男子之事也。論八佾：射不主皮。 又「僕射」官名。 <strong>入讀</strong>外<strong>動字</strong>。論述而：弋而射宿。 又詩大雅思齊：無射亦保。<strong>靜字</strong>，厭也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字、靜字</strong></td>
+</tr>
+<tr>
+<td> 196</td>
+<td> 畜</td>
+<td>畜 <strong>去讀名字</strong>。左僖十九：古者六畜不相爲用。疏云：養之曰畜，用之曰牲。 <strong>入讀</strong>，許六反，<strong>名字</strong>，與<strong>去讀</strong>同解。左桓六：謂其畜之碩大蕃滋也。 又禮曲禮：問庶人之富，數畜以對。 兩「畜」字疏皆作入聲。 又丑六切，外<strong>動字</strong>，積也。禮月令：仲秋之月，乃命有司趣民收斂，務畜菜。 又內則：子婦無私貨，無私畜。又止也。孟梁下：畜君何尤？又許六切，外<strong>動字</strong>，養也。易師：君子以容民畜衆。禮儒行：易祿而難畜也。 至「大畜」「小畜」卦名，有止之義，音仍丑六切。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>名字、外動字</strong></td>
+</tr>
+<tr>
+<td> 197</td>
+<td> 伏</td>
+<td>伏 <strong>去讀</strong>外<strong>動字</strong>，鳥覆卵也。漢五行志：丞相府史家，雌鷄伏子。 <strong>入讀</strong>內<strong>動字</strong>，偃也。禮曲禮：寢毋伏。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td><strong> 外動字</strong></td>
+<td><strong>內動字</strong></td>
+</tr>
+<tr>
+<td> 198</td>
+<td> 讀</td>
+<td>讀 <strong>去讀名字</strong>，凡經書語絕處謂句，語未絕而點之以便成誦者曰「讀」。<strong>入讀</strong>外<strong>動字</strong>，誦書也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td> 名字</td>
+<td><strong>外動字</strong></td>
+</tr>
+<tr>
+<td> 199</td>
+<td> 越</td>
+<td>越 王伐切，外<strong>動字</strong>，度也，踰也。 又國名。戶括切，<strong>名字</strong>。禮禮運：越席疏布。 又瑟下孔爲「越」。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+<td><strong> 外動字、名字</strong></td>
+</tr>
+<tr>
+<td> 200</td>
+<td> 活</td>
+<td>活 戶括切，內<strong>動字</strong>，生也。 古活切，<strong>狀字</strong>。詩衛風碩人：北流活活。 水流聲。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+<td><strong> 內動字、名字</strong></td>
+</tr>
+<tr>
+<td> 201</td>
+<td> 拔</td>
+<td>拔 蒲撥切，<strong>靜字</strong>，疾也。禮少儀：毋拔來。漢陳項傳：拔起隴畝之中。 又蒲八切，外<strong>動字</strong>，擢也，抽也。易文言：確乎其不可拔。 又泰：拔茅茹。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+<td><strong> 靜字、外動字</strong></td>
+</tr>
+<tr>
+<td> 202</td>
+<td> 別</td>
+<td>別 必列切，<strong>名字</strong>，券書也。周禮天官小宰：聽稱責以傳別。注云：別爲兩，兩家各得一也。 又「大別」，山名。又辨也，用如名。 音便，則外<strong>動字</strong>，離別也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+<td><strong> 名字、外動字</strong></td>
+</tr>
+<tr>
+<td> 203</td>
+<td> 合</td>
+<td>合 侯閤切，一作外<strong>動字</strong>，同也。易乾：保合大和。詩小雅常隸：妻子好合。 又會了。禮王制：不能五十里者，不合於天子。 又聚也。論子路：始有，曰，苟合矣。 又答也。左宣二：既合而來奔。此內<strong>動字</strong>，無止詞也。 一作<strong>名字</strong>，配也。詩大雅大明：天作之合。史貨殖列傳：糵麴鹽豉千合。注謂四者輕重多寡相配合耳。 又「六合」「宇合」皆名也。 葛合切，則專作<strong>名字</strong>。漢律曆志：量者，龠、合、升、斗、斛也，所以量多少也。</td>
+<td>動字辨音</td>
+<td> /</td>
+<td>/</td>
+<td>/</td>
+<td><strong> 動字、名字</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<p>[<a href="#_ftnref1">①]</a> （北齐）颜之推撰，（清）赵曦明注，（清）钱大昕补：《颜氏家训・卷七》，清乾隆嘉庆间嘉善谢氏刻抱经堂丛书本，第 348 页。</p>
+<p>[<a href="#_ftnref2">②]</a> （唐）陆德名撰，吴承仕疏证：《经典释文序录疏证》，北京：中华书局，2008 年，第 15 页：“夫质有精麤，谓之好恶，心有爱憎，称为好、恶；尝体即云名誉，论情则曰毁誉；及夫自败、白他之殊；自坏坏撤之异。此等或近代始分，或古已为别，相仍积习，有自来矣。”</p>
+<p>[<a href="#_ftnref3">③]</a> 黄侃：《黄侃国学文集 `》，北京：中华书局，2006 年，第 100-101 页。</p>
+<p>[<a href="#_ftnref4">④]</a> （清）顾炎武：《音学五书・音论卷下》，清康熙张弨刻本，第 178 页。</p>
+<p>[<a href="#_ftnref5">⑤]</a> （清）顾炎武：《音学五书・音论卷下》，清康熙张弨刻本，第 186 页。</p>
+<p>[<a href="#_ftnref6">⑥]</a> （清）钱大昕撰：《潜研堂集・文集卷十五》，民国八年上海商务印书馆四部丛刊景清嘉庆十一年刻本，第 556 页。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 吕叔湘，王海棻编：《〈马氏文通〉读本 第 2 版》，上海教育出版社，2005 年，第 58 页。下同。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 差、追、推、居、呕、还、背、輠。详见附录。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 逢、越、活、拨、别、合。详见附录。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 孙玄常著，吕叔湘校批：《马氏文通札记》，吕叔湘校批译，安徽教育出版社，1984 年，第 17 页。</p>
+<p>[<a href="#_ftnref11">11]</a> 周祖谟：《四声别义释例》，《问学集》，北京：中华书局，1966 年，第 83 页。</p>
+<p>[<a href="#_ftnref12">12]</a> 殷焕先：《破读的语言性质及其审音》，《山东大学学报（语言文学版）》1963 年第 S5 期。</p>
+<p>[<a href="#_ftnref13">13]</a> 黄坤尧：《〈经典释文〉动词异读新探》，台北：台湾学生书局，1992 年。</p>
+<p>[<a href="#_ftnref14">14]</a> 周法高：《中国古代语法 构词编》，台北：中央研究院历史语言研究所，1994 年。</p>
+<p>[<a href="#_ftnref15">15]</a> 任铭善：《〈古籍中的 “破音异读” 问题〉补义》，《无受室文存》，杭州：浙江人学出版社，2005 年，第 250 页。</p>
+<p>[<a href="#_ftnref16">16]</a> 周祖谟：《四声别义释例》，《问学集》，北京：中华书局，1966 年，第 83 页：“一字两读，决非起于葛洪、徐邈，推其本源，盖远自后汉始。魏晋诸儒，第衍绪余，推而广之耳，非自创也。”</p>
+<p>[<a href="#_ftnref17">17]</a> 孙玉文：《汉语变调构词研究》，北京，商务印书馆，2007 年。</p>
+<p>[<a href="#_ftnref18">18]</a> 蒋彰明：《古汉语异读字浅议》，《青海民族学院学报》1989 年第 2 期。</p>
+<p>[<a href="#_ftnref19">19]</a> 黄志强，杨剑桥：《论汉语词汇双音节化的原因》，《复旦学报（社会科学版）》1990 年第 1 期。</p>
+<p>[<a href="#_ftnref20">20]</a> 梅祖麟：《四声别义中的时间层次》，《中国语文》1980 年第 6 期。</p>
+<p>[<a href="#_ftnref21">21]</a> 潘悟云：《谐声现象的重新解释》，《温州师院学报》1987 年第 4 期。</p>
+]]></content>
+      <categories>
+        <category>作业</category>
+        <category>古汉</category>
+      </categories>
+      <tags>
+        <tag>语法</tag>
+        <tag>以音别义</tag>
       </tags>
   </entry>
 </search>

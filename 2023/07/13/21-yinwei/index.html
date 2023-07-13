@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/apple-touch-icon-next.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-corner-indicator.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mistycrown.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要：本文从学界对于 “因为” 词类划分问题的分歧出发，讨论 “因为” 一词的多种语法分布情况，兼而讨论连词和介词的判断标准。“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为（+np）+vp” 逐渐由介词向连词转化。当 “因为” 后接的主谓结构具有了句子的特点，“因为” 就已经完全成为连词。 关键词：“因为” 词类 连词 介词 复句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再论 “因为” 词类">
+<meta property="og:url" content="https://mistycrown.github.io/2023/07/13/21-yinwei/index.html">
+<meta property="og:site_name" content="嚶嚶閣">
+<meta property="og:description" content="摘要：本文从学界对于 “因为” 词类划分问题的分歧出发，讨论 “因为” 一词的多种语法分布情况，兼而讨论连词和介词的判断标准。“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为（+np）+vp” 逐渐由介词向连词转化。当 “因为” 后接的主谓结构具有了句子的特点，“因为” 就已经完全成为连词。 关键词：“因为” 词类 连词 介词 复句">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\blog\hexo-demo\source\images\%E5%9B%BE%E7%89%871.png">
+<meta property="article:published_time" content="2023-07-13T12:49:00.000Z">
+<meta property="article:modified_time" content="2023-07-13T12:59:24.841Z">
+<meta property="article:author" content="蒺藜">
+<meta property="article:tag" content="词类">
+<meta property="article:tag" content="语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\blog\hexo-demo\source\images\%E5%9B%BE%E7%89%871.png">
+
+<link rel="canonical" href="https://mistycrown.github.io/2023/07/13/21-yinwei/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>再论 “因为” 词类 | 嚶嚶閣</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嚶嚶閣</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">嚶其鳴矣，求其友聲。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mistycrown.github.io/2023/07/13/21-yinwei/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yinglogo.png">
+      <meta itemprop="name" content="蒺藜">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嚶嚶閣">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          再论 “因为” 词类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-13 20:49:00 / 修改时间：20:59:24" itemprop="dateCreated datePublished" datetime="2023-07-13T20:49:00+08:00">2023-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">作业</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%9C%E4%B8%9A/%E7%8E%B0%E6%B1%89/" itemprop="url" rel="index"><span itemprop="name">现汉</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<p><strong>摘要</strong>：本文从学界对于 “因为” 词类划分问题的分歧出发，讨论 “因为” 一词的多种语法分布情况，兼而讨论连词和介词的判断标准。“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为（+np）+vp” 逐渐由介词向连词转化。当 “因为” 后接的主谓结构具有了句子的特点，“因为” 就已经完全成为连词。</p>
+<p><strong>关键词</strong>：“因为” 词类 连词 介词 复句</p>
+<span id="more"></span>
+
+<p>再论 “因为” 词类</p>
+<h1 id="一、“因为”词类划分的分歧"><a href="#一、“因为”词类划分的分歧" class="headerlink" title="一、“因为”词类划分的分歧"></a>一、“因为” 词类划分的分歧</h1><p>自《马氏文通》起，学界对连词的划分问题一直有所讨论。《马氏文通》中分出连字、介字、状字，但无法界限分明地划定三者的区别，导致他在分析过程时常有纠缠，标准不一。赵元任也指出 “中文里的连接词跟介词、副词很难分得开…… 事实上中文里连接词的性质很难确定，所以龙索夫索性不把他当作独立的一个词类来看。”[<a href="#_ftn1">①]</a> 因为语法分布的相似和兼类词的存在，连词与介词、副词在某些情况难以区分。</p>
+<p>例如，《现代汉语八百词》中的 “因为” 分为两种词性：介词、连词。本书并未明确指出两种词性的判断依据，但是根据其阐释和例句可以大体推断出，介词的 “因为” 连接的是体词性成分，连词的 “因为” 连接的是谓词性成分。《现代汉语词典》、沈阳和郭锐的《现代汉语》也列出了 “因为” 的两种词性，分类标准和《八百词》大体一致。但是，宋绍年、章欣提出，要对 “因为” 一词的词性进行重新思考，他们认为 “因为” 可以作为介词连接谓词性成分，并且对汉语偏正复句的合理性提出质疑 [<a href="#_ftn2">②]</a>[<a href="#_ftn3">③]</a>。</p>
+<p>词类划分主要是以语法分布及语法功能为依据的，要考察 “因为” 的词类，首先要分析 “因为” 在语境中的语法分布。本文对 BCC 及 CCL 语料库中包含 “因为” 的现代汉语语料进行句法结构分析，提取 “因为” 所在结构的主干成分，得到以下三种句法结构模式：</p>
+<table>
+<thead>
+<tr>
+<th>语法结构</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>因为 + np</td>
+<td> 但因为固执于地方自治学说的缘故，《宪草》所规定是十分凌杂的。</td>
+</tr>
+<tr>
+<td>因为 + vp</td>
+<td> 山东有个中学有些学生因为过分用功，经常头痛。</td>
+</tr>
+<tr>
+<td>因为 + np+vp</td>
+<td> 厂领导因为我无故矿工，给我记大过处分，并且把我赶出了工厂宿舍。</td>
+</tr>
+</tbody></table>
+<p>其中，“因为 + np” 模式没有争议，学界普遍认为这一结构中的 “因为” 是介词，因为介词连接体词性短语是其常规语法功能，而偏正复句中的连词不具有这项功能。第二种情况 “因为 + vp”，陆俭明在论述表示主从关系的连词时曾提出 “在表示主从关系的连词中，有少部分能用来连接主语和谓语。”[<a href="#_ftn4">④]</a> 那么 “因为 + vp” 应是 “因为 + np+vp” 的一种简略形式，属于连词 + 分句的一种特殊情况。第三种情况 “因为 + np+vp” 已经有了较为完整的主谓结构，大多数学者都将之视为一个分句，从而认为 “因为” 是连接分句与分句的连词。而章欣则认为，由于三种 “因为” 结构后接成分皆为指称性成分，并无本质区别，所以后二种情况的 “因为” 皆属介词。</p>
+<p>可以看出，关于 “因为” 的词类划分的分歧主要集中于 “因为 + vp” 和 “因为 + np+vp” 结构，下面主要讨论这两种结构中的 “因为” 词类。</p>
+<h1 id="二、“因为（-np）-vp”与“介词-谓宾”同理"><a href="#二、“因为（-np）-vp”与“介词-谓宾”同理" class="headerlink" title="二、“因为（+np）+vp”与“介词+谓宾”同理"></a>二、“因为（+np）+vp” 与 “介词 + 谓宾” 同理</h1><p>介词将自己的宾语引介给谓语，整个介宾词组在句中充当状语。连词能够连接词或词以上的语言单位，表示各种逻辑关系。在复句中，连词主要用于分句与分句的连接。“因为（+np）+vp” 属连词的观点是将 “因为 + np” 的模式与 “因为（+np）+vp” 分开，认为介词不能连接谓词性短语从而获得 “因为” 作为连词的合理性。然而，这种分类方法存在局限，“因为（+np）+vp” 实际上与 “介词 + 谓宾” 同理。</p>
+<p><strong>1****、根据后接成分区别连词介词的局限</strong></p>
+<p>根据后接成分的性质来区分介词和连词的方法实际上来自印欧语法。以英语为例，介词的后接成分只能是名词性的宾语，如果后接从句，则应该将该词归为连词。这一规则成立的前提条件是英语具有严格的形态变化，有着定式动词和不定式动词的区分。当一个兼类词连接一个带有动词的结构时，可以通过动词是否具有不定式动词的形式来判断这个结构是从句还是名词性宾语。但是汉语不具有形态变化，所以当一个兼类词连接含有谓词性成分的结构时，无法从形式上判断该结构是作为宾语还是作为分句存在的，主流的观点将这种情况直接归入连词类，是值得商榷的。</p>
+<p><strong>2****、“因为” 后接 “指称成分”</strong></p>
+<p>朱德熙在《语法讲义》中用指称和陈述来说明体词性成分和谓词性成分在特定句法位置上的语义功能。汉语中的动词和形容词可以直接充任主宾语而无需形态变化，但是在语义上有已经事物化和没有事物化的区别。具有指称功能的成分可以用 “什么” 指代，具有陈述功能的成分可以用 “怎么样” 指代。[<a href="#_ftn5">⑤]</a> 章欣基于此，认为 “位于‘因为’之后的谓词性成分全部已经指称化了，并且其意义跟谓词性结构的原因有关，都表示转指意义。”[<a href="#_ftn6">⑥]</a> 由此，“因为” 的三种结构皆能被 “因为 + 指称成分” 容纳。</p>
+<p>朱德熙已经指出，汉语中词类和句法成分没有一一对应的关系，并且以陈述和指称来划定词的语义功能。沈家煊的 “名动包含” 说则更进一步，说明汉语陈述语用作指称语是 “构成关系” 而非 “实现关系”，汉语的陈述语是指称语的一个次类，汉语动词是名词的一个次类。[<a href="#_ftn7">⑦]</a> 那么，不论是从语义还是词类功能的角度，谓词充当宾语的合法性已经显而易见，“因为” 后接的谓词性成分，是可以作为介词宾语而存在的。</p>
+<p>*<em>3</em>***、“因为 +** <strong>谓词性成分” 能够成立</strong></p>
+<p>汉语词类与句子成分没有一一对应的关系，谓词性成分可以充当谓语、主语、宾语多种句子成分。朱德熙在《语法讲义》中提出体宾动词和谓宾动词的概念，打破了传统语法中认为动词不能带谓宾的观点。介词由动词虚化而来，应当具有与动词相似的语法功能。那么介词是否能够容纳谓宾，具有和动词相似的语法功能？</p>
+<p>学者们已经对 “介词 + 谓宾” 结构进行了一定的研究。马杜娟分析出包含 “[对 + 谓词性成分]+ 谓词性成分” 的语块 [<a href="#_ftn8">⑧]</a>。蒋瑾媛考察了 “通过”、“经过”、“自从”“关于” 等介词，能够和动宾短语、主谓短语组合，从而论证 “为了” 只有介词词性 [<a href="#_ftn9">⑨]</a>。陈昌来的《介词与介引功能》将介词分为两类：只介引体词性宾语的介词和也能够介引谓词性宾语的介词 [<a href="#_ftn10">⑩]</a>。由此可证 “介词 + 谓宾” 是具有合理性的。</p>
+<p>综上所述，因为 “动词 + vp”、“介词 + vp” 的结构能够成立，而 “连词 + vp” 的结构只能看成省略的特殊情况，所以 “因为 + vp” 结构中的 “因为” 如果被视为介词，会更加具有语法系统上的规整性。所以，本文更倾向于将 “因为 +（np+）+vp” 结构分析为介宾短语。</p>
+<h1 id="三、单复句划分与“因为”词类"><a href="#三、单复句划分与“因为”词类" class="headerlink" title="三、单复句划分与“因为”词类"></a>三、单复句划分与 “因为” 词类</h1><p>“因为（+np）+vp” 结构中 “因为” 的词类划分问题，还受到学者们对于汉语单复句划分的认识的影响。若 “因为” 为连词，则承认以谓词结构划分单复句，若为介词，则不认可谓词结构独立成一分句。对于单复句的划分问题，学界尚存在一些分歧。综合来看，学者们通过小句结构上的互相独立、小句间的语音停顿、连词的使用、意义的关联等标准对单复句进行划分 [<a href="#_ftn11">11]</a>，但是仍然存在许多单复句界限不明的情况。刑福义指出了单句与复句在界限上互有瓜葛的诸多情况 [<a href="#_ftn12">12]</a>。孙良朋则主张汉语句子不再分单、复句，应该按照句法结构、语义关系对所谓 “复句” 进行分析 [<a href="#_ftn13">13]</a>。汉语单复句的划分问题，在古代汉语语法研究中犹为突出，刘利曾指出句子边界的不清以及复句与紧缩、连动、介词结构、代词复指结构的纠缠，都会导致单复句划分的不明 [<a href="#_ftn14">14]</a>。</p>
+<p>古代汉语中，“分句” 这一概念并不常用。《马氏文通》连字章有一重要概念 “读”，在语法分布上，与现代汉语中偏正复句中的偏句相类似。然而，在现代汉语复句语法中，偏正复句的偏句和复句都是小句，在语法单位层级体系中的地位相同。然而，“读” 虽然可以具有起词和语词这样与 “句” 类似的主谓结构，但是马建忠并未给予 “读” 以 “句” 的同等地位，“读” 实际上是在核心结构之外的一个谓词性结构，在句中作一个指称性的成分。在古人的汉语实践中并未有单复句的观念，他们往往使用一些标记关系的虚词（有关联作用的副词、连词、介词）来表示逻辑语义关系。所以，马氏实际上是根据汉语的特点，以 “读” 代替了小句这一级语法单位。《文通》中的连字章也并不等同于现代意义上的 “连词”，而是将具有关联作用的虚词都吸纳进来，大约等同于 “关联词”。</p>
+<p>但是，现代汉语相对于古代汉语发展出了更多语法范畴和形式手段，在一个句子中，一个主谓结构需要加上一些结构成分，才能构成一个意义完整的句子。例如 “夫子哂之” 可以成立，而 “夫子笑他” 就不太能说。在 “因为” 连接的结构中，有许多比单纯的主谓结构中更为复杂的形式。如果说 “因为 + np+vp” 结构大致能被介词结构容纳，那么当 “因为” 的后接部分包含了表示语气范畴、否定范畴、情态范畴、意愿范畴、时体范畴等完句成分时 [<a href="#_ftn15">15]</a>，就不能称之为动宾或主谓短语，只能称之为分句了。所以，主张取消复句的观点，在现代汉语研究中就显得执其一端了。</p>
+<p> ①多元化总是优于单一化，因为多元化包含了各单一化的优点，而避免了它的缺点。<br>②有的人因为他们不正确地忽视或排斥教育为社会需要服务的职能就予以全盘否定。<br>③原则上，他并不鼓励学生读历史，因为历史系毕业后出路很窄。</p>
+<p>以上三句，“因为” 的后接成分都不是简单的主谓结构。在形式上，有几点与主谓短语相区别的特点：其一，具有语气范畴、否定范畴、程度范畴等完句成分；其二，结构内部可能有多个主谓结构，语气有停顿，结构相对复杂，本身就可以是复句；其三，该结构可以后置，并不出现在介宾短语的典型位置。由此我们可以判断，不同于 “因为（+np）+vp” 简单结构的模棱两可，这些结构中的 “因为” 已经完全成为连词了。</p>
+<h1 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a>四、结论</h1><p>在 “因为” 词类的探讨过程中，本文注意到以下两个方面的问题：其一，至少在共时层面上，基于汉语特点，我们能对 “因为（+np）+vp” 结构中 “因为” 词性进行重新探讨，将之归于介词和连词的过渡状态。其二，通过对古代汉语和现代汉语中复句的划分操作中的区别进行讨论，可以明确的是，从一些形式特征判断，一部分的 “因为” 已经从介词转化成连词。由此，我们需要在三类 “因为” 的语法结构之外另立一类 “因为 + 句”，尽管这一类的主干仍是主谓结构，但已经具有句子的特点。</p>
+<p> <img src="D:\blog\hexo-demo\source\images\图片1.png" alt="image-20230713205659028"></p>
+<p>本文最后得出的结论是，“因为” 的词类是在一连续统上进行变化的。“因为 + np” 是典型的介宾结构。“因为 + vp” 由于 “介词 + 谓宾” 结构的合法性可以将 “因为” 看作是介词，但是已经开始向连词转化。“因为 + np+vp” 已经具有了主谓结构，但仍然是一指称性成分，处于介词和连词的过渡地带。而当 “因为” 后接的主谓结构具有了句子的特点（完句范畴、语调、结构复杂度等），它已经不能为介宾结构所容纳，那么 “因为” 就已经完全成为了连词。</p>
+<p>参考文献</p>
+<p>[1] 陈昌来。介词与介引功能 [M]. 安徽教育出版社，2002.</p>
+<p>[2] 李泉。试论现代汉语完句范畴 [J]. 语言文字应用，2006 (1): 56-63.</p>
+<p>[3] 贺阳。汉语完句成分试探 [J]. 语言教学与研究，1994 (4): 26-38.</p>
+<p>[4] 孙良明。研究汉语单复句划分应当明了的问题 [J]. 语言教学与研究，2007 (2): 56-63.</p>
+<p>[5] 郭中平。单句复句的划界问题 [M]// 胡裕树主编。现代汉语参考资料 （下册）: 上海教育出版社，1982: 743-762.</p>
+<p>[6] 李宏玲，王用源。介词 “因”“由” 的连词化与词汇化 [J]. 现代语文，2020 (5): 47-52.</p>
+<p>[7] 朱德熙，盧甲文。关于动词形容词 “名物化” 的问题 [J]. 北京大学学报 (人文科学), 1961 (4): 53-66.</p>
+<p>[8] 储泽祥，陶伏平。汉语因果复句的关联标记模式与 “联系项居中原则”[J]. 中国语文，2008 (5): 410-422+479-480.</p>
+<p>[9] 刘利，朱光鑫。汉语历史语法研究中判定复句的标准问题 [J]. 华夏文化论坛，2022 (1): 168-176.</p>
+<p>[10] 宋绍年。吸收与创新 ——《马氏文通》介词和连词问题的研究给我们的启迪 [J]. 湖北大学学报 (哲学社会科学版), 2007 (4): 18-21.</p>
+<p>[11] 陆俭明。汉语中表示主从关系的连词 [J]. 北京大学学报 (哲学社会科学版), 1983 (3): 91-97+30.</p>
+<p>[12] 江蓝生。汉语连 — 介词的来源及其语法化的路径和类型 [J]. 中国语文，2012 (4): 291-308+383.</p>
+<p>[13] 章欣。从 “因为” 看汉语介词、连词的分野 [J]. 语文研究，2015 (3): 51-54.</p>
+<p>[14] 沈家煊。我看汉语的词类 [J]. 语言科学，2009, 8 (1): 1-12.</p>
+<p>[15] 朱德熙。自指和转指 —— 汉语名词化标记 “的、者、所、之” 的语法功能和语义功能 [J]. 方言，1983 (1): 16-31.</p>
+<hr>
+<p>[<a href="#_ftnref1">①]</a> 刘梦溪主编；胡明扬，王启龙编校.：《中国现代学术经典 赵元任卷》，石家庄：河北教育出版社，，1996 年，第 652 页。</p>
+<p>[<a href="#_ftnref2">②]</a> 宋绍年：《吸收与创新 ——《马氏文通》介词和连词问题的研究给我们的启迪》，《湖北大学学报 (哲学社会科学版)》2007 年第 04 期。</p>
+<p>[<a href="#_ftnref3">③]</a> 章欣：《从 “因为” 看汉语介词、连词的分野》，《语文研究》2015 年第 3 期。下同。</p>
+<p>[<a href="#_ftnref4">④]</a> 这里的直接连接主语不同于 “因为 + np” 结构，因为主语是作为句子成分出现在连词结构内的，而不是一个单独的名词性成分。所谓的直接连接主语或谓语，是整句的一种省略。</p>
+<p>[<a href="#_ftnref5">⑤]</a> 朱德熙：《语法讲义》，北京：商务印书馆，1982 年，第 124 页。</p>
+<p>[<a href="#_ftnref6">⑥]</a> 章欣：《从 “因为” 看汉语介词、连词的分野》。</p>
+<p>[<a href="#_ftnref7">⑦]</a> 沈家煊：《我看汉语的词类》，《语言科学》2009 年第 1 期。</p>
+<p>[<a href="#_ftnref8">⑧]</a> 马杜娟：《基于语料库的现代汉语介词语块探讨 —— 以介词 “对” 为例》，《国际汉语学报》2014 年第 2 期。</p>
+<p>[<a href="#_ftnref9">⑨]</a> 蒋瑾媛：《关于 “为了” 的词性》，《四川教育学院学报》2002 年第 3 期。</p>
+<p>[<a href="#_ftnref10">⑩]</a> 陈昌来：《介词与介引功能》，安徽教育出版社，2002 年。</p>
+<p>[<a href="#_ftnref11">11]</a> 郭中平：《单句复句的划界问题》，《现代汉语参考资料 （下册）》，1982 年，第 743–762 页。</p>
+<p>[<a href="#_ftnref12">12]</a> 邢福义：《汉语复句与单句的对立和纠结》，《世界汉语教学》1993 年第 1 期。</p>
+<p>[<a href="#_ftnref13">13]</a> 孙良明：《研究汉语单复句划分应当明了的问题》，《语言教学与研究》2007 年第 2 期。</p>
+<p>[<a href="#_ftnref14">14]</a> 刘利、朱光鑫：《汉语历史语法研究中判定复句的标准问题》，《华夏文化论坛》2022 年第 1 期。</p>
+<p>[<a href="#_ftnref15">15]</a> 完句范畴的分类来自贺阳：《汉语完句成分试探》，《语言教学与研究》1994 年第 4 期。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%8D%E7%B1%BB/" rel="tag"># 词类</a>
+              <a href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag"># 语法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/13/23-shili/" rel="prev" title="事与理：乾嘉汉学的求实性与科学性">
+      <i class="fa fa-chevron-left"></i> 事与理：乾嘉汉学的求实性与科学性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/13/19-qianmu/" rel="next" title="钱穆《中国文化史导论》读书报告">
+      钱穆《中国文化史导论》读书报告 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E2%80%9C%E5%9B%A0%E4%B8%BA%E2%80%9D%E8%AF%8D%E7%B1%BB%E5%88%92%E5%88%86%E7%9A%84%E5%88%86%E6%AD%A7"><span class="nav-number">1.</span> <span class="nav-text">一、“因为” 词类划分的分歧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E2%80%9C%E5%9B%A0%E4%B8%BA%EF%BC%88-np%EF%BC%89-vp%E2%80%9D%E4%B8%8E%E2%80%9C%E4%BB%8B%E8%AF%8D-%E8%B0%93%E5%AE%BE%E2%80%9D%E5%90%8C%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">二、“因为（+np）+vp” 与 “介词 + 谓宾” 同理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E5%A4%8D%E5%8F%A5%E5%88%92%E5%88%86%E4%B8%8E%E2%80%9C%E5%9B%A0%E4%B8%BA%E2%80%9D%E8%AF%8D%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">三、单复句划分与 “因为” 词类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%BB%93%E8%AE%BA"><span class="nav-number">4.</span> <span class="nav-text">四、结论</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蒺藜"
+      src="/images/yinglogo.png">
+  <p class="site-author-name" itemprop="name">蒺藜</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蒺藜</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">168k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:33</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
